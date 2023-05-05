@@ -1,0 +1,19 @@
+Please re-write the code that you just wrote, into the style of a Bachelor student. Do not change the class names. The obstacles, droid position and spaceship deck size should all remain hardcoded.
+
+Please re-write the code that you just wrote in the style of a Bachelor student who is not skilled at programming. Do not change the class names. The obstacles, droid position and spaceship deck size should all remain hardcoded.
+
+Please re-write the code that you just wrote, into the style of a Bachelor student.
+
+Please re-write the code that you just wrote in the style of a Bachelor student who is not skilled at programming.
+
+Please write the code in the style of a Bachelor student who is not skilled at programming. The style and formatting of the code should be a little inconsistent. Please only write code.
+
+Please re-write the code that you just wrote, into the style of a Bachelor student. The code should look a bit messy.
+
+Please re-write the code that you just wrote, in the style of someone who is not skilled at programming.
+
+Please re-write the code that you just wrote, so that the style and formatting of the code is a little bit messy and inconsistent.
+
+Please re-write the code that you just wrote so that it can be more easily understood by someone who is new to programming.
+
+Can you re-write the code so that the variable names are all single characters, and remove all the comments.

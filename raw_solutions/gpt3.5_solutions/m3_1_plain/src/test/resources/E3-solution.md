@@ -1,0 +1,24 @@
+|Requirement # | URI | VERB |
+|---|---|---|
+| Get all maintenance droids                                                                      | /maintenanceDroids | GET |
+| Create a new maintenance droid                                                                  | /maintenanceDroids | POST |
+| Get a specific maintenance droid by ID                                                          | /maintenanceDroids/{maintenanceDroid-id} | GET |
+| Delete a specific maintenance droid                                                             | /maintenanceDroids/{maintenanceDroid-id} | DELETE |
+| Change the name of a specific maintenance droid                                                 | /maintenanceDroids/{maintenanceDroid-id} | PATCH |
+| Give a specific maintenance droid an order                                         | /maintenanceDroids/{maintenanceDroid-id}/orders | POST |
+| List all the orders a specific maintenance droid has received so far                        | /maintenanceDroids/{maintenanceDroid-id}/orders | GET |
+| Delete the order history of a specific maintenance droid                                    | /maintenanceDroids/{maintenanceDroid-id}/orders | DELETE |
+| Get all spaceship decks                                                                 | /spaceShipDecks | GET |
+| Create a new spaceship deck                                                             | /spaceShipDecks | POST |
+| Get a specific spaceship deck by ID                                                     | /spaceShipDecks/{spaceShipDeck-id} | GET |
+| Delete a specific spaceship deck                                                        | /spaceShipDecks/{spaceShipDeck-id} | DELETE |
+| Make a specific spaceship deck larger, by specifying a new (larger) width and/or height | /spaceShipDecks/{spaceShipDeck-id} | PATCH |
+| Get all obstacles contained in a specific spaceship deck                                  | /spaceShipDecks/{spaceShipDeck-id}/obstacles | GET |
+| Delete all obstacles contained in a specific spaceship deck                               | /spaceShipDecks/{spaceShipDeck-id}/obstacles | DELETE |
+| Add a new obstacle to a spaceship deck                                                    | /spaceShipDecks/{spaceShipDeck-id}/obstacles | POST |
+| Delete a obstacle on a spaceship deck                                                     | /spaceShipDecks/{spaceShipDeck-id}/obstacles/{obstacle-id} | DELETE |
+| Get all transport categories                                                            | /transportCategories | GET |
+| Create a new transport category                                                        | /transportCategories | POST |
+| Create a new connection for a transport category                                       | /transportCategories/{transportCategory-id}/connections | POST |
+| Get all connections of a specific transport category                                   | /transportCategories/{transportCategory-id}/connections | GET |
+| Delete a specific connection in a transport category                                   | /transportCategories/{transportCategory-id}/connections/{connection-id} | DELETE |

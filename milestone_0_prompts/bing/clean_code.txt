@@ -1,0 +1,7 @@
+Please re-write the code so that it follows the clean code rules: Meaningful names, Comments only where necessary, Keep your methods small, No side effect in a function, Only one level of abstraction within a method, Stepdown rule, Proper error handling using exceptions.
+
+The code must follow the clean code rules: Meaningful names, Comments only where necessary, Keep your methods small, No side effect in a function, Only one level of abstraction within a method, Stepdown rule, Proper error handling using exceptions.
+
+Please re-write the code to hardcode the walls, robot position and room size, and make sure that it follows the clean code rules: Meaningful names, Comments only where necessary, Keep your methods small, No side effect in a function, Only one level of abstraction within a method, Stepdown rule, Proper error handling using exceptions.
+
+Please hardcode the walls, robot position and room size, and please re-write the code so that it follows the clean code rules: Meaningful names, Comments only where necessary, Keep your methods small, No side effect in a function, Only one level of abstraction within a method, Stepdown rule, Proper error handling using exceptions.

@@ -1,0 +1,11 @@
+You have the task to steer a maintenance droid across a spaceship deck with obstacles. The spaceship deck is square-shaped. The spaceship deck is modelled as a system of gridcells.
+
+A spaceship deck is divided into gridcells by an x- and y-coordinate system, each starting at 0. A gridcell is identified by its lower left corner. The spaceship deck contains obstacles, depicted as red lines. The obstacles run only horizontally or vertically. The droid exists and moves within the gridcells, but the obstacles run along the grid lines. In addition, spaceship deck boundaries cannot be passed - essentially they also are a kind of obstacle. The maintenance droid can be moved by a simple set of commands. A command is enclosed by square brackets, and has two parts: a direction and the number of steps. A maintenance droid can only be moved horizontally or vertically, not diagonally. If the maintenance droid initially is located in the cell (1,2) and the command is [no,2], the maintenance droid moves 2 cells up, and is then positioned on (1,4). The direction is either no (north), ea (east), so (south), or we (west). If the maintenance droid meets an obstacle or a spaceship deck boundary, then it moves only as many steps as possible, and then stops.
+
+My personal map of the spaceship deck has the maintenance droid starting at (11, 7). The grid is 12 cells wide and 8 cells high. The coordinate system begins at 0. There are four obstacles, at: (6,2)-(6,5) and (5,5)-(6,5) and (5,5)-(5,6) and (5,6)-(12,6). Remember that the obstacles exist on the grid lines, whereas the droid exists and moves on the actual grid cells, where a grid cell is defined by the coordinate associated with its bottom left corner.
+
+Use this information to write the Java class thkoeln.st.st2praktikum.exercise.Exercise0, using my personal map to define the starting location of the droid, the size of the spaceship deck, and the locations of the obstacles. The class has to implement one interface:
+public interface GoAble {
+    String goTo(String goCommandString);
+}
+The string parameter goCommandString has the same format as shown above (e.g. "[no,2]"). The expected return value is the coordinate where the maintenance droid is afterwards, in the format as above (e.g. "(2,4)").

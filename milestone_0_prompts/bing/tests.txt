@@ -1,0 +1,3 @@
+When I enter the command "[ea,5]","[no,3]","[we,4]","[so,1]" I get the final robot position as (3, 2) but it should be (3, 1). Please identify where the error is in the code, and rewrite the code to fix it.
+
+When I enter the command  "[no,4]", "[ea,4]", "[so,1]", "[we,7]" I get the final robot position as (3, 3) but it should be (3, 2). Please identify where the error is in the code, and rewrite the code to fix it.
