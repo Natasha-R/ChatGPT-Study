@@ -1,0 +1,9 @@
+image: maven:3-jdk-11
+
+stages:
+    - deploy
+        
+trigger_build:
+  stage: deploy
+  script:
+    - "curl -X POST -F token=$TEST_REPO_TRIGGER_TOKEN -F ref=master $TEST_REPO_TRIGGER_URL"

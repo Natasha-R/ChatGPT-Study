@@ -1,0 +1,14 @@
+# Spring
+spring:
+    jpa:
+        hibernate:
+            ddl-auto: create-drop
+            naming:
+              implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyComponentPathImpl
+
+
+# Server
+server:
+    port: 8080
+    compression.enabled: true
+    compression.mime-types: application/json,application/xml,text/html,text/xml,text/plain

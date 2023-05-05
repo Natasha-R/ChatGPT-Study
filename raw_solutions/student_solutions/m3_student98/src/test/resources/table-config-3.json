@@ -1,0 +1,12 @@
+{
+  "explanationDimensions": [],
+  "validRowValues": [],
+  "validColumnValues": [
+    "Requirement #",
+    "URI",
+    "VERB"
+  ],
+  "validCellValues": [],
+  "showRowHints": true,
+  "showColumnHints": false
+}
