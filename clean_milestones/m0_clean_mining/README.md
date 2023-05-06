@@ -1,7 +1,7 @@
 # Praktikum Softwaretechnik 2 (ST2) im SoSe 2021
 
 Sofortiges Feedback zu Ihres Lösung finden Sie wie immer auf Ihrer individuellen Testseite:
-[http://students.pages.st.archi-lab.io/st2/ss21/m0/tests/st2-praktikum_tests_group_021b34b2-29c3-4824-b23d-b94f68b1bc2e]([http://students.pages.st.archi-lab.io/st2/ss21/m0/tests/st2-praktikum_tests_group_021b34b2-29c3-4824-b23d-b94f68b1bc2e])
+[http://students.pages.st.archi-lab.io/st2/ss21/m0/tests/st2-praktikum_tests_group_974d91ed-a365-4d9c-af68-b80b9a0bd569]([http://students.pages.st.archi-lab.io/st2/ss21/m0/tests/st2-praktikum_tests_group_974d91ed-a365-4d9c-af68-b80b9a0bd569])
 
 Da wir aus der Aufgabenbeschreibung direkt Coding-Aufgaben ableiten, ist die komplette Beschreibung in Englisch
 gehalten. 
@@ -11,15 +11,15 @@ gehalten.
 A mining machine is used to collect minerals from a mining field, like copper, cobalt, lithium, etc. 
 In milestone 0, you have the task to steer such a mining machine across a field with walls.
 The field is square-shaped. In the following image, you see a how the field is modelled as a 
-system of gridcells.
+system of cells.
 
 (Please note - this is **not your personal map yet**, just a general explanation. Your personal map is further down!)
 
 ![field](src/main/resources/explanation.jpg)
 
-1. A **field** is divided into **gridcells** by an x- and y-coordinate system, each starting
+1. A **field** is divided into **cells** by an x- and y-coordinate system, each starting
  at 0. 
-1. A **gridcell** is identified by its lower left corner. So the blue gridcell depicted here has the coordinate **(2,1)**. 
+1. A **cell** is identified by its lower left corner. So the blue cell depicted here has the coordinate **(2,1)**. 
 1. The field contains **walls**, depicted as red lines. The walls run only horizontally or
     vertically. They may be connected to each other. A wall is identified by its start- and 
     end coordinate. So, in the above image you see three walls: 
@@ -27,12 +27,12 @@ system of gridcells.
     * (3,3)-(5,3)
     * (3,3)-(3,4)
 1. In addition, field boundaries cannot be passed - essentially they also are a kind of wall.
-1. The **mining machine** initially is located in the gridcell indicated by the red dot. In the above case this is 
+1. The **mining machine** initially is located in the cell indicated by the red dot. In the above case this is 
     **(1,2)**.  
 1. The mining machine can be moved by a simple set of commands. A command is enclosed by square brackets, and 
     has two parts: a direction and the number of steps. A mining machine can only be moved horizontally or 
     vertically, not diagonally. 
-    * If the command is e.g. **[no,2]**, the mining machine moves 2 gridcells up, and is then positioned 
+    * If the command is e.g. **[no,2]**, the mining machine moves 2 cells up, and is then positioned 
         on **(1,4)**.
     * The direction is either **no** (north), **ea** (east), **so** (south), or **we** (west).    
 1. If the mining machine meets a wall or a field boundary, then it moves only as 
@@ -45,7 +45,7 @@ system of gridcells.
 
 ## Your task in milestone 0
 
-This is your personal map of the field. You see the dimensions of it. The mining machine is at (7,7).
+This is your personal map of the field. You see the dimensions of it. The mining machine is at (0,2).
 
 ![Grid](src/main/resources/grid.png "Grid")
 
@@ -53,12 +53,12 @@ Please implement `thkoeln.st.st2praktikum.exercise.Exercise0`. It basically mean
 simple interface: 
 
 ```java
-public interface Moveable {
-    String moveTo(String moveCommandString);
+public interface Walkable {
+    String walk(String walkCommandString);
 }
 ```
 
-The string parameter `moveCommandString` has the same format as shown above (e.g. "`[no,2]`"). The expexted return
+The string parameter `walkCommandString` has the same format as shown above (e.g. "`[no,2]`"). The expexted return
 value is the coordinate where the mining machine is afterwards, in the format as above (e.g. "`(2,4)`").
 
 A word of warning: You find two visible unit tests in your repo. Just hardcoding the expected results won't work, 

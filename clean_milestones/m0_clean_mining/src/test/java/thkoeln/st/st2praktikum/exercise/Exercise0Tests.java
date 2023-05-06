@@ -13,12 +13,12 @@ public class Exercise0Tests {
     public void movement1Test() {
         movementTests.performMovesAndCheckFinishedPosition(new Exercise0(),
             new String[]{
-                "[no,5]",
-                "[so,9]",
-                "[we,4]",
-                "[so,4]",
+                "[so,2]",
+                "[ea,3]",
+                "[no,9]",
+                "[ea,5]",
             },
-            "(3,1)"
+            "(6,8)"
         );
     }
 
@@ -26,12 +26,12 @@ public class Exercise0Tests {
     public void movement2Test() {
         movementTests.performMovesAndCheckFinishedPosition(new Exercise0(),
                 new String[]{
-                        "[we,6]",
-                        "[so,6]",
-                        "[ea,4]",
-                        "[no,3]",
+                        "[no,1]",
+                        "[ea,5]",
+                        "[so,5]",
+                        "[we,2]",
                 },
-                "(1,4)"
+                "(3,0)"
         );
     }
 }
