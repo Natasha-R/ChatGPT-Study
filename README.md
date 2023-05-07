@@ -12,19 +12,19 @@ Milestone 0 involves writing code to navigate a robot around a room with obstacl
 
 | **Notebook name** | **Contents** |
 |---|---|
-| [Clone Student Repos](https://github.com/Natasha-R/ChatGPT-Project/blob/main/1.%20Clone%20Student%20Repos.ipynb) | The student solutions are cloned from GitLab and stored locally. This notebook is not re-usable for data privacy reasons, but the anonymised student solutions are available in the folder "raw_solutions".  |
+| [Clone Student Repos](https://github.com/Natasha-R/ChatGPT-Project/blob/main/1.%20Clone%20Student%20Repos.ipynb) | The student solutions are cloned from GitLab and stored locally. This notebook is not re-usable for data privacy reasons, but the anonymised student solutions are available in the folder [student_solutions](raw_solutions/student_solutions).  |
 | [Scenarios](https://github.com/Natasha-R/ChatGPT-Project/blob/main/2.%20Scenarios.ipynb) | Each student was randomly assigned a different scenario accompanying the task. The variants of these are explored, to ensure that the AI generated solutions include the same variation. |
-| [Process All Exercise Solutions](https://github.com/Natasha-R/ChatGPT-Project/blob/main/3.%20Process%20All%20Exercise%20Solutions.ipynb) | All of the solutions to all of the milestones from all sources are processed and stored as .json files. The resulting datasets can be found in the folder "processed_solutions". |
-| [Process Milestone 0 Solutions](https://github.com/Natasha-R/ChatGPT-Project/blob/main/4.%20Process%20Milestone%200%20Solutions.ipynb) | The solutions from all sources to the milestone 0 tasks are processed separately in preparation for closer analysis. The resulting datasets are stored in both .json and .csv format in the folder "processed_solutions". |
+| [Process All Exercise Solutions](https://github.com/Natasha-R/ChatGPT-Project/blob/main/3.%20Process%20All%20Exercise%20Solutions.ipynb) | All of the solutions to all of the milestones from all sources are processed and stored as .json files. The resulting datasets can be found in the folder [processed_solutions](processed_solutions). |
+| [Process Milestone 0 Solutions](https://github.com/Natasha-R/ChatGPT-Project/blob/main/4.%20Process%20Milestone%200%20Solutions.ipynb) | The solutions from all sources to the milestone 0 tasks are processed separately in preparation for closer analysis. The resulting datasets are stored in both .json and .csv format in the folder [processed_solutions](processed_solutions). |
 
 #### Directory structure:
 
 | **Folder name** | **Contents** |
 |---|---|
-| clean_milestones | The empty task repos, used as the starting point to generate the task solutions. |
-| raw_solutions | The full task repos including the code written to solve the task. Divided into subfolders indicating the source of the solution (ChatGPT, student, etc). |
-| processed_solutions | The task solution repos are processed and stored as analysable datasets, stored in both .json and .csv formats. |
-| milestone_0_prompts | The prompts used for the chatbots to generate the solutions. |
+| [clean_milestones](clean_milestones) | The empty task repos, used as the starting point to generate the task solutions. |
+| [raw_solutions](raw_solutions) | The full task repos including the code written to solve the task. Divided into subfolders indicating the source of the solution (ChatGPT, student, etc). |
+| [processed_solutions](processed_solutions) | The task solution repos are processed and stored as analysable datasets, stored in both .json and .csv formats. |
+| [milestone_0_prompts](milestone_0_prompts) | The prompts used for the chatbots to generate the solutions. |
 
 #### Datasets schema:
 
