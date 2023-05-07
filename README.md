@@ -4,7 +4,9 @@
 
 AI chatbots (ChatGPT, Bard, etc) were used to generate code solutions to Java programming tasks (milestone assignments) taken from the 2021 presentation of the [Software Engineering 2](https://www.archi-lab.io/regularModules/ss22/st2_ss22.html) Bachelor's course at TH Köln.
 
-Milestone 0 involves writing code to navigate a robot around a room with obstacles. The AI solutions to this task are compared to the student-written solutions.
+Milestone 0 involves writing code to navigate a robot around a room with obstacles. The AI solutions to this task will be compared to the student-written solutions.
+
+*<This project is currently in progress, and the description will continue to be updated.>*
 
 ## Project Metadata
 
