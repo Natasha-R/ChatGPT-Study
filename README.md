@@ -18,6 +18,7 @@ Milestone 0 involves writing code to navigate a robot around a room with obstacl
 | [Scenarios](https://github.com/Natasha-R/ChatGPT-Project/blob/main/2.%20Scenarios.ipynb) | Each student was randomly assigned a different scenario accompanying the task. The variants of these are explored, to ensure that the AI generated solutions include the same variation. |
 | [Process All Exercise Solutions](https://github.com/Natasha-R/ChatGPT-Project/blob/main/3.%20Process%20All%20Exercise%20Solutions.ipynb) | All of the solutions to all of the milestones from all sources are processed and stored as .json files. The resulting datasets can be found in the folder [processed_solutions](processed_solutions). |
 | [Process Milestone 0 Solutions](https://github.com/Natasha-R/ChatGPT-Project/blob/main/4.%20Process%20Milestone%200%20Solutions.ipynb) | The solutions from all sources to the milestone 0 tasks are processed separately in preparation for closer analysis. The resulting datasets are stored in both .json and .csv format in the folder [processed_solutions](processed_solutions). |
+| [Test Passing](https://github.com/Natasha-R/ChatGPT-Project/blob/main/5.%20Test%20Passing.ipynb) | Analyse how different AIs and different styling prompts affect the number of tests the code passes.|
 
 #### Directory structure:
 
