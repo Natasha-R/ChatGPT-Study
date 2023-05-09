@@ -11,7 +11,7 @@ public class Exercise0 implements Moveable {
     public String moveTo(String moveCommandString) {
         String movement = moveCommandString.substring(1,moveCommandString.length()-1);
         String[] moving = movement.split(",");
-        String directionMove = moving[0];  testetsetsragdsagdsgdgaesttest,M;
+        String directionMove = moving[0];
         int stepToMove= Integer.parseInt(moving[1]);
 
         switch (directionMove){
