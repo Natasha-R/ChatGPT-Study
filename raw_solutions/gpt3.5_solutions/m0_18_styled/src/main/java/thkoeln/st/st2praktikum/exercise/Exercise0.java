@@ -1,5 +1,4 @@
 package thkoeln.st.st2praktikum.exercise;
-
 public class Exercise0 implements GoAble {
     public String goTo(String goCommandString) {
         String direction = goCommandString.substring(1,3);

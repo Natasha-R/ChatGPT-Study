@@ -1,0 +1,27 @@
+image: maven:3-jdk-11
+
+stages:
+    - build
+    - deploy
+
+build: # Build test reports
+  stage: build
+  script:
+    - chmod ugo+x ./setup-test-environment.sh
+    - ./setup-test-environment.sh
+    - mvn verify -fn # Always return status code 0 => Continue with the next stage
+  artifacts: # Keep reports for the next stage
+    paths:
+        - target/surefire-reports/TEST-*.xml
+
+pages: # Deploy test-report page
+  image: node:latest # use nodejs enviroment
+  stage: deploy
+  script:
+    - npm install @jintveen/generate-report # install page generator
+    - npx generate-report --title $CI_PROJECT_NAME # genrate page
+  artifacts:
+    paths:
+    - public
+  only:
+  - master

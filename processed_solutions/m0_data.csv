@@ -1,5 +1,5 @@
-source,style,version,code
-gpt3.5,plain,,"package thkoeln.st.st2praktikum.exercise;
+name,source,style,version,code
+1,gpt3.5,plain,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements GoAble {
     private int x; // current x-coordinate
@@ -82,7 +82,7 @@ public interface GoAble {
     String goTo(String goCommandString);
 }
 "
-gpt3.5,plain,,"package thkoeln.st.st2praktikum.exercise;
+10,gpt3.5,plain,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements GoAble {
     // Define the size of the spaceship deck
@@ -164,7 +164,7 @@ public interface GoAble {
     String goTo(String goCommandString);
 }
 "
-gpt3.5,cc,,"package thkoeln.st.st2praktikum.exercise;
+11,gpt3.5,cc,,"package thkoeln.st.st2praktikum.exercise;
 
 import java.util.Arrays;
 import java.util.List;
@@ -240,7 +240,7 @@ public interface GoAble {
     String goTo(String goCommandString);
 }
 "
-gpt3.5,cc,,"package thkoeln.st.st2praktikum.exercise;
+12,gpt3.5,cc,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements GoAble {
     private static final int WIDTH = 12;
@@ -315,7 +315,7 @@ public interface GoAble {
     String goTo(String goCommandString);
 }
 "
-gpt3.5,cc,,"package thkoeln.st.st2praktikum.exercise;
+13,gpt3.5,cc,,"package thkoeln.st.st2praktikum.exercise;
 
 import java.util.Arrays;
 import java.util.List;
@@ -391,7 +391,7 @@ public interface GoAble {
     String goTo(String goCommandString);
 }
 "
-gpt3.5,cc,,"package thkoeln.st.st2praktikum.exercise;
+14,gpt3.5,cc,,"package thkoeln.st.st2praktikum.exercise;
 
 import java.util.Arrays;
 import java.util.List;
@@ -490,7 +490,7 @@ public interface GoAble {
     String goTo(String goCommandString);
 }
 "
-gpt3.5,styled,,"package thkoeln.st.st2praktikum.exercise;
+15,gpt3.5,styled,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements GoAble {
 
@@ -571,7 +571,7 @@ public interface GoAble {
     String goTo(String goCommandString);
 }
 "
-gpt3.5,styled,,"package thkoeln.st.st2praktikum.exercise;
+16,gpt3.5,styled,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements GoAble {
 
@@ -661,7 +661,7 @@ public interface GoAble {
     String goTo(String goCommandString);
 }
 "
-gpt3.5,styled,,"package thkoeln.st.st2praktikum.exercise;
+17,gpt3.5,styled,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements GoAble{
     private int robotX = 11;
@@ -712,8 +712,7 @@ public interface GoAble {
     String goTo(String goCommandString);
 }
 "
-gpt3.5,styled,,"package thkoeln.st.st2praktikum.exercise;
-
+18,gpt3.5,styled,,"package thkoeln.st.st2praktikum.exercise;
 public class Exercise0 implements GoAble {
     public String goTo(String goCommandString) {
         String direction = goCommandString.substring(1,3);
@@ -783,7 +782,7 @@ public interface GoAble {
     String goTo(String goCommandString);
 }
 "
-gpt3.5,styled,,"package thkoeln.st.st2praktikum.exercise;
+19,gpt3.5,styled,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements GoAble{
     private int droidX;
@@ -884,7 +883,7 @@ public interface GoAble {
     String goTo(String goCommandString);
 }
 "
-gpt3.5,plain,,"package thkoeln.st.st2praktikum.exercise;
+2,gpt3.5,plain,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements GoAble {
 
@@ -950,7 +949,7 @@ public interface GoAble {
     String goTo(String goCommandString);
 }
 "
-gpt3.5,plain,,"package thkoeln.st.st2praktikum.exercise;
+3,gpt3.5,plain,,"package thkoeln.st.st2praktikum.exercise;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -1039,7 +1038,7 @@ public interface GoAble {
     String goTo(String goCommandString);
 }
 "
-gpt3.5,plain,,"package thkoeln.st.st2praktikum.exercise;
+4,gpt3.5,plain,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements GoAble {
     private int[][] obstacles;
@@ -1121,7 +1120,7 @@ public interface GoAble {
     String goTo(String goCommandString);
 }
 "
-gpt3.5,plain,,"package thkoeln.st.st2praktikum.exercise;
+5,gpt3.5,plain,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements GoAble {
     private int[][] obstacles;
@@ -1207,7 +1206,7 @@ public interface GoAble {
     String goTo(String goCommandString);
 }
 "
-gpt3.5,plain,,"package thkoeln.st.st2praktikum.exercise;
+6,gpt3.5,plain,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements GoAble {
 
@@ -1289,7 +1288,7 @@ public interface GoAble {
     String goTo(String goCommandString);
 }
 "
-gpt3.5,plain,,"package thkoeln.st.st2praktikum.exercise;
+7,gpt3.5,plain,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements GoAble {
     private int droidX;
@@ -1364,7 +1363,7 @@ public interface GoAble {
     String goTo(String goCommandString);
 }
 "
-gpt3.5,plain,,"package thkoeln.st.st2praktikum.exercise;
+8,gpt3.5,plain,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements GoAble {
 
@@ -1441,7 +1440,7 @@ public interface GoAble {
     String goTo(String goCommandString);
 }
 "
-gpt3.5,plain,,"package thkoeln.st.st2praktikum.exercise;
+9,gpt3.5,plain,,"package thkoeln.st.st2praktikum.exercise;
 
 import java.util.Arrays;
 import java.util.List;
@@ -1531,7 +1530,7 @@ public interface GoAble {
     String goTo(String goCommandString);
 }
 "
-bing,plain,balanced,"package thkoeln.st.st2praktikum.exercise;
+1,bing,plain,balanced,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Walkable {
     private int[][] walls = {{3,0},{3,1},{3,2},{3,3},{4,3},{5,3},{6,3},{7,3},{7,2},{7,1},{7,0},{1,4},{2,4},{3,4},{4,4},{5,4},{6,4},{7,4}};
@@ -1583,7 +1582,7 @@ public interface Walkable {
     String walkTo(String walkCommandString);
 }
 "
-bing,plain,concise,"package thkoeln.st.st2praktikum.exercise;
+1,bing,plain,concise,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Walkable {
     private int x = 3;
@@ -1639,7 +1638,7 @@ public interface Walkable {
     String walkTo(String walkCommandString);
 }
 "
-bing,plain,creative,"package thkoeln.st.st2praktikum.exercise;
+1,bing,plain,creative,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Walkable {
 
@@ -1753,7 +1752,7 @@ public interface Walkable {
     String walkTo(String walkCommandString);
 }
 "
-bing,styled,creative,"package thkoeln.st.st2praktikum.exercise;
+10,bing,styled,creative,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Walkable {
 
@@ -1841,7 +1840,7 @@ public interface Walkable {
     String walkTo(String walkCommandString);
 }
 "
-bing,plain,creative,"package thkoeln.st.st2praktikum.exercise;
+11,bing,plain,creative,"package thkoeln.st.st2praktikum.exercise;
 
 // A class that implements the Walkable interface
 public class Exercise0 implements Walkable {
@@ -2048,7 +2047,7 @@ public interface Walkable {
     String walkTo(String walkCommandString);
 }
 "
-bing,styled,creative,"package thkoeln.st.st2praktikum.exercise;
+12,bing,styled,creative,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Walkable {
 
@@ -2157,7 +2156,7 @@ public interface Walkable {
     String walkTo(String walkCommandString);
 }
 "
-bing,plain,balanced,"package thkoeln.st.st2praktikum.exercise;
+2,bing,plain,balanced,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Walkable {
     private int x = 3;
@@ -2236,7 +2235,7 @@ public interface Walkable {
     String walkTo(String walkCommandString);
 }
 "
-bing,plain,concise,"package thkoeln.st.st2praktikum.exercise;
+2,bing,plain,concise,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Walkable {
     private int x = 3;
@@ -2303,7 +2302,7 @@ public interface Walkable {
     String walkTo(String walkCommandString);
 }
 "
-bing,plain,creative,"package thkoeln.st.st2praktikum.exercise;
+2,bing,plain,creative,"package thkoeln.st.st2praktikum.exercise;
 
 // A class that represents a tidy-up robot that can move in a room with walls
 public class Exercise0 implements Walkable {
@@ -2430,7 +2429,7 @@ public interface Walkable {
     String walkTo(String walkCommandString);
 }
 "
-bing,cc,concise,"package thkoeln.st.st2praktikum.exercise;
+3,bing,cc,concise,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Walkable {
     private int robotX;
@@ -2527,7 +2526,7 @@ public interface Walkable {
     String walkTo(String walkCommandString);
 }
 "
-bing,plain,balanced,"package thkoeln.st.st2praktikum.exercise;
+3,bing,plain,balanced,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Walkable {
     private int[][] walls = {{0, 0, 12, 0}, {0, 0, 0, 8}, {12, 0, 12, 8}, {0, 8, 12, 8}, {3, 0, 3, 3}, {4, 3, 7, 3}, {7, 0, 7, 2}, {1, 4, 8, 4}};
@@ -2600,7 +2599,7 @@ public interface Walkable {
     String walkTo(String walkCommandString);
 }
 "
-bing,plain,creative,"package thkoeln.st.st2praktikum.exercise;
+3,bing,plain,creative,"package thkoeln.st.st2praktikum.exercise;
 
 // A class that represents a tidy-up robot that can walk in a room with walls
 public class Exercise0 implements Walkable {
@@ -2686,7 +2685,7 @@ public interface Walkable {
     String walkTo(String walkCommandString);
 }
 "
-bing,cc,balanced,"package thkoeln.st.st2praktikum.exercise;
+4,bing,cc,balanced,"package thkoeln.st.st2praktikum.exercise;
 
 import java.util.Arrays;
 import java.util.List;
@@ -2774,7 +2773,7 @@ public interface Walkable {
     String walkTo(String walkCommandString);
 }
 "
-bing,plain,concise,"package thkoeln.st.st2praktikum.exercise;
+4,bing,plain,concise,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Walkable {
     private int x = 3;
@@ -2840,7 +2839,7 @@ public interface Walkable {
     String walkTo(String walkCommandString);
 }
 "
-bing,plain,creative,"package thkoeln.st.st2praktikum.exercise;
+4,bing,plain,creative,"package thkoeln.st.st2praktikum.exercise;
 
 // Define the class that implements the Walkable interface
 public class Exercise0 implements Walkable {
@@ -2993,7 +2992,7 @@ public interface Walkable {
     String walkTo(String walkCommandString);
 }
 "
-bing,cc,balanced,"package thkoeln.st.st2praktikum.exercise;
+5,bing,cc,balanced,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Walkable {
 
@@ -3078,7 +3077,7 @@ public interface Walkable {
     String walkTo(String walkCommandString);
 }
 "
-bing,cc,concise,"package thkoeln.st.st2praktikum.exercise;
+5,bing,cc,concise,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Walkable {
     private int robotX = 3;
@@ -3187,7 +3186,7 @@ public interface Walkable {
     String walkTo(String walkCommandString);
 }
 "
-bing,plain,creative,"package thkoeln.st.st2praktikum.exercise;
+5,bing,plain,creative,"package thkoeln.st.st2praktikum.exercise;
 
 // A class that represents a tidy-up robot that can move in a room with walls
 public class Exercise0 implements Walkable {
@@ -3359,7 +3358,7 @@ public interface Walkable {
     String walkTo(String walkCommandString);
 }
 "
-bing,cc,balanced,"package thkoeln.st.st2praktikum.exercise;
+6,bing,cc,balanced,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Walkable {
     private final int[][] walls = {{3, 0}, {3, 1}, {3, 2}, {3, 3}, {4, 3}, {5, 3}, {6, 3}, {7, 3}, {7, 2}, {7, 1}, {7, 0}, {1, 4}, {2, 4}, {3, 4}, {4, 4}, {5, 4}, {6, 4}, {7, 4}};
@@ -3432,7 +3431,7 @@ public interface Walkable {
     String walkTo(String walkCommandString);
 }
 "
-bing,cc,creative,"package thkoeln.st.st2praktikum.exercise;
+6,bing,cc,creative,"package thkoeln.st.st2praktikum.exercise;
 
 // A class that implements the Walkable interface
 public class Exercise0 implements Walkable {
@@ -3652,7 +3651,7 @@ public interface Walkable {
     String walkTo(String walkCommandString);
 }
 "
-bing,styled,balanced,"package thkoeln.st.st2praktikum.exercise;
+6,bing,styled,balanced,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Walkable {
     private int[][] walls = {{3, 0}, {3, 1}, {3, 2}, {3, 3}, {4, 3}, {5, 3}, {6, 3}, {7, 3}, {7, 2}, {7, 1}, {7, 0}, {1, 4}, {2, 4}, {3, 4}, {4, 4}, {5, 4}, {6, 4}, {7, 4}, {8, 4}};
@@ -3700,7 +3699,7 @@ public interface Walkable {
     String walkTo(String walkCommandString);
 }
 "
-bing,styled,concise,"package thkoeln.st.st2praktikum.exercise;
+6,bing,styled,concise,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Walkable {
     private int x;
@@ -3774,7 +3773,7 @@ public interface Walkable {
     String walkTo(String walkCommandString);
 }
 "
-bing,cc,creative,"package thkoeln.st.st2praktikum.exercise;
+7,bing,cc,creative,"package thkoeln.st.st2praktikum.exercise;
 
 // A class that represents a robot that can walk in a room with walls
 public class Exercise0 implements Walkable {
@@ -3926,7 +3925,7 @@ public interface Walkable {
     String walkTo(String walkCommandString);
 }
 "
-bing,styled,concise,"package thkoeln.st.st2praktikum.exercise;
+7,bing,styled,concise,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Walkable {
     private int x;
@@ -3977,7 +3976,7 @@ public interface Walkable {
     String walkTo(String walkCommandString);
 }
 "
-bing,styled,concise,"package thkoeln.st.st2praktikum.exercise;
+8,bing,styled,concise,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Walkable {
     private int x;
@@ -4056,7 +4055,7 @@ public interface Walkable {
     String walkTo(String walkCommandString);
 }
 "
-bing,styled,creative,"package thkoeln.st.st2praktikum.exercise;
+8,bing,styled,creative,"package thkoeln.st.st2praktikum.exercise;
 
 import java.util.Arrays;
 import java.util.List;
@@ -4219,7 +4218,7 @@ public interface Walkable {
     String walkTo(String walkCommandString);
 }
 "
-bing,styled,concise,"package thkoeln.st.st2praktikum.exercise;
+9,bing,styled,concise,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Walkable {
     private int x;
@@ -4288,7 +4287,7 @@ public interface Walkable {
     String walkTo(String walkCommandString);
 }
 "
-bing,styled,creative,"package thkoeln.st.st2praktikum.exercise;
+9,bing,styled,creative,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Walkable {
 
@@ -4402,7 +4401,7 @@ public interface Walkable {
     String walkTo(String walkCommandString);
 }
 "
-bard,plain,,"package thkoeln.st.st2praktikum.exercise;
+1,bard,plain,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Moveable {
 
@@ -4475,7 +4474,7 @@ public interface Moveable {
     String move(String moveCommandString);
 }
 "
-bard,styled,,"package thkoeln.st.st2praktikum.exercise;
+10,bard,styled,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Moveable {
 
@@ -4557,7 +4556,7 @@ public interface Moveable {
     String move(String moveCommandString);
 }
 "
-bard,styled,,"package thkoeln.st.st2praktikum.exercise;
+11,bard,styled,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Moveable{
     private static final int WIDTH = 11;
@@ -4630,7 +4629,7 @@ public interface Moveable {
     String move(String moveCommandString);
 }
 "
-bard,styled,,"package thkoeln.st.st2praktikum.exercise;
+12,bard,styled,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Moveable {
     private static final int W = 11;
@@ -4692,7 +4691,7 @@ public interface Moveable {
     String move(String moveCommandString);
 }
 "
-bard,cc,,"package thkoeln.st.st2praktikum.exercise;
+13,bard,cc,,"package thkoeln.st.st2praktikum.exercise;
 
 import java.util.Arrays;
 
@@ -4778,7 +4777,7 @@ public interface Moveable {
     String move(String moveCommandString);
 }
 "
-bard,cc,,"package thkoeln.st.st2praktikum.exercise;
+14,bard,cc,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Moveable {
 
@@ -4878,7 +4877,7 @@ public interface Moveable {
     String move(String moveCommandString);
 }
 "
-bard,cc,,"package thkoeln.st.st2praktikum.exercise;
+15,bard,cc,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Moveable {
 
@@ -4967,7 +4966,7 @@ public interface Moveable {
     String move(String moveCommandString);
 }
 "
-bard,cc,,"package thkoeln.st.st2praktikum.exercise;
+16,bard,cc,,"package thkoeln.st.st2praktikum.exercise;
 
 import java.util.Arrays;
 import java.util.List;
@@ -5070,7 +5069,7 @@ public interface Moveable {
     String move(String moveCommandString);
 }
 "
-bard,plain,,"package thkoeln.st.st2praktikum.exercise;
+17,bard,plain,,"package thkoeln.st.st2praktikum.exercise;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -5165,7 +5164,7 @@ public interface Moveable {
     String move(String moveCommandString);
 }
 "
-bard,plain,,"package thkoeln.st.st2praktikum.exercise;
+2,bard,plain,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Moveable {
 
@@ -5241,7 +5240,7 @@ public interface Moveable {
     String move(String moveCommandString);
 }
 "
-bard,plain,,"package thkoeln.st.st2praktikum.exercise;
+3,bard,plain,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Moveable {
 
@@ -5316,7 +5315,7 @@ public interface Moveable {
     String move(String moveCommandString);
 }
 "
-bard,plain,,"package thkoeln.st.st2praktikum.exercise;
+4,bard,plain,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Barrier {
 
@@ -5441,7 +5440,7 @@ public interface Moveable {
     String move(String moveCommandString);
 }
 "
-bard,plain,,"package thkoeln.st.st2praktikum.exercise;
+5,bard,plain,,"package thkoeln.st.st2praktikum.exercise;
 
 import java.awt.Point;
 import java.util.ArrayList;
@@ -5515,7 +5514,7 @@ public interface Moveable {
     String move(String moveCommandString);
 }
 "
-bard,plain,,"package thkoeln.st.st2praktikum.exercise;
+6,bard,plain,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Moveable {
 
@@ -5584,7 +5583,7 @@ public interface Moveable {
     String move(String moveCommandString);
 }
 "
-bard,plain,,"package thkoeln.st.st2praktikum.exercise;
+7,bard,plain,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Moveable {
 
@@ -5654,7 +5653,7 @@ public interface Moveable {
     String move(String moveCommandString);
 }
 "
-bard,styled,,"package thkoeln.st.st2praktikum.exercise;
+8,bard,styled,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Moveable {
 
@@ -5737,7 +5736,7 @@ public interface Moveable {
     String move(String moveCommandString);
 }
 "
-bard,styled,,"package thkoeln.st.st2praktikum.exercise;
+9,bard,styled,,"package thkoeln.st.st2praktikum.exercise;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -5836,7 +5835,1341 @@ public interface Moveable {
     String move(String moveCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+1,gpt4,plain,,"package thkoeln.st.st2praktikum.exercise;
+
+public class Exercise0 implements Walkable {
+    private int x = 0;
+    private int y = 2;
+    private final int fieldWidth = 12;
+    private final int fieldHeight = 9;
+
+    @Override
+    public String walk(String walkCommandString) {
+        String[] parts = walkCommandString.substring(1, walkCommandString.length() - 1).split("","");
+        String direction = parts[0].trim();
+        int steps = Integer.parseInt(parts[1].trim());
+
+        switch (direction) {
+            case ""no"":
+                y += steps;
+                if (x >= 4 && x < 7 && y > 4) y = 4;
+                if (y >= fieldHeight) y = fieldHeight - 1;
+                break;
+
+            case ""ea"":
+                x += steps;
+                if (y >= 0 && y < 3 && x > 2) x = 2;
+                if (y >= 0 && y < 4 && x > 4) x = 4;
+                if (y > 4 && y <= 8 && x > 6) x = 6;
+                if (x >= fieldWidth) x = fieldWidth - 1;
+                break;
+
+            case ""so"":
+                y -= steps;
+                if (x >= 4 && x < 7 && y < 5 && y > 0) y = 5;
+                if (x >= 3 && x <= 5 && y >= 3) y = 3;
+                if (y < 0) y = 0;
+                break;
+
+            case ""we"":
+                x -= steps;
+                if (x < 0) x = 0;
+                break;
+        }
+
+        return ""("" + x + "","" + y + "")"";
+    }
+}
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walk(String walkCommandString);
+}
+"
+10,gpt4,plain,,"package thkoeln.st.st2praktikum.exercise;
+
+import java.awt.Point;
+import java.util.Arrays;
+import java.util.List;
+
+public class Exercise0 implements Walkable {
+
+    private static final int FIELD_WIDTH = 12;
+    private static final int FIELD_HEIGHT = 9;
+    private Point miningMachineLocation;
+    private List<String> walls;
+
+    public Exercise0() {
+        miningMachineLocation = new Point(0, 2);
+        walls = Arrays.asList(""3,0-3,3"", ""5,0-5,4"", ""4,5-7,5"", ""7,5-7,9"");
+    }
+
+    @Override
+    public String walk(String walkCommandString) {
+        String[] commandParts = walkCommandString.substring(1, walkCommandString.length() - 1).split("","");
+        String direction = commandParts[0];
+        int steps = Integer.parseInt(commandParts[1]);
+
+        for (int i = 0; i < steps; i++) {
+            Point newPosition = new Point(miningMachineLocation);
+            switch (direction) {
+                case ""no"":
+                    newPosition.y++;
+                    break;
+                case ""ea"":
+                    newPosition.x++;
+                    break;
+                case ""so"":
+                    newPosition.y--;
+                    break;
+                case ""we"":
+                    newPosition.x--;
+                    break;
+            }
+
+            if (isValidPosition(newPosition)) {
+                miningMachineLocation = newPosition;
+            } else {
+                break;
+            }
+        }
+
+        return String.format(""(%d,%d)"", miningMachineLocation.x, miningMachineLocation.y);
+    }
+
+    private boolean isValidPosition(Point position) {
+        if (position.x < 0 || position.x >= FIELD_WIDTH || position.y < 0 || position.y >= FIELD_HEIGHT) {
+            return false;
+        }
+
+        for (String wall : walls) {
+            String[] coordinates = wall.split(""-"");
+            String[] startCoords = coordinates[0].split("","");
+            String[] endCoords = coordinates[1].split("","");
+
+            int startX = Integer.parseInt(startCoords[0]);
+            int startY = Integer.parseInt(startCoords[1]);
+            int endX = Integer.parseInt(endCoords[0]);
+            int endY = Integer.parseInt(endCoords[1]);
+
+            if (startX == endX) {
+                if (position.x == startX && position.y >= startY && position.y < endY) {
+                    return false;
+                }
+            } else if (startY == endY) {
+                if (position.y == startY && position.x >= startX && position.x < endX) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+}
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walk(String walkCommandString);
+}
+"
+11,gpt4,plain,,"package thkoeln.st.st2praktikum.exercise;
+
+import java.awt.Point;
+
+public class Exercise0 implements Walkable {
+    private int width = 12;
+    private int height = 9;
+    private Point currentLocation = new Point(0, 2);
+
+    private static final String NORTH = ""no"";
+    private static final String EAST = ""ea"";
+    private static final String SOUTH = ""so"";
+    private static final String WEST = ""we"";
+
+    private boolean[][] horizontalWalls = new boolean[width + 1][height];
+    private boolean[][] verticalWalls = new boolean[width][height + 1];
+
+    public Exercise0() {
+        initializeWalls();
+    }
+
+    private void initializeWalls() {
+        for (int i = 0; i <= width; i++) {
+            verticalWalls[i][0] = true;
+            verticalWalls[i][height] = true;
+        }
+
+        for (int i = 0; i <= height; i++) {
+            horizontalWalls[0][i] = true;
+            horizontalWalls[width][i] = true;
+        }
+
+        addWall(3, 0, 3, 3);
+        addWall(5, 0, 5, 4);
+        addWall(4, 5, 7, 5);
+        addWall(7, 5, 7, 9);
+    }
+
+    private void addWall(int x1, int y1, int x2, int y2) {
+        if (x1 == x2) {
+            for (int i = y1; i <= y2; i++) {
+                verticalWalls[x1][i] = true;
+            }
+        } else if (y1 == y2) {
+            for (int i = x1; i <= x2; i++) {
+                horizontalWalls[i][y1] = true;
+            }
+        }
+    }
+
+    @Override
+    public String walk(String walkCommandString) {
+        String[] commandParts = walkCommandString.substring(1, walkCommandString.length() - 1).split("","");
+
+        String direction = commandParts[0];
+        int steps = Integer.parseInt(commandParts[1]);
+
+        for (int i = 0; i < steps; i++) {
+            if (!move(direction)) {
+                break;
+            }
+        }
+
+        return currentLocation.toString();
+    }
+
+    private boolean move(String direction) {
+        int x = currentLocation.x;
+        int y = currentLocation.y;
+
+        switch (direction) {
+            case NORTH:
+                if (!horizontalWalls[x][y + 1]) {
+                    currentLocation.y++;
+                    return true;
+                }
+                break;
+            case EAST:
+                if (!verticalWalls[x + 1][y]) {
+                    currentLocation.x++;
+                    return true;
+                }
+                break;
+            case SOUTH:
+                if (!horizontalWalls[x][y]) {
+                    currentLocation.y--;
+                    return true;
+                }
+                break;
+            case WEST:
+                if (!verticalWalls[x][y]) {
+                    currentLocation.x--;
+                    return true;
+                }
+                break;
+        }
+        return false;
+    }
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walk(String walkCommandString);
+}
+"
+12,gpt4,plain,,"package thkoeln.st.st2praktikum.exercise;
+
+public class Exercise0 implements Walkable {
+
+    private int x = 0;
+    private int y = 2;
+    private final int maxX = 11;
+    private final int maxY = 8;
+    private final int[][] walls = {
+            {3, 0, 3, 3},
+            {5, 0, 5, 4},
+            {4, 5, 7, 5},
+            {7, 5, 7, 9}
+    };
+
+    @Override
+    public String walk(String walkCommandString) {
+        String[] commandParts = walkCommandString.substring(1, walkCommandString.length() - 1).split("","");
+        String direction = commandParts[0].trim();
+        int steps = Integer.parseInt(commandParts[1].trim());
+
+        switch (direction) {
+            case ""no"":
+                y += steps;
+                for (int[] wall : walls) {
+                    if (wall[0] == wall[2] && y >= wall[1] && y <= wall[3] && x == wall[0] - 1) {
+                        y = wall[1] - 1;
+                        break;
+                    }
+                }
+                if (y > maxY) y = maxY;
+                break;
+
+            case ""ea"":
+                x += steps;
+                for (int[] wall : walls) {
+                    if (wall[0] == wall[2] && x == wall[0] && y >= wall[1] - 1 && y < wall[3]) {
+                        x = wall[0] - 1;
+                        break;
+                    }
+                }
+                if (x > maxX) x = maxX;
+                break;
+
+            case ""so"":
+                y -= steps;
+                for (int[] wall : walls) {
+                    if (wall[0] == wall[2] && y <= wall[3] && y >= wall[1] && x == wall[0] - 1) {
+                        y = wall[3] + 1;
+                        break;
+                    }
+                }
+                if (y < 0) y = 0;
+                break;
+
+            case ""we"":
+                x -= steps;
+                for (int[] wall : walls) {
+                    if (wall[0] == wall[2] && x == wall[2] && y >= wall[1] - 1 && y < wall[3]) {
+                        x = wall[2] + 1;
+                        break;
+                    }
+                }
+                if (x < 0) x = 0;
+                break;
+        }
+
+        return String.format(""(%d,%d)"", x, y);
+    }
+}
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walk(String walkCommandString);
+}
+"
+13,gpt4,plain,,"package thkoeln.st.st2praktikum.exercise;
+
+public class Exercise0 implements Walkable {
+    private int x;
+    private int y;
+    private final int maxX = 12;
+    private final int maxY = 9;
+    private final int[][] walls = {
+            {3, 0, 3, 3},
+            {5, 0, 5, 4},
+            {4, 5, 7, 5},
+            {7, 5, 7, 9},
+    };
+
+    public Exercise0() {
+        this.x = 0;
+        this.y = 2;
+    }
+
+    @Override
+    public String walk(String walkCommandString) {
+        String[] commandParts = walkCommandString.replace(""["", """").replace(""]"", """").split("","");
+        String direction = commandParts[0].trim();
+        int steps = Integer.parseInt(commandParts[1].trim());
+
+        switch (direction) {
+            case ""no"":
+                for (int i = 0; i < steps; i++) {
+                    if (canMove(x, y + 1)) {
+                        y++;
+                    } else {
+                        break;
+                    }
+                }
+                break;
+            case ""ea"":
+                for (int i = 0; i < steps; i++) {
+                    if (canMove(x + 1, y)) {
+                        x++;
+                    } else {
+                        break;
+                    }
+                }
+                break;
+            case ""so"":
+                for (int i = 0; i < steps; i++) {
+                    if (canMove(x, y - 1)) {
+                        y--;
+                    } else {
+                        break;
+                    }
+                }
+                break;
+            case ""we"":
+                for (int i = 0; i < steps; i++) {
+                    if (canMove(x - 1, y)) {
+                        x--;
+                    } else {
+                        break;
+                    }
+                }
+                break;
+        }
+
+        return ""("" + x + "","" + y + "")"";
+    }
+
+    private boolean canMove(int newX, int newY) {
+        if (newX < 0 || newY < 0 || newX >= maxX || newY >= maxY) {
+            return false;
+        }
+
+        for (int[] wall : walls) {
+            if ((wall[0] == wall[2] && wall[0] == newX && ((newY >= wall[1] && newY < wall[3]) || (newY + 1 > wall[1] && newY + 1 <= wall[3]))) ||
+                    (wall[1] == wall[3] && wall[1] == newY + 1 && ((newX >= wall[0] && newX < wall[2]) || (newX + 1 > wall[0] && newX + 1 <= wall[2])))) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+}
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walk(String walkCommandString);
+}
+"
+14,gpt4,plain,,"package thkoeln.st.st2praktikum.exercise;
+
+import java.awt.Point;
+
+public class Exercise0 implements Walkable {
+    private int width = 12;
+    private int height = 9;
+    private Point position = new Point(0, 2);
+    private static final String NORTH = ""no"";
+    private static final String EAST = ""ea"";
+    private static final String SOUTH = ""so"";
+    private static final String WEST = ""we"";
+
+    @Override
+    public String walk(String walkCommandString) {
+        String direction = walkCommandString.substring(1, 3);
+        int steps = Integer.parseInt(walkCommandString.substring(4, walkCommandString.length() - 1));
+
+        switch (direction) {
+            case NORTH:
+                position.y = Math.min(position.y + steps, height - 1);
+                if (position.x <= 3 && position.y >= 3 && position.y <= 4) {
+                    position.y = 3;
+                } else if (position.x >= 4 && position.x <= 7 && position.y >= 5) {
+                    position.y = 5;
+                }
+                break;
+            case EAST:
+                position.x = Math.min(position.x + steps, width - 1);
+                if (position.y <= 3 && position.x >= 3 && position.x <= 5) {
+                    position.x = 3;
+                } else if (position.y >= 0 && position.y <= 4 && position.x >= 5 && position.x <= 6) {
+                    position.x = 5;
+                } else if (position.y >= 5 && position.y <= 9 && position.x >= 7) {
+                    position.x = 7;
+                }
+                break;
+            case SOUTH:
+                position.y = Math.max(position.y - steps, 0);
+                if (position.x <= 3 && position.y <= 2) {
+                    position.y = 2;
+                } else if (position.x >= 4 && position.x <= 7 && position.y <= 4) {
+                    position.y = 4;
+                }
+                break;
+            case WEST:
+                position.x = Math.max(position.x - steps, 0);
+                if (position.y >= 0 && position.y <= 3 && position.x <= 2) {
+                    position.x = 2;
+                } else if (position.y >= 0 && position.y <= 4 && position.x <= 4) {
+                    position.x = 4;
+                } else if (position.y >= 5 && position.y <= 9 && position.x <= 6) {
+                    position.x = 6;
+                }
+                break;
+        }
+
+        return String.format(""(%d,%d)"", position.x, position.y);
+    }
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walk(String walkCommandString);
+}
+"
+15,gpt4,plain,,"package thkoeln.st.st2praktikum.exercise;
+
+public class Exercise0 implements Walkable {
+
+    private int x;
+    private int y;
+    private final int fieldWidth = 12;
+    private final int fieldHeight = 9;
+    private final int[][] walls = {
+            {3, 0, 3, 3},
+            {5, 0, 5, 4},
+            {4, 5, 7, 5},
+            {7, 5, 7, 9}
+    };
+
+    public Exercise0() {
+        x = 0;
+        y = 2;
+    }
+
+    @Override
+    public String walk(String walkCommandString) {
+        String[] commandParts = walkCommandString.substring(1, walkCommandString.length() - 1).split("","");
+        String direction = commandParts[0];
+        int steps = Integer.parseInt(commandParts[1]);
+
+        for (int i = 0; i < steps; i++) {
+            int nextX = x;
+            int nextY = y;
+
+            switch (direction) {
+                case ""no"":
+                    nextY++;
+                    break;
+                case ""ea"":
+                    nextX++;
+                    break;
+                case ""so"":
+                    nextY--;
+                    break;
+                case ""we"":
+                    nextX--;
+                    break;
+            }
+
+            if (isValidMove(nextX, nextY)) {
+                x = nextX;
+                y = nextY;
+            } else {
+                break;
+            }
+        }
+
+        return ""("" + x + "","" + y + "")"";
+    }
+
+    private boolean isValidMove(int x, int y) {
+        if (x < 0 || x >= fieldWidth || y < 0 || y >= fieldHeight) {
+            return false;
+        }
+
+        for (int[] wall : walls) {
+            if (isCollidingWithWall(x, y, wall)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    private boolean isCollidingWithWall(int x, int y, int[] wall) {
+        if (wall[0] == wall[2]) {
+            if (x == wall[0] && y >= wall[1] && y < wall[3]) {
+                return true;
+            }
+        } else if (wall[1] == wall[3]) {
+            if (y == wall[1] && x >= wall[0] && x < wall[2]) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walk(String walkCommandString);
+}
+"
+16,gpt4,plain,,"package thkoeln.st.st2praktikum.exercise;
+
+import java.awt.Point;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Exercise0 implements Walkable {
+    private static final int FIELD_WIDTH = 12;
+    private static final int FIELD_HEIGHT = 9;
+
+    private Point machinePosition;
+    private List<Wall> walls;
+
+    public Exercise0() {
+        machinePosition = new Point(0, 2);
+        walls = new ArrayList<>();
+        walls.add(new Wall(new Point(3, 0), new Point(3, 3)));
+        walls.add(new Wall(new Point(5, 0), new Point(5, 4)));
+        walls.add(new Wall(new Point(4, 5), new Point(7, 5)));
+        walls.add(new Wall(new Point(7, 5), new Point(7, 9)));
+
+        // Add field boundary walls
+        walls.add(new Wall(new Point(0, 0), new Point(0, FIELD_HEIGHT)));
+        walls.add(new Wall(new Point(0, 0), new Point(FIELD_WIDTH, 0)));
+        walls.add(new Wall(new Point(FIELD_WIDTH, 0), new Point(FIELD_WIDTH, FIELD_HEIGHT)));
+        walls.add(new Wall(new Point(0, FIELD_HEIGHT), new Point(FIELD_WIDTH, FIELD_HEIGHT)));
+    }
+
+    @Override
+    public String walk(String walkCommandString) {
+        String[] commandParts = walkCommandString.substring(1, walkCommandString.length() - 1).split("","");
+        String direction = commandParts[0];
+        int steps = Integer.parseInt(commandParts[1]);
+
+        Point newPosition = new Point(machinePosition);
+        for (int i = 0; i < steps; i++) {
+            newPosition = getNextPosition(direction, newPosition);
+            if (!canMoveTo(newPosition)) {
+                break;
+            }
+            machinePosition = newPosition;
+        }
+        return ""("" + machinePosition.x + "","" + machinePosition.y + "")"";
+    }
+
+    private Point getNextPosition(String direction, Point position) {
+        Point newPosition = new Point(position);
+        switch (direction) {
+            case ""no"":
+                newPosition.y += 1;
+                break;
+            case ""ea"":
+                newPosition.x += 1;
+                break;
+            case ""so"":
+                newPosition.y -= 1;
+                break;
+            case ""we"":
+                newPosition.x -= 1;
+                break;
+        }
+        return newPosition;
+    }
+
+    private boolean canMoveTo(Point position) {
+        if (position.x < 0 || position.y < 0 || position.x >= FIELD_WIDTH || position.y >= FIELD_HEIGHT) {
+            return false;
+        }
+
+        for (Wall wall : walls) {
+            if (wall.intersects(position)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private static class Wall {
+        Point start;
+        Point end;
+
+        Wall(Point start, Point end) {
+            this.start = start;
+            this.end = end;
+        }
+
+        boolean intersects(Point position) {
+            if (start.x == end.x) {
+                // Vertical wall
+                return position.y >= start.y && position.y < end.y &&
+                        (position.x == start.x || position.x == start.x - 1);
+            } else {
+                // Horizontal wall
+                return position.x >= start.x && position.x < end.x &&
+                        (position.y == start.y || position.y == start.y - 1);
+            }
+        }
+    }
+}
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walk(String walkCommandString);
+}
+"
+17,gpt4,plain,,"package thkoeln.st.st2praktikum.exercise;
+
+import java.awt.Point;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class Exercise0 implements Walkable {
+
+    private int width = 12;
+    private int height = 9;
+    private Point machinePosition;
+    private List<Point[]> walls;
+
+    public Exercise0() {
+        machinePosition = new Point(0, 2);
+        walls = new ArrayList<>(Arrays.asList(
+                new Point[]{new Point(3, 0), new Point(3, 3)},
+                new Point[]{new Point(5, 0), new Point(5, 4)},
+                new Point[]{new Point(4, 5), new Point(7, 5)},
+                new Point[]{new Point(7, 5), new Point(7, 9)}));
+    }
+
+    @Override
+    public String walk(String walkCommandString) {
+        String[] commandParts = walkCommandString.substring(1, walkCommandString.length() - 1).split("","");
+        String direction = commandParts[0];
+        int steps = Integer.parseInt(commandParts[1]);
+
+        switch (direction) {
+            case ""no"":
+                for (int i = 0; i < steps; i++) {
+                    if (isValidMove(machinePosition.x, machinePosition.y + 1)) {
+                        machinePosition.y++;
+                    } else {
+                        break;
+                    }
+                }
+                break;
+            case ""ea"":
+                for (int i = 0; i < steps; i++) {
+                    if (isValidMove(machinePosition.x + 1, machinePosition.y)) {
+                        machinePosition.x++;
+                    } else {
+                        break;
+                    }
+                }
+                break;
+            case ""so"":
+                for (int i = 0; i < steps; i++) {
+                    if (isValidMove(machinePosition.x, machinePosition.y - 1)) {
+                        machinePosition.y--;
+                    } else {
+                        break;
+                    }
+                }
+                break;
+            case ""we"":
+                for (int i = 0; i < steps; i++) {
+                    if (isValidMove(machinePosition.x - 1, machinePosition.y)) {
+                        machinePosition.x--;
+                    } else {
+                        break;
+                    }
+                }
+                break;
+            default:
+                throw new IllegalArgumentException(""Invalid walkCommandString format"");
+        }
+
+        return String.format(""(%d,%d)"", machinePosition.x, machinePosition.y);
+    }
+
+    private boolean isValidMove(int newX, int newY) {
+        if (newX < 0 || newX >= width || newY < 0 || newY >= height) {
+            return false;
+        }
+
+        for (Point[] wall : walls) {
+            if (isCollidingWithWall(newX, newY, wall)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    private boolean isCollidingWithWall(int newX, int newY, Point[] wall) {
+        if (wall[0].x == wall[1].x) {
+            if (newY >= Math.min(wall[0].y, wall[1].y) && newY < Math.max(wall[0].y, wall[1].y)) {
+                if (newX == wall[0].x - 1 && machinePosition.x == newX || newX == wall[0].x && machinePosition.x == newX - 1) {
+                    return true;
+                }
+            }
+        } else if (wall[0].y == wall[1].y) {
+            if (newX >= Math.min(wall[0].x, wall[1].x) && newX < Math.max(wall[0].x, wall[1].x)) {
+                if (newY == wall[0].y - 1 && machinePosition.y == newY || newY == wall[0].y && machinePosition.y == newY - 1) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walk(String walkCommandString);
+}
+"
+2,gpt4,plain,,"package thkoeln.st.st2praktikum.exercise;
+
+public class Exercise0 implements Walkable {
+    private int x, y;
+    private final int fieldWidth = 12;
+    private final int fieldHeight = 9;
+
+    public Exercise0() {
+        x = 0;
+        y = 2;
+    }
+
+    @Override
+    public String walk(String walkCommandString) {
+        String[] parts = walkCommandString.substring(1, walkCommandString.length() - 1).split("","");
+
+        String direction = parts[0];
+        int steps = Integer.parseInt(parts[1]);
+        int newX = x;
+        int newY = y;
+
+        switch (direction) {
+            case ""no"":
+                newY += steps;
+                if (newY >= fieldHeight) {
+                    newY = fieldHeight - 1;
+                }
+                if (newX >= 4 && newX <= 7 && newY > 5) {
+                    newY = 5;
+                }
+                break;
+            case ""ea"":
+                newX += steps;
+                if (newX >= fieldWidth) {
+                    newX = fieldWidth - 1;
+                }
+                if (newY >= 0 && newY <= 3 && newX > 3) {
+                    newX = 3;
+                }
+                if (newY >= 0 && newY <= 4 && newX > 5) {
+                    newX = 5;
+                }
+                break;
+            case ""so"":
+                newY -= steps;
+                if (newY < 0) {
+                    newY = 0;
+                }
+                if (newX >= 4 && newX <= 7 && newY < 5 && newY >= 0) {
+                    newY = 5;
+                }
+                break;
+            case ""we"":
+                newX -= steps;
+                if (newX < 0) {
+                    newX = 0;
+                }
+                if (newY >= 0 && newY <= 3 && newX < 3) {
+                    newX = 3;
+                }
+                if (newY >= 0 && newY <= 4 && newX < 5) {
+                    newX = 5;
+                }
+                break;
+            default:
+                throw new IllegalArgumentException(""Invalid direction: "" + direction);
+        }
+
+        x = newX;
+        y = newY;
+        return ""("" + x + "","" + y + "")"";
+    }
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walk(String walkCommandString);
+}
+"
+3,gpt4,plain,,"package thkoeln.st.st2praktikum.exercise;
+
+public class Exercise0 implements Walkable {
+    private int x;
+    private int y;
+    private final int width = 12;
+    private final int height = 9;
+
+    public Exercise0() {
+        this.x = 0;
+        this.y = 2;
+    }
+
+    @Override
+    public String walk(String walkCommandString) {
+        String[] commandParts = walkCommandString.substring(1, walkCommandString.length() - 1).split("","");
+        String direction = commandParts[0].trim();
+        int steps = Integer.parseInt(commandParts[1].trim());
+
+        switch (direction) {
+            case ""no"":
+                y = Math.min(y + steps, height - 1);
+                if (x == 3 && y > 3) {
+                    y = 3;
+                } else if (x == 7 && y < 5) {
+                    y = 5;
+                }
+                break;
+            case ""ea"":
+                x = Math.min(x + steps, width - 1);
+                if (y <= 3 && x > 3) {
+                    x = 3;
+                } else if (y <= 4 && x > 5) {
+                    x = 5;
+                } else if (y >= 5 && x < 7) {
+                    x = 7;
+                }
+                break;
+            case ""so"":
+                y = Math.max(y - steps, 0);
+                if (x == 3 && y < 3) {
+                    y = 3;
+                } else if (x == 7 && y > 5) {
+                    y = 5;
+                }
+                break;
+            case ""we"":
+                x = Math.max(x - steps, 0);
+                if (y <= 3 && x < 3) {
+                    x = 3;
+                } else if (y <= 4 && x < 5) {
+                    x = 5;
+                } else if (y >= 5 && x > 7) {
+                    x = 7;
+                }
+                break;
+            default:
+                throw new IllegalArgumentException(""Invalid direction: "" + direction);
+        }
+        return ""("" + x + "","" + y + "")"";
+    }
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walk(String walkCommandString);
+}
+"
+4,gpt4,plain,,"package thkoeln.st.st2praktikum.exercise;
+
+public class Exercise0 implements Walkable {
+    private int x;
+    private int y;
+    private final int width = 12;
+    private final int height = 9;
+
+    public Exercise0() {
+        this.x = 0;
+        this.y = 2;
+    }
+
+    @Override
+    public String walk(String walkCommandString) {
+        String[] commandParts = walkCommandString.substring(1, walkCommandString.length() - 1).split("","");
+        String direction = commandParts[0].trim();
+        int steps = Integer.parseInt(commandParts[1].trim());
+        int newX = x;
+        int newY = y;
+
+        switch (direction) {
+            case ""no"":
+                newY = Math.min(y + steps, height - 1);
+                break;
+            case ""ea"":
+                newX = Math.min(x + steps, width - 1);
+                break;
+            case ""so"":
+                newY = Math.max(y - steps, 0);
+                break;
+            case ""we"":
+                newX = Math.max(x - steps, 0);
+                break;
+            default:
+                throw new IllegalArgumentException(""Invalid direction: "" + direction);
+        }
+
+        // Check for walls
+        if (!((newX >= 3 && newX <= 5 && newY == 3) || (newX >= 4 && newX <= 7 && newY == 5))) {
+            x = newX;
+            y = newY;
+        }
+
+        return ""("" + x + "","" + y + "")"";
+    }
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walk(String walkCommandString);
+}
+"
+5,gpt4,plain,,"package thkoeln.st.st2praktikum.exercise;
+
+public class Exercise0 implements Walkable {
+    private int x;
+    private int y;
+    private final int width = 12;
+    private final int height = 9;
+
+    public Exercise0() {
+        this.x = 0;
+        this.y = 2;
+    }
+
+    @Override
+    public String walk(String walkCommandString) {
+        String[] commandParts = walkCommandString.substring(1, walkCommandString.length() - 1).split("","");
+        String direction = commandParts[0].trim();
+        int steps = Integer.parseInt(commandParts[1].trim());
+
+        switch (direction) {
+            case ""no"":
+                for (int i = 0; i < steps; i++) {
+                    if (y < height - 1 && !(x == 3 && y == 2) && !(x == 7 && y == 4)) {
+                        y++;
+                    }
+                }
+                break;
+            case ""ea"":
+                for (int i = 0; i < steps; i++) {
+                    if (x < width - 1 && !(y <= 3 && x == 2) && !(y <= 4 && x == 4) && !(y >= 5 && x == 6)) {
+                        x++;
+                    }
+                }
+                break;
+            case ""so"":
+                for (int i = 0; i < steps; i++) {
+                    if (y > 0 && !(x == 3 && y == 4) && !(x == 7 && y == 6)) {
+                        y--;
+                    }
+                }
+                break;
+            case ""we"":
+                for (int i = 0; i < steps; i++) {
+                    if (x > 0 && !(y <= 3 && x == 4) && !(y <= 4 && x == 6) && !(y >= 5 && x == 8)) {
+                        x--;
+                    }
+                }
+                break;
+            default:
+                throw new IllegalArgumentException(""Invalid direction: "" + direction);
+        }
+
+        return ""("" + x + "","" + y + "")"";
+    }
+}
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walk(String walkCommandString);
+}
+"
+6,gpt4,plain,,"package thkoeln.st.st2praktikum.exercise;
+
+import java.awt.Point;
+
+public class Exercise0 implements Walkable {
+    private int width = 12;
+    private int height = 9;
+    private Point currentPosition = new Point(0, 2);
+    private boolean[][] walls;
+
+    public Exercise0() {
+        // Initialize walls
+        walls = new boolean[width + 1][height + 1];
+        for (int i = 0; i <= width; i++) {
+            walls[i][0] = true;
+            walls[i][height] = true;
+        }
+        for (int i = 0; i <= height; i++) {
+            walls[0][i] = true;
+            walls[width][i] = true;
+        }
+        // Add inner walls
+        for (int i = 0; i <= 3; i++) {
+            walls[3][i] = true;
+            walls[5][i] = true;
+        }
+        walls[5][4] = true;
+
+        for (int i = 5; i <= 7; i++) {
+            walls[i][5] = true;
+        }
+
+        for (int i = 5; i <= 9; i++) {
+            walls[7][i] = true;
+        }
+    }
+
+    @Override
+    public String walk(String walkCommandString) {
+        String[] commandParts = walkCommandString.substring(1, walkCommandString.length() - 1).split("","");
+        String direction = commandParts[0];
+        int steps = Integer.parseInt(commandParts[1]);
+
+        for (int i = 0; i < steps; i++) {
+            Point newPosition = new Point(currentPosition);
+            switch (direction) {
+                case ""no"":
+                    newPosition.y++;
+                    if (!walls[newPosition.x][newPosition.y] && !walls[newPosition.x + 1][newPosition.y]) {
+                        currentPosition = newPosition;
+                    } else {
+                        i = steps;
+                    }
+                    break;
+                case ""ea"":
+                    newPosition.x++;
+                    if (!walls[newPosition.x][newPosition.y] && !walls[newPosition.x][newPosition.y + 1]) {
+                        currentPosition = newPosition;
+                    } else {
+                        i = steps;
+                    }
+                    break;
+                case ""so"":
+                    newPosition.y--;
+                    if (!walls[newPosition.x][newPosition.y] && !walls[newPosition.x + 1][newPosition.y]) {
+                        currentPosition = newPosition;
+                    } else {
+                        i = steps;
+                    }
+                    break;
+                case ""we"":
+                    newPosition.x--;
+                    if (!walls[newPosition.x][newPosition.y] && !walls[newPosition.x][newPosition.y + 1]) {
+                        currentPosition = newPosition;
+                    } else {
+                        i = steps;
+                    }
+                    break;
+            }
+        }
+
+        return String.format(""(%d,%d)"", currentPosition.x, currentPosition.y);
+    }
+}
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walk(String walkCommandString);
+}
+"
+7,gpt4,plain,,"package thkoeln.st.st2praktikum.exercise;
+
+import java.awt.Point;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Exercise0 implements Walkable {
+    private final int WIDTH = 12;
+    private final int HEIGHT = 9;
+    private Point currentPosition = new Point(0, 2);
+
+    @Override
+    public String walk(String walkCommandString) {
+        Pattern pattern = Pattern.compile(""\\[(\\w+),(\\d+)\\]"");
+        Matcher matcher = pattern.matcher(walkCommandString);
+
+        if (matcher.find()) {
+            String direction = matcher.group(1);
+            int steps = Integer.parseInt(matcher.group(2));
+
+            switch (direction) {
+                case ""no"":
+                    currentPosition.y = Math.min(currentPosition.y + steps, HEIGHT - 1);
+                    if (currentPosition.x == 3 && currentPosition.y >= 3) {
+                        currentPosition.y = Math.min(2, currentPosition.y - 1);
+                    } else if (currentPosition.x == 7 && currentPosition.y >= 5) {
+                        currentPosition.y = Math.min(4, currentPosition.y - 1);
+                    }
+                    break;
+                case ""ea"":
+                    currentPosition.x = Math.min(currentPosition.x + steps, WIDTH - 1);
+                    if (currentPosition.y <= 3 && currentPosition.x >= 3) {
+                        currentPosition.x = Math.min(2, currentPosition.x - 1);
+                    } else if (currentPosition.y >= 5 && currentPosition.x >= 5) {
+                        currentPosition.x = Math.min(4, currentPosition.x - 1);
+                    }
+                    break;
+                case ""so"":
+                    currentPosition.y = Math.max(currentPosition.y - steps, 0);
+                    if (currentPosition.x == 3 && currentPosition.y <= 3) {
+                        currentPosition.y = Math.max(4, currentPosition.y + 1);
+                    } else if (currentPosition.x == 7 && currentPosition.y <= 5) {
+                        currentPosition.y = Math.max(6, currentPosition.y + 1);
+                    }
+                    break;
+                case ""we"":
+                    currentPosition.x = Math.max(currentPosition.x - steps, 0);
+                    if (currentPosition.y <= 3 && currentPosition.x <= 3) {
+                        currentPosition.x = Math.max(4, currentPosition.x + 1);
+                    } else if (currentPosition.y >= 5 && currentPosition.x <= 7) {
+                        currentPosition.x = Math.max(8, currentPosition.x + 1);
+                    }
+                    break;
+            }
+        }
+
+        return String.format(""(%d,%d)"", currentPosition.x, currentPosition.y);
+    }
+}
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walk(String walkCommandString);
+}
+"
+8,gpt4,plain,,"package thkoeln.st.st2praktikum.exercise;
+
+public class Exercise0 implements Walkable {
+    private int x;
+    private int y;
+    private int[][] walls;
+
+    public Exercise0() {
+        x = 0;
+        y = 2;
+        walls = new int[][]{
+                {3, 0, 3, 3},
+                {5, 0, 5, 4},
+                {4, 5, 7, 5},
+                {7, 5, 7, 9}
+        };
+    }
+
+    @Override
+    public String walk(String walkCommandString) {
+        String[] parts = walkCommandString.substring(1, walkCommandString.length() - 1).split("","");
+        String direction = parts[0].trim();
+        int steps = Integer.parseInt(parts[1].trim());
+
+        switch (direction) {
+            case ""no"":
+                for (int i = 0; i < steps; i++) {
+                    if (!isWallCollision(x, y + 1)) {
+                        y++;
+                    }
+                }
+                break;
+            case ""ea"":
+                for (int i = 0; i < steps; i++) {
+                    if (!isWallCollision(x + 1, y)) {
+                        x++;
+                    }
+                }
+                break;
+            case ""so"":
+                for (int i = 0; i < steps; i++) {
+                    if (!isWallCollision(x, y - 1)) {
+                        y--;
+                    }
+                }
+                break;
+            case ""we"":
+                for (int i = 0; i < steps; i++) {
+                    if (!isWallCollision(x - 1, y)) {
+                        x--;
+                    }
+                }
+                break;
+        }
+
+        return String.format(""(%d,%d)"", x, y);
+    }
+
+    private boolean isWallCollision(int newX, int newY) {
+        if (newX < 0 || newX > 11 || newY < 0 || newY > 8) {
+            return true;
+        }
+
+        for (int[] wall : walls) {
+            if (wall[0] == newX && wall[1] <= newY && newY < wall[3]) {
+                return true;
+            } else if (wall[1] == newY && wall[0] <= newX && newX < wall[2]) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+}
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walk(String walkCommandString);
+}
+"
+9,gpt4,plain,,"package thkoeln.st.st2praktikum.exercise;
+
+public class Exercise0 implements Walkable {
+
+    private int x, y;
+    private final int fieldWidth = 12;
+    private final int fieldHeight = 9;
+
+    public Exercise0() {
+        x = 0;
+        y = 2;
+    }
+
+    @Override
+    public String walk(String walkCommandString) {
+        String[] commands = walkCommandString.split("","");
+
+        String direction = commands[0].substring(1);
+        int steps = Integer.parseInt(commands[1].substring(0, commands[1].length() - 1));
+
+        switch (direction) {
+            case ""no"":
+                y = Math.min(y + steps, fieldHeight - 1);
+                if (x == 3 && y >= 3) y = 2;
+                if (x == 5 && y <= 4) y = 5;
+                if (x >= 4 && x <= 7 && y >= 5) y = 4;
+                break;
+            case ""ea"":
+                x = Math.min(x + steps, fieldWidth - 1);
+                if (y <= 3 && x >= 3) x = 2;
+                if (y >= 5 && x >= 7) x = 6;
+                break;
+            case ""so"":
+                y = Math.max(y - steps, 0);
+                if (x == 3 && y <= 2) y = 3;
+                if (x == 5 && y >= 4) y = 4;
+                if (x >= 4 && x <= 7 && y <= 4) y = 5;
+                break;
+            case ""we"":
+                x = Math.max(x - steps, 0);
+                if (y <= 3 && x <= 2) x = 3;
+                if (y >= 5 && x <= 6) x = 7;
+                break;
+        }
+
+        return String.format(""(%d,%d)"", x, y);
+    }
+}
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walk(String walkCommandString);
+}
+"
+student1,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Walkable {
     int x = 7;
@@ -6006,7 +7339,7 @@ public class Wegberechnung {
         return y;
     }
 }"
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student100,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 import javassist.compiler.ast.Pair;
 
@@ -6261,7 +7594,7 @@ public interface Walkable {
     String walk(String walkCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student102,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements GoAble {
 
@@ -6389,7 +7722,7 @@ public interface GoAble {
     String goTo(String goCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student103,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 
 public class Exercise0 implements Moveable {
@@ -6646,7 +7979,7 @@ public interface Moveable {
     String moveTo(String moveCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student104,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Dot
 {
@@ -6897,7 +8230,7 @@ public class Wall
     }
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student105,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Barrier {
 
@@ -7103,7 +8436,7 @@ public class Point {
     }
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student106,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public enum Direction {
     no,ea,so,we;
@@ -7277,7 +8610,7 @@ public interface Moveable {
     String move(String moveCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student107,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7611,7 +8944,7 @@ public interface Moveable {
     String move(String moveCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student108,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Moveable {
     int[] position;
@@ -7773,7 +9106,7 @@ public class Wall {
     }
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student109,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 import javax.sound.midi.SysexMessage;
 
@@ -7886,7 +9219,7 @@ public interface GoAble {
     String go(String goCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student11,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Moveable {
 
@@ -7984,7 +9317,7 @@ public interface Moveable {
     String moveTo(String moveCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student110,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import java.util.ArrayList;
@@ -8157,7 +9490,7 @@ public interface GoAble {
     String goTo(String goCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student112,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 
 public class Exercise0 implements GoAble {
@@ -8278,7 +9611,7 @@ public class Pair {
     }
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student116,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Walkable {
     private int x;
@@ -8385,7 +9718,7 @@ public interface Walkable {
     String walk(String walkCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student118,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 import org.modelmapper.internal.Pair;
 
@@ -8490,7 +9823,7 @@ public interface GoAble {
     String go(String goCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student119,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 import java.awt.*;
 import java.util.List;
@@ -8706,7 +10039,7 @@ public interface Walkable {
     String walkTo(String walkCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student121,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Walkable {
     int xPos = 11;
@@ -8815,7 +10148,7 @@ public interface Walkable {
     String walk(String walkCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student122,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 
 import java.util.ArrayList;
@@ -9056,7 +10389,7 @@ public interface Walkable {
     String walkTo(String walkCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student123,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Cell {
 
@@ -9207,7 +10540,7 @@ public interface GoAble {
     String go(String goCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student124,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9489,7 +10822,7 @@ class Point {
         return x == point.x && y == point.y;
     }
 }"
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student125,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 import java.util.List;
 
@@ -9690,7 +11023,7 @@ public interface Walkable {
     String walk(String walkCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student126,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements GoAble {
 
@@ -9817,7 +11150,7 @@ public interface GoAble {
     String go(String goCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student127,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9964,7 +11297,7 @@ public interface Walkable {
     String walk(String walkCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student128,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Dam {
 
@@ -10139,7 +11472,7 @@ public interface Walkable {
     String walkTo(String walkCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student129,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Moveable {
     int[][] matrix = {
@@ -10241,7 +11574,7 @@ public interface Moveable {
     String move(String moveCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student13,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -10463,7 +11796,7 @@ public interface Walkable {
     String walkTo(String walkCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student130,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements GoAble {
 
@@ -10544,7 +11877,7 @@ public interface GoAble {
     String go(String goCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student131,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Dam {
 
@@ -10720,7 +12053,7 @@ public class Position {
     }
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student132,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Walkable {
 
@@ -10818,7 +12151,7 @@ public interface Walkable {
     String walkTo(String walkCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student134,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Walkable {
 
@@ -11056,7 +12389,7 @@ public interface Walkable {
     String walk(String walkCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student135,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Barrier {
     private Vector2 start;
@@ -11277,7 +12610,7 @@ public class Vector2 {
     }
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student137,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements GoAble {
     int startY = 7;
@@ -11416,7 +12749,7 @@ public interface GoAble {
 
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student138,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements GoAble {
     int posx = 4;
@@ -11491,7 +12824,7 @@ public interface GoAble {
     String goTo(String goCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student140,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 
 public class Exercise0 implements GoAble {
@@ -11633,7 +12966,7 @@ package thkoeln.st.st2praktikum.exercise;
 public interface GoAble {
     String go(String goCommandString);
 }"
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student142,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class  Exercise0 implements GoAble {
 
@@ -11799,7 +13132,7 @@ public interface GoAble {
     String goTo(String goCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student143,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Walkable {
 
@@ -11929,7 +13262,7 @@ public interface Walkable {
     String walkTo(String walkCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student144,student,,,"package thkoeln.st.st2praktikum.exercise;
 import java.util.Arrays;
 public class Exercise0 implements GoAble {
     Integer startUpDown = 2;
@@ -12090,7 +13423,7 @@ public interface GoAble {
     String go(String goCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student145,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements GoAble {
 
@@ -12434,7 +13767,7 @@ public interface GoAble {
 
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student146,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -12552,7 +13885,7 @@ public interface Moveable {
     String moveTo(String moveCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student147,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Moveable {
     public  String device=""3,0"";
@@ -12717,7 +14050,7 @@ public interface Moveable {
     String moveTo(String moveCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student148,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements GoAble {
     int x = 1;
@@ -12828,7 +14161,7 @@ public interface GoAble {
     String goTo(String goCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student149,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13236,7 +14569,7 @@ public class Transition {
     }
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student15,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Coordinate {
 
@@ -13374,7 +14707,7 @@ public interface Moveable {
     String moveTo(String moveCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student153,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Walkable {
 
@@ -13522,7 +14855,7 @@ public interface Walkable {
     String walk(String walkCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student157,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public enum Direction {
     NORTH, EAST, SOUTH, WEST
@@ -13718,7 +15051,7 @@ public class WalkCommand {
     }
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student158,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 import java.util.ArrayList;
 
@@ -13936,7 +15269,7 @@ public class Wall {
 
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student16,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Moveable {
 
@@ -14019,7 +15352,7 @@ public interface Moveable {
     String move(String moveCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student17,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 import thkoeln.st.st2praktikum.exercise.BitPaw.MoveCommand;
 import thkoeln.st.st2praktikum.exercise.BitPaw.Point;
@@ -14646,7 +15979,7 @@ if(_ignoreBarrier)
         return _robot.CurrentPosition;
     }
 }"
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student18,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 import lombok.AllArgsConstructor;
 
@@ -14748,7 +16081,7 @@ public interface GoAble {
     String goTo(String goCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student19,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Cell {
     private boolean borderNorth;
@@ -14906,7 +16239,7 @@ public interface GoAble {
     String goTo(String goCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student2,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Moveable {
     private int x = 0;
@@ -14979,7 +16312,7 @@ public interface Moveable {
     String moveTo(String moveCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student20,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 import java.util.ArrayList;
 
@@ -15109,7 +16442,7 @@ public class Wall {
     }
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student21,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Moveable {
 
@@ -15193,7 +16526,7 @@ public interface Moveable {
     String move(String moveCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student23,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Border {
     Coordinate start;
@@ -15473,7 +16806,7 @@ public interface Moveable {
     String moveTo(String moveCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student25,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 import org.springframework.data.util.Pair;
 
@@ -15572,7 +16905,7 @@ public interface GoAble {
     String goTo(String goCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student26,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Walkable {
 
@@ -15685,7 +17018,7 @@ public interface Walkable {
     String walk(String walkCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student27,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
@@ -15842,7 +17175,7 @@ public interface Walkable {
     String walkTo(String walkCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student28,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 //public class Exercise0 implements Walkable {
 
@@ -15926,7 +17259,7 @@ public interface Walkable {
     String walk(String walkCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student3,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 
 public class Exercise0 implements Walkable {
@@ -16234,7 +17567,7 @@ public interface Walkable {
     String walk(String walkCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student30,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 import javax.persistence.criteria.CriteriaBuilder;
 
@@ -16370,7 +17703,7 @@ public interface GoAble {
 
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student32,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements GoAble {
     private int xPos = 3;
@@ -16473,7 +17806,7 @@ public interface GoAble {
     String go(String goCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student33,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Moveable {
     int x = 4;
@@ -16486,7 +17819,7 @@ public class Exercise0 implements Moveable {
     public String moveTo(String moveCommandString) {
         String movement = moveCommandString.substring(1,moveCommandString.length()-1);
         String[] moving = movement.split("","");
-        String directionMove = moving[0];  testetsetsragdsagdsgdgaesttest,M;
+        String directionMove = moving[0];
         int stepToMove= Integer.parseInt(moving[1]);
 
         switch (directionMove){
@@ -16631,7 +17964,7 @@ public interface Moveable {
     String moveTo(String moveCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student34,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -16669,7 +18002,7 @@ public interface Moveable {
     String move(String moveCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student36,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public enum Direction {
     NORTH,
@@ -16855,7 +18188,7 @@ public class Walls {
     private Integer lastX;
     private Integer lastY;
 }"
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student37,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Droid {
     private int x = 1;
@@ -16999,7 +18332,7 @@ public interface Walkable {
 
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student38,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 class Cell{
     int x;
@@ -17109,7 +18442,7 @@ public interface Moveable {
     String move(String moveCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student39,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements GoAble {
     int x_position = 1;
@@ -17213,7 +18546,7 @@ public interface GoAble {
     String goTo(String goCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student40,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements GoAble {
 
@@ -17399,7 +18732,7 @@ public interface GoAble {
     String goTo(String goCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student45,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements GoAble {
 
@@ -17585,7 +18918,7 @@ public interface GoAble {
     String goTo(String goCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student47,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 
     public class Dot {
@@ -17781,7 +19114,7 @@ public interface Walkable {
     String walk(String walkCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student50,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 
 public class Exercise0 implements GoAble {
@@ -17958,7 +19291,7 @@ public interface GoAble {
     String go(String goCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student52,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 import lombok.AllArgsConstructor;
 
@@ -18055,7 +19388,7 @@ public interface Moveable {
     String move(String moveCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student54,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 
 import org.junit.jupiter.params.shadow.com.univocity.parsers.conversions.Conversion;
@@ -18286,7 +19619,7 @@ public interface GoAble {
     String go(String goCommandString);
 }
 "
-student,,,"/*Atidy-uprobotisusedtotidyuparoom-collectgarbage,sortstuff,etc.
+student55,student,,,"/*Atidy-uprobotisusedtotidyuparoom-collectgarbage,sortstuff,etc.
 Inmilestone0,youhavethetasktosteersuchatidy-uprobotacrossaroomwithobstacles.
 Theroomissquare-shaped.Inthefollowingimage,youseeahowtheroomismodelledasa
 systemofcells.*/
@@ -18477,7 +19810,7 @@ public class Room {
 
     }
 }"
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student56,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 import javax.persistence.criteria.CriteriaBuilder;
 
@@ -18645,7 +19978,7 @@ public interface Moveable {
     String move(String moveCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student59,student,,,"package thkoeln.st.st2praktikum.exercise;
 import java.util.ArrayList;
 public class Exercise0 implements GoAble {
 
@@ -18847,7 +20180,7 @@ public interface GoAble {
     String go(String goCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student62,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Walkable {
 int x= 8;
@@ -18936,7 +20269,7 @@ public class Wall {
     }
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student63,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Walkable {
 
@@ -19011,7 +20344,7 @@ public interface Walkable {
     String walkTo(String walkCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student64,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Boundary {
 
@@ -19302,7 +20635,7 @@ public interface Walkable {
     String walk(String walkCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student65,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 import java.util.Vector;
 
@@ -19519,7 +20852,7 @@ public class Vector2d {
     }
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student66,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 import lombok.Getter;
 
@@ -19765,7 +21098,7 @@ public class Wall {
     }
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student68,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -20028,7 +21361,7 @@ public interface Walkable {
     String walk(String walkCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student69,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20207,7 +21540,7 @@ public interface Moveable {
     String move(String moveCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student7,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Moveable {
     int[] limit = new int[]{12,9};
@@ -20284,7 +21617,7 @@ public interface Moveable {
     String move(String moveCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student70,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20446,7 +21779,7 @@ public class Wall {
 
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student71,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 import org.springframework.data.util.Pair;
 
@@ -20621,7 +21954,7 @@ public interface GoAble {
     String go(String goCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student73,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Moveable {
 
@@ -20743,7 +22076,7 @@ public interface Moveable {
     String moveTo(String moveCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student76,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Walkable {
 
@@ -20873,7 +22206,7 @@ public interface Walkable {
     String walkTo(String walkCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student77,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Walkable {
     private static double round (double value) {
@@ -20954,7 +22287,7 @@ public interface Walkable {
     String walkTo(String walkCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student79,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Moveable {
     int x= 3;
@@ -21097,7 +22430,7 @@ public interface Moveable {
 
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student8,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Moveable {
 
@@ -21336,7 +22669,7 @@ public interface Moveable
     String moveTo(String moveCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student80,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 
 public class Exercise0 implements Walkable {
@@ -21545,7 +22878,7 @@ public interface Walkable {
     String walk(String walkCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student82,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Moveable {
 
@@ -21648,7 +22981,7 @@ public interface Moveable {
     String move(String moveCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student83,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 import java.util.ArrayList;
 
@@ -21808,7 +23141,7 @@ package thkoeln.st.st2praktikum.exercise;
 public interface Walkable {
     String walkTo(String walkCommandString);
 }"
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student84,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Barrier {
     Coordinate start;
@@ -21959,7 +23292,7 @@ public interface Walkable {
     String walk(String walkCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student85,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Dam {
 
@@ -22135,7 +23468,7 @@ public class Position {
 }
 
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student86,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22287,7 +23620,7 @@ public interface Walkable {
     String walk(String walkCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student89,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 import javassist.bytecode.stackmap.BasicBlock;
 
@@ -22524,7 +23857,7 @@ public interface Moveable {
     String move(String moveCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student90,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 import java.util.Arrays;
 import java.util.List;
@@ -22685,7 +24018,7 @@ public interface Walkable {
     String walkTo(String walkCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student92,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Moveable {
 
@@ -22773,7 +24106,7 @@ public interface Moveable {
     String moveTo(String moveCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student94,student,,,"package thkoeln.st.st2praktikum.exercise;
 public class Exercise0 implements Walkable {
     int x = 7;
     int y = 7;
@@ -22932,7 +24265,7 @@ public interface Walkable {
 
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student96,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements GoAble {
 
@@ -23094,7 +24427,7 @@ public interface GoAble {
     String goTo(String goCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student97,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 
 public class Exercise0 implements Walkable {
@@ -23190,7 +24523,7 @@ public interface Walkable {
     String walkTo(String walkCommandString);
 }
 "
-student,,,"package thkoeln.st.st2praktikum.exercise;
+student98,student,,,"package thkoeln.st.st2praktikum.exercise;
 
 abstract public class AbstractMove {
 
