@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="12848fa1-f19f-4a0b-8214-c6a8f5ad60cf" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../5. Test Passing.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../5. Test Passing.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../milestone_0_prompts/gpt4/tests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../milestone_0_prompts/gpt4/tests.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../milestone_0_prompts/messy_student_style.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../milestone_0_prompts/messy_student_style.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2PVeThToLm3IbJSoYFr04LOxJlg" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "E:/Folders/Google Drive/TH Köln/Modules/2. ChatGPT Guided Project/ChatGPT-Project/raw_solutions/gpt4_solutions/m0_17_plain - Copy (10) - Copy"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="m0_17_plain" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="m0_17_plain" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="12848fa1-f19f-4a0b-8214-c6a8f5ad60cf" name="Changes" comment="" />
+      <created>1683546688008</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1683546688008</updated>
+    </task>
+    <servers />
+  </component>
+</project>
