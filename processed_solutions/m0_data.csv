@@ -6616,6 +6616,197 @@ public interface Walkable {
     String walk(String walkCommandString);
 }
 "
+18,gpt4,styled,,"package thkoeln.st.st2praktikum.exercise;
+
+import java.awt.Point;
+
+public class Exercise0 implements Walkable {
+    // Define the field's size
+    private final int FIELD_WIDTH = 12;
+    private final int FIELD_HEIGHT = 9;
+    // Define the starting position of the mining machine
+    private Point miningMachineLocation;
+
+    // Constructor
+    public Exercise0() {
+        // Initialize mining machine's location
+        miningMachineLocation = new Point(0, 2);
+    }
+
+    // Implement the walk method as required by the Walkable interface
+    @Override
+    public String walk(String walkCommandString) {
+        // Remove brackets from the command and split it into direction and steps
+        String[] parts = walkCommandString.substring(1, walkCommandString.length() - 1).split("","");
+        String direction = parts[0].trim(); // Get direction
+        int steps = Integer.parseInt(parts[1].trim()); // Get steps
+
+        // Loop for the number of steps
+        for (int i = 0; i < steps; i++) {
+            // Make a copy of the current location
+            Point newLocation = new Point(miningMachineLocation);
+
+            // Move the machine based on the direction
+            switch (direction) {
+                case ""no"": // Move north
+                    newLocation.y += 1;
+                    break;
+                case ""ea"": // Move east
+                    newLocation.x += 1;
+                    break;
+                case ""so"": // Move south
+                    newLocation.y -= 1;
+                    break;
+                case ""we"": // Move west
+                    newLocation.x -= 1;
+                    break;
+            }
+
+            // Check if the move is valid
+            if (isValidMove(newLocation)) {
+                // If it is, update the machine's location
+                miningMachineLocation = newLocation;
+            } else {
+                // If it's not, stop moving
+                break;
+            }
+        }
+
+        // Return the machine's location in the required format
+        return String.format(""(%d,%d)"", miningMachineLocation.x, miningMachineLocation.y);
+    }
+
+    // Helper method to check if a move is valid
+    private boolean isValidMove(Point newLocation) {
+        // Check if the move is within the field's boundaries
+        if (newLocation.x < 0 || newLocation.x >= FIELD_WIDTH
+                || newLocation.y < 0 || newLocation.y >= FIELD_HEIGHT) {
+            return false;
+        }
+
+        // Check for collisions with walls
+        if ((newLocation.x == 3 && newLocation.y < 3)
+                || (newLocation.x == 5 && newLocation.y < 4)
+                || (newLocation.y == 5 && newLocation.x >= 4 && newLocation.x < 7)
+                || (newLocation.x == 7 && newLocation.y >= 5)) {
+            return false;
+        }
+
+        // If no collisions or boundary violations, the move is valid
+        return true;
+    }
+}
+
+
+
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walk(String walkCommandString);
+}
+"
+19,gpt4,styled,,"package thkoeln.st.st2praktikum.exercise;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Exercise0 implements Walkable {
+
+    // Declare the variables for the current position of the mining machine
+    private int currentX;
+    private int currentY;
+
+    // Define the size of the field
+    private int fieldSizeX = 12;
+    private int fieldSizeY = 9;
+
+    // Create a list to store the wall coordinates
+    private List<int[]> walls = new ArrayList<>();
+
+    // Constructor
+    public Exercise0() {
+        // Set the initial position of the mining machine
+        currentX = 0;
+        currentY = 2;
+
+        // Add the walls to the list
+        walls.add(new int[]{3, 0, 3, 3});
+        walls.add(new int[]{5, 0, 5, 4});
+        walls.add(new int[]{4, 5, 7, 5});
+        walls.add(new int[]{7, 5, 7, 9});
+    }
+
+    // Method to move the mining machine
+    @Override
+    public String walk(String walkCommandString) {
+        // Remove the brackets and split the command into direction and steps
+        String[] commands = walkCommandString.substring(1, walkCommandString.length()-1).split("","");
+        String direction = commands[0];
+        int steps = Integer.parseInt(commands[1]);
+
+        // Loop for the number of steps
+        for (int i = 0; i < steps; i++) {
+            // Check the direction and move the mining machine
+            if (direction.equals(""no"")) {
+                if (!isWall(currentX, currentY+1)) {
+                    currentY = currentY + 1;
+                    if (currentY > fieldSizeY - 1) {
+                        currentY = fieldSizeY - 1;
+                    }
+                }
+            } else if (direction.equals(""ea"")) {
+                if (!isWall(currentX+1, currentY)) {
+                    currentX = currentX + 1;
+                    if (currentX > fieldSizeX - 1) {
+                        currentX = fieldSizeX - 1;
+                    }
+                }
+            } else if (direction.equals(""so"")) {
+                if (!isWall(currentX, currentY-1)) {
+                    currentY = currentY - 1;
+                    if (currentY < 0) {
+                        currentY = 0;
+                    }
+                }
+            } else if (direction.equals(""we"")) {
+                if (!isWall(currentX-1, currentY)) {
+                    currentX = currentX - 1;
+                    if (currentX < 0) {
+                        currentX = 0;
+                    }
+                }
+            }
+        }
+        // Return the final position of the mining machine
+        return ""("" + currentX + "","" + currentY + "")"";
+    }
+
+    // Method to check if there is a wall at the given position
+    private boolean isWall(int x, int y) {
+        // Loop over all the walls
+        for (int[] wall : walls) {
+            // Check if the given position is inside the wall
+            if (x == wall[0] || x == wall[2]) {
+                if (y >= Math.min(wall[1], wall[3]) && y <= Math.max(wall[1], wall[3])) {
+                    return true;
+                }
+            } else if (y == wall[1] || y == wall[3]) {
+                if (x >= Math.min(wall[0], wall[2]) && x <= Math.max(wall[0], wall[2])) {
+                    return true;
+                }
+            }
+        }
+        // If no wall is found, return false
+        return false;
+    }
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walk(String walkCommandString);
+}
+"
 2,gpt4,plain,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Walkable {
@@ -6696,6 +6887,769 @@ public interface Walkable {
     String walk(String walkCommandString);
 }
 "
+20,gpt4,styled,,"package thkoeln.st.st2praktikum.exercise;
+
+import java.awt.Point;
+
+public class Exercise0 implements Walkable {
+    private Point machineLocation;
+    private int fieldWidth = 12;
+    private int fieldHeight = 9;
+    private boolean[][] walls;
+
+    public Exercise0() { machineLocation = new Point(0, 2);
+        walls = new boolean[fieldHeight + 1][fieldWidth + 1];
+        setWall(3, 0, 3, 3);
+        setWall(5, 0, 5, 4);
+        setWall(4, 5, 7, 5);setWall(7, 5, 7, 9);}
+
+    private void setWall(int x1, int y1, int x2, int y2) {
+        if (x1 == x2) {for (int i = y1; i <= y2; i++) {walls[i][x1] = true;}} else {for (int i = x1; i <= x2; i++) {walls[y1][i] = true;}}}
+
+    @Override
+    public String walk(String walkCommandString) {
+        String direction = walkCommandString.substring(1, 3);
+        int steps = Integer.parseInt(walkCommandString.substring(4, walkCommandString.length() - 1));
+
+        switch (direction) {case ""no"":for (int i = 0; i < steps; i++) {if (machineLocation.y + 1 < fieldHeight && !walls[machineLocation.y + 1][machineLocation.x]) {machineLocation.y++;}}break;case ""ea"":for (int i = 0; i < steps; i++) {if (machineLocation.x + 1 < fieldWidth && !walls[machineLocation.y][machineLocation.x + 1]) {machineLocation.x++;}}break;case ""so"":for (int i = 0; i < steps; i++) {if (machineLocation.y - 1 >= 0 && !walls[machineLocation.y - 1][machineLocation.x]) {machineLocation.y--;}}break;case ""we"":for (int i = 0; i < steps; i++) {if (machineLocation.x - 1 >= 0 && !walls[machineLocation.y][machineLocation.x - 1]) {machineLocation.x--;}}break;}
+
+        return ""("" + machineLocation.x + "","" + machineLocation.y + "")"";
+    }}
+
+
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walk(String walkCommandString);
+}
+"
+21,gpt4,styled,,"package thkoeln.st.st2praktikum.exercise;
+import java.awt.Point;
+public class Exercise0 implements Walkable {
+    private static final int F_W = 12;
+    private static final int F_H = 9;
+    boolean[][] f = new boolean[F_H][F_W];
+    Point m;
+
+    public Exercise0() {
+        m = new Point(0, 2);
+        initF();
+    }
+
+    private void initF() {
+        for (int i = 0; i < F_H; i++) {
+            for (int j = 0; j < F_W; j++) {
+                f[i][j] = true;
+            }
+        }
+        bW(3, 0, 3, 3);
+        bW(5, 0, 5, 4);
+        bW(4, 5, 7, 5);
+        bW(7, 5, 7, 9);
+    }
+
+    private void bW(int startX, int startY, int endX, int endY) {
+        for (int i = Math.min(startY, endY); i <= Math.max(startY, endY); i++) {
+            for (int j = Math.min(startX, endX); j <= Math.max(startX, endX); j++) {
+                f[i][j] = false;
+            }
+        }
+    }
+
+    @Override
+    public String walk(String walkCommandString) {
+        String[] commandParts = walkCommandString.replace(""["", """").replace(""]"", """").split("","");
+        String direction = commandParts[0];
+        int steps = Integer.parseInt(commandParts[1]);
+
+        for (int i = 0; i < steps; i++) {
+            switch (direction) {
+                case ""no"":
+                    if (m.y < F_H - 2 && f[m.y + 2][m.x]) {
+                        m.y++;
+                    }
+                    break;
+                case ""ea"":
+                    if (m.x < F_W - 2 && f[m.y][m.x + 2]) {
+                        m.x++;
+                    }
+                    break;
+                case ""so"":
+                    if (m.y > 1 && f[m.y - 2][m.x]) {
+                        m.y--;
+                    }
+                    break;
+                case ""we"":
+                    if (m.x > 1 && f[m.y][m.x - 2]) {
+                        m.x--;
+                    }
+                    break;
+            }
+        }
+
+        return ""("" + m.x + "","" + m.y + "")"";
+    }
+}
+
+
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walk(String walkCommandString);
+}
+"
+22,gpt4,styled,,"package thkoeln.st.st2praktikum.exercise;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Exercise0 implements Walkable {
+    private static final int x_max=12;
+    private static final int y_max=9;
+    private int posX=0;
+    private int posY=2;
+    private boolean[][] w = new boolean[x_max+1][y_max+1];
+
+    public Exercise0() {
+        for (int i = 0; i <= x_max; i++) {w[i][0] = true; w[i][y_max] = true;}
+        for (int j = 0; j <= y_max; j++) {w[0][j] = true;w[x_max][j] = true;}
+        setWall(3, 0, 3, 3);setWall(5, 0, 5, 4);setWall(4, 5, 7, 5);setWall(7, 5, 7, 9);
+    }
+
+    private void setWall(int a, int b, int c, int d) {
+        if (a == c) {for (int j = b; j <= d; j++) {w[a][j] = true;}} else if (b == d) {for (int i = a; i <= c; i++) {w[i][b] = true;}}
+    }
+
+    @Override
+    public String walk(String s) {
+        Pattern p = Pattern.compile(""\\[(\\w+),(\\d+)\\]"");Matcher m = p.matcher(s);
+        if (m.find()) {
+            String dir = m.group(1);int step = Integer.parseInt(m.group(2));
+
+            switch (dir) {case ""no"":for (int i = 0; i < step; i++) {if (!w[posX][posY+1]) posY++;}break;case ""ea"":for (int i = 0; i < step; i++) {if (!w[posX+1][posY]) posX++;}break;case ""so"":for (int i = 0; i < step; i++) {if (!w[posX][posY-1]) posY--;}break;case ""we"":for (int i = 0; i < step; i++) {if (!w[posX-1][posY]) posX--;}break;}
+        }
+
+        return String.format(""(%d,%d)"", posX, posY);
+    }
+}
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walk(String walkCommandString);
+}
+"
+23,gpt4,styled,,"package thkoeln.st.st2praktikum.exercise;
+
+import java.util.Arrays;
+import java.util.List;
+
+public class Exercise0 implements Walkable {
+
+    private static final int abc = 12;
+    private static final int xyz = 9;
+    private int[] p = new int[]{0, 2};
+
+    private static final List<String> w = Arrays.asList(
+            ""3,0-3,3"",
+            ""5,0-5,4"",
+            ""4,5-7,5"",
+            ""7,5-7,9""
+    );
+
+    @Override
+    public String walk(String s) {
+        String[] c = s.replace(""["", """").replace(""]"", """").split("","");
+        String d = c[0];
+        int st = Integer.parseInt(c[1]);
+
+        for (int i = 0; i < st; i++) {
+            if (d.equals(""no"")) {
+                if (!iw(p[0], p[1] + 1) && p[1] < xyz - 1) p[1]++;
+            } else if (d.equals(""ea"")) {
+                if (!iw(p[0] + 1, p[1]) && p[0] < abc - 1) p[0]++;
+            } else if (d.equals(""so"")) {
+                if (!iw(p[0], p[1] - 1) && p[1] > 0) p[1]--;
+            } else if (d.equals(""we"")) {
+                if (!iw(p[0] - 1, p[1]) && p[0] > 0) p[0]--;
+            }
+        }
+        return ""("" + p[0] + "","" + p[1] + "")"";
+    }
+
+    private boolean iw(int x, int y) {
+        for (String wl : w) {
+            String[] wc = wl.split(""-"");
+            int[] s = Arrays.stream(wc[0].split("","")).mapToInt(Integer::parseInt).toArray();
+            int[] e = Arrays.stream(wc[1].split("","")).mapToInt(Integer::parseInt).toArray();
+
+            if (s[0] == e[0]) { // vertical wall
+                if (x == s[0] && y >= s[1] && y < e[1]) {
+                    return true;
+                }
+            } else { // horizontal wall
+                if (y == s[1] && x >= s[0] && x < e[0]) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walk(String walkCommandString);
+}
+"
+24,gpt4,styled,,"package thkoeln.st.st2praktikum.exercise;
+
+import java.awt.Point;
+import java.util.Arrays;
+import java.util.List;
+
+public class Exercise0 implements Walkable {
+    private Point pos;
+    private int w = 12;
+    private int h = 9;
+    private List<Point> ws = Arrays.asList(new Point(3, 0), new Point(5, 0), new Point(4, 5), new Point(7, 5));
+    private List<Point> we = Arrays.asList(new Point(3, 3), new Point(5, 4), new Point(7, 5), new Point(7, 9));
+
+    public Exercise0() {
+        this.pos = new Point(0, 2);
+    }
+
+    @Override
+    public String walk(String cmd) {
+        String dir = cmd.substring(1, 3);
+        int s = Integer.parseInt(cmd.substring(4, cmd.length() - 1));
+        Point np;
+
+        if (dir.equals(""no"")) {
+            for (int i = 0; i < s; i++) {
+                np = new Point(pos.x, pos.y + 1);
+                if (canMove(np)) pos = np;
+            }
+        } else if (dir.equals(""ea"")) {
+            for (int i = 0; i < s; i++) {
+                np = new Point(pos.x + 1, pos.y);
+                if (canMove(np)) pos = np;
+            }
+        } else if (dir.equals(""so"")) {
+            for (int i = 0; i < s; i++) {
+                np = new Point(pos.x, pos.y - 1);
+                if (canMove(np)) pos = np;
+            }
+        } else if (dir.equals(""we"")) {
+            for (int i = 0; i < s; i++) {
+                np = new Point(pos.x - 1, pos.y);
+                if (canMove(np)) pos = np;
+            }
+        }
+
+        return ""("" + pos.x + "","" + pos.y + "")"";
+    }
+
+    private boolean canMove(Point np) {
+        if (np.x < 0 || np.x >= w || np.y < 0 || np.y >= h) {
+            return false;
+        }
+
+        for (int i = 0; i < ws.size(); i++) {
+            if ((np.x == ws.get(i).x && np.y >= ws.get(i).y && np.y < we.get(i).y) ||
+                    (np.y == ws.get(i).y && np.x >= ws.get(i).x && np.x < we.get(i).x)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+}
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walk(String walkCommandString);
+}
+"
+25,gpt4,styled,,"package thkoeln.st.st2praktikum.exercise;
+
+public class Exercise0 implements Walkable {
+    private int x = 0;
+    private int y = 2;
+    private final int MAX_X = 11; // As the field is 12 tiles wide (0-11)
+    private final int MAX_Y = 8; // As the field is 9 tiles high (0-8)
+
+    @Override
+    public String walk(String walkCommandString) {
+        String direction = walkCommandString.substring(1, 3);
+        int steps = Integer.parseInt(walkCommandString.substring(4, walkCommandString.length() - 1));
+
+        for(int i = 0; i < steps; i++) {
+            if (""no"".equals(direction)) {
+                if (y < MAX_Y && !(x >= 4 && x < 7 && y == 4)) {
+                    y++;
+                }
+            } else if (""ea"".equals(direction)) {
+                if (x < MAX_X && !(y >= 0 && y < 4 && x == 2) && !(y > 0 && y <= 4 && x == 4) && !(y >= 5 && x == 6)) {
+                    x++;
+                }
+            } else if (""so"".equals(direction)) {
+                if (y > 0 && !(x >= 4 && x < 7 && y == 5) && !(x == 7 && y == 6)) {
+                    y--;
+                }
+            } else if (""we"".equals(direction)) {
+                if (x > 0 && !(y >= 0 && y < 4 && x == 3) && !(y > 0 && y <= 4 && x == 5)) {
+                    x--;
+                }
+            }
+        }
+
+        return ""("" + x + "","" + y + "")"";
+    }
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walk(String walkCommandString);
+}
+"
+26,gpt4,plain,,"package thkoeln.st.st2praktikum.exercise;
+
+import java.util.HashSet;
+import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Exercise0 implements Walkable {
+    private static final int FIELD_WIDTH = 12;
+    private static final int FIELD_HEIGHT = 9;
+
+    private Cell position;
+    private Set<Cell> walls;
+
+    public Exercise0() {
+        this.position = new Cell(0, 2);
+
+        this.walls = new HashSet<>();
+        // field boundaries
+        for(int i=0; i<FIELD_WIDTH; i++) {
+            this.walls.add(new Cell(i, -1)); // south boundary
+            this.walls.add(new Cell(i, FIELD_HEIGHT)); // north boundary
+        }
+        for(int j=0; j<FIELD_HEIGHT; j++) {
+            this.walls.add(new Cell(-1, j)); // west boundary
+            this.walls.add(new Cell(FIELD_WIDTH, j)); // east boundary
+        }
+        // specified walls
+        addWall(3, 0, 3, 3);
+        addWall(5, 0, 5, 4);
+        addWall(4, 5, 7, 5);
+        addWall(7, 5, 7, 9);
+    }
+
+    private void addWall(int x1, int y1, int x2, int y2) {
+        for(int i=x1; i<=x2; i++) {
+            for(int j=y1; j<=y2; j++) {
+                this.walls.add(new Cell(i, j));
+            }
+        }
+    }
+
+    public String walk(String walkCommandString) {
+        Pattern pattern = Pattern.compile(""\\[(\\w+),(\\d+)\\]"");
+        Matcher matcher = pattern.matcher(walkCommandString);
+        if(matcher.find()) {
+            String direction = matcher.group(1);
+            int steps = Integer.parseInt(matcher.group(2));
+            int dx = 0, dy = 0;
+            switch (direction) {
+                case ""no"": dy = 1; break;
+                case ""so"": dy = -1; break;
+                case ""ea"": dx = 1; break;
+                case ""we"": dx = -1; break;
+            }
+            for(int i=0; i<steps; i++) {
+                Cell nextPosition = new Cell(position.x + dx, position.y + dy);
+                if(walls.contains(nextPosition)) break;
+                this.position = nextPosition;
+            }
+        }
+        return this.position.toString();
+    }
+
+    private static class Cell {
+        int x, y;
+
+        Cell(int x, int y) {
+            this.x = x;
+            this.y = y;
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if(this == obj) return true;
+            if(obj == null || getClass() != obj.getClass()) return false;
+            Cell cell = (Cell) obj;
+            return x == cell.x && y == cell.y;
+        }
+
+        @Override
+        public int hashCode() {
+            return 31 * x + y;
+        }
+
+        @Override
+        public String toString() {
+            return ""("" + x + "","" + y + "")"";
+        }
+    }
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walk(String walkCommandString);
+}
+"
+27,gpt4,plain,,"package thkoeln.st.st2praktikum.exercise;
+
+import java.awt.Point;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Exercise0 implements Walkable {
+    private final int fieldWidth;
+    private final int fieldHeight;
+    private final List<Wall> walls = new ArrayList<>();
+    private Point machinePosition;
+
+    public Exercise0() {
+        this.fieldWidth = 12;
+        this.fieldHeight = 9;
+        this.machinePosition = new Point(0, 2);
+
+        // Initialize walls
+        walls.add(new Wall(new Point(3, 0), new Point(3, 3)));
+        walls.add(new Wall(new Point(5, 0), new Point(5, 4)));
+        walls.add(new Wall(new Point(4, 5), new Point(7, 5)));
+        walls.add(new Wall(new Point(7, 5), new Point(7, 9)));
+    }
+
+    @Override
+    public String walk(String walkCommandString) {
+        // Parse command
+        String direction = walkCommandString.substring(1, 3);
+        int steps = Integer.parseInt(walkCommandString.substring(4, walkCommandString.length() - 1));
+
+        // Execute command
+        for (int i = 0; i < steps; i++) {
+            switch (direction) {
+                case ""no"":
+                    if (canMoveTo(new Point(machinePosition.x, machinePosition.y + 1)))
+                        machinePosition.y++;
+                    break;
+                case ""ea"":
+                    if (canMoveTo(new Point(machinePosition.x + 1, machinePosition.y)))
+                        machinePosition.x++;
+                    break;
+                case ""so"":
+                    if (canMoveTo(new Point(machinePosition.x, machinePosition.y - 1)))
+                        machinePosition.y--;
+                    break;
+                case ""we"":
+                    if (canMoveTo(new Point(machinePosition.x - 1, machinePosition.y)))
+                        machinePosition.x--;
+                    break;
+            }
+        }
+
+        // Return machine position
+        return String.format(""(%d,%d)"", machinePosition.x, machinePosition.y);
+    }
+
+    private boolean canMoveTo(Point point) {
+        // Check boundaries
+        if (point.x < 0 || point.y < 0 || point.x >= fieldWidth || point.y >= fieldHeight)
+            return false;
+
+        // Check walls
+        for (Wall wall : walls) {
+            if (wall.intersects(point))
+                return false;
+        }
+
+        return true;
+    }
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walk(String walkCommandString);
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+import java.awt.Point;
+
+public class Wall {
+    private final Point start;
+    private final Point end;
+
+    public Wall(Point start, Point end) {
+        this.start = start;
+        this.end = end;
+    }
+
+    public boolean intersects(Point point) {
+        return (point.x > start.x && point.x < end.x && point.y >= start.y && point.y < end.y) ||
+                (point.y > start.y && point.y < end.y && point.x >= start.x && point.x < end.x);
+    }
+}
+"
+28,gpt4,cc,,"package thkoeln.st.st2praktikum.exercise;
+
+import java.util.*;
+
+public class Exercise0 implements Walkable {
+
+    // Starting position
+    private int currentXPosition = 0;
+    private int currentYPosition = 2;
+
+    // Field dimensions
+    private static final int MAX_FIELD_WIDTH = 12;
+    private static final int MAX_FIELD_HEIGHT = 9;
+
+    // Walls
+    private static final List<int[]> WALL_COORDINATES = Arrays.asList(
+            new int[]{3, 0, 3, 3},
+            new int[]{5, 0, 5, 4},
+            new int[]{4, 5, 7, 5},
+            new int[]{7, 5, 7, 9}
+    );
+
+    @Override
+    public String walk(String walkCommandString) {
+        try {
+            Command command = parseCommand(walkCommandString);
+            executeCommand(command);
+        } catch (Exception e) {
+            System.err.println(""Invalid command: "" + e.getMessage());
+        }
+        return getCurrentPositionAsString();
+    }
+
+    private Command parseCommand(String commandString) throws Exception {
+        String direction = commandString.substring(1, 3);
+        int steps = Integer.parseInt(commandString.substring(4, commandString.length() - 1));
+        return new Command(direction, steps);
+    }
+
+    private void executeCommand(Command command) {
+        for (int i = 0; i < command.steps; i++) {
+            if (canMoveToNextPosition(command.direction)) {
+                updateCurrentPosition(command.direction);
+            } else {
+                break;
+            }
+        }
+    }
+
+    private boolean canMoveToNextPosition(String direction) {
+        int nextXPosition = getNextXPosition(direction);
+        int nextYPosition = getNextYPosition(direction);
+        return !hasWallAtPosition(nextXPosition, nextYPosition) && isPositionWithinField(nextXPosition, nextYPosition);
+    }
+
+    private int getNextXPosition(String direction) {
+        return direction.equals(""ea"") ? currentXPosition + 1 : direction.equals(""we"") ? currentXPosition - 1 : currentXPosition;
+    }
+
+    private int getNextYPosition(String direction) {
+        return direction.equals(""no"") ? currentYPosition + 1 : direction.equals(""so"") ? currentYPosition - 1 : currentYPosition;
+    }
+
+    private void updateCurrentPosition(String direction) {
+        currentXPosition = getNextXPosition(direction);
+        currentYPosition = getNextYPosition(direction);
+    }
+
+    private boolean hasWallAtPosition(int x, int y) {
+        return WALL_COORDINATES.stream().anyMatch(wall -> isPositionWithinWall(x, y, wall));
+    }
+
+    private boolean isPositionWithinWall(int x, int y, int[] wall) {
+        return x == wall[0] && y >= wall[1] && y <= wall[3];
+    }
+
+    private boolean isPositionWithinField(int x, int y) {
+        return x >= 0 && x < MAX_FIELD_WIDTH && y >= 0 && y < MAX_FIELD_HEIGHT;
+    }
+
+    private String getCurrentPositionAsString() {
+        return String.format(""(%d,%d)"", currentXPosition, currentYPosition);
+    }
+
+    private class Command {
+        String direction;
+        int steps;
+
+        Command(String direction, int steps) {
+            this.direction = direction;
+            this.steps = steps;
+        }
+    }
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walk(String walkCommandString);
+}
+"
+29,gpt4,cc,,"package thkoeln.st.st2praktikum.exercise;
+
+import java.util.*;
+
+public class Exercise0 implements Walkable {
+    private static final String NORTH = ""no"";
+    private static final String EAST = ""ea"";
+    private static final String SOUTH = ""so"";
+    private static final String WEST = ""we"";
+
+    private int machineX;
+    private int machineY;
+    private int fieldWidth;
+    private int fieldHeight;
+    private Set<String> walls;
+
+    public Exercise0() {
+        initializeField();
+        initializeWalls();
+    }
+
+    private void initializeField() {
+        this.machineX = 0;
+        this.machineY = 2;
+        this.fieldWidth = 12;
+        this.fieldHeight = 9;
+    }
+
+    private void initializeWalls() {
+        this.walls = new HashSet<>();
+
+        // Adding boundaries as walls
+        addBoundaryWalls();
+
+        // Adding specific walls
+        addVerticalWall(3, 0, 3);
+        addVerticalWall(5, 0, 4);
+        addHorizontalWall(4, 5, 7);
+        addVerticalWall(7, 5, 8);
+    }
+
+    private void addBoundaryWalls() {
+        for (int i = 0; i <= fieldWidth; i++) {
+            walls.add(i + "",0"");
+            walls.add(i + "","" + fieldHeight);
+        }
+        for (int i = 0; i <= fieldHeight; i++) {
+            walls.add(""0,"" + i);
+            walls.add(fieldWidth + "","" + i);
+        }
+    }
+
+    private void addVerticalWall(int x, int startY, int endY) {
+        for (int i = startY; i < endY; i++) {
+            walls.add(x + "","" + (i+1));
+        }
+    }
+
+    private void addHorizontalWall(int startX, int y, int endX) {
+        for (int i = startX; i < endX; i++) {
+            walls.add((i+1) + "","" + y);
+        }
+    }
+
+    @Override
+    public String walk(String walkCommandString) {
+        try {
+            String[] commandParts = parseCommand(walkCommandString);
+            performWalk(commandParts[0], Integer.parseInt(commandParts[1]));
+        } catch (Exception e) {
+            System.out.println(""Invalid command: "" + walkCommandString);
+        }
+
+        return getCurrentPosition();
+    }
+
+    private String[] parseCommand(String walkCommandString) {
+        return walkCommandString.substring(1, walkCommandString.length() - 1).split("","");
+    }
+
+    private void performWalk(String direction, int steps) {
+        for (int i = 0; i < steps; i++) {
+            if (canMoveToNextCell(direction)) {
+                moveMachine(direction);
+            } else {
+                break;
+            }
+        }
+    }
+
+    private boolean canMoveToNextCell(String direction) {
+        int nextX = machineX;
+        int nextY = machineY;
+
+        switch (direction) {
+            case NORTH:
+                nextY++;
+                break;
+            case EAST:
+                nextX++;
+                break;
+            case SOUTH:
+                nextY--;
+                break;
+            case WEST:
+                nextX--;
+                break;
+        }
+
+        return !walls.contains(nextX + "","" + nextY);
+    }
+
+    private void moveMachine(String direction) {
+        switch (direction) {
+            case NORTH:
+                machineY++;
+                break;
+            case EAST:
+                machineX++;
+                break;
+            case SOUTH:
+                machineY--;
+                break;
+            case WEST:
+                machineX--;
+                break;
+        }
+    }
+
+    private String getCurrentPosition() {
+        return ""("" + machineX + "","" + machineY + "")"";
+
+    }
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walk(String walkCommandString);
+}
+"
 3,gpt4,plain,,"package thkoeln.st.st2praktikum.exercise;
 
 public class Exercise0 implements Walkable {
@@ -6756,6 +7710,204 @@ public class Exercise0 implements Walkable {
                 throw new IllegalArgumentException(""Invalid direction: "" + direction);
         }
         return ""("" + x + "","" + y + "")"";
+    }
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walk(String walkCommandString);
+}
+"
+30,gpt4,cc,,"package thkoeln.st.st2praktikum.exercise;
+
+import java.awt.Point;
+import java.util.Arrays;
+import java.util.List;
+
+public class Exercise0 implements Walkable {
+
+    private static final int FIELD_WIDTH = 12;
+    private static final int FIELD_HEIGHT = 9;
+
+    private static final String NORTH = ""no"";
+    private static final String EAST = ""ea"";
+    private static final String SOUTH = ""so"";
+    private static final String WEST = ""we"";
+
+    private Point miningMachinePosition;
+    private final int[][] wallCoordinates;
+
+    public Exercise0() {
+        miningMachinePosition = new Point(0, 2);
+        wallCoordinates = new int[][] {
+                {3, 0, 3, 3},
+                {5, 0, 5, 4},
+                {4, 5, 7, 5},
+                {7, 5, 7, 9}
+        };
+    }
+
+    @Override
+    public String walk(String walkCommandString) {
+        List<String> commandParts = parseCommand(walkCommandString);
+        String direction = commandParts.get(0);
+        int steps = Integer.parseInt(commandParts.get(1));
+
+        for (int i = 0; i < steps; i++) {
+            if (!attemptMoveInDirection(direction)) {
+                break;
+            }
+        }
+
+        return formatPosition(miningMachinePosition);
+    }
+
+    private List<String> parseCommand(String command) {
+        return Arrays.asList(command.replaceAll(""[\\[\\]]"", """").split("",""));
+    }
+
+    private boolean attemptMoveInDirection(String direction) {
+        switch (direction) {
+            case NORTH:
+                return moveIfPossible(0, 1);
+            case EAST:
+                return moveIfPossible(1, 0);
+            case SOUTH:
+                return moveIfPossible(0, -1);
+            case WEST:
+                return moveIfPossible(-1, 0);
+        }
+        throw new IllegalArgumentException(""Invalid direction: "" + direction);
+    }
+
+    private boolean moveIfPossible(int dx, int dy) {
+        int newX = miningMachinePosition.x + dx;
+        int newY = miningMachinePosition.y + dy;
+
+        if (isMovePossible(newX, newY)) {
+            miningMachinePosition.move(newX, newY);
+            return true;
+        }
+        return false;
+    }
+
+    private boolean isMovePossible(int x, int y) {
+        return isWithinFieldBounds(x, y) && !isWall(x, y);
+    }
+
+    private boolean isWithinFieldBounds(int x, int y) {
+        return x >= 0 && x < FIELD_WIDTH && y >= 0 && y < FIELD_HEIGHT;
+    }
+
+    private boolean isWall(int x, int y) {
+        for (int[] wall : wallCoordinates) {
+            if ((x == wall[0] && y >= wall[1] && y < wall[3]) || (y == wall[1] && x >= wall[0] && x < wall[2])) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private String formatPosition(Point position) {
+        return ""("" + position.x + "","" + position.y + "")"";
+    }
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walk(String walkCommandString);
+}
+"
+31,gpt4,cc,,"package thkoeln.st.st2praktikum.exercise;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Exercise0 implements Walkable {
+
+    private static final int FIELD_WIDTH = 12;
+    private static final int FIELD_HEIGHT = 9;
+
+    private int minerPositionX = 0;
+    private int minerPositionY = 2;
+    private final boolean[][] wallMatrix = new boolean[FIELD_WIDTH][FIELD_HEIGHT];
+
+    public Exercise0() {
+        initializeWalls();
+    }
+
+    private void initializeWalls() {
+        setWall(3, 0, 3);
+        setWall(5, 0, 4);
+        setWall(4, 5, 5);
+        setWall(7, 5, 9);
+    }
+
+    private void setWall(int x, int yStart, int yEnd) {
+        for (int y = yStart; y < yEnd; y++) {
+            wallMatrix[x][y] = true;
+        }
+    }
+
+    @Override
+    public String walk(String walkCommandString) {
+        Pattern pattern = Pattern.compile(""\\[(\\w+),(\\d+)\\]"");
+        Matcher matcher = pattern.matcher(walkCommandString);
+
+        if (matcher.matches()) {
+            String direction = matcher.group(1);
+            int steps = Integer.parseInt(matcher.group(2));
+            moveMiner(direction, steps);
+        }
+
+        return formatMinerPosition();
+    }
+
+    private void moveMiner(String direction, int steps) {
+        switch (direction) {
+            case ""no"":
+                moveMinerNorth(steps);
+                break;
+            case ""so"":
+                moveMinerSouth(steps);
+                break;
+            case ""ea"":
+                moveMinerEast(steps);
+                break;
+            case ""we"":
+                moveMinerWest(steps);
+                break;
+        }
+    }
+
+    private void moveMinerNorth(int steps) {
+        for (int i = 0; i < steps && minerPositionY + 1 < FIELD_HEIGHT && !wallMatrix[minerPositionX][minerPositionY + 1]; i++) {
+            minerPositionY++;
+        }
+    }
+
+    private void moveMinerSouth(int steps) {
+        for (int i = 0; i < steps && minerPositionY - 1 >= 0 && !wallMatrix[minerPositionX][minerPositionY - 1]; i++) {
+            minerPositionY--;
+        }
+    }
+
+    private void moveMinerEast(int steps) {
+        for (int i = 0; i < steps && minerPositionX + 1 < FIELD_WIDTH && !wallMatrix[minerPositionX + 1][minerPositionY]; i++) {
+            minerPositionX++;
+        }
+    }
+
+    private void moveMinerWest(int steps) {
+        for (int i = 0; i < steps && minerPositionX - 1 >= 0 && !wallMatrix[minerPositionX - 1][minerPositionY]; i++) {
+            minerPositionX--;
+        }
+    }
+
+    private String formatMinerPosition() {
+        return ""("" + minerPositionX + "","" + minerPositionY + "")"";
     }
 }
 

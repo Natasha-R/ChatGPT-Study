@@ -1,6 +1,6 @@
 Using the code that you just wrote, when I enter the command "[so,2]", "[ea,3]", "[no,9]", "[ea,5]", I get the final machine position as (6, 1) but it should be (6, 8). Please identify where the error is in the code, and rewrite the code to fix it.
 
-Using the code that you just wrote, when I enter the command "[no,1]", "[ea,5]", "[so,5]", "[we,2]", I get the final machine position as (2, 5) but it should be (3, 0). Please identify where the error is in the code, and rewrite the code to fix it.
+Using the code that you just wrote, when I enter the command "[no,1]", "[ea,5]", "[so,5]", "[we,2]", I get the final machine position as (4, 0) but it should be (3, 0). Please identify where the error is in the code, and rewrite the code to fix it.
 
 
 

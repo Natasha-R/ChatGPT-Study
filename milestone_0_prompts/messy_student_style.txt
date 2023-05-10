@@ -14,6 +14,19 @@ Please re-write the code that you just wrote, in the style of someone who is not
 
 Please re-write the code that you just wrote, so that the style and formatting of the code is a little bit messy and inconsistent.
 
+Please re-write the code that you just wrote, so that the code has a very bad coding style.
+
+Please re-write the code that you just wrote, so that the code is poorly styled.
+
 Please re-write the code that you just wrote so that it can be more easily understood by someone who is new to programming.
 
 Can you re-write the code so that the variable names are all single characters, and remove all the comments.
+
+Can you re-write the code so that the variable names are inconsistent and non-descriptive, there is inconsistent spacing. Make a few of the lines too long.
+
+Can you re-write the code so that the variable names are inconsistent and non-descriptive. Use if/else instead of switch. 
+
+Can you re-write the code so that some of the variable names are shorter and less-descriptive. Use if/else instead of switch. 
+
+
+Use if/else statements and numbers to implement the obstacle collisions, rather than an isWall method.
