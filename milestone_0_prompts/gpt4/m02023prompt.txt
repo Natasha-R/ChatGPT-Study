@@ -1,0 +1,48 @@
+Please use Spring JPA to persist the data.
+
+----
+
+You need to develop an eCommerce system for a small online shop. 
+The shop sells things. A thing has a name, description, size, purchase price, and a sales price.
+The shop sells things to customers. A customer has a name, a mail address, and an address (with street, city,
+and postal code). There is no username, so a customer can only be identified by his mail address.
+A customer can place an order for one or more things. An order consists of one or several order positions.
+An order position references a thing, and contains the quantity of the thing that is ordered.
+The shop has a catalog which stores all things. For each thing, the stock quantity is stored in the catalog. For some
+things, the stock quantity is zero. In that case, the thing is out of stock, and not available for sale at moment.
+Customers can order only things that are in stock, i.e. have stock quantity > 0.
+Shop admins can manually change the stock quantity for a thing, add new things to the catalog, or remove
+things from the catalog.
+When a customer orders things, he/she puts them in the shopping basket first. By that action, the things are reserved for the customer, and cannot be ordered by other customers. There is no time limit for the reservation.
+The customer can remove things from the shopping basket, or check out.
+
+Please create a logical data model for the shop system. The logical data model should represent the entities, value objects and relationships described above. 
+
+-----
+
+You need to implement a minimal version (MVP) for this shop system. The functionalities of the MVP are predefined. There are four interfaces that you should implement, by implementing one or more Spring Boot Services. You should use the domain entities and value objects from the logical data model. Please use Spring JPA to persist the data. 
+The implementation must be below the package thkoeln.archilab.ecommerce.solution. You can create as many sub-packages and classes as you like here. The implementation must implement all interfaces from thkoeln.archilab.ecommerce.usecases. 
+
+I will now give you three interfaces that will need to be implemented. Firstly, just use this information to correctly and fully implement the Thing class, so that it will work with the methods defined in the interfaces.
+
+-------
+#### For all entities defined in the logical data model (in the order -> Thing, Catalog, Order, OrderPosition, Shopping Basket, Customer)
+ThingCatalogUseCases - Thing, Catalog, Order, Shopping Basket
+StockManagement - Thing, Catalog
+ShopppingBasketUseCases - ShoppingBasket, Thing, Customer
+CustomerRegistrationUseCases -  Customer
+####
+
+Using the information from the three interfaces, please correctly and fully implement the <..> class, so that it will work with the methods defined in the interfaces.
+
+------
+
+Please write a class to implement the following interface. Please remember how you wrote the Thing, Catalog, Order and other classes, when writing this new class.
+
+------
+
+Given all of the interfaces that you just wrote, and the <...> class that I have included below, please write a <...>Repository class.
+
+------
+
+Please fix the CatalogService class and the Catalog class so that they work together.

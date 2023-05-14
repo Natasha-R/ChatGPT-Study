@@ -1,0 +1,221 @@
+You need to implement a minimal version (MVP) for this shop system. The functionalities of the MVP are predefined. There are four interfaces that you should implement, by implementing one or more Spring Boot Services. You should use the domain entities and value objects from the logical data model. Please use Spring JPA to persist the data. 
+The implementation must be below the package thkoeln.archilab.ecommerce.solution. You can create as many sub-packages and classes as you like here. The implementation must implement all interfaces from thkoeln.archilab.ecommerce.usecases. 
+
+I will now give you three interfaces that will need to be implemented. Firstly, just use this information to correctly and fully implement the Thing class, so that it will work with the methods defined in the interfaces.
+
+package thkoeln.archilab.ecommerce.usecases;
+
+import java.util.UUID;
+
+
+/**
+ * This interface contains methods needed in the context of use cases dealing with managing the thing catalog.
+ * The interface is probably incomplete, and will grow over time.
+ */
+
+public interface ThingCatalogUseCases {
+    /**
+     * Adds a new thing to the shop catalog
+     * @param thingId
+     * @param name
+     * @param description
+     * @param size
+     * @param purchasePrice
+     * @param salesPrice
+     * @throws ShopException if ...
+     *         - the thing id already exists,
+     *         - name or description are null or empty,
+     *         - the size is <= 0 (but can be null!),
+     *         - the purchase price is null or <= 0,
+     *         - the sales price is null or <= 0,
+     *         - the sales price is lower than the purchase price
+     */
+    public void addThingToCatalog( UUID thingId, String name, String description, Float size,
+                                     Float purchasePrice, Float salesPrice );
+
+
+    /**
+     * Removes a thing from the shop catalog
+     * @param thingId
+     * @throws ShopException if
+     *      - the thing id does not exist
+     *      - the thing is still in stock
+     *      - the thing is still reserved in a shopping basket, or part of a completed order
+     */
+    public void removeThingFromCatalog( UUID thingId );
+
+
+    /**
+     * Get the sales price of a given thing
+     * @param thingId
+     * @return the sales price
+     * @throws ShopException if the thing id does not exist
+     */
+    public Float getSalesPrice( UUID thingId );
+
+
+    /**
+     * Clears the thing catalog, i.e. removes all things from the catalog, including all the stock,
+     * all the reservations and all the orders.
+     */
+    public void deleteThingCatalog();
+
+}
+
+
+package thkoeln.archilab.ecommerce.usecases;
+
+import java.util.Map;
+import java.util.UUID;
+
+/**
+ * This interface contains methods needed in the context of use cases dealing with the shopping basket.
+ * The interface is probably incomplete, and will grow over time.
+ */
+public interface ShoppingBasketUseCases {
+    /**
+     * Adds a thing to the cart of a customer
+     *
+     * @param customerMailAddress
+     * @param thingId
+     * @param quantity
+     * @throws ShopException if ...
+     *                       - the customer with the given mailAddress does not exist,
+     *                       - the thing does not exist,
+     *                       - the quantity is negative,
+     *                       - the thing is not available in the requested quantity
+     */
+    public void addThingToShoppingBasket( String customerMailAddress, UUID thingId, int quantity );
+
+
+    /**
+     * Removes a thing from the cart of a customer
+     *
+     * @param customerMailAddress
+     * @param thingId
+     * @param quantity
+     * @throws ShopException if ...
+     *                       - the customer with the given mailAddress does not exist,
+     *                       - the thing does not exist
+     *                       - the quantity is negative
+     *                       - the thing is not in the cart in the requested quantity
+     */
+    public void removeThingFromShoppingBasket( String customerMailAddress, UUID thingId, int quantity );
+
+
+    /**
+     * Returns a map showing which things are in the cart of a customer and how many of each thing
+     *
+     * @param customerMailAddress
+     * @return the cart of the customer (map is empty if the cart is empty)
+     * @throws ShopException if the customer with the given mailAddress does not exist
+     */
+    public Map<UUID, Integer> getShoppingBasketAsMap( String customerMailAddress );
+
+
+    /**
+     * Returns the current value of all things in the cart of a customer
+     *
+     * @param customerMailAddress
+     * @return the cart of the customer
+     * @throws ShopException if the customer with the given mailAddress does not exist
+     */
+    public float getShoppingBasketAsMoneyValue( String customerMailAddress );
+
+
+
+    /**
+     * Get the number units of a specific thing that are currently reserved in the shopping baskets of all customers
+     * @param thingId
+     * @throws ShopException if the thing id does not exist
+     */
+    public int getReservedStockInShoppingBaskets( UUID thingId );
+
+
+
+    /**
+     * Checks out the cart of a customer
+     *
+     * @param customerMailAddress
+     * @throws ShopException if the customer with the given mailAddress does not exist, or if the cart is empty
+     */
+    public void checkout( String customerMailAddress );
+
+
+    /**
+     * Returns a map showing which things have been ordered by a customer and how many of each thing
+     *
+     * @param customerMailAddress
+     * @return the order history of the customer (map is empty if the customer has not ordered anything yet)
+     * @throws ShopException if the customer with the given mailAddress does not exist
+     */
+    public Map<UUID, Integer> getOrderHistory( String customerMailAddress );
+
+
+
+    /**
+     * Deletes all orders and shopping baskets in the system
+     */
+    public void deleteAllOrders();
+}
+
+package thkoeln.archilab.ecommerce.usecases;
+
+import java.util.UUID;
+
+
+/**
+ * This interface contains methods needed in the context of use cases dealing with managing the shop stock,
+ * i.e. adding and removing things in the warehouse. The interface is probably incomplete, and
+ * will grow over time.
+ */
+public interface StockManagementUseCases {
+    /**
+     * Adds a certain quantity of a given thing to the stock
+     * @param thingId
+     * @param addedQuantity
+     * @throws ShopException if the thing id does not exist, or if the added quantity is negative
+     */
+    public void addToStock( UUID thingId, int addedQuantity );
+
+
+    /**
+     * Removes a certain quantity of a given thing from the stock.
+     * If the new total quantity is lower than the currently reserved things, some of currently reserved things
+     * (in the customers' shopping baskets) are removed. This means that some of the reserved things are lost for
+     * the customer. (This is necessary because there probably was a mistake in the stock management, a mis-counting,
+     * or some of the things were stolen from the warehouse, are broken, etc.)
+     * @param thingId
+     * @param removedQuantity
+     * @throws ShopException if ...
+     *      - the thing id does not exist
+     *      - if the removed quantity is negative
+     *      - if the removed quantity is greater than the current stock and the currently reserved things together
+     */
+    public void removeFromStock( UUID thingId, int removedQuantity );
+
+
+    /**
+     * Changes the total quantity of a given thing in the stock.
+     * If the new total quantity is lower than the currently reserved things, some of currently reserved things
+     * (in the customers' shopping baskets) are removed. This means that some of the reserved things are lost for
+     * the customer. (This is necessary because there probably was a mistake in the stock management, a mis-counting,
+     * or some of the things were stolen from the warehouse, are broken, etc.)
+     * @param thingId
+     * @param newTotalQuantity
+     * @throws ShopException if ...
+     *      - the thing id does not exist
+     *      - if the new total quantity is negative
+     */
+    public void changeStockTo( UUID thingId, int newTotalQuantity );
+
+
+    /**
+     * Get the current total stock of a given thing, including the currently reserved things
+     * @param thingId
+     * @throws ShopException if the thing id does not exist
+     */
+    public int getAvailableStock( UUID thingId );
+
+
+}

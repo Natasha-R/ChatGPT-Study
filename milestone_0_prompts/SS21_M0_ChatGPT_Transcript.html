@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+                            <html>
+                            <head>
+                                <title>Chat GPT: ${title}</title>
+                                <meta name="generator" content="chatGPT Saving Bookmark"/>
+                                <style>
+                                    body {
+                                        background-color: rgb(32,33,35);
+                                        color: rgb(236,236,241);
+                                        font-size: 16px;
+                                        font-family: sans-serif;
+                                        line-height: 28px;
+                                        margin: -10px;
+                                    }
+                                    body > .w-full {
+                                        padding: 30px;
+                                    }
+                                    /* prompt */
+                                    body > .w-full:nth-child(2n+1) {
+                                        background: rgb(52,53,65);
+                                    }
+                                    /* response */
+                                    body > .w-full:nth-child(2n+2) {
+                                        background: rgb(68,70,84);
+                                    }
+                                    a, a:visited {
+                                        color: #7792cd;
+                                    }
+                                    pre {
+                                        margin: 0 0 1em 0;
+                                        display: inline-block;
+                                        width: 100%;
+                                    }
+                                    pre code.hljs {
+                                        margin-bottom: 1em;
+                                        border-radius: 5px;
+                                    }
+                                    .whitespace-pre-wrap {
+                                        white-space: pre-wrap;
+                                    }
+                                    .flex-col {
+                                        max-width: 850px;
+                                        margin: 0px auto;
+                                    }
+
+pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}.hljs{background:#f3f3f3;color:#444}.hljs-comment{color:#697070}.hljs-punctuation,.hljs-tag{color:#444a}.hljs-tag .hljs-attr,.hljs-tag .hljs-name{color:#444}.hljs-attribute,.hljs-doctag,.hljs-keyword,.hljs-meta .hljs-keyword,.hljs-name,.hljs-selector-tag{font-weight:700}.hljs-deletion,.hljs-number,.hljs-quote,.hljs-selector-class,.hljs-selector-id,.hljs-string,.hljs-template-tag,.hljs-type{color:#800}.hljs-section,.hljs-title{color:#800;font-weight:700}.hljs-link,.hljs-operator,.hljs-regexp,.hljs-selector-attr,.hljs-selector-pseudo,.hljs-symbol,.hljs-template-variable,.hljs-variable{color:#ab5656}.hljs-literal{color:#695}.hljs-addition,.hljs-built_in,.hljs-bullet,.hljs-code{color:#397300}.hljs-meta{color:#1f7199}.hljs-meta .hljs-string{color:#38a}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}
+</style>
+                            </head>
+                            <body><div class="flex w-full items-center justify-center gap-1 border-b border-black/10 bg-gray-50 p-3 text-gray-500 dark:border-gray-900/50 dark:bg-gray-700 dark:text-gray-300">Model: GPT-4</div><div class="group w-full text-gray-800 dark:text-gray-100 border-b border-black/10 dark:border-gray-900/50 dark:bg-gray-800"><div class="flex p-4 gap-4 text-base md:gap-6 md:max-w-2xl lg:max-w-xl xl:max-w-3xl md:py-6 lg:px-0 m-auto"><div class="relative flex flex-col w-[calc(100%-50px)] gap-1 md:gap-3 lg:w-[calc(100%-115px)]"><div class="flex flex-grow flex-col gap-3"><div class="min-h-[20px] flex flex-col items-start gap-4 whitespace-pre-wrap break-words">You have the task to steer a maintenance droid across a spaceship deck with obstacles. The spaceship deck is square-shaped. The spaceship deck is modelled as a system of gridcells. A spaceship deck is divided into gridcells by an x- and y-coordinate system, each starting at 0. A gridcell is identified by its lower left corner. The spaceship deck contains obstacles. The obstacles run only horizontally or vertically. The droid exists and moves within the gridcells, but the obstacles run along the grid lines. In addition, spaceship deck boundaries cannot be passed - essentially they also are a kind of obstacle. The maintenance droid can be moved by a simple set of commands. A command is enclosed by square brackets, and has two parts: a direction and the number of steps. A maintenance droid can only be moved horizontally or vertically, not diagonally. If the maintenance droid initially is located in the cell (1,2) and the command is [no,2], the maintenance droid moves 2 cells up, and is then positioned on (1,4). The direction is either no (north), ea (east), so (south), or we (west). If the maintenance droid meets an obstacle or a spaceship deck boundary, then it moves only as many steps as possible, and then stops. My personal map of the spaceship deck has the maintenance droid starting at (11, 7). The grid is 12 cells wide and 8 cells high. The coordinate system begins at 0. There are four obstacles, at: (6,2)-(6,5) and (5,5)-(6,5) and (5,5)-(5,6) and (5,6)-(12,6). Remember that the obstacles exist on the grid lines, whereas the droid exists and moves on the actual grid cells, where a grid cell is defined by the coordinate associated with its bottom left corner.
+
+Use this information to write the Java class thkoeln.st.st2praktikum.exercise.Exercise0, using my personal map to define the starting location of the droid, the size of the spaceship deck, and the locations of the obstacles. The class has to implement one interface:
+public interface GoAble {
+    String goTo(String goCommandString);
+}
+The string parameter goCommandString has the same format as shown above (e.g. "[no,2]"). The expected return value is the coordinate where the maintenance droid is afterwards, in the format as above (e.g. "(2,4)").
+</div></div></div></div></div><div class="group w-full text-gray-800 dark:text-gray-100 border-b border-black/10 dark:border-gray-900/50 bg-gray-50 dark:bg-[#444654]"><div class="flex p-4 gap-4 text-base md:gap-6 md:max-w-2xl lg:max-w-xl xl:max-w-3xl md:py-6 lg:px-0 m-auto"><div class="relative flex flex-col w-[calc(100%-50px)] gap-1 md:gap-3 lg:w-[calc(100%-115px)]"><div class="flex flex-grow flex-col gap-3"><div class="min-h-[20px] flex flex-col items-start gap-4 whitespace-pre-wrap break-words"><div class="markdown prose w-full break-words dark:prose-invert light"><p>Here is a Java class that adheres to your requirements:</p><pre class=""><div class="bg-black rounded-md mb-4"><div class="flex items-center relative text-gray-200 bg-gray-800 px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>java</span></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-java"><span class="hljs-keyword">package</span> thkoeln.st.st2praktikum.exercise;
+
+<span class="hljs-keyword">import</span> java.awt.Point;
+<span class="hljs-keyword">import</span> java.util.ArrayList;
+<span class="hljs-keyword">import</span> java.util.List;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Exercise0</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">GoAble</span> {
+    
+    <span class="hljs-keyword">private</span> Point droidLocation;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> List&lt;Point[]&gt; obstacles;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-type">int</span> maxX;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-type">int</span> maxY;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Exercise0</span><span class="hljs-params">()</span> {
+        <span class="hljs-built_in">this</span>.droidLocation = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">11</span>, <span class="hljs-number">7</span>);
+        <span class="hljs-built_in">this</span>.maxX = <span class="hljs-number">11</span>;
+        <span class="hljs-built_in">this</span>.maxY = <span class="hljs-number">7</span>;
+
+        <span class="hljs-comment">// Initialize obstacles</span>
+        <span class="hljs-built_in">this</span>.obstacles = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();
+        obstacles.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>[]{<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">6</span>,<span class="hljs-number">2</span>), <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">6</span>,<span class="hljs-number">5</span>)});
+        obstacles.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>[]{<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">5</span>,<span class="hljs-number">5</span>), <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">6</span>,<span class="hljs-number">5</span>)});
+        obstacles.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>[]{<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">5</span>,<span class="hljs-number">5</span>), <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">5</span>,<span class="hljs-number">6</span>)});
+        obstacles.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>[]{<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">5</span>,<span class="hljs-number">6</span>), <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">12</span>,<span class="hljs-number">6</span>)});
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">goTo</span><span class="hljs-params">(String goCommandString)</span> {
+        <span class="hljs-comment">// Remove brackets and split command into direction and steps</span>
+        String[] commands = goCommandString.replace(<span class="hljs-string">"["</span>, <span class="hljs-string">""</span>).replace(<span class="hljs-string">"]"</span>, <span class="hljs-string">""</span>).split(<span class="hljs-string">","</span>);
+        <span class="hljs-type">String</span> <span class="hljs-variable">direction</span> <span class="hljs-operator">=</span> commands[<span class="hljs-number">0</span>];
+        <span class="hljs-type">int</span> <span class="hljs-variable">steps</span> <span class="hljs-operator">=</span> Integer.parseInt(commands[<span class="hljs-number">1</span>]);
+
+        <span class="hljs-comment">// Determine new position based on direction</span>
+        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; steps; i++) {
+            <span class="hljs-type">Point</span> <span class="hljs-variable">newLocation</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(droidLocation);
+            <span class="hljs-keyword">switch</span> (direction) {
+                <span class="hljs-keyword">case</span> <span class="hljs-string">"no"</span>: newLocation.y++; <span class="hljs-keyword">break</span>;
+                <span class="hljs-keyword">case</span> <span class="hljs-string">"ea"</span>: newLocation.x++; <span class="hljs-keyword">break</span>;
+                <span class="hljs-keyword">case</span> <span class="hljs-string">"so"</span>: newLocation.y--; <span class="hljs-keyword">break</span>;
+                <span class="hljs-keyword">case</span> <span class="hljs-string">"we"</span>: newLocation.x--; <span class="hljs-keyword">break</span>;
+            }
+
+            <span class="hljs-comment">// Check if new location is valid</span>
+            <span class="hljs-keyword">if</span> (isValidLocation(newLocation)) {
+                droidLocation = newLocation;
+            } <span class="hljs-keyword">else</span> {
+                <span class="hljs-keyword">break</span>;
+            }
+        }
+
+        <span class="hljs-comment">// Return new location</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-string">"("</span> + droidLocation.x + <span class="hljs-string">","</span> + droidLocation.y + <span class="hljs-string">")"</span>;
+    }
+
+    <span class="hljs-keyword">private</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">isValidLocation</span><span class="hljs-params">(Point location)</span> {
+        <span class="hljs-comment">// Check if location is within boundaries</span>
+        <span class="hljs-keyword">if</span> (location.x &lt; <span class="hljs-number">0</span> || location.x &gt; maxX || location.y &lt; <span class="hljs-number">0</span> || location.y &gt; maxY) {
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+        }
+
+        <span class="hljs-comment">// Check if location has an obstacle</span>
+        <span class="hljs-keyword">for</span> (Point[] obstacle : obstacles) {
+            <span class="hljs-keyword">if</span> (obstacle[<span class="hljs-number">0</span>].x == location.x &amp;&amp; obstacle[<span class="hljs-number">0</span>].y &lt;= location.y &amp;&amp; obstacle[<span class="hljs-number">1</span>].y &gt;= location.y) {
+                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+            }
+            <span class="hljs-keyword">if</span> (obstacle[<span class="hljs-number">0</span>].y == location.y &amp;&amp; obstacle[<span class="hljs-number">0</span>].x &lt;= location.x &amp;&amp; obstacle[<span class="hljs-number">1</span>].x &gt;= location.x) {
+                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+            }
+        }
+
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+    }
+}
+</code></div></div></pre><p>This Java class <code>Exercise0</code> implements the interface <code>GoAble</code> and moves the droid according to the command string. The obstacles and the boundaries of the spaceship deck are also taken into account to prevent the droid from crossing them. The <code>goTo</code> method returns the new location of the droid after executing the command. If the droid encounters an obstacle or the boundary, it will stop and return its current location.</p></div></div></div><div class="flex justify-between lg:block"><div class="text-gray-400 flex self-end lg:self-center justify-center mt-2 gap-2 md:gap-3 lg:gap-1 lg:absolute lg:top-0 lg:translate-x-full lg:right-0 lg:mt-0 lg:pl-2 visible"></div></div></div></div></div><div class="group w-full text-gray-800 dark:text-gray-100 border-b border-black/10 dark:border-gray-900/50 dark:bg-gray-800"><div class="flex p-4 gap-4 text-base md:gap-6 md:max-w-2xl lg:max-w-xl xl:max-w-3xl md:py-6 lg:px-0 m-auto"><div class="relative flex flex-col w-[calc(100%-50px)] gap-1 md:gap-3 lg:w-[calc(100%-115px)]"><div class="flex flex-grow flex-col gap-3"><div class="min-h-[20px] flex flex-col items-start gap-4 whitespace-pre-wrap break-words">Re-write the isValidLocation method so that it compares the old and new location of the droid. If the pair of old and new location matches one of the following pairs, then the movement is invalid:
+
+(5,2 - 6,2)
+(5,3 - 6,3)
+(5,4 - 6,4)
+(4,5 - 5,5)
+(5,5 - 5,4)
+(5,6 - 5,5)
+(6,6 - 6,5)
+(7,6 - 7,5)
+(8,6 - 8,5)
+(9,6 - 9,5)
+(10,6 - 10,5)
+(11,6 - 11,5)</div></div></div></div></div><div class="group w-full text-gray-800 dark:text-gray-100 border-b border-black/10 dark:border-gray-900/50 bg-gray-50 dark:bg-[#444654]"><div class="flex p-4 gap-4 text-base md:gap-6 md:max-w-2xl lg:max-w-xl xl:max-w-3xl md:py-6 lg:px-0 m-auto"><div class="relative flex flex-col w-[calc(100%-50px)] gap-1 md:gap-3 lg:w-[calc(100%-115px)]"><div class="flex flex-grow flex-col gap-3"><div class="min-h-[20px] flex flex-col items-start gap-4 whitespace-pre-wrap break-words"><div class="markdown prose w-full break-words dark:prose-invert light"><p>Here is the revised <code>isValidLocation</code> method:</p><pre class=""><div class="bg-black rounded-md mb-4"><div class="flex items-center relative text-gray-200 bg-gray-800 px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>java</span></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-java"><span class="hljs-keyword">private</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">isValidLocation</span><span class="hljs-params">(Point oldLocation, Point newLocation)</span> {
+    <span class="hljs-comment">// Check if location is within boundaries</span>
+    <span class="hljs-keyword">if</span> (newLocation.x &lt; <span class="hljs-number">0</span> || newLocation.x &gt; maxX || newLocation.y &lt; <span class="hljs-number">0</span> || newLocation.y &gt; maxY) {
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    }
+
+    <span class="hljs-comment">// Initialize obstacle pairs</span>
+    Point[][] obstaclePairs = {
+        {<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">5</span>,<span class="hljs-number">2</span>), <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">6</span>,<span class="hljs-number">2</span>)},
+        {<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">5</span>,<span class="hljs-number">3</span>), <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">6</span>,<span class="hljs-number">3</span>)},
+        {<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">5</span>,<span class="hljs-number">4</span>), <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">6</span>,<span class="hljs-number">4</span>)},
+        {<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">4</span>,<span class="hljs-number">5</span>), <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">5</span>,<span class="hljs-number">5</span>)},
+        {<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">5</span>,<span class="hljs-number">5</span>), <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">5</span>,<span class="hljs-number">4</span>)},
+        {<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">5</span>,<span class="hljs-number">6</span>), <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">5</span>,<span class="hljs-number">5</span>)},
+        {<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">6</span>,<span class="hljs-number">6</span>), <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">6</span>,<span class="hljs-number">5</span>)},
+        {<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">7</span>,<span class="hljs-number">6</span>), <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">7</span>,<span class="hljs-number">5</span>)},
+        {<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">8</span>,<span class="hljs-number">6</span>), <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">8</span>,<span class="hljs-number">5</span>)},
+        {<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">9</span>,<span class="hljs-number">6</span>), <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">9</span>,<span class="hljs-number">5</span>)},
+        {<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">10</span>,<span class="hljs-number">6</span>), <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">10</span>,<span class="hljs-number">5</span>)},
+        {<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">11</span>,<span class="hljs-number">6</span>), <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">11</span>,<span class="hljs-number">5</span>)}
+    };
+
+    <span class="hljs-comment">// Check if the new location is an obstacle</span>
+    <span class="hljs-keyword">for</span> (Point[] obstaclePair : obstaclePairs) {
+        <span class="hljs-keyword">if</span> (oldLocation.equals(obstaclePair[<span class="hljs-number">0</span>]) &amp;&amp; newLocation.equals(obstaclePair[<span class="hljs-number">1</span>]) ||
+            oldLocation.equals(obstaclePair[<span class="hljs-number">1</span>]) &amp;&amp; newLocation.equals(obstaclePair[<span class="hljs-number">0</span>])) {
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+        }
+    }
+
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+}
+</code></div></div></pre><p>This modified <code>isValidLocation</code> method checks if the pair of old and new location matches one of the obstacle pairs. If so, the movement is considered invalid.</p><p>To use the modified <code>isValidLocation</code> method, you also need to modify the <code>goTo</code> method:</p><pre class=""><div class="bg-black rounded-md mb-4"><div class="flex items-center relative text-gray-200 bg-gray-800 px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>java</span></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Override</span>
+<span class="hljs-keyword">public</span> String <span class="hljs-title function_">goTo</span><span class="hljs-params">(String goCommandString)</span> {
+    <span class="hljs-comment">// Remove brackets and split command into direction and steps</span>
+    String[] commands = goCommandString.replace(<span class="hljs-string">"["</span>, <span class="hljs-string">""</span>).replace(<span class="hljs-string">"]"</span>, <span class="hljs-string">""</span>).split(<span class="hljs-string">","</span>);
+    <span class="hljs-type">String</span> <span class="hljs-variable">direction</span> <span class="hljs-operator">=</span> commands[<span class="hljs-number">0</span>];
+    <span class="hljs-type">int</span> <span class="hljs-variable">steps</span> <span class="hljs-operator">=</span> Integer.parseInt(commands[<span class="hljs-number">1</span>]);
+
+    <span class="hljs-comment">// Determine new position based on direction</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; steps; i++) {
+        <span class="hljs-type">Point</span> <span class="hljs-variable">newLocation</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(droidLocation);
+        <span class="hljs-keyword">switch</span> (direction) {
+            <span class="hljs-keyword">case</span> <span class="hljs-string">"no"</span>: newLocation.y++; <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">case</span> <span class="hljs-string">"ea"</span>: newLocation.x++; <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">case</span> <span class="hljs-string">"so"</span>: newLocation.y--; <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">case</span> <span class="hljs-string">"we"</span>: newLocation.x--; <span class="hljs-keyword">break</span>;
+        }
+
+        <span class="hljs-comment">// Check if new location is valid</span>
+        <span class="hljs-keyword">if</span> (isValidLocation(droidLocation, newLocation)) {
+            droidLocation = newLocation;
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">break</span>;
+        }
+    }
+
+    <span class="hljs-comment">// Return new location</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">"("</span> + droidLocation.x + <span class="hljs-string">","</span> + droidLocation.y + <span class="hljs-string">")"</span>;
+}
+</code></div></div></pre><p>This modification in <code>goTo</code> method allows it to use the new <code>isValidLocation</code> method with the pair of old and new location.</p></div></div></div><div class="flex justify-between lg:block"><div class="text-gray-400 flex self-end lg:self-center justify-center mt-2 gap-2 md:gap-3 lg:gap-1 lg:absolute lg:top-0 lg:translate-x-full lg:right-0 lg:mt-0 lg:pl-2 visible"></div></div></div></div></div><div class="group w-full text-gray-800 dark:text-gray-100 border-b border-black/10 dark:border-gray-900/50 dark:bg-gray-800"><div class="flex p-4 gap-4 text-base md:gap-6 md:max-w-2xl lg:max-w-xl xl:max-w-3xl md:py-6 lg:px-0 m-auto"><div class="relative flex flex-col w-[calc(100%-50px)] gap-1 md:gap-3 lg:w-[calc(100%-115px)]"><div class="flex flex-grow flex-col gap-3"><div class="min-h-[20px] flex flex-col items-start gap-4 whitespace-pre-wrap break-words">Can you move the initialisation of the obstaclePairs from within the new isValidLocation method to within the constructor instead</div></div></div></div></div><div class="group w-full text-gray-800 dark:text-gray-100 border-b border-black/10 dark:border-gray-900/50 bg-gray-50 dark:bg-[#444654]"><div class="flex p-4 gap-4 text-base md:gap-6 md:max-w-2xl lg:max-w-xl xl:max-w-3xl md:py-6 lg:px-0 m-auto"><div class="relative flex flex-col w-[calc(100%-50px)] gap-1 md:gap-3 lg:w-[calc(100%-115px)]"><div class="flex flex-grow flex-col gap-3"><div class="min-h-[20px] flex flex-col items-start gap-4 whitespace-pre-wrap break-words"><div class="markdown prose w-full break-words dark:prose-invert light"><p>Sure, you can initialize <code>obstaclePairs</code> in the constructor and store them as a class member. Here's the revised Java class:</p><pre class=""><div class="bg-black rounded-md mb-4"><div class="flex items-center relative text-gray-200 bg-gray-800 px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>java</span></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-java"><span class="hljs-keyword">package</span> thkoeln.st.st2praktikum.exercise;
+
+<span class="hljs-keyword">import</span> java.awt.Point;
+<span class="hljs-keyword">import</span> java.util.ArrayList;
+<span class="hljs-keyword">import</span> java.util.List;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Exercise0</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">GoAble</span> {
+    
+    <span class="hljs-keyword">private</span> Point droidLocation;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-type">int</span> maxX;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-type">int</span> maxY;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> List&lt;Point[]&gt; obstaclePairs;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Exercise0</span><span class="hljs-params">()</span> {
+        <span class="hljs-built_in">this</span>.droidLocation = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">11</span>, <span class="hljs-number">7</span>);
+        <span class="hljs-built_in">this</span>.maxX = <span class="hljs-number">11</span>;
+        <span class="hljs-built_in">this</span>.maxY = <span class="hljs-number">7</span>;
+
+        <span class="hljs-comment">// Initialize obstacle pairs</span>
+        <span class="hljs-built_in">this</span>.obstaclePairs = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();
+        obstaclePairs.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>[]{<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">5</span>,<span class="hljs-number">2</span>), <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">6</span>,<span class="hljs-number">2</span>)});
+        obstaclePairs.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>[]{<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">5</span>,<span class="hljs-number">3</span>), <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">6</span>,<span class="hljs-number">3</span>)});
+        obstaclePairs.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>[]{<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">5</span>,<span class="hljs-number">4</span>), <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">6</span>,<span class="hljs-number">4</span>)});
+        obstaclePairs.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>[]{<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">4</span>,<span class="hljs-number">5</span>), <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">5</span>,<span class="hljs-number">5</span>)});
+        obstaclePairs.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>[]{<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">5</span>,<span class="hljs-number">5</span>), <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">5</span>,<span class="hljs-number">4</span>)});
+        obstaclePairs.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>[]{<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">5</span>,<span class="hljs-number">6</span>), <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">5</span>,<span class="hljs-number">5</span>)});
+        obstaclePairs.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>[]{<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">6</span>,<span class="hljs-number">6</span>), <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">6</span>,<span class="hljs-number">5</span>)});
+        obstaclePairs.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>[]{<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">7</span>,<span class="hljs-number">6</span>), <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">7</span>,<span class="hljs-number">5</span>)});
+        obstaclePairs.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>[]{<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">8</span>,<span class="hljs-number">6</span>), <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">8</span>,<span class="hljs-number">5</span>)});
+        obstaclePairs.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>[]{<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">9</span>,<span class="hljs-number">6</span>), <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">9</span>,<span class="hljs-number">5</span>)});
+        obstaclePairs.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>[]{<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">10</span>,<span class="hljs-number">6</span>), <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">10</span>,<span class="hljs-number">5</span>)});
+        obstaclePairs.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>[]{<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">11</span>,<span class="hljs-number">6</span>), <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">11</span>,<span class="hljs-number">5</span>)});
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">goTo</span><span class="hljs-params">(String goCommandString)</span> {
+        <span class="hljs-comment">// Remove brackets and split command into direction and steps</span>
+        String[] commands = goCommandString.replace(<span class="hljs-string">"["</span>, <span class="hljs-string">""</span>).replace(<span class="hljs-string">"]"</span>, <span class="hljs-string">""</span>).split(<span class="hljs-string">","</span>);
+        <span class="hljs-type">String</span> <span class="hljs-variable">direction</span> <span class="hljs-operator">=</span> commands[<span class="hljs-number">0</span>];
+        <span class="hljs-type">int</span> <span class="hljs-variable">steps</span> <span class="hljs-operator">=</span> Integer.parseInt(commands[<span class="hljs-number">1</span>]);
+
+        <span class="hljs-comment">// Determine new position based on direction</span>
+        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; steps; i++) {
+            <span class="hljs-type">Point</span> <span class="hljs-variable">newLocation</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(droidLocation);
+            <span class="hljs-keyword">switch</span> (direction) {
+                <span class="hljs-keyword">case</span> <span class="hljs-string">"no"</span>: newLocation.y++; <span class="hljs-keyword">break</span>;
+                <span class="hljs-keyword">case</span> <span class="hljs-string">"ea"</span>: newLocation.x++; <span class="hljs-keyword">break</span>;
+                <span class="hljs-keyword">case</span> <span class="hljs-string">"so"</span>: newLocation.y--; <span class="hljs-keyword">break</span>;
+                <span class="hljs-keyword">case</span> <span class="hljs-string">"we"</span>: newLocation.x--; <span class="hljs-keyword">break</span>;
+            }
+
+            <span class="hljs-comment">// Check if new location is valid</span>
+            <span class="hljs-keyword">if</span> (isValidLocation(droidLocation, newLocation)) {
+                droidLocation = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Location</span>;
+            } <span class="hljs-keyword">else</span> {
+                <span class="hljs-keyword">break</span>;
+            }
+        }
+
+        <span class="hljs-comment">// Return new location</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-string">"("</span> + droidLocation.x + <span class="hljs-string">","</span> + droidLocation.y + <span class="hljs-string">")"</span>;
+    }
+
+    <span class="hljs-keyword">private</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">isValidLocation</span><span class="hljs-params">(Point oldLocation, Point newLocation)</span> {
+        <span class="hljs-comment">// Check if location is within boundaries</span>
+        <span class="hljs-keyword">if</span> (newLocation.x &lt; <span class="hljs-number">0</span> || newLocation.x &gt; maxX || newLocation.y &lt; <span class="hljs-number">0</span> || newLocation.y &gt; maxY) {
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+        }
+
+        <span class="hljs-comment">// Check if the new location is an obstacle</span>
+        <span class="hljs-keyword">for</span> (Point[] obstaclePair : obstaclePairs) {
+            <span class="hljs-keyword">if</span> (oldLocation.equals(obstaclePair[<span class="hljs-number">0</span>]) &amp;&amp; newLocation.equals(obstaclePair[<span class="hljs-number">1</span>]) ||
+                oldLocation.equals(obstaclePair[<span class="hljs-number">1</span>]) &amp;&amp; newLocation.equals(obstaclePair[<span class="hljs-number">0</span>])) {
+                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+            }
+        }
+
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+    }
+}
+</code></div></div></pre></div></div></div><div class="flex justify-between lg:block"><div class="text-gray-400 flex self-end lg:self-center justify-center mt-2 gap-2 md:gap-3 lg:gap-1 lg:absolute lg:top-0 lg:translate-x-full lg:right-0 lg:mt-0 lg:pl-2 visible"></div></div></div></div></div><div class="group w-full text-gray-800 dark:text-gray-100 border-b border-black/10 dark:border-gray-900/50 dark:bg-gray-800"><div class="flex p-4 gap-4 text-base md:gap-6 md:max-w-2xl lg:max-w-xl xl:max-w-3xl md:py-6 lg:px-0 m-auto"><div class="relative flex flex-col w-[calc(100%-50px)] gap-1 md:gap-3 lg:w-[calc(100%-115px)]"><div class="flex flex-grow flex-col gap-3"><div class="min-h-[20px] flex flex-col items-start gap-4 whitespace-pre-wrap break-words">Let's write an additional method that generates all of the obstaclePairs, given a provided obstacle.
+
+If the obstacle is (6,2)-(6,5), then the pairs that are generated should be:
+(5,2 - 6,2)
+(5,3 - 6,3)
+(5,4 - 6,4)
+
+If the obstacle is (5,5)-(6,5), then the pairs that are generated should be:
+(4,5 - 5,5)
+
+If the obstacle is (5,5)-(5,6), then the pairs that are generated should be:
+(5,5 - 5,4)
+
+
+If the obstacle is (5,6)-(12,6), then the pairs that are generated should be:
+(5,6 - 5,5)
+(6,6 - 6,5)
+(7,6 - 7,5)
+(8,6 - 8,5)
+(9,6 - 9,5)
+(10,6 - 10,5)
+(11,6 - 11,5)</div></div></div></div></div><div class="group w-full text-gray-800 dark:text-gray-100 border-b border-black/10 dark:border-gray-900/50 bg-gray-50 dark:bg-[#444654]"><div class="flex p-4 gap-4 text-base md:gap-6 md:max-w-2xl lg:max-w-xl xl:max-w-3xl md:py-6 lg:px-0 m-auto"><div class="relative flex flex-col w-[calc(100%-50px)] gap-1 md:gap-3 lg:w-[calc(100%-115px)]"><div class="flex flex-grow flex-col gap-3"><div class="min-h-[20px] flex flex-col items-start gap-4 whitespace-pre-wrap break-words"><div class="markdown prose w-full break-words dark:prose-invert light"><p>You're correct in your approach. Given an obstacle defined by two points, we generate the pairs of points that a droid would need to traverse to move along the obstacle. Here's a method that accomplishes that:</p><pre class=""><div class="bg-black rounded-md mb-4"><div class="flex items-center relative text-gray-200 bg-gray-800 px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>java</span></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-java"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">generateObstaclePairs</span><span class="hljs-params">(Point start, Point end)</span> {
+    <span class="hljs-keyword">if</span>(start.x == end.x) {
+        <span class="hljs-comment">// Vertical obstacle</span>
+        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> start.y; i &lt; end.y; i++) {
+            obstaclePairs.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>[]{<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(start.x - <span class="hljs-number">1</span>, i), <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(start.x, i)});
+        }
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(start.y == end.y) {
+        <span class="hljs-comment">// Horizontal obstacle</span>
+        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> start.x; i &lt; end.x; i++) {
+            obstaclePairs.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>[]{<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(i, start.y - <span class="hljs-number">1</span>), <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(i, start.y)});
+        }
+    }
+}
+</code></div></div></pre><p>You can call this method in the constructor for each obstacle:</p><pre class=""><div class="bg-black rounded-md mb-4"><div class="flex items-center relative text-gray-200 bg-gray-800 px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>java</span></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-java"><span class="hljs-keyword">public</span> <span class="hljs-title function_">Exercise0</span><span class="hljs-params">()</span> {
+    <span class="hljs-built_in">this</span>.droidLocation = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">11</span>, <span class="hljs-number">7</span>);
+    <span class="hljs-built_in">this</span>.maxX = <span class="hljs-number">11</span>;
+    <span class="hljs-built_in">this</span>.maxY = <span class="hljs-number">7</span>;
+
+    <span class="hljs-comment">// Initialize obstacle pairs</span>
+    <span class="hljs-built_in">this</span>.obstaclePairs = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();
+    generateObstaclePairs(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">6</span>,<span class="hljs-number">2</span>), <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">6</span>,<span class="hljs-number">5</span>));
+    generateObstaclePairs(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">5</span>,<span class="hljs-number">5</span>), <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">6</span>,<span class="hljs-number">5</span>));
+    generateObstaclePairs(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">5</span>,<span class="hljs-number">5</span>), <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">5</span>,<span class="hljs-number">6</span>));
+    generateObstaclePairs(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">5</span>,<span class="hljs-number">6</span>), <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">12</span>,<span class="hljs-number">6</span>));
+}
+</code></div></div></pre><p>The <code>generateObstaclePairs</code> method creates the pairs of points that are blocked by each obstacle. We're assuming that the starting point of an obstacle is always smaller than the ending point in both x and y dimensions. If the obstacles can start from the larger point, additional logic would be needed to handle that case.</p></div></div></div><div class="flex justify-between lg:block"><div class="text-gray-400 flex self-end lg:self-center justify-center mt-2 gap-2 md:gap-3 lg:gap-1 lg:absolute lg:top-0 lg:translate-x-full lg:right-0 lg:mt-0 lg:pl-2 visible"></div></div></div></div></div><div class="group w-full text-gray-800 dark:text-gray-100 border-b border-black/10 dark:border-gray-900/50 dark:bg-gray-800"><div class="flex p-4 gap-4 text-base md:gap-6 md:max-w-2xl lg:max-w-xl xl:max-w-3xl md:py-6 lg:px-0 m-auto"><div class="relative flex flex-col w-[calc(100%-50px)] gap-1 md:gap-3 lg:w-[calc(100%-115px)]"><div class="flex flex-grow flex-col gap-3"><div class="min-h-[20px] flex flex-col items-start gap-4 whitespace-pre-wrap break-words">I don't think "isValidLocation" is a good name for the method - can you rename it "isValidMovement" instead?</div></div></div></div></div><div class="group w-full text-gray-800 dark:text-gray-100 border-b border-black/10 dark:border-gray-900/50 bg-gray-50 dark:bg-[#444654]"><div class="flex p-4 gap-4 text-base md:gap-6 md:max-w-2xl lg:max-w-xl xl:max-w-3xl md:py-6 lg:px-0 m-auto"><div class="relative flex flex-col w-[calc(100%-50px)] gap-1 md:gap-3 lg:w-[calc(100%-115px)]"><div class="flex flex-grow flex-col gap-3"><div class="min-h-[20px] flex flex-col items-start gap-4 whitespace-pre-wrap break-words"><div class="markdown prose w-full break-words dark:prose-invert light"><p>Sure, the method name can be changed to <code>isValidMovement</code> to better reflect its purpose. Here's the updated code:</p><pre class=""><div class="bg-black rounded-md mb-4"><div class="flex items-center relative text-gray-200 bg-gray-800 px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>java</span></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-java"><span class="hljs-keyword">package</span> thkoeln.st.st2praktikum.exercise;
+
+<span class="hljs-keyword">import</span> java.awt.Point;
+<span class="hljs-keyword">import</span> java.util.ArrayList;
+<span class="hljs-keyword">import</span> java.util.List;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Exercise0</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">GoAble</span> {
+    
+    <span class="hljs-keyword">private</span> Point droidLocation;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-type">int</span> maxX;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-type">int</span> maxY;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> List&lt;Point[]&gt; obstaclePairs;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Exercise0</span><span class="hljs-params">()</span> {
+        <span class="hljs-built_in">this</span>.droidLocation = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">11</span>, <span class="hljs-number">7</span>);
+        <span class="hljs-built_in">this</span>.maxX = <span class="hljs-number">11</span>;
+        <span class="hljs-built_in">this</span>.maxY = <span class="hljs-number">7</span>;
+
+        <span class="hljs-comment">// Initialize obstacle pairs</span>
+        <span class="hljs-built_in">this</span>.obstaclePairs = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();
+        generateObstaclePairs(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">6</span>,<span class="hljs-number">2</span>), <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">6</span>,<span class="hljs-number">5</span>));
+        generateObstaclePairs(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">5</span>,<span class="hljs-number">5</span>), <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">6</span>,<span class="hljs-number">5</span>));
+        generateObstaclePairs(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">5</span>,<span class="hljs-number">5</span>), <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">5</span>,<span class="hljs-number">6</span>));
+        generateObstaclePairs(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">5</span>,<span class="hljs-number">6</span>), <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(<span class="hljs-number">12</span>,<span class="hljs-number">6</span>));
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">goTo</span><span class="hljs-params">(String goCommandString)</span> {
+        <span class="hljs-comment">// Remove brackets and split command into direction and steps</span>
+        String[] commands = goCommandString.replace(<span class="hljs-string">"["</span>, <span class="hljs-string">""</span>).replace(<span class="hljs-string">"]"</span>, <span class="hljs-string">""</span>).split(<span class="hljs-string">","</span>);
+        <span class="hljs-type">String</span> <span class="hljs-variable">direction</span> <span class="hljs-operator">=</span> commands[<span class="hljs-number">0</span>];
+        <span class="hljs-type">int</span> <span class="hljs-variable">steps</span> <span class="hljs-operator">=</span> Integer.parseInt(commands[<span class="hljs-number">1</span>]);
+
+        <span class="hljs-comment">// Determine new position based on direction</span>
+        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; steps; i++) {
+            <span class="hljs-type">Point</span> <span class="hljs-variable">newLocation</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(droidLocation);
+            <span class="hljs-keyword">switch</span> (direction) {
+                <span class="hljs-keyword">case</span> <span class="hljs-string">"no"</span>: newLocation.y++; <span class="hljs-keyword">break</span>;
+                <span class="hljs-keyword">case</span> <span class="hljs-string">"ea"</span>: newLocation.x++; <span class="hljs-keyword">break</span>;
+                <span class="hljs-keyword">case</span> <span class="hljs-string">"so"</span>: newLocation.y--; <span class="hljs-keyword">break</span>;
+                <span class="hljs-keyword">case</span> <span class="hljs-string">"we"</span>: newLocation.x--; <span class="hljs-keyword">break</span>;
+            }
+
+            <span class="hljs-comment">// Check if new location is valid</span>
+            <span class="hljs-keyword">if</span> (isValidMovement(droidLocation, newLocation)) {
+                droidLocation = newLocation;
+            } <span class="hljs-keyword">else</span> {
+                <span class="hljs-keyword">break</span>;
+            }
+        }
+
+        <span class="hljs-comment">// Return new location</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-string">"("</span> + droidLocation.x + <span class="hljs-string">","</span> + droidLocation.y + <span class="hljs-string">")"</span>;
+    }
+
+    <span class="hljs-keyword">private</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">isValidMovement</span><span class="hljs-params">(Point oldLocation, Point newLocation)</span> {
+        <span class="hljs-comment">// Check if location is within boundaries</span>
+        <span class="hljs-keyword">if</span> (newLocation.x &lt; <span class="hljs-number">0</span> || newLocation.x &gt; maxX || newLocation.y &lt; <span class="hljs-number">0</span> || newLocation.y &gt; maxY) {
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+        }
+
+        <span class="hljs-comment">// Check if the new location is an obstacle</span>
+        <span class="hljs-keyword">for</span> (Point[] obstaclePair : obstaclePairs) {
+            <span class="hljs-keyword">if</span> (oldLocation.equals(obstaclePair[<span class="hljs-number">0</span>]) &amp;&amp; newLocation.equals(obstaclePair[<span class="hljs-number">1</span>]) ||
+                oldLocation.equals(obstaclePair[<span class="hljs-number">1</span>]) &amp;&amp; newLocation.equals(obstaclePair[<span class="hljs-number">0</span>])) {
+                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+            }
+        }
+
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+    }
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">generateObstaclePairs</span><span class="hljs-params">(Point start, Point end)</span> {
+        <span class="hljs-keyword">if</span>(start.x == end.x) {
+            <span class="hljs-comment">// Vertical obstacle</span>
+            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> start.y; i &lt; end.y; i++) {
+                obstaclePairs.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>[]{<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(start.x - <span class="hljs-number">1</span>, i), <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(start.x, i)});
+            }
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(start.y == end.y) {
+            <span class="hljs-comment">// Horizontal obstacle</span>
+            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> start.x; i &lt; end.x; i++) {
+                obstaclePairs.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>[]{<span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(i, start.y - <span class="hljs-number">1</span>), <span class="hljs-keyword">new</span> <span class="hljs-title class_">Point</span>(i, start.y)});
+            }
+        }
+    }
+}
+</code></div></div></pre><p>This updated Java class <code>Exercise0</code> now uses the <code>isValidMovement</code> method name to validate if the droid can move to a new location.</p></div></div></div><div class="flex justify-between lg:block"><div class="text-gray-400 flex self-end lg:self-center justify-center mt-2 gap-2 md:gap-3 lg:gap-1 lg:absolute lg:top-0 lg:translate-x-full lg:right-0 lg:mt-0 lg:pl-2 visible"></div></div></div></div></div><div class="group w-full text-gray-800 dark:text-gray-100 border-b border-black/10 dark:border-gray-900/50 dark:bg-gray-800"><div class="flex p-4 gap-4 text-base md:gap-6 md:max-w-2xl lg:max-w-xl xl:max-w-3xl md:py-6 lg:px-0 m-auto"><div class="relative flex flex-col w-[calc(100%-50px)] gap-1 md:gap-3 lg:w-[calc(100%-115px)]"><div class="flex flex-grow flex-col gap-3"><div class="min-h-[20px] flex flex-col items-start gap-4 whitespace-pre-wrap break-words">Thank you, works great!</div></div></div></div></div><div class="group w-full text-gray-800 dark:text-gray-100 border-b border-black/10 dark:border-gray-900/50 bg-gray-50 dark:bg-[#444654]"><div class="flex p-4 gap-4 text-base md:gap-6 md:max-w-2xl lg:max-w-xl xl:max-w-3xl md:py-6 lg:px-0 m-auto"><div class="relative flex flex-col w-[calc(100%-50px)] gap-1 md:gap-3 lg:w-[calc(100%-115px)]"><div class="flex flex-grow flex-col gap-3"><div class="min-h-[20px] flex flex-col items-start gap-4 whitespace-pre-wrap break-words"><div class="markdown prose w-full break-words dark:prose-invert light"><p>You're welcome! I'm glad to hear that the code is working well for you. If you have any more questions or need further assistance with anything else, please feel free to ask. Happy coding!</p></div></div></div><div class="flex justify-between lg:block"><div class="text-gray-400 flex self-end lg:self-center justify-center mt-2 gap-2 md:gap-3 lg:gap-1 lg:absolute lg:top-0 lg:translate-x-full lg:right-0 lg:mt-0 lg:pl-2 visible"></div></div></div></div></div></body>
+                            </html>
