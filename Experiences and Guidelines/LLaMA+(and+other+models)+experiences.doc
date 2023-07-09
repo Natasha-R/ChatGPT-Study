@@ -1,0 +1,553 @@
+Date: Sun, 14 May 2023 14:45:48 +0000 (UTC)
+Message-ID: <30656226.117.1684075548676@765e4ed26f2a>
+Subject: Exported From Confluence
+MIME-Version: 1.0
+Content-Type: multipart/related; 
+	boundary="----=_Part_116_743015453.1684075548675"
+
+------=_Part_116_743015453.1684075548675
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///C:/exported.html
+
+<html xmlns:o=3D'urn:schemas-microsoft-com:office:office'
+      xmlns:w=3D'urn:schemas-microsoft-com:office:word'
+      xmlns:v=3D'urn:schemas-microsoft-com:vml'
+      xmlns=3D'urn:w3-org-ns:HTML'>
+<head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8=
+">
+    <title>LLaMA (and other models) experiences</title>
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:TargetScreenSize>1024x640</o:TargetScreenSize>
+            <o:PixelsPerInch>72</o:PixelsPerInch>
+            <o:AllowPNG/>
+        </o:OfficeDocumentSettings>
+        <w:WordDocument>
+            <w:View>Print</w:View>
+            <w:Zoom>90</w:Zoom>
+            <w:DoNotOptimizeForBrowser/>
+        </w:WordDocument>
+    </xml>
+    <![endif]-->
+    <style>
+                <!--
+        @page Section1 {
+            size: 8.5in 11.0in;
+            margin: 1.0in;
+            mso-header-margin: .5in;
+            mso-footer-margin: .5in;
+            mso-paper-source: 0;
+        }
+
+        table {
+            border: solid 1px;
+            border-collapse: collapse;
+        }
+
+        table td, table th {
+            border: solid 1px;
+            padding: 5px;
+        }
+
+        td {
+            page-break-inside: avoid;
+        }
+
+        tr {
+            page-break-after: avoid;
+        }
+
+        div.Section1 {
+            page: Section1;
+        }
+
+        /* Confluence print stylesheet. Common to all themes for print medi=
+a */
+/* Full of !important until we improve batching for print CSS */
+
+@media print {
+    #main {
+        padding-bottom: 1em !important; /* The default padding of 6em is to=
+o much for printouts */
+    }
+
+    body {
+        font-family: Arial, Helvetica, FreeSans, sans-serif;
+        font-size: 10pt;
+        line-height: 1.2;
+    }
+
+    body, #full-height-container, #main, #page, #content, .has-personal-sid=
+ebar #content {
+        background: var(--ds-surface, #fff) !important;
+        color: var(--ds-text, #000) !important;
+        border: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+    }
+
+    a, a:link, a:visited, a:focus, a:hover, a:active {
+        color: var(--ds-text, #000);
+    }
+
+    #content h1,
+    #content h2,
+    #content h3,
+    #content h4,
+    #content h5,
+    #content h6 {
+        font-family: Arial, Helvetica, FreeSans, sans-serif;
+        page-break-after: avoid;
+    }
+
+    pre {
+        font-family: Monaco, "Courier New", monospace;
+    }
+
+    #header,
+    .aui-header-inner,
+    #navigation,
+    #sidebar,
+    .sidebar,
+    #personal-info-sidebar,
+    .ia-fixed-sidebar,
+    .page-actions,
+    .navmenu,
+    .ajs-menu-bar,
+    .noprint,
+    .inline-control-link,
+    .inline-control-link a,
+    a.show-labels-editor,
+    .global-comment-actions,
+    .comment-actions,
+    .quick-comment-container,
+    #addcomment {
+        display: none !important;
+    }
+
+    /* CONF-28544 cannot print multiple pages in IE */
+    #splitter-content {
+        position: relative !important;
+    }
+
+    .comment .date::before {
+        content: none !important; /* remove middot for print view */
+    }
+
+    h1.pagetitle img {
+        height: auto;
+        width: auto;
+    }
+
+    .print-only {
+        display: block;
+    }
+
+    #footer {
+        position: relative !important; /* CONF-17506 Place the footer at en=
+d of the content */
+        margin: 0;
+        padding: 0;
+        background: none;
+        clear: both;
+    }
+
+    #poweredby {
+        border-top: none;
+        background: none;
+    }
+
+    #poweredby li.print-only {
+        display: list-item;
+        font-style: italic;
+    }
+
+    #poweredby li.noprint {
+        display: none;
+    }
+
+    /* no width controls in print */
+    .wiki-content .table-wrap,
+    .wiki-content p,
+    .panel .codeContent,
+    .panel .codeContent pre,
+    .image-wrap {
+        overflow: visible !important;
+    }
+
+    /* TODO - should this work? */
+    #children-section,
+    #comments-section .comment,
+    #comments-section .comment .comment-body,
+    #comments-section .comment .comment-content,
+    #comments-section .comment p {
+        page-break-inside: avoid;
+    }
+
+    #page-children a {
+        text-decoration: none;
+    }
+
+    /**
+     hide twixies
+
+     the specificity here is a hack because print styles
+     are getting loaded before the base styles. */
+    #comments-section.pageSection .section-header,
+    #comments-section.pageSection .section-title,
+    #children-section.pageSection .section-header,
+    #children-section.pageSection .section-title,
+    .children-show-hide {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .children-show-hide.icon {
+        display: none;
+    }
+
+    /* personal sidebar */
+    .has-personal-sidebar #content {
+        margin-right: 0px;
+    }
+
+    .has-personal-sidebar #content .pageSection {
+        margin-right: 0px;
+    }
+
+    .no-print, .no-print * {
+        display: none !important;
+    }
+}
+-->
+    </style>
+</head>
+<body>
+    <h1>LLaMA (and other models) experiences</h1>
+    <div class=3D"Section1">
+        <p>LLaMA and other open source models such as StarCoder are complet=
+e useless for this type of approach/task. They cannot even write code that =
+is able to be compiled, let alone can solve the programming tasks. Seemingl=
+y only GPT based AI (GPT-3.5, GPT-4 and Bing) are capable of writing soluti=
+ons to the ST2 milestones.</p>
+<h2 id=3D"LLaMA(andothermodels)experiences-LLaMA">LLaMA</h2>
+<p><em>The example code cannot be compiled, and is completely nonsensical i=
+n terms of logic.</em></p>
+<div id=3D"expander-741402210" class=3D"expand-container">
+<div id=3D"expander-control-741402210" class=3D"expand-control">
+<span class=3D"expand-control-icon"><img style=3D"vertical-align:middle;" c=
+lass=3D"expand-control-image" src=3D"43223fc8dc59f155c705d1aaca152746" widt=
+h=3D"16" height=3D"16"></span><span class=3D"expand-control-text">Example c=
+ode:</span>
+</div>
+<div id=3D"expander-content-741402210" class=3D"expand-content">
+<div class=3D"code panel pdl" style=3D"border-width: 1px;">
+<div class=3D"codeContent panelContent pdl">=20
+<pre class=3D"syntaxhighlighter-pre" data-syntaxhighlighter-params=3D"brush=
+: java; gutter: false; theme: Confluence" data-theme=3D"Confluence">package=
+ thkoeln.st.st2praktikum.exercise;
+import java.util.*;
+public class Exercise0 implements thkoeln.st.st2praktikum.Walkable{
+    int width =3D 12;
+    int height =3D 9;
+    HashMap&lt;Integer[], Integer[]&gt;[] walls =3D {{{{0, 3}, {3, 6}}, {5,=
+ 8}}}; // Wall Locations
+    Scanner scanner =3D new Scanner(System.in);
+    public boolean validCommand(String[] cmd) {
+        if (cmd.length !=3D 2) return false;
+        for (int i=3D0; i&lt;cmd[0].length(); ++i) {
+            char c =3D cmd[0].charAt(i);
+            switch (c) {
+                case 'n':
+                    return true;
+                case 'e':
+                    return true;
+                case 's':
+                    return true;
+                case 'w':
+                    return true;
+            }
+        }
+        return false;
+    };
+
+    public int[] move(String cmd){
+
+        int xOffSet =3D xFromCmd(cmd.substring(0, cmd.indexOf('[')));
+        int yOffSet =3D yFromCmd(cmd.substring(cmd.indexOf('[')+1, cmd.inde=
+xOf(']')));
+
+        int tempX =3D currentLocation().getX() + xOffSet;
+        int tempY =3D currentLocation().getY() + yOffSet;
+
+        for (HashMap&lt;Integer[],Integer[]&gt; wall : walls) {
+            for(int i=3D0; i&lt;wall.size();++i) {
+                int tempTempX =3D tempX;
+                int tempTempY =3D tempY;
+                while(wall.get(tempTempX,tempTempY)[0] &gt; 0 &amp;&amp; te=
+mpTempX &gt;=3D 0 || tempTempX &lt;width )
+                {
+                    tempTempX +=3D xOffSet;
+                }
+                while(wall.get(tempTempX,tempTempY)[1] &gt; 0 &amp;&amp; te=
+mpTempY&gt;=3D0 || tempTempY&lt;height)
+                {
+                    tempTempY+=3DyOffSet;
+                }
+                if((tempX =3D=3D (xTempTempX - (xOffSet*(xTempTempX/Math.ab=
+s(Math.abs(wall.get(xTempTempX,tempTempY)[0])))))&amp;&amp; wall.get(tempTe=
+mpX,tempTempY)[0]*-1=3D=3DMath.signum(xOffSet))||
+                        (tempY =3D=3D (yTempTempY - (yOffSet*((yTempTempY)/=
+Math.abs(Math.abs(wall.get(xTempTempX,tempTempY)[1])))))){
+                    System.out.println("Collision Detected");
+                }
+                else{
+                    tempX=3DxTempTempTempX;
+                    tempY=3DyTempTempY;
+                }
+            }
+        }
+    }
+      =20
+      return new int[]{currentLocation().getX(),currentLocation().getY()};
+
+};
+
+private IntHolder location(){
+        return new IntHolder();
+        }
+
+private class IntHolder {
+    int x =3D 0;
+    int y =3D 0;
+    public void getLoc(int[] temp_loc){
+        temp_loc[0]=3Dx;
+        temp_loc[1]=3Dy;
+    }
+}
+   =20
+}</pre>=20
+</div>
+</div>
+</div>
+</div>
+<ul>
+<li><p>Very often fails to complete the class, lags and times out, which ge=
+ts very frustrating.</p></li>
+<li><p>The code is extremely badly written and structured, with inconsisten=
+t indentation.</p></li>
+<li><p>The code cannot be compiled.</p></li>
+<li><p>Constantly invents variables and methods that do not exist.</p></li>
+<li><p>Uses terrible variable names: "yTempTempY".</p></li>
+</ul>
+<h2 id=3D"LLaMA(andothermodels)experiences-StarCoder">StarCoder</h2>
+<p><em>StarCoder cannot cope with such a complex prompt/task as necessary f=
+or the ST2 milestones.</em></p>
+<div id=3D"expander-1451924634" class=3D"expand-container">
+<div id=3D"expander-control-1451924634" class=3D"expand-control">
+<span class=3D"expand-control-icon"><img style=3D"vertical-align:middle;" c=
+lass=3D"expand-control-image" src=3D"43223fc8dc59f155c705d1aaca152746" widt=
+h=3D"16" height=3D"16"></span><span class=3D"expand-control-text">Example o=
+f a typical response:</span>
+</div>
+<div id=3D"expander-content-1451924634" class=3D"expand-content">
+<p>Thank you very much for taking time to explain everything clearly. As fa=
+r as I understood correctly, you wanted us to design our own game engine wh=
+ich could simulate walking around a minefield without hitting the walls. I =
+believe that this exercise requires knowledge of object oriented concepts, =
+including inheritance etc., and thus I won't be able to complete it easily.=
+ However, I'll still attempt to guide you towards completing this assignmen=
+t successfully. First off, please note down the answers to the following qu=
+estions before proceeding further:</p>
+<ol start=3D"1">
+<li><p>Do you intend to build a MineSweeper clone? Or something similar?</p=
+></li>
+<li><p>Does the user play against another human player?</p></li>
+<li><p>Should the difficulty level vary based on the distance away from the=
+ exit point?</p></li>
+</ol>
+<p>Answering these questions will allow me to better assess whether impleme=
+nting this feature makes sense. Also keep in mind that while building games=
+ is fun, it is important to remember that real life gambling involves risk =
+management, and therefore care needs to be taken during development.</p>
+</div>
+</div>
+<div id=3D"expander-157289763" class=3D"expand-container">
+<div id=3D"expander-control-157289763" class=3D"expand-control">
+<span class=3D"expand-control-icon"><img style=3D"vertical-align:middle;" c=
+lass=3D"expand-control-image" src=3D"43223fc8dc59f155c705d1aaca152746" widt=
+h=3D"16" height=3D"16"></span><span class=3D"expand-control-text">Example c=
+ode:</span>
+</div>
+<div id=3D"expander-content-157289763" class=3D"expand-content">
+<div class=3D"code panel pdl" style=3D"border-width: 1px;">
+<div class=3D"codeContent panelContent pdl">=20
+<pre class=3D"syntaxhighlighter-pre" data-syntaxhighlighter-params=3D"brush=
+: java; gutter: false; theme: Confluence" data-theme=3D"Confluence">package=
+ koeln.st.st2praktikum.exercise;
+
+public class Exercise0 implements Walkable {
+
+    private static final char NORTH =3D 'N';
+    private static final char EAST =3D 'E';
+    private static final char SOUTH =3D 'S';
+    private static final char WEST =3D 'W';
+
+    @Override
+    public String walk(final String walkCommandStr) {
+        // Parse the walk command
+        final Direction dir =3D parseDirectionFromWalkCmd(walkCommandStr);
+        final Integer numSteps =3D parseIntFromWalkCmd(walkCommandStr);
+
+        // Initialize variables
+        Point currPos =3D null;
+        boolean hitWall =3D true;
+        Point nextPosition =3D null;
+
+        while (!hitWall &amp;&amp; numSteps &gt; 0) {
+            switch (dir) {
+                case N -&gt; currPos =3D moveNorth(currPos, numSteps);
+                break;
+                case E -&gt; currPos =3D moveEast(currPoss, numSteps);
+                break;
+                case S -&gt; currPos =3D moveSouth(currPos, numSteps);
+                break;
+                default -&gt; currPos =3D moveWest(currPos, numSteps);
+            }
+            hitWall =3D !isValidPointOnField(currPos);
+            nextPosition =3D getNextValidPositionAfterMove(currPos, dir, nu=
+mSteps);
+            numSteps--;
+        }
+
+        return "(" + (nextPosition !=3D null ? (int) (nextPosition.getX()) =
+: "") + ", " + (nextPosition !=3D null ? (int) (nextPosition.getY()) : "") =
++ ")";
+    }
+
+    /**
+     * Parses the direction part of the walk command
+     */
+    protected Direction parseDirectionFromWalkCmd(final String cmd) {
+        Character c =3D cmd !=3D null &amp;&amp; cmd.length() &gt;=3D 2 ? c=
+md.charAt(1) : ' ';
+        switch (Character.toUpperCase(c)) {
+            case 'N':
+                return Direction.NORTH;
+            case 'E':
+                return Direction.EAST;
+            case 'S':
+                return Direction.SOUTH;
+            case 'W':
+                return Direction.WEST;
+            default:
+                throw new IllegalArgumentException("Invalid Command");
+        }
+    }
+
+    /**
+     * Parses the numeric part of the walk command
+     */
+    protected Integer parseIntFromWalkCmd(final String cmd) {
+        StringBuilder sb =3D new StringBuilder();
+        for (char ch : cmd.toCharArray()) {
+            if ((ch &lt; '0' || ch &gt; '9') &amp;&amp; !(ch =3D=3D ',' || =
+ch =3D=3D ' '))
+                continue;
+            sb.append(ch);
+        }
+        return Integer.parseInt(sb.toString());
+    }
+
+    /* Moves northwards */
+    protected Point moveNorth(final Point pos, Integer numSteps) {
+        return new Point(pos.getX(), Math.max(-1, (int) (pos.getY() - numSt=
+eps)));
+    }
+
+    /* Moves eastwards */
+    protected Point moveEast(final Point pos, Integer numSteps) {
+        return new Point(Math.min(((int) (pos.getX() + numSteps)), FIELDSIZ=
+E), (int) (pos.getY()));
+    }
+
+    /* Moves southwards */
+    protected Point moveSouth(final Point pos, Integer numSteps) {
+        return new Point(pos.getX(), Math.min((((int) (pos.getY() + numStep=
+s))), FIELDSIZE));
+    }
+
+    /* Moves westwards */
+    protected Point moveWest(final Point pos, Integer numSteps) {
+        return new Point(Math.max((-1 * (int) ((pos.getX() - numSteps)))), =
+((int) (pos.getY())));
+    }
+
+    /* Returns whether point lies outside bounds of field */
+    protected Boolean isValidPointOnField(final Point pt) {
+        return ((pt.getX() &gt;=3D -1 &amp;&amp; (pt.getX() &lt;=3D (FIELDS=
+IZE))) &amp;&amp; (pt.getY() &gt;=3D -1 &amp;&amp; (pt.getY() &lt;=3D FIELD=
+SIZE)));
+    }
+
+    /* Returns valid position after movement */
+    protected Point getNextValidPositionAfterMove(final Point pos, final Di=
+rection dir, final Integer numSteps) {
+        Point nextPt =3D null;
+        switch (dir) {
+            case N -&gt; nextPt =3D moveNorth(pos, numSteps);
+            break;
+            case E -&gt; nextPt =3D moveEast(pos, numSteps);
+            break;
+            case S -&gt; nextPt =3D moveSouth(pos, numSteps);
+            break;
+            default -&gt; nextPt =3D moveWest(pos, numSteps);
+        }
+        return (!isValidPointOnField(nextPt) ? getNextValidPositionAfterMov=
+e(nextPt, dir, --numSteps) : nextPt);
+    }
+
+    enum Direction {
+        NORTH, EAST, SOUTH, WEST
+    }
+
+    ;
+
+}
+</pre>=20
+</div>
+</div>
+</div>
+</div>
+<ul>
+<li><p>Rarely gives you code, instead usually responds with nonsensical tex=
+t.</p></li>
+<li><p>When code is provided, the code cannot be compiled.</p></li>
+<li><p>Makes strange typos in variable names - =E2=80=9CcurPoss=E2=80=9D in=
+stead of =E2=80=9CcurPos=E2=80=9D.</p></li>
+<li><p>Invents methods that do not exist.</p></li>
+<li><p>Fails to import required classes.</p></li>
+<li><p>The code does not get anywhere close to solving the task.</p></li>
+</ul>
+<p></p>
+    </div>
+</body>
+</html>
+------=_Part_116_743015453.1684075548675
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: file:///C:/43223fc8dc59f155c705d1aaca152746
+
+iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAA3NCSVQICAjb4U/gAAAAFVBMVEX/
+//9wcHBwcHBwcHBwcHBwcHBwcHA3RenHAAAAB3RSTlMAZoiZzN3/SzZomQAAAAlwSFlzAAALEgAA
+CxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAAUdEVYdENy
+ZWF0aW9uIFRpbWUANi8xLzEzOKlF0AAAACFJREFUCJljYCATsCgwqIAZTMnMyRAhsTABCIMxkVxT
+GQCLcwHyUKXpLgAAAABJRU5ErkJggg==
+------=_Part_116_743015453.1684075548675--

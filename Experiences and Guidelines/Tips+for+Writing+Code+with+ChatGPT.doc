@@ -1,0 +1,314 @@
+Date: Sat, 8 Jul 2023 16:41:40 +0000 (UTC)
+Message-ID: <22348182.79.1688834500064@1e91120dd797>
+Subject: Exported From Confluence
+MIME-Version: 1.0
+Content-Type: multipart/related; 
+	boundary="----=_Part_78_1754581912.1688834500064"
+
+------=_Part_78_1754581912.1688834500064
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///C:/exported.html
+
+<html xmlns:o=3D'urn:schemas-microsoft-com:office:office'
+      xmlns:w=3D'urn:schemas-microsoft-com:office:word'
+      xmlns:v=3D'urn:schemas-microsoft-com:vml'
+      xmlns=3D'urn:w3-org-ns:HTML'>
+<head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8=
+">
+    <title>Tips for Writing Code with ChatGPT</title>
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:TargetScreenSize>1024x640</o:TargetScreenSize>
+            <o:PixelsPerInch>72</o:PixelsPerInch>
+            <o:AllowPNG/>
+        </o:OfficeDocumentSettings>
+        <w:WordDocument>
+            <w:View>Print</w:View>
+            <w:Zoom>90</w:Zoom>
+            <w:DoNotOptimizeForBrowser/>
+        </w:WordDocument>
+    </xml>
+    <![endif]-->
+    <style>
+                <!--
+        @page Section1 {
+            size: 8.5in 11.0in;
+            margin: 1.0in;
+            mso-header-margin: .5in;
+            mso-footer-margin: .5in;
+            mso-paper-source: 0;
+        }
+
+        table {
+            border: solid 1px;
+            border-collapse: collapse;
+        }
+
+        table td, table th {
+            border: solid 1px;
+            padding: 5px;
+        }
+
+        td {
+            page-break-inside: avoid;
+        }
+
+        tr {
+            page-break-after: avoid;
+        }
+
+        div.Section1 {
+            page: Section1;
+        }
+
+        /* Confluence print stylesheet. Common to all themes for print medi=
+a */
+/* Full of !important until we improve batching for print CSS */
+
+@media print {
+    #main {
+        padding-bottom: 1em !important; /* The default padding of 6em is to=
+o much for printouts */
+    }
+
+    body {
+        font-family: Arial, Helvetica, FreeSans, sans-serif;
+        font-size: 10pt;
+        line-height: 1.2;
+    }
+
+    body, #full-height-container, #main, #page, #content, .has-personal-sid=
+ebar #content {
+        background: var(--ds-surface, #fff) !important;
+        color: var(--ds-text, #000) !important;
+        border: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+    }
+
+    a, a:link, a:visited, a:focus, a:hover, a:active {
+        color: var(--ds-text, #000);
+    }
+
+    #content h1,
+    #content h2,
+    #content h3,
+    #content h4,
+    #content h5,
+    #content h6 {
+        font-family: Arial, Helvetica, FreeSans, sans-serif;
+        page-break-after: avoid;
+    }
+
+    pre {
+        font-family: Monaco, "Courier New", monospace;
+    }
+
+    #header,
+    .aui-header-inner,
+    #navigation,
+    #sidebar,
+    .sidebar,
+    #personal-info-sidebar,
+    .ia-fixed-sidebar,
+    .page-actions,
+    .navmenu,
+    .ajs-menu-bar,
+    .noprint,
+    .inline-control-link,
+    .inline-control-link a,
+    a.show-labels-editor,
+    .global-comment-actions,
+    .comment-actions,
+    .quick-comment-container,
+    #addcomment {
+        display: none !important;
+    }
+
+    /* CONF-28544 cannot print multiple pages in IE */
+    #splitter-content {
+        position: relative !important;
+    }
+
+    .comment .date::before {
+        content: none !important; /* remove middot for print view */
+    }
+
+    h1.pagetitle img {
+        height: auto;
+        width: auto;
+    }
+
+    .print-only {
+        display: block;
+    }
+
+    #footer {
+        position: relative !important; /* CONF-17506 Place the footer at en=
+d of the content */
+        margin: 0;
+        padding: 0;
+        background: none;
+        clear: both;
+    }
+
+    #poweredby {
+        border-top: none;
+        background: none;
+    }
+
+    #poweredby li.print-only {
+        display: list-item;
+        font-style: italic;
+    }
+
+    #poweredby li.noprint {
+        display: none;
+    }
+
+    /* no width controls in print */
+    .wiki-content .table-wrap,
+    .wiki-content p,
+    .panel .codeContent,
+    .panel .codeContent pre,
+    .image-wrap {
+        overflow: visible !important;
+    }
+
+    /* TODO - should this work? */
+    #children-section,
+    #comments-section .comment,
+    #comments-section .comment .comment-body,
+    #comments-section .comment .comment-content,
+    #comments-section .comment p {
+        page-break-inside: avoid;
+    }
+
+    #page-children a {
+        text-decoration: none;
+    }
+
+    /**
+     hide twixies
+
+     the specificity here is a hack because print styles
+     are getting loaded before the base styles. */
+    #comments-section.pageSection .section-header,
+    #comments-section.pageSection .section-title,
+    #children-section.pageSection .section-header,
+    #children-section.pageSection .section-title,
+    .children-show-hide {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .children-show-hide.icon {
+        display: none;
+    }
+
+    /* personal sidebar */
+    .has-personal-sidebar #content {
+        margin-right: 0px;
+    }
+
+    .has-personal-sidebar #content .pageSection {
+        margin-right: 0px;
+    }
+
+    .no-print, .no-print * {
+        display: none !important;
+    }
+}
+-->
+    </style>
+</head>
+<body>
+    <h1>Tips for Writing Code with ChatGPT</h1>
+    <div class=3D"Section1">
+        <h1 id=3D"TipsforWritingCodewithChatGPT-Generaltips:">General tips:=
+</h1>
+<ul>
+<li><p>When writing prompts to ChatGPT, give it as much detailed informatio=
+n as possible - it has a very large token limit now, so don't be afraid to =
+write long prompts. Describe pictures/diagrams in detail. Giving ChatGPT ex=
+ample code also really helps it to understand what you want.</p></li>
+<li><p>ChatGPT is great at finding bugs and reading stack traces. Provide C=
+hatGPT with the full code and description of the error, and it can often su=
+ggest a fix.</p></li>
+<li><p>ChatGPT is also very good at explaining code and teaching you concep=
+ts that you ask it about. You don't necessarily need to ever have ChatGPT w=
+rite a single line of code for you, to have it help you with coding.</p></l=
+i>
+<li><p>ChatGPT is good at simple 'busy work', but is not so good at impleme=
+nting complex logic. You can save yourself a lot of work just by knowing wh=
+en to use ChatGPT, and when not to use it.</p></li>
+<li><p>ChatGPT will often write "working code", but not "good code". Always=
+ review all of the code it writes for you, and consider whether a) you full=
+y understand it b) it actually fulfils the task and c) it follows any best =
+practices required (clean code rules, etc).</p></li>
+</ul>
+<p>The guidelines for the educated approach may also be helpful: <a href=3D=
+"https://gp-chatgpt.atlassian.net/wiki/spaces/ChatGPT/pages/4947969/Guideli=
+nes+for+using+AI+tools+to+write+code#Educated-Approach-Guidelines" data-car=
+d-appearance=3D"inline" rel=3D"nofollow">https://gp-chatgpt.atlassian.net/w=
+iki/spaces/ChatGPT/pages/4947969/Guidelines+for+using+AI+tools+to+write+cod=
+e#Educated-Approach-Guidelines</a> </p>
+<p>Strengths and weaknesses of ChatGPT-3.5: <a href=3D"/wiki/spaces/ChatGPT=
+/pages/3801089/ChatGPT+3.5+Experiences" data-linked-resource-id=3D"3801089"=
+ data-linked-resource-version=3D"13" data-linked-resource-type=3D"page">Cha=
+tGPT 3.5 Experiences</a> </p>
+<h1 id=3D"TipsforWritingCodewithChatGPT-Approaches:">Approaches:</h1>
+<p>There are a few specific approaches that you can use to start to generat=
+e code.<em> </em>Personally I use a combination of the 'improvements' and t=
+he 'piecewise details' approach. I like to begin by writing the program mys=
+elf, then if I start to struggle on coding a specific line, I will ask Chat=
+GPT how to code just that specific part.</p>
+<h3 id=3D"TipsforWritingCodewithChatGPT-=E2=80=98Lazyapproach=E2=80=99">=E2=
+=80=98Lazy approach=E2=80=99</h3>
+<p>Prompt ChatGPT with the entire task, described in detail. Let ChatGPT wr=
+ite the full code solution.</p>
+<p>I wouldn't recommend this approach, as ChatGPT often creates very ineffi=
+cient/unusual/incorrect code, and it can be down to chance whether it gives=
+ you a working solution or not. By not even trying to understand the task o=
+r the code yourself, the resulting program becomes much more difficult to d=
+ebug, and it is more confusing to modify or add to the code.</p>
+<h3 id=3D"TipsforWritingCodewithChatGPT-=E2=80=98Detailsapproach=E2=80=99">=
+=E2=80=98Details approach=E2=80=99</h3>
+<p>Read through the task question carefully, and formulate the initial logi=
+c and general structure for your solution yourself. Prompt ChatGPT with the=
+ entire task, described in detail, but also include exactly the logic that =
+you want it to use and how you want it to structure the solution.</p>
+<p>It can also be useful to create a solution 'piecewise', by asking ChatGP=
+T to write specific lines of code that you then piece together to create th=
+e full solution. (e.g.<em> "write SQL code that finds all licences with exp=
+iry dates that are less than 6 months from the current date. A licence enti=
+ty has =E2=80=9Cvalid from=E2=80=9D and =E2=80=9Cvalid until=E2=80=9D attri=
+butes. Use the SYSDATE and ADD_MONTHS functions."</em>)</p>
+<h3 id=3D"TipsforWritingCodewithChatGPT-=E2=80=98Improvementsapproach=E2=80=
+=99">=E2=80=98Improvements approach=E2=80=99</h3>
+<p>Code the initial solution as best as you can yourself. If your solution =
+doesn't work, if you get errors or just get stuck, then prompt ChatGPT with=
+ the code that you have written so far, and describe in detail what you are=
+ trying to do and what the error is. You can also provide ChatGPT with the =
+original task description, if the additional context helps.</p>
+<p>Sometimes the fix that ChatGPT suggests won't work, and when re-promptin=
+g for another fix, you can end up going down a rabbit hole of more and more=
+ complicated suggestions that break the code even further. ChatGPT is unabl=
+e to "think outside of the box", so you always have to be the one to "take =
+a step back" and consider whether another approach entirely is needed.</p>
+<h3 id=3D"TipsforWritingCodewithChatGPT-=E2=80=A6andmore!">=E2=80=A6and mor=
+e!</h3>
+<p>I am sure there are even more different (possibly better) approaches tha=
+t can be used, these are just the ones that I have experimented with while =
+working on the ST2 tasks.</p>
+    </div>
+</body>
+</html>
+------=_Part_78_1754581912.1688834500064--

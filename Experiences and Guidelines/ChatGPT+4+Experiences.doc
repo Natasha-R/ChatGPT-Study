@@ -1,0 +1,733 @@
+Date: Sun, 14 May 2023 14:44:50 +0000 (UTC)
+Message-ID: <39938346.113.1684075490306@765e4ed26f2a>
+Subject: Exported From Confluence
+MIME-Version: 1.0
+Content-Type: multipart/related; 
+	boundary="----=_Part_112_348490680.1684075490306"
+
+------=_Part_112_348490680.1684075490306
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///C:/exported.html
+
+<html xmlns:o=3D'urn:schemas-microsoft-com:office:office'
+      xmlns:w=3D'urn:schemas-microsoft-com:office:word'
+      xmlns:v=3D'urn:schemas-microsoft-com:vml'
+      xmlns=3D'urn:w3-org-ns:HTML'>
+<head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8=
+">
+    <title>ChatGPT 4 Experiences</title>
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:TargetScreenSize>1024x640</o:TargetScreenSize>
+            <o:PixelsPerInch>72</o:PixelsPerInch>
+            <o:AllowPNG/>
+        </o:OfficeDocumentSettings>
+        <w:WordDocument>
+            <w:View>Print</w:View>
+            <w:Zoom>90</w:Zoom>
+            <w:DoNotOptimizeForBrowser/>
+        </w:WordDocument>
+    </xml>
+    <![endif]-->
+    <style>
+                <!--
+        @page Section1 {
+            size: 8.5in 11.0in;
+            margin: 1.0in;
+            mso-header-margin: .5in;
+            mso-footer-margin: .5in;
+            mso-paper-source: 0;
+        }
+
+        table {
+            border: solid 1px;
+            border-collapse: collapse;
+        }
+
+        table td, table th {
+            border: solid 1px;
+            padding: 5px;
+        }
+
+        td {
+            page-break-inside: avoid;
+        }
+
+        tr {
+            page-break-after: avoid;
+        }
+
+        div.Section1 {
+            page: Section1;
+        }
+
+        /* Confluence print stylesheet. Common to all themes for print medi=
+a */
+/* Full of !important until we improve batching for print CSS */
+
+@media print {
+    #main {
+        padding-bottom: 1em !important; /* The default padding of 6em is to=
+o much for printouts */
+    }
+
+    body {
+        font-family: Arial, Helvetica, FreeSans, sans-serif;
+        font-size: 10pt;
+        line-height: 1.2;
+    }
+
+    body, #full-height-container, #main, #page, #content, .has-personal-sid=
+ebar #content {
+        background: var(--ds-surface, #fff) !important;
+        color: var(--ds-text, #000) !important;
+        border: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+    }
+
+    a, a:link, a:visited, a:focus, a:hover, a:active {
+        color: var(--ds-text, #000);
+    }
+
+    #content h1,
+    #content h2,
+    #content h3,
+    #content h4,
+    #content h5,
+    #content h6 {
+        font-family: Arial, Helvetica, FreeSans, sans-serif;
+        page-break-after: avoid;
+    }
+
+    pre {
+        font-family: Monaco, "Courier New", monospace;
+    }
+
+    #header,
+    .aui-header-inner,
+    #navigation,
+    #sidebar,
+    .sidebar,
+    #personal-info-sidebar,
+    .ia-fixed-sidebar,
+    .page-actions,
+    .navmenu,
+    .ajs-menu-bar,
+    .noprint,
+    .inline-control-link,
+    .inline-control-link a,
+    a.show-labels-editor,
+    .global-comment-actions,
+    .comment-actions,
+    .quick-comment-container,
+    #addcomment {
+        display: none !important;
+    }
+
+    /* CONF-28544 cannot print multiple pages in IE */
+    #splitter-content {
+        position: relative !important;
+    }
+
+    .comment .date::before {
+        content: none !important; /* remove middot for print view */
+    }
+
+    h1.pagetitle img {
+        height: auto;
+        width: auto;
+    }
+
+    .print-only {
+        display: block;
+    }
+
+    #footer {
+        position: relative !important; /* CONF-17506 Place the footer at en=
+d of the content */
+        margin: 0;
+        padding: 0;
+        background: none;
+        clear: both;
+    }
+
+    #poweredby {
+        border-top: none;
+        background: none;
+    }
+
+    #poweredby li.print-only {
+        display: list-item;
+        font-style: italic;
+    }
+
+    #poweredby li.noprint {
+        display: none;
+    }
+
+    /* no width controls in print */
+    .wiki-content .table-wrap,
+    .wiki-content p,
+    .panel .codeContent,
+    .panel .codeContent pre,
+    .image-wrap {
+        overflow: visible !important;
+    }
+
+    /* TODO - should this work? */
+    #children-section,
+    #comments-section .comment,
+    #comments-section .comment .comment-body,
+    #comments-section .comment .comment-content,
+    #comments-section .comment p {
+        page-break-inside: avoid;
+    }
+
+    #page-children a {
+        text-decoration: none;
+    }
+
+    /**
+     hide twixies
+
+     the specificity here is a hack because print styles
+     are getting loaded before the base styles. */
+    #comments-section.pageSection .section-header,
+    #comments-section.pageSection .section-title,
+    #children-section.pageSection .section-header,
+    #children-section.pageSection .section-title,
+    .children-show-hide {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .children-show-hide.icon {
+        display: none;
+    }
+
+    /* personal sidebar */
+    .has-personal-sidebar #content {
+        margin-right: 0px;
+    }
+
+    .has-personal-sidebar #content .pageSection {
+        margin-right: 0px;
+    }
+
+    .no-print, .no-print * {
+        display: none !important;
+    }
+}
+-->
+    </style>
+</head>
+<body>
+    <h1>ChatGPT 4 Experiences</h1>
+    <div class=3D"Section1">
+        <style type=3D"text/css">/*<![CDATA[*/
+div.rbtoc1684075490277 {padding: 0px;}
+div.rbtoc1684075490277 ul {list-style: disc;margin-left: 0px;}
+div.rbtoc1684075490277 li {margin-left: 0px;padding-left: 0px;}
+
+/*]]>*/</style>
+<div class=3D"toc-macro rbtoc1684075490277">=20
+<ul class=3D"toc-indentation">=20
+<li><a href=3D"#ChatGPT4Experiences-UneducatedApproachExperience">Uneducate=
+d Approach Experience</a></li>=20
+<li><a href=3D"#ChatGPT4Experiences-GPT-4SS21PairProgrammingConversationExp=
+erience">GPT-4 SS21 Pair Programming Conversation Experience</a></li>=20
+<li><a href=3D"#ChatGPT4Experiences-GPT-4SS23PairProgrammingConversationExp=
+erience">GPT-4 SS23 Pair Programming Conversation Experience</a></li>=20
+</ul>=20
+</div>
+<h1 id=3D"ChatGPT4Experiences-UneducatedApproachExperience"><strong>Uneduca=
+ted Approach Experience</strong></h1>
+<p><em>GPT-4 is a marked improvement on the other chatbots. The code it gen=
+erates is well-structured, and it can better remember code it has written e=
+arlier in the conversation. However, it still struggles with problems requi=
+ring logic. There is also an extremely high variance in GPT-4's outputs - s=
+ometimes it generates a perfect solution, sometimes a completely failing so=
+lution - from exactly the same prompt.</em></p>
+<p></p>
+<div id=3D"expander-1518284098" class=3D"expand-container">
+<div id=3D"expander-control-1518284098" class=3D"expand-control">
+<span class=3D"expand-control-icon"><img style=3D"vertical-align:middle;" c=
+lass=3D"expand-control-image" src=3D"43223fc8dc59f155c705d1aaca152746" widt=
+h=3D"16" height=3D"16"></span><span class=3D"expand-control-text">All tests=
+ passed example code:</span>
+</div>
+<div id=3D"expander-content-1518284098" class=3D"expand-content">
+<div class=3D"code panel pdl" style=3D"border-width: 1px;">
+<div class=3D"codeContent panelContent pdl">=20
+<pre class=3D"syntaxhighlighter-pre" data-syntaxhighlighter-params=3D"brush=
+: java; gutter: false; theme: Confluence" data-theme=3D"Confluence">package=
+ thkoeln.st.st2praktikum.exercise;
+
+public class Exercise0 implements Walkable {
+
+    private int x, y;
+    private final int fieldWidth =3D 12;
+    private final int fieldHeight =3D 9;
+
+    public Exercise0() {
+        x =3D 0;
+        y =3D 2;
+    }
+
+    @Override
+    public String walk(String walkCommandString) {
+        String[] commands =3D walkCommandString.split(",");
+
+        String direction =3D commands[0].substring(1);
+        int steps =3D Integer.parseInt(commands[1].substring(0, commands[1]=
+.length() - 1));
+
+        switch (direction) {
+            case "no":
+                y =3D Math.min(y + steps, fieldHeight - 1);
+                if (x =3D=3D 3 &amp;&amp; y &gt;=3D 3) y =3D 2;
+                if (x =3D=3D 5 &amp;&amp; y &lt;=3D 4) y =3D 5;
+                if (x &gt;=3D 4 &amp;&amp; x &lt;=3D 7 &amp;&amp; y &gt;=3D=
+ 5) y =3D 4;
+                break;
+            case "ea":
+                x =3D Math.min(x + steps, fieldWidth - 1);
+                if (y &lt;=3D 3 &amp;&amp; x &gt;=3D 3) x =3D 2;
+                if (y &gt;=3D 5 &amp;&amp; x &gt;=3D 7) x =3D 6;
+                break;
+            case "so":
+                y =3D Math.max(y - steps, 0);
+                if (x =3D=3D 3 &amp;&amp; y &lt;=3D 2) y =3D 3;
+                if (x =3D=3D 5 &amp;&amp; y &gt;=3D 4) y =3D 4;
+                if (x &gt;=3D 4 &amp;&amp; x &lt;=3D 7 &amp;&amp; y &lt;=3D=
+ 4) y =3D 5;
+                break;
+            case "we":
+                x =3D Math.max(x - steps, 0);
+                if (y &lt;=3D 3 &amp;&amp; x &lt;=3D 2) x =3D 3;
+                if (y &gt;=3D 5 &amp;&amp; x &lt;=3D 6) x =3D 7;
+                break;
+        }
+
+        return String.format("(%d,%d)", x, y);
+    }
+}</pre>=20
+</div>
+</div>
+</div>
+</div>
+<div id=3D"expander-1995244017" class=3D"expand-container">
+<div id=3D"expander-control-1995244017" class=3D"expand-control">
+<span class=3D"expand-control-icon"><img style=3D"vertical-align:middle;" c=
+lass=3D"expand-control-image" src=3D"43223fc8dc59f155c705d1aaca152746" widt=
+h=3D"16" height=3D"16"></span><span class=3D"expand-control-text">0 tests p=
+assed example code:</span>
+</div>
+<div id=3D"expander-content-1995244017" class=3D"expand-content">
+<div class=3D"code panel pdl" style=3D"border-width: 1px;">
+<div class=3D"codeContent panelContent pdl">=20
+<pre class=3D"syntaxhighlighter-pre" data-syntaxhighlighter-params=3D"brush=
+: java; gutter: false; theme: Confluence" data-theme=3D"Confluence">package=
+ thkoeln.st.st2praktikum.exercise;
+
+import java.awt.Point;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Exercise0 implements Walkable {
+    private static final int FIELD_WIDTH =3D 12;
+    private static final int FIELD_HEIGHT =3D 9;
+
+    private Point machinePosition;
+    private List&lt;Wall&gt; walls;
+
+    public Exercise0() {
+        machinePosition =3D new Point(0, 2);
+        walls =3D new ArrayList&lt;&gt;();
+        walls.add(new Wall(new Point(3, 0), new Point(3, 3)));
+        walls.add(new Wall(new Point(5, 0), new Point(5, 4)));
+        walls.add(new Wall(new Point(4, 5), new Point(7, 5)));
+        walls.add(new Wall(new Point(7, 5), new Point(7, 9)));
+
+        // Add field boundary walls
+        walls.add(new Wall(new Point(0, 0), new Point(0, FIELD_HEIGHT)));
+        walls.add(new Wall(new Point(0, 0), new Point(FIELD_WIDTH, 0)));
+        walls.add(new Wall(new Point(FIELD_WIDTH, 0), new Point(FIELD_WIDTH=
+, FIELD_HEIGHT)));
+        walls.add(new Wall(new Point(0, FIELD_HEIGHT), new Point(FIELD_WIDT=
+H, FIELD_HEIGHT)));
+    }
+
+    @Override
+    public String walk(String walkCommandString) {
+        String[] commandParts =3D walkCommandString.substring(1, walkComman=
+dString.length() - 1).split(",");
+        String direction =3D commandParts[0];
+        int steps =3D Integer.parseInt(commandParts[1]);
+
+        Point newPosition =3D new Point(machinePosition);
+        for (int i =3D 0; i &lt; steps; i++) {
+            newPosition =3D getNextPosition(direction, newPosition);
+            if (!canMoveTo(newPosition)) {
+                break;
+            }
+            machinePosition =3D newPosition;
+        }
+        return "(" + machinePosition.x + "," + machinePosition.y + ")";
+    }
+
+    private Point getNextPosition(String direction, Point position) {
+        Point newPosition =3D new Point(position);
+        switch (direction) {
+            case "no":
+                newPosition.y +=3D 1;
+                break;
+            case "ea":
+                newPosition.x +=3D 1;
+                break;
+            case "so":
+                newPosition.y -=3D 1;
+                break;
+            case "we":
+                newPosition.x -=3D 1;
+                break;
+        }
+        return newPosition;
+    }
+
+    private boolean canMoveTo(Point position) {
+        if (position.x &lt; 0 || position.y &lt; 0 || position.x &gt;=3D FI=
+ELD_WIDTH || position.y &gt;=3D FIELD_HEIGHT) {
+            return false;
+        }
+
+        for (Wall wall : walls) {
+            if (wall.intersects(position)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private static class Wall {
+        Point start;
+        Point end;
+
+        Wall(Point start, Point end) {
+            this.start =3D start;
+            this.end =3D end;
+        }
+
+        boolean intersects(Point position) {
+            if (start.x =3D=3D end.x) {
+                // Vertical wall
+                return position.y &gt;=3D start.y &amp;&amp; position.y &lt=
+; end.y &amp;&amp;
+                        (position.x =3D=3D start.x || position.x =3D=3D sta=
+rt.x - 1);
+            } else {
+                // Horizontal wall
+                return position.x &gt;=3D start.x &amp;&amp; position.x &lt=
+; end.x &amp;&amp;
+                        (position.y =3D=3D start.y || position.y =3D=3D sta=
+rt.y - 1);
+            }
+        }
+    }
+}</pre>=20
+</div>
+</div>
+</div>
+</div>
+<p><strong>Positives</strong></p>
+<ul>
+<li><p>Responds immediately with the full code, with little additional expl=
+anations, and no comments in the code.</p></li>
+<li><p>Is slow to generate code, but does not time out, and can complete th=
+e full class.</p></li>
+<li><p>Creates well-structured code that can compile.</p></li>
+<li><p>Correctly imports all classes required.</p></li>
+<li><p>Good at remembering and repeating code that it has previously writte=
+n in the conversation.</p></li>
+<li><p>When given an example as part of the prompt, ChatGPT-4 does not get =
+confused by the difference between the example/actual scenario it has to im=
+plement. Instead, the example seems to help it to pass more tests.</p></li>
+</ul>
+<p><strong>Negatives</strong></p>
+<ul>
+<li><p>Still unable to directly code the logic part of the problem.</p></li=
+>
+<li><p>Really the first answer you get is the best answer you're going to g=
+et. If the code passes one test, and you ask ChatGPT-4 to correct the code =
+that it can pass the second test, then it breaks the first test. You just g=
+o in circles forever.</p></li>
+<li><p>If you repeatedly prompt it to correct the code to pass a particular=
+ test, then the code starts to look more like it has been written specifica=
+lly to pass that test.</p></li>
+<li><p>Extremely inconsistent results. The result of one conversation gives=
+ a perfect solution that passes all tests. The result of the next conversat=
+ion is code with constant =E2=80=9Cjava.lang.ArrayIndexOutOfBoundsException=
+=E2=80=9D errors that it is unable to fix.</p></li>
+</ul>
+<p><strong>Styling prompts</strong></p>
+<ul>
+<li><p>Accepts a prompt to write code "in the style of a student". However =
+it simply adds a lot of comments to the code.</p></li>
+<li><p>Accepts a prompt to write code "with a bad coding style." However th=
+e resulting code just looks silly and unrealistic, for example, putting alm=
+ost the entire class onto just one line.</p></li>
+<li><p>Specific requests are necessary to get a less extreme result, e.g. "=
+Can you re-write the code so that some of the variable names are shorter an=
+d less descriptive. Only use if/else instead of switch."</p></li>
+<li><p>Able to follow =E2=80=9Cclean code=E2=80=9D rules. Adds a few commen=
+ts, but not too many. Creates a lot of very short, private methods.</p></li=
+>
+</ul>
+<h1 id=3D"ChatGPT4Experiences-GPT-4SS21PairProgrammingConversationExperienc=
+e"><strong>GPT-4 SS21 Pair Programming Conversation Experience</strong></h1=
+>
+<p>My experience with attempting to solve the SS21 M0 task myself using Cha=
+tGPT-4 was incredibly positive. The experience was in no way frustrating (a=
+s using the other chatbots has sometimes been), but felt like a great way t=
+o write a program in a programming language that you have no knowledge of. =
+By the end of the conversation, I had a fully working solution that (in my =
+opinion) looks pretty nice, with 0 code written by myself and no understand=
+ing of Java - I only had to give ChatGPT the logic for the obstacles that I=
+ wanted it to use.</p>
+<p>What was most impressive was not only its ability in programming (correc=
+t implementation of individual methods) but also its grasp of the structure=
+ and purpose of the entire class. It implicitly understood the context of w=
+hat I wanted it to do, more like a human would - not just directly followin=
+g instructions ("write this particular method") but also the unsaid implica=
+tions that I didn't directly give it ("=E2=80=A6so that it works with the r=
+est of the class, and then update the class so that it incorporates the new=
+ method.") When I tried the same prompts with ChatGPT-3.5, it just couldn't=
+ make that same "leap" - it would write the method I asked for, but couldn'=
+t understand so well how it related to the rest of the problem.</p>
+<p>The conversation: </p>
+<p class=3D"media-group"><img height=3D"250" style=3D"margin: 2px; border: =
+1px solid #ddd; box-sizing: border-box; vertical-align: text-bottom;" src=
+=3D"e51950dd68ffd61e3c6afd2d5efe8efa" width=3D"250"></p>
+<p><strong>Some key points from the conversation:</strong></p>
+<ul>
+<li><p>I gave ChatGPT pairs of co-ordinates that I just said should represe=
+nt an invalid movement. ChatGPT implicitly understood that the pairs repres=
+ented obstacles, and thus the movement should be invalid from both directio=
+ns, even though I did not specifically state this.</p></li>
+<li><p>I only told it write the new method, but it automatically realised t=
+hat the method needed to be integrated into the rest of the class, and knew=
+ which parts of the class needed to be re-written to accommodate the new me=
+thod.</p></li>
+<li><p>I then told ChatGPT which pairs of invalid movements were associated=
+ with which obstacle, and told it to write a method capable of generating t=
+he pairs automatically. ChatGPT not only figured out the logic associated w=
+ith the patterns of blocked movements and obstacles and wrote the new metho=
+d, but also correctly assumed that I wanted to use this method in the class=
+, and was able to integrate it accordingly.</p></li>
+</ul>
+<h1 id=3D"ChatGPT4Experiences-GPT-4SS23PairProgrammingConversationExperienc=
+e"><strong>GPT-4 SS23 Pair Programming Conversation Experience</strong></h1=
+>
+<p>I used a completely blind approach to solve SS23 M0 - I did not think ab=
+out what the actual task was or considered how it should be structured, I w=
+rote no code myself, and only copy-pasted the instructions/results of tests=
+ into ChatGPT.</p>
+<p>My approach was to regularly and repeatedly provide ChatGPT with as much=
+ information as possible - and firstly just get it to create a full structu=
+re of the entire program. Any bugs were ignored until the whole system had =
+been drafted - trying to fix bugs too early can get you caught in a "death =
+spiral", where the more "memory tokens" you use up trying to fix the bug, t=
+he more of something else ChatGPT will forget, thus a new bug gets introduc=
+ed, getting you caught in a cycle of problems.</p>
+<p>The general structure of the prompts/conversation:</p>
+<ul>
+<li><p>I gave ChatGPT the general background task and told it to create the=
+ logical data model.</p></li>
+<li><p>I gave it the UseCase interfaces already existing in the repo.</p></=
+li>
+<li><p>I told it to create classes for all of the entities.</p></li>
+<li><p>I told it to implement all of the interfaces as service classes.</p>=
+</li>
+<li><p>ChatGPT informed me I needed repositories, so I told it to also crea=
+te those.</p></li>
+<li><p>When there was a mismatch between the classes, (e.g. using a method =
+that doesn't exist) I gave ChatGPT both classes and told it to fix it so th=
+at they will work together (with no further instructions).</p></li>
+<li><p>I then ran all of the tests. I gave ChatGPT the error from each fail=
+ed test, and followed its instructions to fix it.</p></li>
+</ul>
+<p>The full conversation:</p>
+<p class=3D"media-group"><img height=3D"250" style=3D"margin: 2px; border: =
+1px solid #ddd; box-sizing: border-box; vertical-align: text-bottom;" src=
+=3D"da146b18367081e6329333b15b0cb73f" width=3D"250"></p>
+<p>The result was a perfectly working program that correctly passes every s=
+ingle test - even the more tricky ones like testImpactOfStockCorrectionToSe=
+veralShoppingBaskets. ChatGPT was easily capable of defining the overall st=
+ructure of the system via the logical data model, creating all of the neces=
+sary (often very long) classes, and writing quite complex methods to fulfil=
+ specific requirements. ChatGPT is also extremely good at fixing errors. Wh=
+en provided with the stack trace, it was able to identify the source of the=
+ error, contextualise the bug in terms of the eCommerce concept, request an=
+y additional information needed, and suggest a suitable fix.</p>
+<p>The final program:</p>
+<p class=3D"media-group"><img height=3D"250" style=3D"margin: 2px; border: =
+1px solid #ddd; box-sizing: border-box; vertical-align: text-bottom;" src=
+=3D"395c3e86dee7398d70e1a9897293f011" width=3D"250"></p>
+<p>In total it took me almost exactly 4 hours to create the solution, split=
+ up into four 1 hour sessions (due to the restrictions on 25 messages per 3=
+ hours for GPT-4). About 2 hours was spent on creating the program, and 2 h=
+ours on bug fixing at the end.</p>
+<p>A final point: while ChatGPT is easily capable of creating <em>working <=
+/em>code it does not by default create <em>good </em>code - although the so=
+lution passed all of the unit tests, it often used very unorthodox syntax a=
+nd approaches.</p>
+    </div>
+</body>
+</html>
+------=_Part_112_348490680.1684075490306
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: base64
+Content-Location: file:///C:/e51950dd68ffd61e3c6afd2d5efe8efa
+
+iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6CAMAAAC/MqoPAAADAFBMVEX19fXv7+98fHx1dXV9fX23
+t7eenp5wcHDn5+f09PTz8/Pd3d2SkpLY2Njt7e3Q0NCioqJycnKqqqq7u7uurq6CgoKGhobOzs7D
+w8PR0dGNjY3Hx8fj4+PGxsbS0tKoqKgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAABYhwFnAAAEs0lEQVR4Xu3cf1eiShjA8RFFEJNy1bS71nLf/4u6nWr3bnrdNn9r
+KcugII7WlU5C5vfzBzAPM8BzBsdTjAgBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcg
+owb2w5zPs2rsBTNNG6uxA2bmdFONvcTUtZ3rHoC8rkZeo+fVyF5oamAvdr7bfdm5Gjlghhp4Xczq
+b5RMr39IR5x6rA/hm+VmasRu5CdateZO1B3SZvV9SCn10jA7mrpi1i9ty32j+gFTx626cbHYuDBK
+63t8avVDpuRi566CzdOsHd2zkEzqqQxz5bObYPPxtBzdk6ScGkjCcLTanqRyBclR7uBs5I8mWw60
+yv7Pe8MXcu6q0E2t19NI/YMg9WNE6scotdST+QJ7TWqpp4/UjxGpHyNSP0akfoxIPT2WZamhhKSS
+ukz2afkkOasPRSGV7NNIffRoep19tiiU5kK4j+sVkpFG6sI6FcOzh4aQ/5HvDIU4TaXXU3nw5Gpj
+0bWyRa36UHK91PXR+hP1ZB48pZL6Sc96ElNRyg603pMQxZG1/uQtmdSTof5f4tKITJcxta+rgk+t
+fsg2cqnkisFmyahE90gb1Q/YZi6X2lndLBTM+llO7fNt1Q/Xllxs/SRnlHMn+paZe1uqH6yYucSs
+/kapfK9/DKS+Z7NYUz/NZL7Wk0ldi5XMLKGLUgN7oblxpgcnlPqWr5Z9ON5J4QAAAAAAAACAN3LU
+wP44akBy1MCKowZeFucHdpnik7c8v1Xj3gmv5dIyB97yqXYvL+BfoQ9cJ6gg968V3mJxltcjMcRI
+PZMfF/qW2VLjAWs2qPaEW/wtZHYZe1xrXYvI5a0VdnWtBt5PjGc8unjuuYOOnPFTMQxDvj2mVDaM
+sun1p+M44tmafO92e78WU4Lcx9qLs+GcL4YbtBVOeDBv7U8ukYHqspbjravLsn8W37LJIuJ880pf
+ZaVwksp7M8KZH47RsJvZrBe6zNjnteW9bNTDqn65uZgh4G8HFgVHXmTYNjxY3rQvDZlXxb4qL2s5
+cn3pxRuRI4VN/IhjlOy/DH+hnO11MW540Qm3zJ+i22zPxORWdEU48Wvto5BptO12NBBVvxGrtsHB
+xPnduOuV+/OOkGu/lnTi1dQfVq0jTXz5nphedLxFtMr/i3HDR8jh7u5CiGLZcL6sPxxc3JSOk/9V
+2fYaigU5UoZtg4NV2rVqU+4NHkwG46kcPNcfVgZNFp6FGPuLMLKTOL1e+R5sDZfr59Nia/R3ED2/
+F3JccvylED+C+Cb5I+6wbXCwH1c/Z7l8pOsiP/VWBE0W/BcBRN4GsKMYve7+p0a8m/NuKDvqHznJ
+1ZVDewzLtis301ku463VeQhy9JIx/yxrNiP7kTFyJatZCccSR45Mdt2Q64Yl93vjkdXUnfXBJrq9
+arlqG4aMiml/M+RUSm+YC8cwOYzJYa6yPIsfCZvISFAvsmsncXp9ak5n7f55JGRmJr8L3nr+MHCE
+m3Vbk1l7tuOtF7QNlfvuRL7D4Hben9xHX95Rak1axc7yLGs2I5+LowbeSYxe/2yOOHUAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAA+NT+AIXVEL+7cn2MAAAAAElFTkSuQmCC
+------=_Part_112_348490680.1684075490306
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: base64
+Content-Location: file:///C:/395c3e86dee7398d70e1a9897293f011
+
+iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6CAMAAAC/MqoPAAADAFBMVEX19fXv7+98fHx1dXV9fX23
+t7eenp5wcHDn5+f09PTz8/Pd3d2SkpLY2Njt7e3Q0NCioqJycnKqqqq7u7uurq6CgoKGhobOzs7D
+w8PR0dGNjY3Hx8fj4+PGxsbS0tKoqKgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAABYhwFnAAAEk0lEQVR4Xu3cC1PaShiA4SUXEi4JcMAjVu3k//+pMp2eOZbqoILc
+FDjZ3IhL6hgsiRzeZzrZ3S+7DB8bgiVLhAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA
+I1BRA4dhr9e6GvuNlabN1dgRsw3TVmO/Y5vau/segaqpRt5iVtXIQWhq4CDefbQH9LUaOWKWGnhb
+zu57KmbWP6UTTj3Xm3BvxkqNuP3qQuudbRbqDmm3+yGUlLoz1WfLjVhNnKzcd7ofMfW8dW5dhJUL
+y3m9J6B2P2ZKLq7xNa62dDe9J1RM6qWc5jrt73H1odVJ7ymSoQaKMJ1t64tSnkFxlCNYT/2nyZUn
+WmX///eArxmbbeOxtFkvI/VPgtRPEamfotJSL+YD7C2lpV4+Uj9FpH6KSP0UkfopIvXy1Ot1NVSQ
+UlKXyT5HV5J1cypqpWRfRuqzB9uf7HbYcNZCbB5edyhGGamLektM26O+kN/I302FaJUy66VceNpo
+c/FY1xtab+Rs/NTN2esr6sVceCol9ea4/iyWwtGftPGzEI1Z/fWVt2JSL4b6vcS1lVouY2uX20ZA
+7X7MdnLpGo246ljd9B5pp/sR283lWmuf27Wafd421DnP6n68MnJxzaZhdYymmbFyL6P70cqZS87u
+eyrlc/1zIPUDW+Va+mkX87FeTOparmRWBT0pNXAQ2ibP8uCCUs/4aDmE010UDgAAAAAAAAA4Ap4a
+SPPUQB5/4Nt+07KsN27Dce3v/iJ/s3up+7Vmxq93Y54aOKyPp36pNa2mdq6GE8Nm5ezn1K/cdqpL
+o5b1e/W9DdRAHntdffE2N0L0FmMhjCehO/dCVFfJVTVn6W+ad0kp2cndCbY14Y0nQjxX58IxpqI+
+m3syOIgayXC1Vzg02A6E5/+b+E/DuY0eM4/9flF6U600b4W/uYuWO1nLJPXlRqu2httSMmUevnql
+Eb4WgUln6v777Pds3zumMR/4iSSN7XClVzBSdjSjA3b890Nr2L8JGwfnOf70BRtLiI1897rbhRDW
+1etS0sOb7Hiel1o65bX8zVU0UD6AF++RjXj4Tq/IteUGIzy5CMncZx3Gfu/1FyHmwSa670Ja99dZ
+Tz7tuPRVjfDgGgzXIpp/yZ9K8cN/hEbH8v6KLzHGjWR4Zi/hDI3HsPYkilr9J3npTXC3CSf1sn+t
+6pac5bgUVTlBkXj+RDzJ/tb6clWveFEgbsTDd3oFrix5MASzLg8jefTltt+sp73Il3zxsg18X64M
+efaMy17FiibIN0pqKZMfUznB34KlslEjGa72ktxfzWRFsVyAl2vlQuzjqfdnXbdb6SVtq2u7shWX
+/XElzNzq2+7ly876QN/cPZcnNNuVuUeNePhOLznVi9r2bDm5dq+1ZtJ8v4+n/s968jBZ/0zanclm
+IW9FEJeji75/evMPy85os7htZEy7XVnc1/xyPXrykkY8fKeXdNH2H9IL685wMUx/bpwOTw2828dn
+/Wjt9ydNFi8sBulYJi8sBukYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOAP+w8xiBIcxEC/
+CQAAAABJRU5ErkJggg==
+------=_Part_112_348490680.1684075490306
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: base64
+Content-Location: file:///C:/da146b18367081e6329333b15b0cb73f
+
+iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6CAMAAAC/MqoPAAADAFBMVEX19fXv7+98fHx1dXV9fX23
+t7eenp5wcHDn5+f09PTz8/Pd3d2SkpLY2Njt7e3Q0NCioqJycnKqqqq7u7uurq6CgoKGhobOzs7D
+w8PR0dGNjY3Hx8fj4+PGxsbS0tKoqKgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAABYhwFnAAAF2ElEQVR4Xu3ciXLaOhQGYHmVg2MDBQI0y9Wr3ie9TJdpm6YlC4GY
+xb6SbNlGkDRkBjuU/5vWyEdC5lheprWAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAgANg6IH98OLY0mPPWJnmkx47YJ7teHrsOZ5jvrrtAXAdPfISx9Uje2Hqgb149dEu
+WbEeOWBUD7xsx+ZvVM2ov0tHnPpOJ+Gb2Ss9Eg7cyOz2kkivEDab70NNqQdTazZPyGoSbMt9o/kB
+069bfTpMC0MarNdIevNDpuUS2leq2LTCck2qmtRrucy1W59U8a7ZLtdUydYDVZjOinJUyyeojnYE
+W6V/NIXiQqvV/70H/ImdFCv3tY16Ham/E0j9GCH1Y1Rb6tXcwF5SW+r1Q+rHCKkfI6R+jJD6MULq
+9Wk0GnqoIrWkLpJdZE+SLWdKTmrJvo7UZ3ceH+xWuhLEhCR36w2qUUfqpNEk09Z4QMT/yP+aEtKs
+ZdRrefCUmE/kvmH5ZnccJDx1Z7b+RL2aB0+1pH760FiQOQmsR/NhQYg/a6w/easm9Wro/y9xSUvT
+ZTzzvFiR9OaHbCOXju2rYkA75Rpho/kB28zl0mz1vZMTr9+y9THf1vxwbckldE5t2rZPnS0z97Y0
+P1g75rJj8zeq5b7+PiD1PVvtNPXTq+a2Xk3q5k7JrCr6UHpgL8xkl+nBFaW+5dayD8c7KRwAAAAA
+AAAAAAAA9oTpgf1jekBgeqDA0i92GuJB73LwtShcXhPSmdwTcv6dN3DM+/wd39KpH3Q4EnFC4oWq
+4v34YuXscxFR2EgsG94jXy56P8SGvxHnMWGqgazPMFUYFbGdpFt7OZIxrcDwu7RUoB3vwhJ7hXZ5
+pFc89GX0UrxcUsZ3C+2EHdrP6wxq88YdumVvy0CD0vMwDD6kDYwmPSvqdEwP7II9X8ixdBqRa03J
+YroqFVaz5T01RGE6J4uY5I/MWsZYlKM4vCVTfxzNrMf8S5quseCNZ7y+ZcW2ndAlCfzEDsmSkVar
+dWv4k4comssGt7yP4W/ZrShvSIPMjJf/Zn0Qlndq2LbdmvHjkgfa07QVuyXMXqXrcmuyl+wtaYQ1
+n2x7QHkjbyE2IB9v5ZNZyrNa1E/JNPxwWUSn5IqQoayU85xo8ZVUo5sXJ23aM/jRPz+dUyfgR+5o
+NCLG7j8382gbqo9Sp4lBzybijDylffEZRCvh4YyePQyyrUnZW7LId5d2bh74osjHoVbrXMzaywuC
+lX5SxlhpuhMjjiUmd4oDJhFfug+Lk6Foxpp8cZHViBZM1qcfUDbgO2pIe6q8iaVL9Q1/2YfqlF6k
+QZoNjmzF+B8xcE75fMvfIiOM7z9PLtKIGPWF0XZvVv1SgXPtdDxH1zGZpz1Jju37WdXzxOXuy5AQ
+v03Zh/WHh3xXyqX7u7PtZyrWiStm3ofqtPOz15XZqweY6roqLqLrDzXVW1J8sJ/kIo+kxNWtVHBp
+8UMKavyI3FnOWc+RBfkzE0Fp1POpUEwt6ceLhsGygLoiqvVMuZxjxXKtD7m8ci3qFkeZrBANxHo2
+oqWafHtrC1Z6vj5ZK3QNmt/QyDgvCfZd9pXzpdjDUXHeJDd5MTf5MhUD9J84i5Jt17NXyPoofJqv
+5Nmtz1cQU/FETG5tzWYkQ7u+EVhmqTBQe5QOvPCcfsybslJh282tcVHc3PiSumFf3AfpoCHq6WXY
+uHBYqZu0mXpRf9eWqo88xO+84T9U3GE74ZVVGkje/aWYfyi3JiP5W0REtVNVYtS746U7PzktFcbD
+AT8nefrtcRLd+OvDrnyNJ3eT+Ee+nsy9+ernJL1bpzwjuj3hr/H4kZHESq6j1c9V6YcqXkP1kWtP
+kkgceJ/jSfSj/CMfwXV07f/KtrZmM/J3YXrgD6qZtvIu/ek2lWHpy6gcU1j6MirHAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACgZv8D+5dld0c+6PgAAAAASUVORK5CYII=
+------=_Part_112_348490680.1684075490306
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: file:///C:/43223fc8dc59f155c705d1aaca152746
+
+iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAA3NCSVQICAjb4U/gAAAAFVBMVEX/
+//9wcHBwcHBwcHBwcHBwcHBwcHA3RenHAAAAB3RSTlMAZoiZzN3/SzZomQAAAAlwSFlzAAALEgAA
+CxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAAUdEVYdENy
+ZWF0aW9uIFRpbWUANi8xLzEzOKlF0AAAACFJREFUCJljYCATsCgwqIAZTMnMyRAhsTABCIMxkVxT
+GQCLcwHyUKXpLgAAAABJRU5ErkJggg==
+------=_Part_112_348490680.1684075490306--

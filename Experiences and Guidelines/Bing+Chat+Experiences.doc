@@ -1,0 +1,622 @@
+Date: Sun, 14 May 2023 14:45:41 +0000 (UTC)
+Message-ID: <2009453683.141.1684075541696@5855e6b6d56e>
+Subject: Exported From Confluence
+MIME-Version: 1.0
+Content-Type: multipart/related; 
+	boundary="----=_Part_140_1699084670.1684075541696"
+
+------=_Part_140_1699084670.1684075541696
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///C:/exported.html
+
+<html xmlns:o=3D'urn:schemas-microsoft-com:office:office'
+      xmlns:w=3D'urn:schemas-microsoft-com:office:word'
+      xmlns:v=3D'urn:schemas-microsoft-com:vml'
+      xmlns=3D'urn:w3-org-ns:HTML'>
+<head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8=
+">
+    <title>Bing Chat Experiences</title>
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:TargetScreenSize>1024x640</o:TargetScreenSize>
+            <o:PixelsPerInch>72</o:PixelsPerInch>
+            <o:AllowPNG/>
+        </o:OfficeDocumentSettings>
+        <w:WordDocument>
+            <w:View>Print</w:View>
+            <w:Zoom>90</w:Zoom>
+            <w:DoNotOptimizeForBrowser/>
+        </w:WordDocument>
+    </xml>
+    <![endif]-->
+    <style>
+                <!--
+        @page Section1 {
+            size: 8.5in 11.0in;
+            margin: 1.0in;
+            mso-header-margin: .5in;
+            mso-footer-margin: .5in;
+            mso-paper-source: 0;
+        }
+
+        table {
+            border: solid 1px;
+            border-collapse: collapse;
+        }
+
+        table td, table th {
+            border: solid 1px;
+            padding: 5px;
+        }
+
+        td {
+            page-break-inside: avoid;
+        }
+
+        tr {
+            page-break-after: avoid;
+        }
+
+        div.Section1 {
+            page: Section1;
+        }
+
+        /* Confluence print stylesheet. Common to all themes for print medi=
+a */
+/* Full of !important until we improve batching for print CSS */
+
+@media print {
+    #main {
+        padding-bottom: 1em !important; /* The default padding of 6em is to=
+o much for printouts */
+    }
+
+    body {
+        font-family: Arial, Helvetica, FreeSans, sans-serif;
+        font-size: 10pt;
+        line-height: 1.2;
+    }
+
+    body, #full-height-container, #main, #page, #content, .has-personal-sid=
+ebar #content {
+        background: var(--ds-surface, #fff) !important;
+        color: var(--ds-text, #000) !important;
+        border: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+    }
+
+    a, a:link, a:visited, a:focus, a:hover, a:active {
+        color: var(--ds-text, #000);
+    }
+
+    #content h1,
+    #content h2,
+    #content h3,
+    #content h4,
+    #content h5,
+    #content h6 {
+        font-family: Arial, Helvetica, FreeSans, sans-serif;
+        page-break-after: avoid;
+    }
+
+    pre {
+        font-family: Monaco, "Courier New", monospace;
+    }
+
+    #header,
+    .aui-header-inner,
+    #navigation,
+    #sidebar,
+    .sidebar,
+    #personal-info-sidebar,
+    .ia-fixed-sidebar,
+    .page-actions,
+    .navmenu,
+    .ajs-menu-bar,
+    .noprint,
+    .inline-control-link,
+    .inline-control-link a,
+    a.show-labels-editor,
+    .global-comment-actions,
+    .comment-actions,
+    .quick-comment-container,
+    #addcomment {
+        display: none !important;
+    }
+
+    /* CONF-28544 cannot print multiple pages in IE */
+    #splitter-content {
+        position: relative !important;
+    }
+
+    .comment .date::before {
+        content: none !important; /* remove middot for print view */
+    }
+
+    h1.pagetitle img {
+        height: auto;
+        width: auto;
+    }
+
+    .print-only {
+        display: block;
+    }
+
+    #footer {
+        position: relative !important; /* CONF-17506 Place the footer at en=
+d of the content */
+        margin: 0;
+        padding: 0;
+        background: none;
+        clear: both;
+    }
+
+    #poweredby {
+        border-top: none;
+        background: none;
+    }
+
+    #poweredby li.print-only {
+        display: list-item;
+        font-style: italic;
+    }
+
+    #poweredby li.noprint {
+        display: none;
+    }
+
+    /* no width controls in print */
+    .wiki-content .table-wrap,
+    .wiki-content p,
+    .panel .codeContent,
+    .panel .codeContent pre,
+    .image-wrap {
+        overflow: visible !important;
+    }
+
+    /* TODO - should this work? */
+    #children-section,
+    #comments-section .comment,
+    #comments-section .comment .comment-body,
+    #comments-section .comment .comment-content,
+    #comments-section .comment p {
+        page-break-inside: avoid;
+    }
+
+    #page-children a {
+        text-decoration: none;
+    }
+
+    /**
+     hide twixies
+
+     the specificity here is a hack because print styles
+     are getting loaded before the base styles. */
+    #comments-section.pageSection .section-header,
+    #comments-section.pageSection .section-title,
+    #children-section.pageSection .section-header,
+    #children-section.pageSection .section-title,
+    .children-show-hide {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .children-show-hide.icon {
+        display: none;
+    }
+
+    /* personal sidebar */
+    .has-personal-sidebar #content {
+        margin-right: 0px;
+    }
+
+    .has-personal-sidebar #content .pageSection {
+        margin-right: 0px;
+    }
+
+    .no-print, .no-print * {
+        display: none !important;
+    }
+}
+-->
+    </style>
+</head>
+<body>
+    <h1>Bing Chat Experiences</h1>
+    <div class=3D"Section1">
+        <ul>
+<li><p>The three different versions of Bing chat (creative/balanced/concise=
+) are quite different in terms of outputs.</p></li>
+<li><p>There is a very large amount of randomness in the outputs. Even when=
+ I entered exactly the same task/prompt multiple times, it wrote very diffe=
+rent solutions each time.</p></li>
+<li><p>It often bugs out and stops before finishing the code, or times out,=
+ which gets very frustrating.</p></li>
+<li><p>Bing chat allows for only an extremely limited amount of input chara=
+cters. This makes it impossible to give it a whole class to re-write, and t=
+hus requires more manual effort to generate the code.</p>
+<ul>
+<li><p><em>Edit 06.05.2023: </em>as described by Nils, there are ways to ge=
+t around the limitations:</p></li>
+</ul></li>
+</ul>
+<blockquote>
+<p>There are two possible workarounds to enhance the 2000 character limit:<=
+/p>
+<p>1. The limit seems to be only enforced in the HTML and therefore increas=
+ing "maxlength" for the "textarea" does allow a much longer input. This has=
+ worked well for me to summarise longer texts.<br>2. As the "chat" is also =
+available via the discover button on the top right corner in Edge and can r=
+ead the current website, it might be possible to open a .txt file with Edge=
+ and use it that way as input.</p>
+</blockquote>
+<ul>
+<li><p>Like ChatGPT, Bing chat is able to generate well structured, compila=
+ble code that relates to the given task.</p></li>
+<li><p>It is better at remembering and correctly referencing code it has wr=
+itten previously (compared to ChatGPT-3.5).</p></li>
+<li><p>Still not able to understand/solve problems that require logic.</p><=
+/li>
+</ul>
+<h2 id=3D"BingChatExperiences-CreativeMode">Creative Mode</h2>
+<p><em>Creative mode could be the most useful for a student. It provides lo=
+ts of explanations, and tries to help you to fix problems yourself. The lim=
+ited amount of tokens and refusal to write in the potentially fraudulent "s=
+tyle of a student" could also force users to take a more active, educated r=
+ole in "pair-programming."</em></p>
+<div id=3D"expander-282066251" class=3D"expand-container">
+<div id=3D"expander-control-282066251" class=3D"expand-control">
+<span class=3D"expand-control-icon"><img style=3D"vertical-align:middle;" c=
+lass=3D"expand-control-image" src=3D"43223fc8dc59f155c705d1aaca152746" widt=
+h=3D"16" height=3D"16"></span><span class=3D"expand-control-text">Example c=
+ode:</span>
+</div>
+<div id=3D"expander-content-282066251" class=3D"expand-content">
+<div class=3D"code panel pdl" style=3D"border-width: 1px;">
+<div class=3D"codeContent panelContent pdl">=20
+<pre class=3D"syntaxhighlighter-pre" data-syntaxhighlighter-params=3D"brush=
+: java; gutter: false; theme: Confluence" data-theme=3D"Confluence">package=
+ thkoeln.st.st2praktikum.exercise;
+
+public class Exercise0 implements Walkable {
+
+    // The width and height of the room in cells
+    private static final int ROOM_WIDTH =3D 12;
+    private static final int ROOM_HEIGHT =3D 8;
+
+    // The initial x and y coordinates of the robot in cells
+    private static final int INITIAL_X =3D 3;
+    private static final int INITIAL_Y =3D 0;
+
+    // The current x and y coordinates of the robot in cells
+    private int x;
+    private int y;
+
+    // A two-dimensional array that represents the room grid
+    // A cell is true if it is blocked by a wall or a boundary, false other=
+wise
+    private boolean[][] grid;
+
+    // A constructor that initializes the robot and the grid
+    public Exercise0() {
+        // Set the initial position of the robot
+        x =3D INITIAL_X;
+        y =3D INITIAL_Y;
+
+        // Create the grid with the given width and height
+        grid =3D new boolean[ROOM_WIDTH][ROOM_HEIGHT];
+
+        // Mark the boundaries of the room as blocked cells
+        for (int i =3D 0; i &lt; ROOM_WIDTH; i++) {
+            grid[i][0] =3D true; // bottom boundary
+            grid[i][ROOM_HEIGHT - 1] =3D true; // top boundary
+        }
+        for (int j =3D 0; j &lt; ROOM_HEIGHT; j++) {
+            grid[0][j] =3D true; // left boundary
+            grid[ROOM_WIDTH - 1][j] =3D true; // right boundary
+        }
+
+        // Mark the walls as blocked cells
+        for (int j =3D 0; j &lt;=3D 3; j++) {
+            grid[3][j] =3D true; // wall between (3,0) and (3,3)
+        }
+        for (int i =3D 4; i &lt;=3D 7; i++) {
+            grid[i][3] =3D true; // wall between (4,3) and (7,3)
+        }
+        for (int j =3D 0; j &lt;=3D 2; j++) {
+            grid[7][j] =3D true; // wall between (7,0) and (7,2)
+        }
+        for (int i =3D 1; i &lt;=3D 8; i++) {
+            grid[i][4] =3D true; // wall between (1,4) and (8,4)
+        }
+    }
+
+    // A method that implements the Walkable interface
+    public String walkTo(String walkCommandString) {
+        // Parse the walk command string into direction and steps
+        String direction =3D walkCommandString.substring(1, 3); // e.g. "no=
+"
+        int steps =3D Integer.parseInt(walkCommandString.substring(4, walkC=
+ommandString.length() - 1)); // e.g. 2
+
+        // Move the robot according to the direction and steps
+        switch (direction) {
+            case "no": // north
+                for (int i =3D 0; i &lt; steps; i++) {
+                    if (y &lt; ROOM_HEIGHT - 1 &amp;&amp; !grid[x][y + 1]) =
+{ // check if the robot is not at the top boundary and the next cell is not=
+ blocked
+                        y++; // move one cell up
+                    } else {
+                        break; // stop moving if at the boundary or blocked=
+ by a wall
+                    }
+                }
+                break;
+            case "ea": // east
+                for (int i =3D 0; i &lt; steps; i++) {
+                    if (x &lt; ROOM_WIDTH - 1 &amp;&amp; !grid[x + 1][y]) {=
+ // check if the robot is not at the right boundary and the next cell is no=
+t blocked
+                        x++; // move one cell right
+                    } else {
+                        break; // stop moving if at the boundary or blocked=
+ by a wall
+                    }
+                }
+                break;
+            case "so": // south
+                for (int i =3D 0; i &lt; steps; i++) {
+                    if (y &gt; 0 &amp;&amp; !grid[x][y - 1]) { // check if =
+the robot is not at the bottom boundary and the next cell is not blocked
+                        y--; // move one cell down
+                    } else {
+                        break; // stop moving if at the boundary or blocked=
+ by a wall
+                    }
+                }
+                break;
+            case "we": // west
+                for (int i =3D 0; i &lt; steps; i++) {
+                    if (x &gt; 0 &amp;&amp; !grid[x - 1][y]) { // check if =
+the robot is not at the left boundary and the next cell is not blocked
+                        x--; // move one cell left
+                    } else {
+                        break; // stop moving if at the boundary or blocked=
+ by a wall
+                    }
+                }
+                break;
+            default: // invalid direction
+                throw new IllegalArgumentException("Invalid direction: " + =
+direction);
+        }
+
+        // Return the current position of the robot as a string
+        return "(" + x + "," + y + ")";
+    }
+}</pre>=20
+</div>
+</div>
+</div>
+</div>
+<ul>
+<li><p>Creative mode provides a lot of explanations alongside the code. If =
+you tell Bing chat about a bug in the code, it elaborately explains how you=
+ can try to fix it yourself (run a debugger etc) rather than just give you =
+the corrected code. This could be more useful for students.</p></li>
+<li><p>Creative mode adds a ridiculous amount of comments. Even if you tell=
+ it to follow clean code rules, specifically "comments only where necessary=
+", it still comments almost every line.</p></li>
+<li><p>Creative mode refuses to write code in the "style of a student", or =
+in a "bad style". However it will comply with a "simple style" or "style of=
+ someone who is not good at programming". Specific commands also work, like=
+ "make some of the variable names be single characters. Remove all comments=
+".</p></li>
+</ul>
+<h2 id=3D"BingChatExperiences-Balancedmode">Balanced mode</h2>
+<p><em>Balanced mode is not recommended at all. The code itself is worse, t=
+here are fewer explanations, and it feels more frustrating to work with.</e=
+m></p>
+<div id=3D"expander-28394909" class=3D"expand-container">
+<div id=3D"expander-control-28394909" class=3D"expand-control">
+<span class=3D"expand-control-icon"><img style=3D"vertical-align:middle;" c=
+lass=3D"expand-control-image" src=3D"43223fc8dc59f155c705d1aaca152746" widt=
+h=3D"16" height=3D"16"></span><span class=3D"expand-control-text">Code exam=
+ple:</span>
+</div>
+<div id=3D"expander-content-28394909" class=3D"expand-content">
+<div class=3D"code panel pdl" style=3D"border-width: 1px;">
+<div class=3D"codeContent panelContent pdl">=20
+<pre class=3D"syntaxhighlighter-pre" data-syntaxhighlighter-params=3D"brush=
+: java; gutter: false; theme: Confluence" data-theme=3D"Confluence">package=
+ thkoeln.st.st2praktikum.exercise;
+
+public class Exercise0 implements Walkable {
+    private int[][] walls =3D {{3,0},{3,1},{3,2},{3,3},{4,3},{5,3},{6,3},{7=
+,3},{7,2},{7,1},{7,0},{1,4},{2,4},{3,4},{4,4},{5,4},{6,4},{7,4}};
+    private int[] currentPos =3D {3,0};
+    private int[] roomSize =3D {12,8};
+
+    public String walkTo(String walkCommandString) {
+        String[] walkCommand =3D walkCommandString.substring(1,walkCommandS=
+tring.length()-1).split(",");
+        int steps =3D Integer.parseInt(walkCommand[1]);
+        switch(walkCommand[0]) {
+            case "no":
+                for(int i=3D0; i&lt;steps; i++) {
+                    if(currentPos[1]+1&gt;=3DroomSize[1] || isWall(currentP=
+os[0],currentPos[1]+1)) break;
+                    currentPos[1]++;
+                }
+                break;
+            case "ea":
+                for(int i=3D0; i&lt;steps; i++) {
+                    if(currentPos[0]+1&gt;=3DroomSize[0] || isWall(currentP=
+os[0]+1,currentPos[1])) break;
+                    currentPos[0]++;
+                }
+                break;
+            case "so":
+                for(int i=3D0; i&lt;steps; i++) {
+                    if(currentPos[1]-1&lt;0 || isWall(currentPos[0],current=
+Pos[1]-1)) break;
+                    currentPos[1]--;
+                }
+                break;
+            case "we":
+                for(int i=3D0; i&lt;steps; i++) {
+                    if(currentPos[0]-1&lt;0 || isWall(currentPos[0]-1,curre=
+ntPos[1])) break;
+                    currentPos[0]--;
+                }
+                break;
+        }
+        return "("+currentPos[0]+","+currentPos[1]+")";
+    }
+
+    private boolean isWall(int x,int y) {
+        for(int[] wall : walls) {
+            if(wall[0]=3D=3Dx &amp;&amp; wall[1]=3D=3Dy) return true;
+        }
+        return false;
+    }
+}</pre>=20
+</div>
+</div>
+</div>
+</div>
+<ul>
+<li><p>Balanced mode often won't write any code in response to the prompt, =
+or struggles to understand the task.</p></li>
+<li><p>Balanced mode provides you with very short, condensed code with no c=
+omments and little explanations. The code does looks more like student code=
+ though.</p></li>
+<li><p>Balanced mode processes much faster, and is less likely to time out =
+before finishing the code.</p></li>
+<li><p>Balanced mode code is much more buggy and incorrect, as it has not o=
+nly logic problems but also compiling issues. Balanced mode cannot suggest =
+any useful fixes either.</p></li>
+<li><p>Balanced mode refuses to write code in any other style. Only "write =
+code so that it is easy to understand" worked, and even then it made very f=
+ew changes.</p></li>
+</ul>
+<h2 id=3D"BingChatExperiences-Concisemode">Concise mode</h2>
+<p><em>Concise mode could be recommended if you just want to quickly and di=
+rectly get some code, without extra explanations. However that code will ne=
+ed a lot of re-writing and fixing.</em></p>
+<div id=3D"expander-943514747" class=3D"expand-container">
+<div id=3D"expander-control-943514747" class=3D"expand-control">
+<span class=3D"expand-control-icon"><img style=3D"vertical-align:middle;" c=
+lass=3D"expand-control-image" src=3D"43223fc8dc59f155c705d1aaca152746" widt=
+h=3D"16" height=3D"16"></span><span class=3D"expand-control-text">Code exam=
+ple:</span>
+</div>
+<div id=3D"expander-content-943514747" class=3D"expand-content">
+<div class=3D"code panel pdl" style=3D"border-width: 1px;">
+<div class=3D"codeContent panelContent pdl">=20
+<pre class=3D"syntaxhighlighter-pre" data-syntaxhighlighter-params=3D"brush=
+: java; gutter: false; theme: Confluence" data-theme=3D"Confluence">package=
+ thkoeln.st.st2praktikum.exercise;
+
+public class Exercise0 implements Walkable {
+    private int x =3D 3;
+    private int y =3D 0;
+    private int width =3D 12;
+    private int height =3D 8;
+    private boolean[][] verticalWalls =3D new boolean[width + 1][height];
+    private boolean[][] horizontalWalls =3D new boolean[width][height + 1];
+
+    public Exercise0() {
+        for (int i =3D 0; i &lt;=3D 3; i++) {
+            verticalWalls[3][i] =3D true;
+        }
+        for (int i =3D 4; i &lt;=3D 7; i++) {
+            horizontalWalls[i][3] =3D true;
+        }
+        for (int i =3D 0; i &lt;=3D 2; i++) {
+            verticalWalls[7][i] =3D true;
+        }
+        for (int i =3D 1; i &lt;=3D 8; i++) {
+            horizontalWalls[i][4] =3D true;
+        }
+    }
+
+    @Override
+    public String walkTo(String walkCommandString) {
+        String[] parts =3D walkCommandString.substring(1, walkCommandString=
+.length() - 1).split(",");
+        String direction =3D parts[0];
+        int steps =3D Integer.parseInt(parts[1]);
+
+        switch (direction) {
+            case "no":
+                for (int i =3D 0; i &lt; steps; i++) {
+                    if (y + 1 &gt;=3D height || horizontalWalls[x][y + 1]) =
+break;
+                    y++;
+                }
+                break;
+            case "ea":
+                for (int i =3D 0; i &lt; steps; i++) {
+                    if (x + 1 &gt;=3D width || verticalWalls[x + 1][y]) bre=
+ak;
+                    x++;
+                }
+                break;
+            case "so":
+                for (int i =3D 0; i &lt; steps; i++) {
+                    if (y - 1 &lt; 0 || horizontalWalls[x][y]) break;
+                    y--;
+                }
+                break;
+            case "we":
+                for (int i =3D 0; i &lt; steps; i++) {
+                    if (x - 1 &lt; 0 || verticalWalls[x][y]) break;
+                    x--;
+                }
+                break;
+        }
+
+        return "(" + x + "," + y + ")";
+    }
+}</pre>=20
+</div>
+</div>
+</div>
+</div>
+<ul>
+<li><p>Concise mode will immediately just write the code requested, and inc=
+ludes little explanation.</p></li>
+<li><p>Concise mode code is very short and simple, with no comments. </p></=
+li>
+<li><p>Concise mode still cannot understand logic, and although it will sug=
+gest fixes to the code, they do not really help, and you just end up going =
+in circles.</p></li>
+<li><p>Concise mode will write code in any style that you want, with no ref=
+usals. However sometimes it agrees to your request, but then returns the co=
+de without any changes. When questioned afterwards, it says it doesn't want=
+ to write "bad code".</p></li>
+</ul>
+    </div>
+</body>
+</html>
+------=_Part_140_1699084670.1684075541696
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: file:///C:/43223fc8dc59f155c705d1aaca152746
+
+iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAA3NCSVQICAjb4U/gAAAAFVBMVEX/
+//9wcHBwcHBwcHBwcHBwcHBwcHA3RenHAAAAB3RSTlMAZoiZzN3/SzZomQAAAAlwSFlzAAALEgAA
+CxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAAUdEVYdENy
+ZWF0aW9uIFRpbWUANi8xLzEzOKlF0AAAACFJREFUCJljYCATsCgwqIAZTMnMyRAhsTABCIMxkVxT
+GQCLcwHyUKXpLgAAAABJRU5ErkJggg==
+------=_Part_140_1699084670.1684075541696--

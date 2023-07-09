@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a078cc44-3466-4005-b18f-9207115e6924" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../3. Process All Exercise Solutions.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../3. Process All Exercise Solutions.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../4. Process Milestone 0 Solutions.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../4. Process Milestone 0 Solutions.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../5. Test Passing.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../5. Test Passing.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6. Feature Extraction.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6. Feature Extraction.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_processed_solutions/all_code_solutions.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss21_processed_solutions/all_code_solutions.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_processed_solutions/all_concat_code_solutions.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss21_processed_solutions/all_concat_code_solutions.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_processed_solutions/m0_code_solutions.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss21_processed_solutions/m0_code_solutions.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_processed_solutions/m0_concat_code_solutions.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss21_processed_solutions/m0_concat_code_solutions.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_processed_solutions/m0_data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss21_processed_solutions/m0_data.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_processed_solutions/m0_data_binary.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/modified_solutions/m0_dennis/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/modified_solutions/m0_dennis/.gitlab-ci.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/modified_solutions/m0_dennis/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/modified_solutions/m0_dennis/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/modified_solutions/m0_dennis/src/main/java/thkoeln/st/st2praktikum/ProjectApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/modified_solutions/m0_dennis/src/main/java/thkoeln/st/st2praktikum/exercise/Barrier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/modified_solutions/m0_dennis/src/main/java/thkoeln/st/st2praktikum/exercise/BarrierType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/modified_solutions/m0_dennis/src/main/java/thkoeln/st/st2praktikum/exercise/Exercise0.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/modified_solutions/m0_dennis/src/main/java/thkoeln/st/st2praktikum/exercise/GoAble.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/modified_solutions/m0_dennis/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/modified_solutions/m0_dennis/src/main/resources/explanation.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/modified_solutions/m0_dennis/src/main/resources/grid.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/modified_solutions/m0_dennis/src/test/java/thkoeln/st/st2praktikum/exercise/Exercise0HiddenTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/modified_solutions/m0_dennis/src/test/java/thkoeln/st/st2praktikum/exercise/Exercise0Tests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/modified_solutions/m0_dennis/src/test/java/thkoeln/st/st2praktikum/exercise/core/MovementTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/modified_solutions/m0_natasha1/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/modified_solutions/m0_natasha1/.gitlab-ci.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/modified_solutions/m0_natasha1/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/modified_solutions/m0_natasha1/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/modified_solutions/m0_natasha1/setup-test-environment.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/modified_solutions/m0_natasha1/src/main/java/thkoeln/st/st2praktikum/ProjectApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/modified_solutions/m0_natasha1/src/main/java/thkoeln/st/st2praktikum/exercise/Exercise0.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/modified_solutions/m0_natasha1/src/main/java/thkoeln/st/st2praktikum/exercise/GoAble.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/modified_solutions/m0_natasha1/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/modified_solutions/m0_natasha1/src/main/resources/explanation.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/modified_solutions/m0_natasha1/src/main/resources/grid.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/modified_solutions/m0_natasha1/src/test/java/thkoeln/st/st2praktikum/exercise/Exercise0HiddenTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/modified_solutions/m0_natasha1/src/test/java/thkoeln/st/st2praktikum/exercise/Exercise0Tests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/modified_solutions/m0_natasha1/src/test/java/thkoeln/st/st2praktikum/exercise/core/MovementTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/modified_solutions/m0_natasha2/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/modified_solutions/m0_natasha2/.gitlab-ci.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/modified_solutions/m0_natasha2/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/modified_solutions/m0_natasha2/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/modified_solutions/m0_natasha2/setup-test-environment.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/modified_solutions/m0_natasha2/src/main/java/thkoeln/st/st2praktikum/ProjectApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/modified_solutions/m0_natasha2/src/main/java/thkoeln/st/st2praktikum/exercise/Exercise0.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/modified_solutions/m0_natasha2/src/main/java/thkoeln/st/st2praktikum/exercise/GoAble.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/modified_solutions/m0_natasha2/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/modified_solutions/m0_natasha2/src/main/resources/explanation.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/modified_solutions/m0_natasha2/src/main/resources/grid.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/modified_solutions/m0_natasha2/src/test/java/thkoeln/st/st2praktikum/exercise/Exercise0HiddenTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/modified_solutions/m0_natasha2/src/test/java/thkoeln/st/st2praktikum/exercise/Exercise0Tests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/modified_solutions/m0_natasha2/src/test/java/thkoeln/st/st2praktikum/exercise/core/MovementTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/student_solutions/m0_student23/src/main/java/thkoeln/st/st2praktikum/exercise/Exercise0.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss21_raw_solutions/student_solutions/m0_student23/src/main/java/thkoeln/st/st2praktikum/exercise/Exercise0.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/student_solutions/m0_student28/src/main/java/thkoeln/st/st2praktikum/exercise/Exercise0.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss21_raw_solutions/student_solutions/m0_student28/src/main/java/thkoeln/st/st2praktikum/exercise/Exercise0.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/student_solutions/m0_student3/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/student_solutions/m0_student3/.gitlab-ci.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss21_raw_solutions/student_solutions/m0_student84/src/main/java/thkoeln/st/st2praktikum/exercise/Exercise0.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss21_raw_solutions/student_solutions/m0_student84/src/main/java/thkoeln/st/st2praktikum/exercise/Exercise0.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2QcBPB2vPWFknviMHmkHnt7rH0c" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "E:/Folders/Google Drive/TH Köln/Modules/2. ChatGPT Guided Project/ChatGPT-Project/ss23_raw_solutions/DIP_ss23_natasha/natasha_refactoring_2"
+  }
+}]]></component>
+  <component name="RunManager" selected="JUnit.E3DDDRulesTest and 6 more">
+    <configuration name="CanvasTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Bauzeicher20" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="thkoeln.archilab.bauzeichner20.functionaltests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="thkoeln.archilab.bauzeichner20.functionaltests" />
+      <option name="MAIN_CLASS_NAME" value="thkoeln.archilab.bauzeichner20.functionaltests.CanvasTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <patterns>
+        <pattern testClass="thkoeln.archilab.bauzeichner20.dddtests.E3DDDRulesTest" />
+        <pattern testClass="thkoeln.archilab.bauzeichner20.dddtests.E3PackageStructureTest" />
+        <pattern testClass="thkoeln.archilab.bauzeichner20.functionaltests.*" />
+        <pattern testClass="thkoeln.archilab.bauzeichner20.functionaltests.CanvasTest" />
+        <pattern testClass="thkoeln.archilab.bauzeichner20.functionaltests.DrawingElementTest" />
+        <pattern testClass="thkoeln.archilab.bauzeichner20.solidtests.*" />
+        <pattern testClass="thkoeln.archilab.bauzeichner20.solidtests.E4SOLIDTest" />
+      </patterns>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="E3DDDRulesTest and 6 more" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Bauzeicher20" />
+      <option name="TEST_OBJECT" value="pattern" />
+      <patterns>
+        <pattern testClass="thkoeln.archilab.bauzeichner20.dddtests.E3DDDRulesTest" />
+        <pattern testClass="thkoeln.archilab.bauzeichner20.dddtests.E3PackageStructureTest" />
+        <pattern testClass="thkoeln.archilab.bauzeichner20.functionaltests.*" />
+        <pattern testClass="thkoeln.archilab.bauzeichner20.functionaltests.CanvasTest" />
+        <pattern testClass="thkoeln.archilab.bauzeichner20.functionaltests.DrawingElementTest" />
+        <pattern testClass="thkoeln.archilab.bauzeichner20.solidtests.*" />
+        <pattern testClass="thkoeln.archilab.bauzeichner20.solidtests.E4SOLIDTest" />
+      </patterns>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.E3DDDRulesTest and 6 more" />
+        <item itemvalue="JUnit.CanvasTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a078cc44-3466-4005-b18f-9207115e6924" name="Changes" comment="" />
+      <created>1685642964638</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1685642964638</updated>
+    </task>
+    <servers />
+  </component>
+</project>

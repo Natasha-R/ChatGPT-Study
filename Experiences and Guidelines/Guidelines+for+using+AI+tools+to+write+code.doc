@@ -1,0 +1,364 @@
+Date: Sun, 14 May 2023 14:45:38 +0000 (UTC)
+Message-ID: <1362656393.115.1684075538226@765e4ed26f2a>
+Subject: Exported From Confluence
+MIME-Version: 1.0
+Content-Type: multipart/related; 
+	boundary="----=_Part_114_122622359.1684075538226"
+
+------=_Part_114_122622359.1684075538226
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///C:/exported.html
+
+<html xmlns:o=3D'urn:schemas-microsoft-com:office:office'
+      xmlns:w=3D'urn:schemas-microsoft-com:office:word'
+      xmlns:v=3D'urn:schemas-microsoft-com:vml'
+      xmlns=3D'urn:w3-org-ns:HTML'>
+<head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8=
+">
+    <title>Guidelines for using AI tools to write code</title>
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:TargetScreenSize>1024x640</o:TargetScreenSize>
+            <o:PixelsPerInch>72</o:PixelsPerInch>
+            <o:AllowPNG/>
+        </o:OfficeDocumentSettings>
+        <w:WordDocument>
+            <w:View>Print</w:View>
+            <w:Zoom>90</w:Zoom>
+            <w:DoNotOptimizeForBrowser/>
+        </w:WordDocument>
+    </xml>
+    <![endif]-->
+    <style>
+                <!--
+        @page Section1 {
+            size: 8.5in 11.0in;
+            margin: 1.0in;
+            mso-header-margin: .5in;
+            mso-footer-margin: .5in;
+            mso-paper-source: 0;
+        }
+
+        table {
+            border: solid 1px;
+            border-collapse: collapse;
+        }
+
+        table td, table th {
+            border: solid 1px;
+            padding: 5px;
+        }
+
+        td {
+            page-break-inside: avoid;
+        }
+
+        tr {
+            page-break-after: avoid;
+        }
+
+        div.Section1 {
+            page: Section1;
+        }
+
+        /* Confluence print stylesheet. Common to all themes for print medi=
+a */
+/* Full of !important until we improve batching for print CSS */
+
+@media print {
+    #main {
+        padding-bottom: 1em !important; /* The default padding of 6em is to=
+o much for printouts */
+    }
+
+    body {
+        font-family: Arial, Helvetica, FreeSans, sans-serif;
+        font-size: 10pt;
+        line-height: 1.2;
+    }
+
+    body, #full-height-container, #main, #page, #content, .has-personal-sid=
+ebar #content {
+        background: var(--ds-surface, #fff) !important;
+        color: var(--ds-text, #000) !important;
+        border: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+    }
+
+    a, a:link, a:visited, a:focus, a:hover, a:active {
+        color: var(--ds-text, #000);
+    }
+
+    #content h1,
+    #content h2,
+    #content h3,
+    #content h4,
+    #content h5,
+    #content h6 {
+        font-family: Arial, Helvetica, FreeSans, sans-serif;
+        page-break-after: avoid;
+    }
+
+    pre {
+        font-family: Monaco, "Courier New", monospace;
+    }
+
+    #header,
+    .aui-header-inner,
+    #navigation,
+    #sidebar,
+    .sidebar,
+    #personal-info-sidebar,
+    .ia-fixed-sidebar,
+    .page-actions,
+    .navmenu,
+    .ajs-menu-bar,
+    .noprint,
+    .inline-control-link,
+    .inline-control-link a,
+    a.show-labels-editor,
+    .global-comment-actions,
+    .comment-actions,
+    .quick-comment-container,
+    #addcomment {
+        display: none !important;
+    }
+
+    /* CONF-28544 cannot print multiple pages in IE */
+    #splitter-content {
+        position: relative !important;
+    }
+
+    .comment .date::before {
+        content: none !important; /* remove middot for print view */
+    }
+
+    h1.pagetitle img {
+        height: auto;
+        width: auto;
+    }
+
+    .print-only {
+        display: block;
+    }
+
+    #footer {
+        position: relative !important; /* CONF-17506 Place the footer at en=
+d of the content */
+        margin: 0;
+        padding: 0;
+        background: none;
+        clear: both;
+    }
+
+    #poweredby {
+        border-top: none;
+        background: none;
+    }
+
+    #poweredby li.print-only {
+        display: list-item;
+        font-style: italic;
+    }
+
+    #poweredby li.noprint {
+        display: none;
+    }
+
+    /* no width controls in print */
+    .wiki-content .table-wrap,
+    .wiki-content p,
+    .panel .codeContent,
+    .panel .codeContent pre,
+    .image-wrap {
+        overflow: visible !important;
+    }
+
+    /* TODO - should this work? */
+    #children-section,
+    #comments-section .comment,
+    #comments-section .comment .comment-body,
+    #comments-section .comment .comment-content,
+    #comments-section .comment p {
+        page-break-inside: avoid;
+    }
+
+    #page-children a {
+        text-decoration: none;
+    }
+
+    /**
+     hide twixies
+
+     the specificity here is a hack because print styles
+     are getting loaded before the base styles. */
+    #comments-section.pageSection .section-header,
+    #comments-section.pageSection .section-title,
+    #children-section.pageSection .section-header,
+    #children-section.pageSection .section-title,
+    .children-show-hide {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .children-show-hide.icon {
+        display: none;
+    }
+
+    /* personal sidebar */
+    .has-personal-sidebar #content {
+        margin-right: 0px;
+    }
+
+    .has-personal-sidebar #content .pageSection {
+        margin-right: 0px;
+    }
+
+    .no-print, .no-print * {
+        display: none !important;
+    }
+}
+-->
+    </style>
+</head>
+<body>
+    <h1>Guidelines for using AI tools to write code</h1>
+    <div class=3D"Section1">
+        <p>For research purposes, always keep a record of:</p>
+<ol start=3D"1">
+<li><p>All of the prompts used for ChatGPT</p></li>
+<li><p>All of the responses given by ChatGPT</p></li>
+<li><p>The results of the tests at the end of the milestone</p></li>
+<li><p>The final code submission</p></li>
+</ol>
+<p><strong>Disclaimer. Guidelines assume GPT 3.5 Turbo as a base model.</st=
+rong></p>
+<h1 id=3D"GuidelinesforusingAItoolstowritecode-UneducatedApproachGuidelines=
+">Uneducated Approach Guidelines</h1>
+<p><em>Represents a student with little knowledge of the domain or of codin=
+g. However, an understanding of the overall task, and an idea for a general=
+ approach for the solution is likely required. They submit only code provid=
+ed directly by ChatGPT.</em></p>
+<p>If possible GPT-4 should be used, as it is the most powerful model. See =
+<a data-card-appearance=3D"inline" href=3D"https://gp-chatgpt.atlassian.net=
+/wiki/spaces/ChatGPT/pages/7176217/ChatGPT+4+Experiences#GPT-4-SS23-Pair-Pr=
+ogramming-Conversation-Experience" rel=3D"nofollow">https://gp-chatgpt.atla=
+ssian.net/wiki/spaces/ChatGPT/pages/7176217/ChatGPT+4+Experiences#GPT-4-SS2=
+3-Pair-Programming-Conversation-Experience</a> for an example of a successf=
+ul conversation to create complex code.</p>
+<ol start=3D"1">
+<li><p>Re-write the task to include as much information as possible, includ=
+ing any helpful examples. </p></li>
+<li><p>Create a full structure of the entire program before attempting to f=
+ix any bugs.</p></li>
+<li><p>Paste any problematic code/errors given by the tests into ChatGPT, i=
+ncluding as much information as possible, and ask it to fix the code.</p></=
+li>
+<li><p>If ChatGPT cannot fix it, then review the code and identify the area=
+ containing the error. You can also ask ChatGPT to help you find it. Any ar=
+eas requiring an understanding of logic/mathematics are likely areas prone =
+to errors.</p></li>
+<li><p>Provide ChatGPT with the approach or logic required to fix the error=
+. You do not need to write any code - explain your desired approach clearly=
+, and ChatGPT will be capable of programming it for you.</p></li>
+</ol>
+<h1 id=3D"GuidelinesforusingAItoolstowritecode-EducatedApproachGuidelines">=
+Educated Approach Guidelines</h1>
+<p>During the educated approach multiple tools will be used, leveraging the=
+ir strengths in order to aid the student programming. The general approach =
+is to use ChatGPT to create the initial code for methods and to refactor me=
+thods, while GitHub Copilot will be used to generate new code as the codeba=
+se grows. The student is also free to code themself at any point either to =
+fix bugs or to change the structure of the code. You are free to use any ot=
+her tools to finish a milestone.</p>
+<p>See the <a data-card-appearance=3D"inline" href=3D"https://gp-chatgpt.at=
+lassian.net/wiki/spaces/~64182cd21273131f2ae1b775/pages/3801089" rel=3D"nof=
+ollow">https://gp-chatgpt.atlassian.net/wiki/spaces/~64182cd21273131f2ae1b7=
+75/pages/3801089</a> pages for ChatGPT's strengths and weaknesses.</p>
+<p><em>(This approach is not final and will be modified when we learn new a=
+spects about ChatGPT=E2=80=99s and Copilot=E2=80=99s capabilities.)</em></p=
+>
+<h3 id=3D"GuidelinesforusingAItoolstowritecode-OverallApproach">Overall App=
+roach</h3>
+<ol start=3D"1">
+<li><p>Prime ChatGPT with the necessary data about your coding session</p>
+<ol start=3D"1">
+<li><p><strong>Don=E2=80=99t give provide any Code to ChatGPT at this point=
+!</strong></p></li>
+<li><p>Programming language and any frameworks</p></li>
+<li><p>Provide the relevant data for the task (e.g. task description)</p></=
+li>
+<li><p>The overall design approach for your code (e.g. Clean Code rules)</p=
+></li>
+</ol></li>
+<li><p>Ask ChatGPT to implement you initial methods</p>
+<ol start=3D"1">
+<li><p>We currently recommend that you define the fields and methods yourse=
+lf.</p></li>
+<li><p>Consider whether writing a prompt will take more effort than impleme=
+nting the method yourself</p></li>
+<li><p>Provide any necessary data about the method and the class it belongs=
+ to (e.g. method signature, method doc, class fields, related classes and t=
+heir field and methods)</p></li>
+<li><p>If necessary provide any previously defined constrained (e.g. Clean =
+Code rules)</p></li>
+</ol></li>
+<li><p>Use Copilot where advantageous</p></li>
+<li><p>Keep programming until ChatGPT answers decline in quality</p></li>
+<li><p>Rely more on your own coding skills and Copilot. Use ChatGPT where y=
+ou think it=E2=80=99s appropriate</p></li>
+</ol>
+<h3 id=3D"GuidelinesforusingAItoolstowritecode-UsingChatGPT">Using ChatGPT<=
+/h3>
+<p>See the <a data-card-appearance=3D"inline" href=3D"https://gp-chatgpt.at=
+lassian.net/wiki/spaces/~64182cd21273131f2ae1b775/pages/3801089" rel=3D"nof=
+ollow">https://gp-chatgpt.atlassian.net/wiki/spaces/~64182cd21273131f2ae1b7=
+75/pages/3801089</a> pages for ChatGPT's strengths and weaknesses. Decide w=
+hat you want to use ChatGPT based on that information and your previous exp=
+eriences.</p>
+<ul>
+<li><p>Prime ChatGPT with necessary information</p>
+<ul>
+<li><p>ChatGPT might struggle to remember this information and might have t=
+o be reminded of it in future prompts.</p></li>
+</ul></li>
+<li><p>Always provide the necessary code you want to modify</p>
+<ul>
+<li><p>ChatGPT can struggle and produce worse results of previously generat=
+ed code if there is no code provided in the prompt.</p></li>
+<li><p>ChatGPT can forget the code it generated as recent as the previous p=
+rompt and might not use it as a base for improvements.</p></li>
+</ul></li>
+<li><p>ChatGPT struggles with logic. Code with <code>if</code> statements h=
+as to be tested and manually fixed.</p></li>
+<li><p>Don=E2=80=99t use ChatGPT=E2=80=99s imports. Rely on your IDE or do =
+it yourself.</p></li>
+</ul>
+<h3 id=3D"GuidelinesforusingAItoolstowritecode-UsingCopilot">Using Copilot<=
+/h3>
+<p>Copilot excels in established code bases, as it can use the existing cod=
+e to suggest new code. Copilot generally suggest new code as you are writin=
+g. If fitting code is suggested you can use the suggested code, otherwise k=
+eep writing your code until you get a better suggestion or are done with yo=
+ur code.</p>
+<p>There are still some aspects to look out for.</p>
+<ul>
+<li><p>Code suggested by Copilot doesn=E2=80=99t always compile</p>
+<ul>
+<li><p>E.g. If a keyword from another programming language is used suggesti=
+ons will still occur despite being uncompilable</p></li>
+</ul></li>
+<li><p>Braces are sometimes not closed correctly</p></li>
+</ul>
+    </div>
+</body>
+</html>
+------=_Part_114_122622359.1684075538226--

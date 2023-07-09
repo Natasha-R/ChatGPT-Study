@@ -1,0 +1,3637 @@
+source,milestone,name,style,version,code,num_chars,num_lines,avg_line_length,max_line_length,num_scaled_comments,num_scaled_if,num_scaled_for,num_scaled_switch,num_scaled_digits,num_scaled_exceptions,num_scaled_empty_lines,num_scaled_whitespace,num_scaled_indents,num_scaled_prints,prop_spaces_around_assignments,used_boolean,used_List,used_Integer,used_Point,used_ArrayList,used_StringBuilder,num_files,num_scaled_method_declarations,num_scaled_declared_fields,num_scaled_local_variables,num_scaled_classes,num_scaled_field_references,num_scaled_method_invocations,num_scaled_imports,avg_name_length,max_name_length,avg_comment_length,max_comment_length,scaled_edit_distance,diff_num_chars,diff_num_lines,diff_avg_line_length,diff_max_line_length,diff_num_scaled_empty_lines,diff_num_scaled_whitespace,diff_num_scaled_indents
+intervene,m0,dennis,,,"package thkoeln.st.st2praktikum.exercise;
+
+public class Barrier {
+
+    private int startX;
+    private int startY;
+    private int endX;
+    private int endY;
+    private BarrierType barrierType;
+
+    public Barrier(String barrierString) {
+        String[] coords = barrierString.split(""-"");
+        this.startX = Integer.parseInt(coords[0].substring(1, 2));
+        this.startY = Integer.parseInt(coords[0].substring(3, 4));
+        this.endX = Integer.parseInt(coords[1].substring(1, 2));
+        this.endY = Integer.parseInt(coords[1].substring(3, 4));
+        if (startX > endX) {
+            int tmp = startX;
+            startX = endX;
+            endX = tmp;
+        }
+        if (startY > endY) {
+            int tmp = startY;
+            startY = endY;
+            endY = tmp;
+        }
+        if (startX == endX) {
+            this.barrierType = BarrierType.VERTICAL;
+        } else {
+            this.barrierType = BarrierType.HORIZONTAL;
+        }
+    }
+
+    public boolean willHitBarrier(int currentX, int currentY, String direction) {
+        switch (direction) {
+            case ""ea"":
+                return willHitBarrierWhenMovingHorizontally(currentX, currentY, currentX + 1);
+            case ""we"":
+                return willHitBarrierWhenMovingHorizontally(currentX, currentY, currentX - 1);
+            case ""no"":
+                return willHitBarrierWhenMovingVertically(currentX, currentY,  currentY + 1);
+            case ""so"":
+                return willHitBarrierWhenMovingVertically(currentX, currentY,  currentY - 1);
+            default:
+                throw new IllegalArgumentException(""Invalid direction String"");
+        }
+    }
+
+    /**
+     * Checks whether the MiningMachine will hit this barrier when moving north or south
+     * @param currentX current X position of the MiningMachine
+     * @param currentY current Y position of the MiningMachine
+     * @param nextY next Y position of the MiningMachine
+     * @return true if it will hit the Barrier, otherwise false
+     */
+    private boolean willHitBarrierWhenMovingVertically(int currentX, int currentY, int nextY) {
+        if (barrierType.isVertical()) return false;
+
+        if (currentX < startX || currentX >= endX) return false;
+
+        return (nextY < startY && currentY >= startY) || (nextY >= startY && currentY < startY);
+    }
+
+    /**
+     * Checks whether the MiningMachine will hit this barrier when moving east or west
+     * @param currentX current X position of the MiningMachine
+     * @param currentY current Y position of the MiningMachine
+     * @param nextX next X position of the MiningMachine
+     * @return true if it will hit the Barrier, otherwise false
+     */
+    private boolean willHitBarrierWhenMovingHorizontally(int currentX, int currentY, int nextX) {
+        if (barrierType.isHorizontal()) return false;
+
+        if (currentY < startY || currentY >= endY) return false;
+
+        return (nextX < startX && currentX >= startX) || (nextX >= startX && currentX < startX);
+    }
+}
+package thkoeln.st.st2praktikum.exercise;
+
+import lombok.Getter;
+
+@Getter
+public enum BarrierType {
+    HORIZONTAL(true, false), VERTICAL(false, true);
+
+    private final boolean isHorizontal;
+    private final boolean isVertical;
+
+    BarrierType(boolean isHorizontal, boolean isVertical){
+        this.isHorizontal = isHorizontal;
+        this.isVertical = isVertical;
+    }
+
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Exercise0 implements GoAble {
+    private int x = 4;
+    private int y = 0;
+    private List<Barrier> barriers = new ArrayList<Barrier>();
+    private int fieldWidth = 11;
+    private int fieldHeight = 8;
+
+    public Exercise0() {
+        // Add the barriers to the list
+        barriers.add(new Barrier(""(1,0)-(1,6)""));
+        barriers.add(new Barrier(""(1,6)-(4,6)""));
+        barriers.add(new Barrier(""(5,6)-(7,6)""));
+        barriers.add(new Barrier(""(7,1)-(7,6)""));
+    }
+
+    @Override
+    public String go(String goCommandString) {
+        String[] goCommand = goCommandString.replaceAll(""[\\[\\]]"", """").split("","");
+        String direction = goCommand[0];
+        int steps = Integer.parseInt(goCommand[1]);
+
+        for (int i = 0; i < steps; i++) {
+            int nextX = x;
+            int nextY = y;
+
+            switch (direction) {
+                case ""no"":
+                    nextY += 1;
+                    break;
+                case ""so"":
+                    nextY -= 1;
+                    break;
+                case ""we"":
+                    nextX -= 1;
+                    break;
+                case ""ea"":
+                    nextX += 1;
+                    break;
+                default:
+                    throw new IllegalArgumentException(""Invalid direction String"");
+            }
+
+            // Check if the mining machine goes out of bounds
+            if (nextX < 0 || nextX >= fieldWidth || nextY < 0 || nextY >= fieldHeight) {
+                // Mining machine goes out of bounds, stay at current position
+                return ""("" + x + "","" + y + "")"";
+            }
+
+            // Check if the next step hits a barrier
+            for (Barrier barrier : barriers) {
+                if (barrier.willHitBarrier(x, y, direction)) {
+                    // Barrier will be hit, stay at current position
+                    return ""("" + x + "","" + y + "")"";
+                }
+            }
+
+            // Move to the next position
+            x = nextX;
+            y = nextY;
+
+        }
+
+        return ""("" + x + "","" + y + "")"";
+    }
+
+}
+package thkoeln.st.st2praktikum.exercise;
+
+public interface GoAble {
+    String go(String goCommandString);
+}
+",5684,172,38.54545454545455,97,0.046511627906976744,0.0755813953488372,0.011627906976744186,0.011627906976744186,0.3023255813953488,0.011627906976744186,0.1686046511627907,9.784883720930232,7.0,0.0,1.0,True,True,False,False,False,False,4,0.029069767441860465,0.06976744186046512,0.046511627906976744,0.011627906976744186,0.5872093023255814,0.13372093023255813,0.01744186046511628,6.666666666666667,12,47.55555555555556,83,3.5348837209302326,586,2,4.819427148194272,2,-0.005813953488372093,3.4302325581395348,3.4186046511627906
+intervene,m0,natasha1,,,"package thkoeln.st.st2praktikum.exercise;
+
+import java.awt.Point;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Exercise0 implements GoAble {
+
+    private Point droidLocation;
+    private final int maxX;
+    private final int maxY;
+    private final List<Point[]> obstaclePairs;
+
+    public Exercise0() {
+        this.droidLocation = new Point(11, 7);
+        this.maxX = 11;
+        this.maxY = 7;
+
+        // Initialize obstacle pairs
+        this.obstaclePairs = new ArrayList<>();
+        generateObstaclePairs(new Point(6,2), new Point(6,5));
+        generateObstaclePairs(new Point(5,5), new Point(6,5));
+        generateObstaclePairs(new Point(5,5), new Point(5,6));
+        generateObstaclePairs(new Point(5,6), new Point(12,6));
+    }
+
+    @Override
+    public String goTo(String goCommandString) {
+        // Remove brackets and split command into direction and steps
+        String[] commands = goCommandString.replace(""["", """").replace(""]"", """").split("","");
+        String direction = commands[0];
+        int steps = Integer.parseInt(commands[1]);
+
+        // Determine new position based on direction
+        for (int i = 0; i < steps; i++) {
+            Point newLocation = new Point(droidLocation);
+            switch (direction) {
+                case ""no"": newLocation.y++; break;
+                case ""ea"": newLocation.x++; break;
+                case ""so"": newLocation.y--; break;
+                case ""we"": newLocation.x--; break;
+            }
+
+            // Check if new location is valid
+            if (isValidMovement(droidLocation, newLocation)) {
+                droidLocation = newLocation;
+            } else {
+                break;
+            }
+        }
+
+        // Return new location
+        return ""("" + droidLocation.x + "","" + droidLocation.y + "")"";
+    }
+
+    private boolean isValidMovement(Point oldLocation, Point newLocation) {
+        // Check if location is within boundaries
+        if (newLocation.x < 0 || newLocation.x > maxX || newLocation.y < 0 || newLocation.y > maxY) {
+            return false;
+        }
+
+        // Check if the new location is an obstacle
+        for (Point[] obstaclePair : obstaclePairs) {
+            if (oldLocation.equals(obstaclePair[0]) && newLocation.equals(obstaclePair[1]) ||
+                    oldLocation.equals(obstaclePair[1]) && newLocation.equals(obstaclePair[0])) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    private void generateObstaclePairs(Point start, Point end) {
+        if(start.x == end.x) {
+            // Vertical obstacle
+            for(int i = start.y; i < end.y; i++) {
+                obstaclePairs.add(new Point[]{new Point(start.x - 1, i), new Point(start.x, i)});
+            }
+        } else if(start.y == end.y) {
+            // Horizontal obstacle
+            for(int i = start.x; i < end.x; i++) {
+                obstaclePairs.add(new Point[]{new Point(i, start.y - 1), new Point(i, start.y)});
+            }
+        }
+    }
+}
+package thkoeln.st.st2praktikum.exercise;
+
+public interface GoAble {
+    String goTo(String goCommandString);
+}
+",3116,91,39.285714285714285,101,0.0989010989010989,0.08791208791208792,0.04395604395604396,0.01098901098901099,0.4175824175824176,0.0,0.15384615384615385,9.593406593406593,6.989010989010989,0.0,1.0,False,True,False,True,False,False,2,0.04395604395604396,0.04395604395604396,0.04395604395604396,0.01098901098901099,0.5714285714285714,0.16483516483516483,0.03296703296703297,6.833333333333333,13,31.88888888888889,58,4.395604395604396,223,9,6.4268907563025195,4,0.01098901098901099,2.5494505494505493,2.6153846153846154
+intervene,m0,natasha2,,,"package thkoeln.st.st2praktikum.exercise;
+
+import java.util.*;
+
+public class Exercise0 implements GoAble {
+
+    private int x, y;
+    private final int width, height;
+    private final Set<String> invalidMoves;
+
+    public Exercise0() {
+        // droid initial position
+        this.x = 11;
+        this.y = 7;
+
+        // spaceship deck dimensions
+        this.width = 12;
+        this.height = 8;
+
+        // obstacles
+        int[][][] obstacles = {
+                {{6, 2}, {6, 5}},
+                {{5, 5}, {6, 5}},
+                {{5, 5}, {5, 6}},
+                {{5, 6}, {12, 6}}
+        };
+
+        // generate invalid moves
+        this.invalidMoves = new HashSet<>();
+        for (int[][] obstacle : obstacles) {
+            invalidMoves.addAll(generateObstaclePairs(obstacle));
+        }
+    }
+
+    private List<String> generateObstaclePairs(int[][] obstacle) {
+        List<String> obstaclePairs = new ArrayList<>();
+
+        int startX = obstacle[0][0];
+        int startY = obstacle[0][1];
+        int endX = obstacle[1][0];
+        int endY = obstacle[1][1];
+
+        // Vertical obstacle
+        if (startX == endX) {
+            int minY = Math.min(startY, endY);
+            int maxY = Math.max(startY, endY);
+
+            for (int y = minY; y < maxY; y++) {
+                obstaclePairs.add((startX - 1) + "","" + y + ""-"" + startX + "","" + y);
+                obstaclePairs.add(startX + "","" + y + ""-"" + (startX - 1) + "","" + y);
+            }
+        }
+        // Horizontal obstacle
+        else if (startY == endY) {
+            int minX = Math.min(startX, endX);
+            int maxX = Math.max(startX, endX);
+
+            for (int x = minX; x < maxX; x++) {
+                obstaclePairs.add(x + "","" + (startY - 1) + ""-"" + x + "","" + startY);
+                obstaclePairs.add(x + "","" + startY + ""-"" + x + "","" + (startY - 1));
+            }
+        }
+
+        return obstaclePairs;
+    }
+
+    @Override
+    public String goTo(String goCommandString) {
+        // remove brackets and split by comma
+        String[] command = goCommandString.substring(1, goCommandString.length() - 1).split("","");
+        String direction = command[0];
+        int steps = Integer.parseInt(command[1]);
+
+        for (int i = 0; i < steps; i++) {
+            int oldX = x, oldY = y;
+
+            switch (direction) {
+                case ""no"":
+                    if (y + 1 < height) y++;
+                    break;
+                case ""ea"":
+                    if (x + 1 < width) x++;
+                    break;
+                case ""so"":
+                    if (y - 1 >= 0) y--;
+                    break;
+                case ""we"":
+                    if (x - 1 >= 0) x--;
+                    break;
+            }
+
+            if (!isValidMove(oldX, oldY, x, y)) {
+                x = oldX;
+                y = oldY;
+                break;
+            }
+        }
+
+        return ""("" + x + "","" + y + "")"";
+    }
+
+    private boolean isValidMove(int oldX, int oldY, int newX, int newY) {
+        String move = oldX + "","" + oldY + ""-"" + newX + "","" + newY;
+        return !invalidMoves.contains(move);
+    }
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+public interface GoAble {
+    String goTo(String goCommandString);
+}
+",3226,112,34.21978021978022,97,0.0625,0.0625,0.03571428571428571,0.008928571428571428,0.44642857142857145,0.0,0.1875,10.651785714285714,7.964285714285714,0.0,1.0,False,True,False,False,False,False,2,0.03571428571428571,0.044642857142857144,0.14285714285714285,0.008928571428571428,0.7232142857142857,0.14285714285714285,0.008928571428571428,5.32,13,21.142857142857142,34,4.053571428571429,454,0,4.989010989010989,4,0.0,4.053571428571429,4.053571428571429
+intervene,m0,natasha3,,,"package thkoeln.st.st2praktikum.exercise;
+
+class Barrier {
+    Position start, end;
+    String orientation;
+
+    Barrier(Position start, Position end) {
+        this.start = start;
+        this.end = end;
+        this.orientation = start.x == end.x ? ""vertical"" : ""horizontal"";
+    }
+
+    public boolean intersects(Position a, Position b, String direction) {
+        if (orientation.equals(""vertical"")) {
+            if (direction.equals(""ea"") && a.x < start.x && b.x == start.x) {
+                return Math.min(start.y, end.y) <= a.y && a.y < Math.max(start.y, end.y);
+            }
+            if (direction.equals(""we"") && a.x == start.x && b.x < start.x) {
+                return Math.min(start.y, end.y) <= a.y && a.y < Math.max(start.y, end.y);
+            }
+        }
+        else {
+            if (direction.equals(""no"") && a.y < start.y && b.y == start.y) {
+                return Math.min(start.x, end.x) <= a.x && a.x < Math.max(start.x, end.x);
+            }
+            if (direction.equals(""so"") && a.y == start.y && b.y < start.y) {
+                return Math.min(start.x, end.x) <= a.x && a.x < Math.max(start.x, end.x);
+            }
+        }
+        return false;
+    }
+}
+
+
+package thkoeln.st.st2praktikum.exercise;
+import java.util.*;
+
+public class Exercise0 implements Moveable {
+    private Position position;
+    private Set<Barrier> barriers;
+
+    public Exercise0() {
+        this.position = new Position(7, 7);
+
+        this.barriers = new HashSet<>();
+        barriers.add(new Barrier(new Position(2, 1), new Position(10, 1)));
+        barriers.add(new Barrier(new Position(2, 1), new Position(2, 6)));
+        barriers.add(new Barrier(new Position(2, 6), new Position(7, 6)));
+        barriers.add(new Barrier(new Position(10, 1), new Position(10, 8)));
+    }
+
+    public String move(String moveCommandString) {
+        String[] command = moveCommandString.substring(1, moveCommandString.length() - 1).split("","");
+        String direction = command[0];
+        int steps = Integer.parseInt(command[1]);
+
+        switch (direction) {
+            case ""no"":
+                for (int i = 0; i < steps; i++) {
+                    Position nextPosition = new Position(position.x, position.y + 1);
+                    if (nextPosition.y < 8 && !barrierInPath(position, nextPosition, ""no"")) {
+                        position = nextPosition;
+                    }
+                }
+                break;
+            case ""ea"":
+                for (int i = 0; i < steps; i++) {
+                    Position nextPosition = new Position(position.x + 1, position.y);
+                    if (nextPosition.x < 11 && !barrierInPath(position, nextPosition, ""ea"")) {
+                        position = nextPosition;
+                    }
+                }
+                break;
+            case ""so"":
+                for (int i = 0; i < steps; i++) {
+                    Position nextPosition = new Position(position.x, position.y - 1);
+                    if (nextPosition.y >= 0 && !barrierInPath(position, nextPosition, ""so"")) {
+                        position = nextPosition;
+                    }
+                }
+                break;
+            case ""we"":
+                for (int i = 0; i < steps; i++) {
+                    Position nextPosition = new Position(position.x - 1, position.y);
+                    if (nextPosition.x >= 0 && !barrierInPath(position, nextPosition, ""we"")) {
+                        position = nextPosition;
+                    }
+                }
+                break;
+        }
+
+        return position.toString();
+    }
+
+    private boolean barrierInPath(Position start, Position end, String direction) {
+        for (Barrier barrier : barriers) {
+            if (direction.equals(""no"") || direction.equals(""so"")) {
+                if (barrier.orientation.equals(""horizontal"") && barrier.intersects(start, end, direction)) {
+                    return true;
+                }
+            } else {
+                if (barrier.orientation.equals(""vertical"") && barrier.intersects(start, end, direction)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+}
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Moveable {
+    String move(String moveCommandString);
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+import java.util.Objects;
+
+class Position {
+    int x, y;
+
+    Position(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Position position = (Position) obj;
+        return x == position.x && y == position.y;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y);
+    }
+
+    @Override
+    public String toString() {
+        return ""("" + x + "","" + y + "")"";
+    }
+}
+",4907,146,38.088,108,0.0,0.0958904109589041,0.03424657534246575,0.00684931506849315,0.3013698630136986,0.0,0.136986301369863,11.047945205479452,8.438356164383562,0.0,1.0,False,False,False,False,False,False,4,0.04794520547945205,0.04794520547945205,0.0547945205479452,0.02054794520547945,0.7808219178082192,0.23972602739726026,0.0136986301369863,4.526315789473684,12,0.0,0,4.273972602739726,620,-1,4.684774193548385,8,0.00684931506849315,4.239726027397261,4.2465753424657535
+intervene,m0,natasha4,,,"package thkoeln.st.st2praktikum.exercise;
+
+public class Command {
+    private String direction;
+    private int steps;
+
+    public Command(String direction, int steps) {
+        this.direction = direction;
+        this.steps = steps;
+    }
+
+    public String getDirection() {
+        return direction;
+    }
+
+    public int getSteps() {
+        return steps;
+    }
+
+    public static Command parseCommand(String commandString) {
+        commandString = commandString.replaceAll(""\\[|\\]"", """");
+        String[] parts = commandString.split("","");
+        return new Command(parts[0], Integer.parseInt(parts[1]));
+    }
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+public class Coordinate {
+    private int x;
+    private int y;
+
+    public Coordinate(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Coordinate that = (Coordinate) o;
+        return x == that.x && y == that.y;
+    }
+
+    @Override
+    public String toString() {
+        return ""("" + x + "","" + y + "")"";
+    }
+}
+
+
+package thkoeln.st.st2praktikum.exercise;
+
+import java.util.*;
+
+public class Exercise0 implements Moveable {
+
+    private static final int MAX_X = 11;
+    private static final int MAX_Y = 8;
+    private Coordinate currentPosition;
+    private List<Obstacle> obstacles;
+
+    public Exercise0() {
+        currentPosition = new Coordinate(0, 2);
+        createObstacles();
+    }
+
+    @Override
+    public String moveTo(String moveCommandString) {
+        Command command = Command.parseCommand(moveCommandString);
+        moveDroid(command);
+        return currentPosition.toString();
+    }
+
+    private void moveDroid(Command command) {
+        int dx = 0, dy = 0;
+
+        switch (command.getDirection()) {
+            case ""no"":
+                dy = 1;
+                break;
+            case ""ea"":
+                dx = 1;
+                break;
+            case ""so"":
+                dy = -1;
+                break;
+            case ""we"":
+                dx = -1;
+                break;
+        }
+
+        for (int i = 0; i < command.getSteps(); i++) {
+            Coordinate nextPosition = new Coordinate(currentPosition.getX() + dx, currentPosition.getY() + dy);
+            if (canMove(currentPosition, nextPosition, command.getDirection())) {
+                currentPosition = nextPosition;
+            } else {
+                break;
+            }
+        }
+    }
+
+    private boolean canMove(Coordinate current, Coordinate next, String direction) {
+
+        if (next.getX() < 0 || next.getX() > MAX_X || next.getY() < 0 || next.getY() > MAX_Y) {
+            return false;
+        }
+        if (direction.equals(""ea"") || direction.equals(""no"")) {
+            for (Obstacle obstacle : obstacles) {
+                if (obstacle.isInPathOfMovement(current, next)) {
+                    return false;
+                }
+            }
+        } else {
+            for (Obstacle obstacle : obstacles) {
+                if (obstacle.isInPathOfMovement(next, current)) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+
+    private void createObstacles() {
+        obstacles = new ArrayList<>();
+        obstacles.add(new Obstacle(new Coordinate(3, 0), new Coordinate(3, 3)));
+        obstacles.add(new Obstacle(new Coordinate(5, 0), new Coordinate(5, 4)));
+        obstacles.add(new Obstacle(new Coordinate(4, 5), new Coordinate(7, 5)));
+        obstacles.add(new Obstacle(new Coordinate(7, 5), new Coordinate(7, 9)));
+    }
+}
+
+
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Moveable {
+    String moveTo(String moveCommandString);
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class Obstacle {
+    private List<Coordinate> coordinates;
+
+    public Obstacle(Coordinate start, Coordinate end) {
+        this.coordinates = new ArrayList<>();
+        int dx = start.getX() != end.getX() ? 1 : 0;
+        int dy = start.getY() != end.getY() ? 1 : 0;
+        int x = start.getX();
+        int y = start.getY();
+        while (x != end.getX() || y != end.getY()) {
+            coordinates.add(new Coordinate(x, y));
+            x += dx;
+            y += dy;
+        }
+        coordinates.add(end);
+    }
+
+    public boolean isInPathOfMovement(Coordinate cStart, Coordinate cEnd) {
+        List<Coordinate[]> blockedPaths = Arrays.asList(
+                new Coordinate[] {new Coordinate(2,0), new Coordinate(3,0)},
+                new Coordinate[] {new Coordinate(2,1), new Coordinate(3,1)},
+                new Coordinate[] {new Coordinate(2,2), new Coordinate(3,2)},
+                new Coordinate[] {new Coordinate(4,0), new Coordinate(5,0)},
+                new Coordinate[] {new Coordinate(4,1), new Coordinate(5,1)},
+                new Coordinate[] {new Coordinate(4,2), new Coordinate(5,2)},
+                new Coordinate[] {new Coordinate(4,3), new Coordinate(5,3)},
+                new Coordinate[] {new Coordinate(4,4), new Coordinate(4,5)},
+                new Coordinate[] {new Coordinate(5,4), new Coordinate(5,5)},
+                new Coordinate[] {new Coordinate(6,4), new Coordinate(6,5)},
+                new Coordinate[] {new Coordinate(6,5), new Coordinate(7,5)},
+                new Coordinate[] {new Coordinate(6,6), new Coordinate(7,6)},
+                new Coordinate[] {new Coordinate(6,7), new Coordinate(7,7)},
+                new Coordinate[] {new Coordinate(6,8), new Coordinate(7,8)}
+        );
+
+        for (Coordinate[] blockedPath : blockedPaths) {
+            Coordinate pStart = blockedPath[0];
+            Coordinate pEnd = blockedPath[1];
+
+            if ((cStart.equals(pStart) && cEnd.equals(pEnd)) || (cStart.equals(pEnd) && cEnd.equals(pStart))) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public List<Coordinate> getCoordinates() {
+        return coordinates;
+    }
+
+    public boolean isObstacle(Coordinate coordinate) {
+        return coordinates.contains(coordinate);
+    }
+}
+",6265,210,35.409356725146196,111,0.0,0.0380952380952381,0.01904761904761905,0.004761904761904762,0.48095238095238096,0.0,0.1761904761904762,8.561904761904762,6.457142857142857,0.0,1.0,False,True,False,False,False,False,5,0.07142857142857142,0.04285714285714286,0.06190476190476191,0.01904761904761905,0.319047619047619,0.20476190476190476,0.01904761904761905,6.133333333333334,17,0.0,0,3.261904761904762,573,0,3.7214954534698954,20,0.0,2.7285714285714286,2.8476190476190477
+optimised,m0,1,,,"package thkoeln.st.st2praktikum.exercise;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Exercise0 implements Walkable {
+
+    private final int WIDTH = 12;
+    private final int HEIGHT = 8;
+
+    private int x;
+    private int y;
+
+    private final Map<String, Wall> walls = new HashMap<>();
+
+
+    public Exercise0() {
+        this.x = 3;
+        this.y = 0;
+
+        walls.put(""w1"", new Wall(3, 0, 3, 3));
+        walls.put(""w2"", new Wall(7, 0, 7, 2));
+
+        walls.put(""w3"", new Wall(4, 3, 7, 3));
+        walls.put(""w4"", new Wall(1, 4, 8, 4));
+    }
+
+    @Override
+    public String walkTo(String walkCommandString) {
+
+        Pattern pattern = Pattern.compile(""\\[(.*),(.*)\\]"");
+        Matcher matcher = pattern.matcher(walkCommandString);
+
+        if (matcher.find()) {
+
+            String direction = matcher.group(1);
+            int steps = Integer.parseInt(matcher.group(2));
+
+            try {
+
+                switch (direction) {
+                    case ""no"":
+                        for (int i = 0; i < steps; i++) {
+
+                            if (!isWallPresent(x, y + 1)) {
+
+                                if (y + 1 < HEIGHT) {
+                                    y++;
+                                }
+                            } else {
+                                break;
+                            }
+                        }
+                        break;
+
+                    case ""ea"":
+                        for (int i = 0; i < steps; i++) {
+                            if (!isWallPresent(x + 1, y)) {
+
+                                if (x + 1 < WIDTH) {
+                                    x++;
+                                }
+                            } else {
+                                break;
+                            }
+                        }
+                        break;
+
+                    case ""so"":
+                        for (int i = 0; i < steps; i++) {
+                            if (!isWallPresent(x, y - 1)) {
+
+                                if (y - 1 >= 0) {
+                                    y--;
+                                }
+                            } else {
+                                break;
+                            }
+                        }
+                        break;
+
+                    case ""we"":
+                        for (int i = 0; i < steps; i++) {
+                            if (!isWallPresent(x - 1, y)) {
+                                if (x - 1 >= 0) {
+                                    x--;
+                                }
+                            } else {
+                                break;
+                            }
+                        }
+                        break;
+
+                    default:
+                        throw new IllegalArgumentException(""Invalid direction: "" + direction);
+                }
+
+            } catch (IllegalArgumentException e) {
+
+                System.err.println(e.getMessage());
+            }
+
+        } else {
+            System.err.println(""Invalid command format: "" + walkCommandString);
+        }
+
+
+        return ""("" + this.x + "","" + this.y + "")"";
+    }
+
+    private boolean isWallPresent(int x, int y) {
+        for (Wall wall : walls.values()) {
+            if (wall.isBlockage(x, y)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private class Wall {
+        int x1, y1, x2, y2;
+
+        public Wall(int x1, int y1, int x2, int y2) {
+            this.x1 = x1;
+            this.y1 = y1;
+            this.x2 = x2;
+            this.y2 = y2;
+        }
+
+        public boolean isBlockage(int x, int y) {
+
+            return (x == this.x1 && y >= this.y1 && y <= this.y2) ||
+                    (x == this.x2 && y >= this.y1 && y <= this.y2);
+        }
+    }
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walkTo(String walkCommandString);
+}
+",3980,144,35.19266055045872,94,0.0,0.06944444444444445,0.041666666666666664,0.006944444444444444,0.4652777777777778,0.006944444444444444,0.22916666666666666,13.930555555555555,12.055555555555555,0.013888888888888888,1.0,False,False,False,False,False,False,2,0.027777777777777776,0.0625,0.027777777777777776,0.013888888888888888,0.4166666666666667,0.13194444444444445,0.027777777777777776,4.416666666666667,17,0.0,0,6.055555555555555,870,-2,7.963302752293583,12,0.0,6.027777777777778,6.027777777777778
+optimised,m0,10,,,"package thkoeln.st.st2praktikum.exercise;
+
+import java.awt.Point;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Exercise0 implements Walkable {
+
+    private Point robotLocation;
+
+    public Exercise0() {
+        initializeRobotLocation();
+        System.out.println(""Initialized robot location: "" + formatRobotLocationToString(robotLocation));
+        createWalls();
+        System.out.println(""Walls created"");
+    }
+
+    @Override
+    public String walkTo(String walkCommandString) {
+        String command = extractCommandFromWalkCommandString(walkCommandString);
+        int steps = extractStepsFromWalkCommandString(walkCommandString);
+
+        System.out.println(""Walk command received: "" + walkCommandString);
+        System.out.println(""Command: "" + command + "", Steps: "" + steps);
+
+        for (int i = 0; i < steps; i++) {
+            robotLocation = computeNewRobotLocation(command, robotLocation);
+            System.out.println(""New robot location: "" + formatRobotLocationToString(robotLocation));
+        }
+
+        return formatRobotLocationToString(robotLocation);
+    }
+
+    private void initializeRobotLocation() {
+        robotLocation = new Point(3, 0);
+    }
+
+    private void createWalls() {
+        List<List<Integer>> walls = new ArrayList<>();
+        walls.add(defineWall(3,0,3,3));
+        walls.add(defineWall(7,0,7,2));
+        walls.add(defineWall(4,3,7,3));
+        walls.add(defineWall(1,4,8,4));
+    }
+
+    private List<Integer> defineWall(int x1, int y1, int x2, int y2) {
+        List<Integer> wall = new ArrayList<>();
+        wall.add(x1);
+        wall.add(y1);
+        wall.add(x2);
+        wall.add(y2);
+        return wall;
+    }
+
+    private String extractCommandFromWalkCommandString(String walkCommandString) {
+        String command = walkCommandString.substring(1, walkCommandString.length() - 1).split("","")[0];
+        System.out.println(""Command extracted: "" + command);
+        return command;
+    }
+
+    private int extractStepsFromWalkCommandString(String walkCommandString) {
+        int steps = Integer.parseInt(walkCommandString.substring(1, walkCommandString.length() - 1).split("","")[1]);
+        System.out.println(""Steps extracted: "" + steps);
+        return steps;
+    }
+
+    private Point computeNewRobotLocation(String command, Point currentLocation) {
+        int currentX = currentLocation.x;
+        int currentY = currentLocation.y;
+
+        System.out.println(""Current robot location: "" + formatRobotLocationToString(currentLocation));
+
+        switch (command) {
+            case ""no"":
+                if (!isWallOrBoundary(currentX, currentY + 1)) currentY++;
+                break;
+            case ""ea"":
+                if (!isWallOrBoundary(currentX + 1, currentY)) currentX++;
+                break;
+            case ""so"":
+                if (!isWallOrBoundary(currentX, currentY - 1)) currentY--;
+                break;
+            case ""we"":
+                if (!isWallOrBoundary(currentX - 1, currentY)) currentX--;
+                break;
+        }
+        return new Point(currentX, currentY);
+    }
+
+    private boolean isWallOrBoundary(int x, int y) {
+        boolean wallOrBoundary = isBoundary(x, y) || isWall(x, y);
+        System.out.println(""Checking if location ("" + x + "","" + y + "") is a wall or boundary: "" + wallOrBoundary);
+        return wallOrBoundary;
+    }
+
+    private boolean isBoundary(int x, int y) {
+        boolean boundary = x < 0 || x > 11 || y < 0 || y > 7;
+        System.out.println(""Checking if location ("" + x + "","" + y + "") is a boundary: "" + boundary);
+        return boundary;
+    }
+
+    private boolean isWall(int x, int y) {
+        List<List<Integer>> walls = new ArrayList<>();
+        walls.add(defineWall(3,0,3,3));
+        walls.add(defineWall(7,0,7,2));
+        walls.add(defineWall(4,3,7,3));
+        walls.add(defineWall(1,4,8,4));
+
+        for (List<Integer> wall: walls) {
+            if ((wall.get(0) == x && wall.get(1) <= y && y <= wall.get(3)) ||
+                    (wall.get(1) == y && wall.get(0) <= x && x <= wall.get(2))) {
+                System.out.println(""Location ("" + x + "","" + y + "") is a wall"");
+                return true;
+            }
+        }
+        System.out.println(""Location ("" + x + "","" + y + "") is not a wall"");
+        return false;
+    }
+
+    private String formatRobotLocationToString(Point robotLocation) {
+        return ""("" + robotLocation.x + "","" + robotLocation.y + "")"";
+    }
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walkTo(String walkCommandString);
+}
+",4573,129,41.924528301886795,115,0.0,0.05426356589147287,0.05426356589147287,0.007751937984496124,0.5271317829457365,0.0,0.17829457364341086,8.643410852713178,6.1395348837209305,0.09302325581395349,1.0,True,True,False,True,False,False,2,0.09302325581395349,0.007751937984496124,0.08527131782945736,0.007751937984496124,0.5503875968992248,0.46511627906976744,0.023255813953488372,6.388888888888889,17,0.0,0,3.511627906976744,341,3,4.309849402804225,15,0.0,2.6666666666666665,2.852713178294574
+optimised,m0,11,,,"package thkoeln.st.st2praktikum.exercise;
+
+import java.awt.Point;
+
+public class Exercise0 implements Walkable {
+
+    private static final int ROOM_WIDTH;
+    private static final int ROOM_HEIGHT;
+
+    private Point location;
+    private boolean[][] walls;
+
+    static {
+        ROOM_WIDTH = 12;
+        ROOM_HEIGHT = 8;
+    }
+
+    public Exercise0() {
+        location = new Point(3, 0);
+        initializeRoom();
+        setupWalls();
+    }
+
+    private void initializeRoom() {
+        walls = new boolean[ROOM_WIDTH][ROOM_HEIGHT];
+
+        for (int i = 0; i < ROOM_HEIGHT; i++) {
+            for (int j = 0; j < ROOM_WIDTH; j++) {
+                walls[j][i] = false;
+            }
+        }
+    }
+
+    private void setupWalls() {
+        for (int i = 0; i < ROOM_HEIGHT; i++) {
+            for (int j = 0; j < ROOM_WIDTH; j++) {
+                if (j == 3 && i < 4) {
+                    walls[j][i] = true;
+                }
+
+                if (j == 7 && i < 3) {
+                    walls[j][i] = true;
+                }
+
+                if (j > 3 && j < 8 && i == 4) {
+                    walls[j][i] = true;
+                }
+
+                if (i == 3 && j > 3 && j < 8) {
+                    walls[j][i] = true;
+                }
+            }
+        }
+    }
+
+    public void addWall(int x, int y) {
+        if (x >= 0 && x < ROOM_WIDTH && y >= 0 && y < ROOM_HEIGHT) {
+            walls[x][y] = true;
+        }
+    }
+
+    public void removeWall(int x, int y) {
+        if (x >= 0 && x < ROOM_WIDTH && y >= 0 && y < ROOM_HEIGHT) {
+            walls[x][y] = false;
+        }
+    }
+
+    public boolean isWall(int x, int y) {
+        if (x >= 0 && x < ROOM_WIDTH && y >= 0 && y < ROOM_HEIGHT) {
+            return walls[x][y];
+        }
+        return false;
+    }
+
+    public String walkTo(String walkCommandString) {
+        String[] command = walkCommandString.substring(1, walkCommandString.length() - 1).split("","");
+        String direction = command[0];
+        int steps = Integer.parseInt(command[1]);
+
+        for (int i = 0; i < steps; i++) {
+            switch (direction) {
+                case ""no"":
+                    moveNorth();
+                    break;
+                case ""ea"":
+                    moveEast();
+                    break;
+                case ""so"":
+                    moveSouth();
+                    break;
+                case ""we"":
+                    moveWest();
+                    break;
+            }
+        }
+
+        return ""("" + location.x + "","" + location.y + "")"";
+    }
+
+    private void moveNorth() {
+        System.out.println(""Attempting to move North..."");
+
+        int potentialNewY = location.y + 1;
+        if (potentialNewY < ROOM_HEIGHT) {
+            System.out.println(""New location is within room height."");
+
+            if (!walls[location.x][potentialNewY]) {
+                System.out.println(""No wall detected at new location. Proceeding with the move."");
+                location.y = potentialNewY;
+            } else {
+                System.out.println(""Wall detected at new location. Cannot move North."");
+            }
+        } else {
+            System.out.println(""New location exceeds room height. Cannot move North."");
+        }
+    }
+
+    private void moveEast() {
+        System.out.println(""Attempting to move East..."");
+
+        int potentialNewX = location.x + 1;
+        if (potentialNewX < ROOM_WIDTH) {
+            System.out.println(""New location is within room width."");
+
+            if (!walls[potentialNewX][location.y]) {
+                System.out.println(""No wall detected at new location. Proceeding with the move."");
+                location.x = potentialNewX;
+            } else {
+                System.out.println(""Wall detected at new location. Cannot move East."");
+            }
+        } else {
+            System.out.println(""New location exceeds room width. Cannot move East."");
+        }
+    }
+
+    private void moveSouth() {
+        System.out.println(""Attempting to move South..."");
+
+        int potentialNewY = location.y - 1;
+        if (potentialNewY >= 0) {
+            System.out.println(""New location is within room height."");
+
+            if (!walls[location.x][potentialNewY]) {
+                System.out.println(""No wall detected at new location. Proceeding with the move."");
+                location.y = potentialNewY;
+            } else {
+                System.out.println(""Wall detected at new location. Cannot move South."");
+            }
+        } else {
+            System.out.println(""New location is less than 0. Cannot move South."");
+        }
+    }
+
+    private void moveWest() {
+        System.out.println(""Attempting to move West..."");
+
+        int potentialNewX = location.x - 1;
+        if (potentialNewX >= 0) {
+            System.out.println(""New location is within room width."");
+
+            if (!walls[potentialNewX][location.y]) {
+                System.out.println(""No wall detected at new location. Proceeding with the move."");
+                location.x = potentialNewX;
+            } else {
+                System.out.println(""Wall detected at new location. Cannot move West."");
+            }
+        } else {
+            System.out.println(""New location is less than 0. Cannot move West."");
+        }
+    }
+
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walkTo(String walkCommandString);
+}
+",5379,178,35.86896551724138,101,0.0,0.08426966292134831,0.028089887640449437,0.0056179775280898875,0.23595505617977527,0.0,0.1853932584269663,10.657303370786517,8.134831460674157,0.11235955056179775,1.0,True,False,False,True,False,False,2,0.06179775280898876,0.02247191011235955,0.03932584269662921,0.0056179775280898875,0.6067415730337079,0.16853932584269662,0.0056179775280898875,6.538461538461538,13,0.0,0,4.073033707865169,725,-1,4.9931034482758605,4,-0.0056179775280898875,4.067415730337078,4.067415730337078
+optimised,m0,12,,,"package thkoeln.st.st2praktikum.exercise;
+
+import java.util.*;
+
+public class Exercise0 implements Walkable {
+
+    private Position robotPosition;
+
+    public Exercise0() {
+        robotPosition = new Position(3, 0);
+    }
+
+    private class Position {
+        int x;
+        int y;
+
+        Position(int x, int y) {
+            this.x = x;
+            this.y = y;
+        }
+
+        @Override
+        public String toString() {
+            return ""("" + this.x + "","" + this.y + "")"";
+        }
+    }
+
+    private int getWidth() {
+        return 12;
+    }
+
+    private int getHeight() {
+        return 8;
+    }
+
+    private List<Set<Integer>> getHorizontalWalls() {
+        return Arrays.asList(
+            new HashSet<>(Arrays.asList(3, 4, 5, 6, 7)),
+            new HashSet<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8))
+        );
+    }
+
+    private List<Set<Integer>> getVerticalWalls() {
+        return Arrays.asList(
+            new HashSet<>(Arrays.asList(0, 1, 2, 3)),
+            new HashSet<>(Arrays.asList(0, 1, 2))
+        );
+    }
+
+    @Override
+    public String walkTo(String walkCommandString) {
+        if (walkCommandString == null || walkCommandString.isEmpty()) {
+            throw new IllegalArgumentException(""Command cannot be null or empty"");
+        }
+
+
+        if (walkCommandString.length() < 6 || walkCommandString.charAt(0) != '[' || walkCommandString.charAt(3) != ',' || walkCommandString.charAt(walkCommandString.length() - 1) != ']') {
+            throw new IllegalArgumentException(""Invalid command format"");
+        }
+
+        String direction = walkCommandString.substring(1, 3);
+        int steps;
+        try {
+            steps = Integer.parseInt(walkCommandString.substring(4, walkCommandString.length() - 1));
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException(""Invalid number of steps"");
+        }
+
+
+        if (steps < 0) {
+            throw new IllegalArgumentException(""Number of steps cannot be negative"");
+        }
+
+
+        List<Set<Integer>> horizontalWalls = getHorizontalWalls();
+        List<Set<Integer>> verticalWalls = getVerticalWalls();
+
+        switch (direction) {
+            case ""no"":
+                for (int i = 0; i < steps && robotPosition.y < getHeight() - 1; i++) {
+                    if (!horizontalWalls.contains(robotPosition.y + 1) || !horizontalWalls.get(robotPosition.y + 1).contains(robotPosition.x)) {
+                        robotPosition.y++;
+                    } else break;
+                }
+                break;
+            case ""so"":
+                for (int i = 0; i < steps && robotPosition.y > 0; i++) {
+                    if (!horizontalWalls.contains(robotPosition.y) || !horizontalWalls.get(robotPosition.y).contains(robotPosition.x)) {
+                        robotPosition.y--;
+                    } else break;
+                }
+                break;
+            case ""ea"":
+                for (int i = 0; i < steps && robotPosition.x < getWidth() - 1; i++) {
+                    if (!verticalWalls.contains(robotPosition.x + 1) || !verticalWalls.get(robotPosition.x + 1).contains(robotPosition.y)) {
+                        robotPosition.x++;
+                    } else break;
+                }
+                break;
+            case ""we"":
+                for (int i = 0; i < steps && robotPosition.x > 0; i++) {
+                    if (!verticalWalls.contains(robotPosition.x) || !verticalWalls.get(robotPosition.x).contains(robotPosition.y)) {
+                        robotPosition.x--;
+                    } else break;
+                }
+                break;
+            default:
+                throw new IllegalArgumentException(""Invalid direction"");
+        }
+
+
+        return robotPosition.toString();
+    }
+}
+
+
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walkTo(String walkCommandString);
+}
+",3870,121,39.052083333333336,188,0.0,0.05785123966942149,0.04132231404958678,0.008264462809917356,0.4132231404958678,0.04132231404958678,0.1652892561983471,10.181818181818182,8.066115702479339,0.0,1.0,False,True,False,False,False,False,2,0.05785123966942149,0.024793388429752067,0.03305785123966942,0.01652892561983471,0.35537190082644626,0.2727272727272727,0.008264462809917356,6.714285714285714,17,0.0,0,4.818181818181818,423,-1,5.782083333333333,93,0.0,3.487603305785124,3.43801652892562
+optimised,m0,13,,,"package thkoeln.st.st2praktikum.exercise;
+
+import java.awt.Point;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Exercise0 implements Walkable {
+
+    private final int MAX_X = 11;  // x coordinates range from 0 to 11
+    private final int MAX_Y = 7;   // y coordinates range from 0 to 7
+
+
+    private Point currentPosition = new Point(3, 0);
+
+
+    private List<List<Point>> walls;
+
+
+    public Exercise0() {
+
+
+        initWalls();
+    }
+
+
+    private void initWalls() {
+
+
+        walls = new ArrayList<>();
+
+        List<Point> wall1 = List.of(
+                new Point(3,0),
+                new Point(3,1),
+                new Point(3,2),
+                new Point(3,3)
+        );
+
+        List<Point> wall2 = List.of(
+                new Point(7,0),
+                new Point(7,1),
+                new Point(7,2)
+        );
+
+        List<Point> wall3 = List.of(
+                new Point(4,3),
+                new Point(5,3),
+                new Point(6,3),
+                new Point(7,3)
+        );
+
+        List<Point> wall4 = List.of(
+                new Point(1,4),
+                new Point(2,4),
+                new Point(3,4),
+                new Point(4,4),
+                new Point(5,4),
+                new Point(6,4),
+                new Point(7,4),
+                new Point(8,4)
+        );
+
+        walls.add(wall1);
+        walls.add(wall2);
+        walls.add(wall3);
+        walls.add(wall4);
+    }
+
+
+    @Override
+    public String walkTo(String walkCommandString) {
+
+
+        if (walkCommandString == null || walkCommandString.isEmpty()) {
+            throw new IllegalArgumentException(""Invalid command string"");
+        }
+
+
+        String command = walkCommandString.replace(""["", """").replace(""]"", """");
+        String[] parts = command.split("","");
+
+
+        if (parts.length != 2) {
+            throw new IllegalArgumentException(""Invalid command string format"");
+        }
+
+
+        String direction = parts[0];
+        int steps;
+        try {
+            steps = Integer.parseInt(parts[1]);
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException(""Invalid number of steps"");
+        }
+
+
+        moveRobot(direction, steps);
+
+
+        return currentPosition.toString();
+    }
+
+
+    private void moveRobot(String direction, int steps) {
+
+
+        int dx = 0, dy = 0;
+        switch (direction) {
+            case ""no"":
+                dy = 1;
+                break;
+            case ""ea"":
+                dx = 1;
+                break;
+            case ""so"":
+                dy = -1;
+                break;
+            case ""we"":
+                dx = -1;
+                break;
+            default:
+                throw new IllegalArgumentException(""Invalid direction"");
+        }
+
+
+        for (int i = 0; i < steps; i++) {
+            Point nextPosition = new Point(currentPosition.x + dx, currentPosition.y + dy);
+
+
+            if (!isValidPosition(nextPosition)) {
+                break;
+            }
+
+
+            currentPosition = nextPosition;
+        }
+    }
+
+
+    private boolean isValidPosition(Point point) {
+
+
+        if (point.x < 0 || point.x > MAX_X || point.y < 0 || point.y > MAX_Y) {
+            return false;
+        }
+
+
+        for (List<Point> wall : walls) {
+            if (wall.contains(point)) {
+                return false;
+            }
+        }
+
+
+        return true;
+    }
+}
+
+
+
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walkTo(String walkCommandString);
+}
+",3505,164,30.935185185185187,91,0.012195121951219513,0.03048780487804878,0.018292682926829267,0.006097560975609756,0.43902439024390244,0.024390243902439025,0.20121951219512196,7.640243902439025,6.2926829268292686,0.0,1.0,False,True,False,True,False,False,2,0.03048780487804878,0.024390243902439025,0.06707317073170732,0.006097560975609756,0.21341463414634146,0.10975609756097561,0.018292682926829267,5.8,17,31.5,32,3.957317073170732,595,-38,1.3181639085894439,-9,-0.006097560975609756,3.3963414634146343,3.5365853658536586
+optimised,m0,14,,,"package thkoeln.st.st2praktikum.exercise;
+
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Exercise0 implements Walkable {
+    private int x, y;  // current position
+    private int MAX_X = 12, MAX_Y = 8;  // room size
+    private static final Pattern COMMAND_PATTERN = Pattern.compile(""\\[(\\w+),(\\d+)\\]"");
+    private Set<String> walls;
+
+    public Exercise0() {
+        // Initialize starting position
+        x = 3;
+        y = 0;
+
+        // Initialize walls
+        walls = new HashSet<>();
+        addWalls();
+    }
+
+    // Implement the walkTo method from the Walkable interface
+    @Override
+    public String walkTo(String walkCommandString) {
+        Matcher matcher = COMMAND_PATTERN.matcher(walkCommandString);
+        if (!matcher.matches()) {
+            throw new IllegalArgumentException(""Invalid walk command: "" + walkCommandString);
+        }
+
+        String direction = matcher.group(1);
+        int steps = Integer.parseInt(matcher.group(2));
+
+        switch (direction) {
+            case ""no"":
+                walkNorth(steps);
+                break;
+            case ""ea"":
+                walkEast(steps);
+                break;
+            case ""so"":
+                walkSouth(steps);
+                break;
+            case ""we"":
+                walkWest(steps);
+                break;
+            default:
+                throw new IllegalArgumentException(""Invalid direction: "" + direction);
+        }
+
+        return ""("" + x + "","" + y + "")"";
+    }
+
+    // New method to change room size
+    public void changeRoomSize(int maxX, int maxY) {
+        if (maxX < 1 || maxY < 1) {
+            throw new IllegalArgumentException(""Room size must be at least 1x1"");
+        }
+        MAX_X = maxX;
+        MAX_Y = maxY;
+    }
+
+    // New method to add a wall at a given position
+    public void addWall(int x, int y) {
+        if (x < 0 || x >= MAX_X || y < 0 || y >= MAX_Y) {
+            throw new IllegalArgumentException(""Wall position out of bounds"");
+        }
+        walls.add(""("" + x + "","" + y + "")"");
+    }
+
+    // New methods for complex movements
+
+    public void moveInSquare(int size) {
+        walkEast(size);
+        walkNorth(size);
+        walkWest(size);
+        walkSouth(size);
+    }
+
+    public void moveInZigZag(int size) {
+        for (int i = 0; i < size; i++) {
+            walkEast(1);
+            walkNorth(1);
+            walkEast(1);
+            walkSouth(1);
+        }
+    }
+
+    // Helper methods to walk in different directions
+    private void walkNorth(int steps) {
+        while (steps-- > 0 && y < MAX_Y - 1 && !isWall(x, y + 1)) {
+            y++;
+        }
+    }
+
+    private void walkEast(int steps) {
+        while (steps-- > 0 && x < MAX_X - 1 && !isWall(x + 1, y)) {
+            x++;
+        }
+    }
+
+    private void walkSouth(int steps) {
+        while (steps-- > 0 && y > 0 && !isWall(x, y - 1)) {
+            y--;
+        }
+    }
+
+    private void walkWest(int steps) {
+        while (steps-- > 0 && x > 0 && !isWall(x - 1, y)) {
+            x--;
+        }
+    }
+
+    // Method to check if a cell is a wall
+    private boolean isWall(int x, int y) {
+        return walls.contains(""("" + x + "","" + y + "")"");
+    }
+
+    // Method to add walls
+    private void addWalls() {
+        addWall(3, 0, 3, 3);
+        addWall(7, 0, 7, 2);
+        addWall(4, 3, 7, 3);
+        addWall(1, 4, 8, 4);
+        // Add boundary walls
+        addWall(0, 0, 0, MAX_Y - 1);
+        addWall(0, 0, MAX_X - 1, 0);
+        addWall(MAX_X - 1, 0, MAX_X - 1, MAX_Y - 1);
+        addWall(0, MAX_Y - 1, MAX_X - 1, MAX_Y - 1);
+    }
+
+    // Helper method to add a wall
+    private void addWall(int x1, int y1, int x2, int y2) {
+        if (x1 == x2) {  // vertical wall
+            for (int y = y1; y <= y2; y++) {
+                walls.add(""("" + x1 + "","" + y + "")"");
+            }
+        } else {  // horizontal wall
+            for (int x = x1; x <= x2; x++) {
+                walls.add(""("" + x + "","" + y1 + "")"");
+            }
+        }
+    }
+}
+
+
+
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walkTo(String walkCommandString);
+}
+",4158,152,31.296875,93,0.09868421052631579,0.039473684210526314,0.02631578947368421,0.006578947368421052,0.5131578947368421,0.02631578947368421,0.1513157894736842,9.098684210526315,6.315789473684211,0.0,1.0,False,False,False,False,False,False,2,0.08552631578947369,0.039473684210526314,0.019736842105263157,0.006578947368421052,0.5263157894736842,0.23026315789473684,0.019736842105263157,4.3125,17,26.933333333333334,55,3.1973684210526314,486,-2,3.78125,5,-0.006578947368421052,3.1842105263157894,3.1578947368421053
+optimised,m0,15,,,"package thkoeln.st.st2praktikum.exercise;
+
+class Cell {
+    private final int x;
+    private final int y;
+
+    public Cell(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    public int getX() { return x; }
+    public int getY() { return y; }
+
+    @Override
+    public String toString() {
+        return ""("" + x + "","" + y + "")"";
+    }
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+import java.util.HashMap;
+
+public class Exercise0 implements Walkable {
+    private final Robot robot;
+
+    public Exercise0() {
+        boolean[][] room = new boolean[12][8];
+        for (int i = 0; i <= 11; i++) {
+            for (int j = 0; j <= 7; j++) {
+                room[i][j] = true;
+            }
+        }
+
+        for (int i = 0; i <= 3; i++) {
+            room[3][i] = false;
+        }
+
+        for (int i = 0; i <= 2; i++) {
+            room[7][i] = false;
+        }
+
+        for (int i = 4; i <= 7; i++) {
+            room[i][3] = false;
+        }
+
+        for (int i = 1; i <= 8; i++) {
+            room[i][4] = false;
+        }
+
+        robot = new Robot(new Cell(3, 0), room);
+    }
+
+    @Override
+    public String walkTo(String walkCommandString) {
+        return robot.walk(walkCommandString).toString();
+    }
+}
+
+
+package thkoeln.st.st2praktikum.exercise;
+
+import java.util.HashMap;
+
+class Robot {
+    private Cell cell;
+    private final boolean[][] room;
+    private static final HashMap<String, int[]> DIRECTIONS = new HashMap<>();
+
+    static {
+        DIRECTIONS.put(""no"", new int[]{0, 1});
+        DIRECTIONS.put(""ea"", new int[]{1, 0});
+        DIRECTIONS.put(""so"", new int[]{0, -1});
+        DIRECTIONS.put(""we"", new int[]{-1, 0});
+    }
+
+    public Robot(Cell cell, boolean[][] room) {
+        this.cell = cell;
+        this.room = room;
+    }
+
+    public Cell walk(String walkCommandString) throws IllegalArgumentException {
+        String[] command = parseCommand(walkCommandString);
+        int[] direction = DIRECTIONS.get(command[0]);
+        int steps = Integer.parseInt(command[1]);
+
+        for (int i = 0; i < steps; i++) {
+            int newX = cell.getX() + direction[0];
+            int newY = cell.getY() + direction[1];
+
+            if (newX < 0 || newX >= room.length || newY < 0 || newY >= room[0].length || !room[newX][newY]) {
+                break;
+            }
+
+            cell = new Cell(newX, newY);
+        }
+
+        return cell;
+    }
+
+    private String[] parseCommand(String walkCommandString) throws IllegalArgumentException {
+        String[] command = walkCommandString.replace(""["", """").replace(""]"", """").split("","");
+        if (command.length != 2 || !DIRECTIONS.containsKey(command[0]) || !isInteger(command[1])) {
+            throw new IllegalArgumentException(""Invalid command: "" + walkCommandString);
+        }
+        return command;
+    }
+
+    private boolean isInteger(String str) {
+        try {
+            Integer.parseInt(str);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walkTo(String walkCommandString);
+}
+",3131,124,31.652631578947368,109,0.0,0.016129032258064516,0.056451612903225805,0.0,0.3790322580645161,0.008064516129032258,0.22580645161290322,7.096774193548387,4.903225806451613,0.0,1.0,True,False,False,False,False,False,4,0.06451612903225806,0.04838709677419355,0.056451612903225805,0.024193548387096774,0.532258064516129,0.13709677419354838,0.016129032258064516,5.222222222222222,17,0.0,0,3.120967741935484,274,7,4.927141382868935,14,0.0,2.0725806451612905,2.032258064516129
+optimised,m0,16,,,"package thkoeln.st.st2praktikum.exercise;
+
+class Command {
+
+    private String direction;
+    private int steps;
+
+    public static Command parse(String commandString) throws IllegalArgumentException {
+        commandString = commandString.substring(1, commandString.length()-1);
+        String[] parts = commandString.split("","");
+        return new Command(parts[0], Integer.parseInt(parts[1]));
+    }
+
+    public Command(String direction, int steps) {
+        this.direction = direction;
+        this.steps = steps;
+    }
+
+    public void execute(Robot robot) {
+        switch (direction) {
+            case ""no"":
+                robot.moveNorth(steps);
+                break;
+            case ""ea"":
+                robot.moveEast(steps);
+                break;
+            case ""so"":
+                robot.moveSouth(steps);
+                break;
+            case ""we"":
+                robot.moveWest(steps);
+                break;
+        }
+    }
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+import java.util.*;
+import java.lang.*;
+
+public class Exercise0 implements Walkable {
+
+    private static final int ROOM_WIDTH = 12;
+    private static final int ROOM_HEIGHT = 8;
+
+    private Robot robot;
+
+    public Exercise0() {
+        this.robot = new Robot(3, 0);
+        setupWalls();
+    }
+
+    private void setupWalls() {
+        Wall.setupBoundaryWalls(ROOM_WIDTH, ROOM_HEIGHT);
+        Wall.addWall(new Wall(3, 0, 3, 3));
+        Wall.addWall(new Wall(7, 0, 7, 2));
+        Wall.addWall(new Wall(4, 3, 7, 3));
+        Wall.addWall(new Wall(1, 4, 8, 4));
+    }
+
+    @Override
+    public String walkTo(String walkCommandString) {
+        try {
+            Command command = Command.parse(walkCommandString);
+            this.robot.walk(command);
+        } catch (Exception e) {
+            System.err.println(""Error executing command: "" + e.getMessage());
+        }
+        return robot.getPosition();
+    }
+}
+
+
+
+package thkoeln.st.st2praktikum.exercise;
+
+class Robot {
+    private int x, y;
+
+    public Robot(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    public void walk(Command command) {
+        command.execute(this);
+    }
+
+    public String getPosition() {
+        return ""("" + this.x + "","" + this.y + "")"";
+    }
+
+    public void moveNorth(int steps) {
+        for (int i = 0; i < steps; i++) {
+            if (!Wall.isWall(x, y+1)) y++;
+        }
+    }
+
+    public void moveEast(int steps) {
+        for (int i = 0; i < steps; i++) {
+            if (!Wall.isWall(x+1, y)) x++;
+        }
+    }
+
+    public void moveSouth(int steps) {
+        for (int i = 0; i < steps; i++) {
+            if (!Wall.isWall(x, y-1)) y--;
+        }
+    }
+
+    public void moveWest(int steps) {
+        for (int i = 0; i < steps; i++) {
+            if (!Wall.isWall(x-1, y)) x--;
+        }
+    }
+}
+
+
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walkTo(String walkCommandString);
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+import java.util.ArrayList;
+import java.util.List;
+
+class Wall {
+
+    private static List<Wall> walls = new ArrayList<>();
+
+    private int x1, y1, x2, y2;
+
+    public Wall(int x1, int y1, int x2, int y2) {
+        this.x1 = Math.min(x1, x2);
+        this.y1 = Math.min(y1, y2);
+        this.x2 = Math.max(x1, x2);
+        this.y2 = Math.max(y1, y2);
+    }
+
+    public static void setupBoundaryWalls(int width, int height) {
+        addWall(new Wall(0, 0, width-1, 0));
+        addWall(new Wall(0, 0, 0, height-1));
+        addWall(new Wall(0, height-1, width-1, height-1));
+        addWall(new Wall(width-1, 0, width-1, height-1));
+    }
+
+    public static void addWall(Wall wall) {
+        walls.add(wall);
+    }
+
+    public static boolean isWall(int x, int y) {
+        for (Wall wall : walls) {
+            if ((wall.x1 == x && y >= wall.y1 && y <= wall.y2) ||
+                    (wall.y1 == y && x >= wall.x1 && x <= wall.x2)) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+",3992,164,29.90625,87,0.0,0.03048780487804878,0.03048780487804878,0.006097560975609756,0.5,0.0,0.2073170731707317,6.969512195121951,5.073170731707317,0.006097560975609756,1.0,False,True,False,False,False,False,5,0.08536585365853659,0.07317073170731707,0.012195121951219513,0.024390243902439025,0.5,0.20121951219512196,0.024390243902439025,5.217391304347826,17,0.0,0,2.847560975609756,413,-4,2.984990157480315,2,-0.006097560975609756,2.3841463414634148,2.5365853658536586
+optimised,m0,17,,,"package thkoeln.st.st2praktikum.exercise;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Exercise0 implements Walkable {
+    private Position position;
+    private Room room;
+    private List<String> history;
+
+    public Exercise0() {
+        this.room = new Room(12, 8);
+        this.position = new Position(3, 0);
+        this.history = new ArrayList<>();
+        this.room.addWall(3, 0, 3, 3);
+        this.room.addWall(7, 0, 7, 2);
+        this.room.addWall(4, 3, 7, 3);
+        this.room.addWall(1, 4, 8, 4);
+        addHistory();
+    }
+
+    public void addWall(int x1, int y1, int x2, int y2) {
+        this.room.addWall(x1, y1, x2, y2);
+    }
+
+    @Override
+    public String walkTo(String walkCommandString) {
+        Matcher matcher = Pattern.compile(""\\[(.*?),(.*?)\\]"").matcher(walkCommandString);
+        if (!matcher.matches()) {
+            throw new IllegalArgumentException(""Invalid command format"");
+        }
+        String direction = matcher.group(1);
+        int steps = Integer.parseInt(matcher.group(2));
+
+        for (int i = 0; i < steps; i++) {
+            switch (direction) {
+                case ""no"":
+                    if (position.y < room.height - 1 && !room.walls[position.x][position.y+1]) {
+                        position.y++;
+                    }
+                    break;
+                case ""ea"":
+                    if (position.x < room.width - 1 && !room.walls[position.x+1][position.y]) {
+                        position.x++;
+                    }
+                    break;
+                case ""so"":
+                    if (position.y > 0 && !room.walls[position.x][position.y-1]) {
+                        position.y--;
+                    }
+                    break;
+                case ""we"":
+                    if (position.x > 0 && !room.walls[position.x-1][position.y]) {
+                        position.x--;
+                    }
+                    break;
+                default:
+                    throw new IllegalArgumentException(""Unknown direction: "" + direction);
+            }
+        }
+        addHistory();
+        return ""("" + position.x + "","" + position.y + "")"";
+    }
+
+    private void addHistory() {
+        history.add(""("" + position.x + "","" + position.y + "")"");
+    }
+
+    public List<String> getHistory() {
+        return new ArrayList<>(history);
+    }
+}
+
+// 10 empty lines follow
+
+
+
+
+
+
+
+
+package thkoeln.st.st2praktikum.exercise;
+
+class Position {
+    public int x, y;
+    public Position(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+class Room {
+    public int width, height;
+    public boolean[][] walls;
+
+    public Room(int width, int height) {
+        this.width = width;
+        this.height = height;
+        this.walls = new boolean[width][height];
+    }
+
+    public void addWall(int x1, int y1, int x2, int y2) {
+        for (int x = x1; x <= x2; x++) {
+            for (int y = y1; y <= y2; y++) {
+                this.walls[x][y] = true;
+            }
+        }
+    }
+}
+
+
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walkTo(String walkCommandString);
+}
+",3229,121,32.375,96,0.008264462809917356,0.04132231404958678,0.03305785123966942,0.008264462809917356,0.4628099173553719,0.01652892561983471,0.1652892561983471,8.644628099173554,6.809917355371901,0.0,1.0,True,True,False,False,False,False,4,0.049586776859504134,0.06611570247933884,0.024793388429752067,0.024793388429752067,0.5537190082644629,0.11570247933884298,0.03305785123966942,3.888888888888889,17,21.0,21,3.5371900826446283,411,-7,4.208333333333332,8,-0.01652892561983471,3.3388429752066116,3.4049586776859506
+optimised,m0,18,,,"package thkoeln.st.st2praktikum.exercise;
+
+import java.awt.Point;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Exercise0 implements Walkable {
+
+    private final Point robotLocation;
+
+    private final int roomWidth;
+
+    private final int roomHeight;
+
+    private final List<Point> walls;
+
+    public Exercise0() {
+
+        this.robotLocation = new Point(3, 0);
+
+        this.roomWidth = 12;
+
+        this.roomHeight = 8;
+
+        this.walls = Arrays.asList(
+                new Point(3, 3),
+                new Point(7, 2),
+                new Point(7, 3),
+                new Point(8, 4)
+        );
+    }
+
+    @Override
+    public String walkTo(String walkCommandString) {
+        try {
+
+            // Parse and validate command
+            String[] command = parseCommand(walkCommandString);
+
+            // Move robot
+            moveRobot(command);
+
+        } catch (Exception e) {
+
+            // Handle error
+            System.err.println(e.getMessage());
+        }
+
+        return getRobotLocation();
+    }
+
+    // More functions, tangentially related or not, for possible future needs
+
+    public String getRobotLocation() {
+        return String.format(""(%d,%d)"",
+                robotLocation.x,
+                robotLocation.y
+        );
+    }
+
+    public boolean isWallAt(Point location) {
+        return walls.contains(location);
+    }
+
+    public void validateLocation(Point location) throws Exception {
+
+        if (
+                location.x < 0
+                        || location.y < 0
+                        || location.x >= roomWidth
+                        || location.y >= roomHeight
+        ) {
+            throw new Exception(""Invalid location: outside of room."");
+        }
+
+        if (isWallAt(location)) {
+            throw new Exception(""Invalid location: wall detected."");
+        }
+    }
+
+    private void moveRobot(String[] command) throws Exception {
+
+        Point newLocation = new Point(robotLocation);
+
+        int steps = Integer.parseInt(command[1]);
+
+        switch (command[0]) {
+
+            case ""no"":
+                newLocation.y += steps;
+                break;
+
+            case ""ea"":
+                newLocation.x += steps;
+                break;
+
+            case ""so"":
+                newLocation.y -= steps;
+                break;
+
+            case ""we"":
+                newLocation.x -= steps;
+                break;
+
+            default:
+                throw new Exception(""Invalid direction in command."");
+        }
+
+        validateLocation(newLocation);
+
+        robotLocation.setLocation(newLocation);
+    }
+
+    private String[] parseCommand(String commandString) throws Exception {
+
+        String command = commandString.replace(""["", """").replace(""]"", """");
+
+        String[] commandParts = command.split("","");
+
+        if (commandParts.length != 2) {
+            throw new Exception(""Invalid command format."");
+        }
+
+        return commandParts;
+    }
+}
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walkTo(String walkCommandString);
+}
+",3096,132,32.21739130434783,77,0.030303030303030304,0.022727272727272728,0.022727272727272728,0.007575757575757576,0.16666666666666666,0.030303030303030304,0.30303030303030304,7.416666666666667,6.090909090909091,0.007575757575757576,1.0,False,True,False,True,False,False,2,0.05303030303030303,0.030303030303030304,0.03787878787878788,0.007575757575757576,0.23484848484848486,0.11363636363636363,0.030303030303030304,8.076923076923077,17,29.5,70,4.159090909090909,547,-14,1.05072463768116,-22,0.0,3.7803030303030303,3.8333333333333335
+optimised,m0,19,,,"package thkoeln.st.st2praktikum.exercise;
+
+import java.util.*;
+import java.awt.Point;
+
+public class Exercise0 implements Walkable {
+
+    private Point currentLocation;
+    private final Map<String, Point> directions;
+    private final int[][] roomGrid;
+    private final int roomWidth = 12;
+    private final int roomHeight = 8;
+
+    public Exercise0() {
+
+        this.currentLocation = new Point(3, 0);
+
+        this.roomGrid = new int[roomWidth][roomHeight];
+
+        this.directions = new HashMap<>();
+        directions.put(""no"", new Point(0, 1));
+        directions.put(""ea"", new Point(1, 0));
+        directions.put(""so"", new Point(0, -1));
+        directions.put(""we"", new Point(-1, 0));
+
+        initializeWalls();
+    }
+
+    private void initializeWalls() {
+
+        for (int x = 0; x < roomWidth; x++) {
+            for (int y = 0; y < roomHeight; y++) {
+                roomGrid[x][y] = (x == 0 || x == roomWidth-1 || y == 0 || y == roomHeight-1) ? 1 : 0;
+            }
+        }
+
+        for (int y = 0; y <= 3; y++) roomGrid[3][y] = 1;
+        for (int y = 0; y <= 2; y++) roomGrid[7][y] = 1;
+        for (int x = 4; x <= 7; x++) roomGrid[x][3] = 1;
+        for (int x = 1; x <= 8; x++) roomGrid[x][4] = 1;
+    }
+
+    public String walkTo(String walkCommandString) {
+
+        String direction = walkCommandString.substring(1, 3);
+        int steps = Integer.parseInt(walkCommandString.substring(4, walkCommandString.length() - 1));
+        Point directionVector = directions.get(direction);
+
+        if (directionVector == null) return ""Invalid command"";
+
+        while (steps > 0) {
+            Point nextLocation = new Point(currentLocation.x + directionVector.x, currentLocation.y + directionVector.y);
+            if (!isFree(nextLocation)) break;
+            currentLocation = nextLocation;
+            steps--;
+        }
+
+        return formatLocation();
+    }
+
+    private boolean isFree(Point location) {
+
+        if (location.x < 0 || location.y < 0 || location.x >= roomWidth || location.y >= roomHeight) return false;
+
+        return roomGrid[location.x][location.y] == 0;
+    }
+
+    private String formatLocation() {
+
+        return String.format(""(%d,%d)"", currentLocation.x, currentLocation.y);
+    }
+
+    public boolean isValidCoordinate(int x, int y) {
+
+        return x >= 0 && x < roomWidth && y >= 0 && y < roomHeight;
+    }
+
+    public void addWall(int x, int y) {
+
+        if (isValidCoordinate(x, y)) roomGrid[x][y] = 1;
+    }
+
+    public void removeWall(int x, int y) {
+
+        if (isValidCoordinate(x, y)) roomGrid[x][y] = 0;
+    }
+
+    public String getCellStatus(int x, int y) {
+
+        if (!isValidCoordinate(x, y)) return ""Invalid coordinate"";
+
+        return roomGrid[x][y] == 0 ? ""Free"" : ""Wall"";
+    }
+
+    public String getRoomLayout() {
+
+        StringBuilder sb = new StringBuilder();
+
+        for (int y = roomHeight - 1; y >= 0; y--) {
+            for (int x = 0; x < roomWidth; x++) {
+                sb.append(roomGrid[x][y] == 0 ? ""."" : ""#"");
+            }
+            sb.append(""\n"");
+        }
+
+        return sb.toString();
+    }
+}
+
+
+
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walkTo(String walkCommandString);
+}
+",3210,116,39.666666666666664,121,0.0,0.05172413793103448,0.09482758620689655,0.0,0.5,0.0,0.31896551724137934,7.0344827586206895,4.379310344827586,0.0,1.0,False,False,False,True,False,True,2,0.08620689655172414,0.04310344827586207,0.04310344827586207,0.008620689655172414,0.7586206896551724,0.16379310344827586,0.017241379310344827,8.636363636363637,15,0.0,0,2.5172413793103448,236,0,3.941666666666663,23,-0.008620689655172414,2.0344827586206895,2.0517241379310347
+optimised,m0,2,,,"package thkoeln.st.st2praktikum.exercise;
+
+import java.awt.Point;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Exercise0 implements Walkable {
+
+    private static final int ROOM_WIDTH = 12;
+    private static final int ROOM_HEIGHT = 8;
+
+
+
+    private final boolean[][] verticalWalls;
+    private final boolean[][] horizontalWalls;
+
+
+    private final Point robotPosition;
+    private final List<String> movementHistory;
+
+
+
+    public Exercise0() {
+        this.verticalWalls = new boolean[ROOM_WIDTH+1][ROOM_HEIGHT];
+        this.horizontalWalls = new boolean[ROOM_WIDTH][ROOM_HEIGHT+1];
+        this.robotPosition = new Point(3, 0);
+        this.movementHistory = new ArrayList<>();
+
+        createRoom();
+        createWalls();
+    }
+
+
+
+    private void createRoom() {
+        for (int i = 0; i <= ROOM_HEIGHT; i++) {
+            this.verticalWalls[0][i] = true;
+            this.verticalWalls[ROOM_WIDTH][i] = true;
+        }
+        for (int i = 0; i <= ROOM_WIDTH; i++) {
+            this.horizontalWalls[i][0] = true;
+            this.horizontalWalls[i][ROOM_HEIGHT] = true;
+        }
+    }
+
+
+    private void createWalls() {
+        for (int i = 0; i <= 3; i++) this.verticalWalls[3][i] = true;
+        for (int i = 0; i <= 2; i++) this.verticalWalls[7][i] = true;
+        for (int i = 4; i <= 7; i++) this.horizontalWalls[i][3] = true;
+        for (int i = 1; i <= 8; i++) this.horizontalWalls[i][4] = true;
+    }
+
+    @Override
+    public String walkTo(String walkCommandString) {
+        if (!isValidCommand(walkCommandString)) return ""Invalid command"";
+
+        String[] commandParts = walkCommandString.replace(""["", """").replace(""]"", """").split("","");
+        String direction = commandParts[0];
+        int steps = Integer.parseInt(commandParts[1]);
+
+        walk(direction, steps);
+
+        String newPosition = ""("" + this.robotPosition.x + "","" + this.robotPosition.y + "")"";
+        this.movementHistory.add(newPosition);
+
+        return newPosition;
+    }
+
+
+
+    private boolean isValidCommand(String command) {
+        return command.matches(""\\[(no|ea|so|we),\\d+\\]"");
+    }
+
+    private void walk(String direction, int steps) {
+        switch (direction) {
+            case ""no"":
+                walkNorth(steps);
+                break;
+            case ""so"":
+                walkSouth(steps);
+                break;
+            case ""we"":
+                walkWest(steps);
+                break;
+            case ""ea"":
+                walkEast(steps);
+                break;
+        }
+    }
+
+
+
+    private void walkNorth(int steps) {
+        for (int i = 0; i < steps; i++)
+            if (!this.horizontalWalls[this.robotPosition.x][this.robotPosition.y+1])
+                this.robotPosition.y++;
+            else
+                break;
+    }
+
+    private void walkSouth(int steps) {
+        for (int i = 0; i < steps; i++)
+            if (!this.horizontalWalls[this.robotPosition.x][this.robotPosition.y])
+                this.robotPosition.y--;
+            else
+                break;
+    }
+
+
+
+    private void walkWest(int steps) {
+        for (int i = 0; i < steps; i++)
+            if (!this.verticalWalls[this.robotPosition.x][this.robotPosition.y])
+                this.robotPosition.x--;
+            else
+                break;
+    }
+
+    private void walkEast(int steps) {
+        for (int i = 0; i < steps; i++)
+            if (!this.verticalWalls[this.robotPosition.x+1][this.robotPosition.y])
+                this.robotPosition.x++;
+            else
+                break;
+    }
+
+
+
+    public List<String> getMovementHistory() {
+        return this.movementHistory;
+    }
+
+    public void addVerticalWall(int x, int from, int to) {
+        for (int i = from; i <= to; i++)
+            this.verticalWalls[x][i] = true;
+    }
+
+
+
+    public void addHorizontalWall(int y, int from, int to) {
+        for (int i = from; i <= to; i++)
+            this.horizontalWalls[i][y] = true;
+    }
+}
+
+
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walkTo(String walkCommandString);
+}
+",4054,153,35.788990825688074,95,0.0,0.032679738562091505,0.0784313725490196,0.006535947712418301,0.22875816993464052,0.0,0.21568627450980393,7.4183006535947715,5.647058823529412,0.0,1.0,True,True,False,True,False,False,2,0.08496732026143791,0.0392156862745098,0.026143790849673203,0.006535947712418301,0.7320261437908496,0.0915032679738562,0.0196078431372549,8.75,17,0.0,0,3.392156862745098,503,-27,1.8780997365791663,-5,-0.05228758169934641,3.111111111111111,3.215686274509804
+optimised,m0,20,,,"package thkoeln.st.st2praktikum.exercise;
+
+import java.util.*;
+
+public class Exercise0 implements Walkable {
+    private final int WIDTH = 12; // Size of room.
+    private final int HEIGHT = 8;
+
+    private int robotX = 3; // Initial robot position.
+    private int robotY = 0;
+
+    private final Set<String> walls = new HashSet<>();
+
+    public Exercise0() {
+        // Initialize walls.
+        initWalls();
+        System.out.println(""Walls initialized: "" + walls);  // 1. Print statement
+    }
+
+    // Helper method to initialize walls in the room.
+    private void initWalls() {
+        addWall(3, 0, 3, 3);
+        addWall(7, 0, 7, 2);
+        addWall(4, 3, 7, 3);
+        addWall(1, 4, 8, 4);
+    }
+
+    // Helper method to add a wall to the room.
+    private void addWall(int startX, int startY, int endX, int endY) {
+        for (int i = startX; i <= endX; i++) {
+            for (int j = startY; j <= endY; j++) {
+                walls.add(buildPosition(i, j));
+            }
+        }
+    }
+
+    // Helper method to build a position string.
+    private String buildPosition(int x, int y) {
+        return x + "","" + y;
+    }
+
+    @Override
+    public String walkTo(String walkCommandString) {
+        String direction = parseDirection(walkCommandString);
+        int steps = parseSteps(walkCommandString);
+
+        System.out.println(""Parsed Direction: "" + direction + "", Steps: "" + steps);  // 2. Print statement
+
+        for (int i = 0; i < steps; i++) {
+            if (!canMove(direction)) {
+                System.out.println(""Invalid move or hit a wall at direction: "" + direction);  // 4. Print statement
+                break;
+            }
+
+            System.out.println(""Before Move: Position = "" + buildPosition(robotX, robotY));  // 3. Print statement
+            move(direction);
+            System.out.println(""After Move: Position = "" + buildPosition(robotX, robotY));   // 3. Print statement
+        }
+
+        return buildPosition(robotX, robotY);
+    }
+
+    // Helper method to parse the direction from a command string.
+    private String parseDirection(String command) {
+        return command.replaceAll(""\\[|\\]"", """").split("","")[0];
+    }
+
+    // Helper method to parse the number of steps from a command string.
+    private int parseSteps(String command) {
+        return Integer.parseInt(command.replaceAll(""\\[|\\]"", """").split("","")[1]);
+    }
+
+    // Helper method to check if the robot can move in a given direction.
+    private boolean canMove(String direction) {
+        switch (direction) {
+            case ""no"":
+                return robotY < HEIGHT - 1 && !walls.contains(buildPosition(robotX, robotY + 1));
+            case ""ea"":
+                return robotX < WIDTH - 1 && !walls.contains(buildPosition(robotX + 1, robotY));
+            case ""so"":
+                return robotY > 0 && !walls.contains(buildPosition(robotX, robotY - 1));
+            case ""we"":
+                return robotX > 0 && !walls.contains(buildPosition(robotX - 1, robotY));
+            default:
+                return false;
+        }
+    }
+
+    // Helper method to move the robot in a given direction.
+    private void move(String direction) {
+        switch (direction) {
+            case ""no"":
+                robotY++;
+                break;
+            case ""ea"":
+                robotX++;
+                break;
+            case ""so"":
+                robotY--;
+                break;
+            case ""we"":
+                robotX--;
+                break;
+        }
+    }
+}
+
+
+
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walkTo(String walkCommandString);
+}
+",3623,114,37.73118279569893,115,0.13157894736842105,0.017543859649122806,0.03508771929824561,0.017543859649122806,0.35964912280701755,0.0,0.17543859649122806,9.482456140350877,6.5964912280701755,0.043859649122807015,1.0,False,False,False,False,False,False,2,0.07894736842105263,0.043859649122807015,0.017543859649122806,0.008771929824561403,0.4298245614035088,0.2807017543859649,0.008771929824561403,5.1875,17,34.2,66,3.754385964912281,340,2,5.081698259616452,23,-0.008771929824561403,3.0,2.9473684210526314
+optimised,m0,3,,,"package thkoeln.st.st2praktikum.exercise;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Exercise0 implements Walkable {
+
+    private Position currentPosition = new Position(3, 0);
+
+    private static final int MAX_X = 11;
+    private static final int MAX_Y = 7;
+
+    @Override
+    public String walkTo(String walkCommandString) {
+
+        Command command = parseCommand(walkCommandString);
+
+        for (int i = 0; i < command.getSteps(); i++) {
+
+            if (canMove(command.getDirection())) {
+                currentPosition.move(command.getDirection());
+            } else {
+
+                break;
+            }
+        }
+
+        return currentPosition.toString();
+    }
+
+    private Command parseCommand(String walkCommandString) {
+
+        Pattern pattern = Pattern.compile(""\\[(\\w+),(\\d+)\\]"");
+        Matcher matcher = pattern.matcher(walkCommandString);
+
+        if (matcher.find()) {
+            String direction = matcher.group(1);
+            int steps = Integer.parseInt(matcher.group(2));
+            return new Command(direction, steps);
+        } else {
+
+            throw new IllegalArgumentException(""Invalid command format"");
+        }
+    }
+
+    private boolean canMove(String direction) {
+
+        return currentPosition.canMove(direction);
+    }
+
+    private static class Position {
+
+        private int x;
+        private int y;
+
+        public Position(int x, int y) {
+            this.x = x;
+            this.y = y;
+        }
+
+        public void move(String direction) {
+
+            switch (direction) {
+
+                case ""no"":
+                    this.y++;
+                    break;
+                case ""ea"":
+                    this.x++;
+                    break;
+                case ""so"":
+                    this.y--;
+                    break;
+                case ""we"":
+                    this.x--;
+                    break;
+
+                default:
+                    throw new IllegalArgumentException(""Invalid direction"");
+            }
+        }
+
+        public boolean canMove(String direction) {
+
+            switch (direction) {
+
+                case ""no"": // north
+                    return !(this.y == MAX_Y || (this.x == 3 && this.y == 2)
+                            || (this.x >= 4 && this.x <= 7 && this.y == 2)
+                            || (this.x >= 1 && this.x <= 8 && this.y == 3));
+                case ""ea"": // east
+                    return !(this.x == MAX_X || (this.x == 2 && this.y >= 0 && this.y <= 3)
+                            || (this.x == 6 && this.y >= 0 && this.y <= 2));
+                case ""so"": // south
+                    return !(this.y == 0 || (this.x == 3 && this.y == 4)
+                            || (this.x >= 4 && this.x <= 7 && this.y == 4)
+                            || (this.x >= 1 && this.x <= 8 && this.y == 5));
+                case ""we"": // west
+                    return !(this.x == 0 || (this.x == 4 && this.y >= 0 && this.y <= 3)
+                            || (this.x == 8 && this.y >= 0 && this.y <= 2));
+                default:
+                    throw new IllegalArgumentException(""Invalid direction"");
+            }
+        }
+
+        @Override
+        public String toString() {
+
+            return String.format(""(%d,%d)"", this.x, this.y);
+        }
+    }
+
+    private static class Command {
+
+        private String direction;
+        private int steps;
+
+        public Command(String direction, int steps) {
+
+            this.direction = direction;
+            this.steps = steps;
+        }
+
+        public String getDirection() {
+            return direction;
+        }
+
+        public int getSteps() {
+            return steps;
+        }
+    }
+}
+
+
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walkTo(String walkCommandString);
+}
+",3823,139,36.11764705882353,91,0.02877697841726619,0.014388489208633094,0.02158273381294964,0.014388489208633094,0.2949640287769784,0.02158273381294964,0.2589928057553957,10.309352517985612,8.258992805755396,0.0,1.0,False,False,False,False,False,False,2,0.06474820143884892,0.050359712230215826,0.03597122302158273,0.02158273381294964,0.4244604316546763,0.1079136690647482,0.014388489208633094,5.5,17,4.5,5,4.553956834532374,521,1,6.287458379578247,24,-0.014388489208633094,3.7553956834532376,3.726618705035971
+optimised,m0,4,,,"package thkoeln.st.st2praktikum.exercise;
+
+import java.awt.Point;
+
+public class Exercise0 implements Walkable {
+    private Point location;
+    private final int width = 12;
+    private final int height = 8;
+
+    private boolean[][] walls;
+
+    public Exercise0() {
+        location = new Point(
+                3,
+                0
+        );
+        initializeWalls();
+    }
+
+    @Override
+    public String walkTo(String walkCommandString) {
+        String direction = extractDirection(walkCommandString);
+        int steps = extractSteps(walkCommandString);
+
+        if (direction.equals(""no"")) {
+            walkNorth(steps);
+        } else if (direction.equals(""ea"")) {
+            walkEast(steps);
+        } else if (direction.equals(""so"")) {
+            walkSouth(steps);
+        } else if (direction.equals(""we"")) {
+            walkWest(steps);
+        }
+
+        return formatLocation();
+    }
+
+    private void walkNorth(int steps) {
+        for (int i = 0; i < steps; i++) {
+            if (location.y < height - 1 && !walls[location.x][location.y + 1]) {
+                location.y++;
+            } else break;
+        }
+    }
+
+    private void walkEast(int steps) {
+        for (int i = 0; i < steps; i++) {
+            if (location.x < width - 1 && !walls[location.x + 1][location.y]) {
+                location.x++;
+            } else break;
+        }
+    }
+
+    private void walkSouth(int steps) {
+        for (int i = 0; i < steps; i++) {
+            if (location.y > 0 && !walls[location.x][location.y - 1]) {
+                location.y--;
+            } else break;
+        }
+    }
+
+    private void walkWest(int steps) {
+        for (int i = 0; i < steps; i++) {
+            if (location.x > 0 && !walls[location.x - 1][location.y]) {
+                location.x--;
+            } else break;
+        }
+    }
+
+    private String extractDirection(String walkCommandString) {
+        try {
+            return walkCommandString.substring(
+                    1,
+                    3
+            );
+        } catch (IndexOutOfBoundsException e) {
+            throw new IllegalArgumentException(
+                    ""The provided walk command is not valid."",
+                    e
+            );
+        }
+    }
+
+    private int extractSteps(String walkCommandString) {
+        try {
+            return Integer.parseInt(walkCommandString.substring(
+                    4,
+                    walkCommandString.length() - 1
+            ));
+        } catch (NumberFormatException | IndexOutOfBoundsException e) {
+            throw new IllegalArgumentException(
+                    ""The number of steps provided is not valid."",
+                    e
+            );
+        }
+    }
+
+    private String formatLocation() {
+        return ""("" +
+                location.x +
+                "","" +
+                location.y +
+                "")"";
+    }
+
+    private void initializeWalls() {
+        walls = new boolean[width][height];
+        setWalls(
+                3,
+                3,
+                0,
+                3
+        );
+        setWalls(
+                7,
+                7,
+                0,
+                2
+        );
+        setWalls(
+                4,
+                7,
+                3,
+                3
+        );
+        setWalls(
+                1,
+                8,
+                4,
+                4
+        );
+    }
+
+    private void setWalls(int startI, int endI, int startJ, int endJ) {
+        for (int i = startI; i <= endI; i++) {
+            for (int j = startJ; j <= endJ; j++) {
+                walls[i][j] = true;
+            }
+        }
+    }
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walkTo(String walkCommandString);
+}
+",3721,147,27.705426356589147,80,0.0,0.05442176870748299,0.05442176870748299,0.0,0.2789115646258503,0.013605442176870748,0.12244897959183673,10.217687074829932,8.598639455782314,0.0,1.0,True,False,False,True,False,False,2,0.07482993197278912,0.027210884353741496,0.013605442176870748,0.006802721088435374,0.4013605442176871,0.1360544217687075,0.006802721088435374,4.733333333333333,17,0.0,0,6.462585034013605,950,-39,-1.8834625322997418,-14,0.0,6.197278911564626,6.340136054421769
+optimised,m0,5,,,"// Package for the class
+package thkoeln.st.st2praktikum.exercise;
+
+// Required import statement
+import java.awt.Point;
+
+// Public class named Exercise0 implementing the interface Walkable
+public class Exercise0 implements Walkable {
+
+    // Declare a private Room object named room
+    private Room room;
+
+    // Declare a private Robot object named robot
+    private Robot robot;
+
+    // Default constructor
+    public Exercise0() {
+
+        // Initialize the room object with dimensions 12x8
+        room = new Room(12, 8);
+
+        // Initialize the robot object at the position (3,0)
+        robot = new Robot(3, 0);
+
+        // Add walls to the room at the specified positions
+        room.addWall(new Wall(3,0,3,3));
+        room.addWall(new Wall(7,0,7,2));
+        room.addWall(new Wall(4,3,7,3));
+        room.addWall(new Wall(1,4,8,4));
+
+        // End of constructor
+    }
+
+    // Implementation of the method walkTo from the interface Walkable
+    @Override
+    public String walkTo(String walkCommandString) {
+
+        // Extract the direction from the walkCommandString
+        String direction = walkCommandString.substring(1, 3);
+
+        // Extract the number of steps from the walkCommandString and convert it to integer
+        int steps = Integer.parseInt(walkCommandString.substring(4, walkCommandString.length() - 1));
+
+        // Start a loop that iterates as many times as steps
+        for (int i = 0; i < steps; i++) {
+
+            // Calculate the next position of the robot based on the direction
+            Point nextPosition = robot.calculateNextPositionAfterMoveInDirection(direction);
+
+            // If the robot can move to the next position, it moves, otherwise it breaks the loop
+            if (room.canMoveTo(nextPosition)) {
+                robot.moveInDirection(direction);
+            } else {
+                break;
+            }
+        }
+
+        // After all steps (or breaking the loop), the method returns the current position of the robot as a String
+        return robot.getCurrentPositionAsString();
+    }
+
+    // End of the Exercise0 class
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+import java.awt.Point;
+
+public class Robot {
+    private Point currentLocation;
+
+    public Robot(int initialXPosition, int initialYPosition) {
+        this.setCurrentLocation(new Point(initialXPosition, initialYPosition));
+    }
+
+    private void setCurrentLocation(Point newLocation) {
+        this.currentLocation = newLocation;
+    }
+
+    private Point getCurrentLocation() {
+        return this.currentLocation;
+    }
+
+    public Point calculateNextPositionAfterMoveInDirection(String cardinalDirection) {
+        Point futurePositionAfterMove = new Point(getCurrentLocation());
+
+        switch (cardinalDirection) {
+            case ""no"": futurePositionAfterMove.y++; break;
+            case ""ea"": futurePositionAfterMove.x++; break;
+            case ""so"": futurePositionAfterMove.y--; break;
+            case ""we"": futurePositionAfterMove.x--; break;
+        }
+
+        return futurePositionAfterMove;
+    }
+
+    public void moveInDirection(String cardinalDirection) {
+        Point newLocation = calculateNextPositionAfterMoveInDirection(cardinalDirection);
+        setCurrentLocation(newLocation);
+    }
+
+    public String getCurrentPositionAsString() {
+        Point currentLocation = getCurrentLocation();
+        return ""("" + currentLocation.x + "","" + currentLocation.y + "")"";
+    }
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+import java.awt.Point;
+
+public class Room {
+    private final int width;
+    private final int height;
+    private boolean[][] walls;
+
+    public Room(int width, int height) {
+        this.width = width;
+        this.height = height;
+        walls = new boolean[width][height];
+    }
+
+    public void addWall(Wall wall) {
+        for (int i = wall.getX1(); i <= wall.getX2(); i++) {
+            for (int j = wall.getY1(); j <= wall.getY2(); j++) {
+                walls[i][j] = true;
+            }
+        }
+    }
+
+    public boolean canMoveTo(Point point) {
+        if (point.x < 0 || point.x >= width || point.y < 0 || point.y >= height) {
+            return false;
+        }
+
+        return !walls[point.x][point.y];
+    }
+}
+
+
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walkTo(String walkCommandString);
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+public class Wall {
+    private final int x1;
+    private final int y1;
+    private final int x2;
+    private final int y2;
+
+    public Wall(int x1, int y1, int x2, int y2) {
+        this.x1 = Math.min(x1, x2);
+        this.y1 = Math.min(y1, y2);
+        this.x2 = Math.max(x1, x2);
+        this.y2 = Math.max(y1, y2);
+    }
+
+    public int getX1() {
+        return x1;
+    }
+
+    public int getY1() {
+        return y1;
+    }
+
+    public int getX2() {
+        return x2;
+    }
+
+    public int getY2() {
+        return y2;
+    }
+}",4901,177,35.79545454545455,115,0.1016949152542373,0.01694915254237288,0.022598870056497175,0.005649717514124294,0.4180790960451977,0.0,0.24858757062146894,6.610169491525424,4.338983050847458,0.0,1.0,True,False,False,True,False,False,5,0.07344632768361582,0.05649717514124294,0.03389830508474576,0.022598870056497175,0.3502824858757062,0.14124293785310735,0.01694915254237288,6.56,23,49.333333333333336,104,2.6497175141242937,301,8,4.483397807865895,16,0.0,1.7627118644067796,1.7853107344632768
+optimised,m0,6,,,"package thkoeln.st.st2praktikum.exercise;
+
+import java.awt.Point;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Exercise0 implements Walkable {
+    private Point robotPosition;
+    private final int roomWidth;
+    private final int roomHeight;
+    private final boolean[][] walls;
+    private final List<Point> wallCoordinates;
+
+    public Exercise0() {
+        this.roomWidth = 12;
+        this.roomHeight = 8;
+        // Initialize the robot's position
+        robotPosition = new Point(3, 0);
+        // Initialize the walls
+        walls = new boolean[roomWidth + 1][roomHeight + 1];
+        wallCoordinates = new ArrayList<>();
+        // Set the initial walls
+        initializeRoom();
+    }
+
+    private void initializeRoom() {
+        addWall(new Point(3, 0), new Point(3, 3));
+        addWall(new Point(7, 0), new Point(7, 2));
+        addWall(new Point(4, 3), new Point(7, 3));
+        addWall(new Point(1, 4), new Point(8, 4));
+    }
+
+    public void addWall(Point from, Point to) {
+        // Assuming walls run either vertically or horizontally
+        if (from.x == to.x) {
+            for (int y = from.y; y <= to.y; y++) {
+                walls[from.x][y] = true;
+                wallCoordinates.add(new Point(from.x, y));
+            }
+        } else if (from.y == to.y) {
+            for (int x = from.x; x <= to.x; x++) {
+                walls[x][from.y] = true;
+                wallCoordinates.add(new Point(x, from.y));
+            }
+        }
+    }
+
+    public void removeWall(Point from, Point to) {
+        // Assuming walls run either vertically or horizontally
+        if (from.x == to.x) {
+            for (int y = from.y; y <= to.y; y++) {
+                walls[from.x][y] = false;
+                wallCoordinates.remove(new Point(from.x, y));
+            }
+        } else if (from.y == to.y) {
+            for (int x = from.x; x <= to.x; x++) {
+                walls[x][from.y] = false;
+                wallCoordinates.remove(new Point(x, from.y));
+            }
+        }
+    }
+
+    public void moveTo(Point position) {
+        if (position.x >= 0 && position.y >= 0 && position.x < roomWidth && position.y < roomHeight) {
+            this.robotPosition = position;
+        }
+    }
+
+    public boolean isAccessible(Point position) {
+        if (position.x < 0 || position.y < 0 || position.x >= roomWidth || position.y >= roomHeight) {
+            return false; // out of bounds
+        }
+        return !walls[position.x][position.y]; // accessible if not a wall
+    }
+
+    @Override
+    public String walkTo(String walkCommandString) {
+        // Parse the command string
+        String[] commandParts = walkCommandString.replaceAll(""[\\[\\]]"", """").split("","");
+        String direction = commandParts[0];
+        int steps = Integer.parseInt(commandParts[1]);
+
+        // Perform the walk command
+        for (int i = 0; i < steps; i++) {
+            // Check for North direction
+            if (direction.equals(""no"")) {
+                if (!isWall(robotPosition.x, robotPosition.y + 1)) {
+                    robotPosition.y++;
+                }
+            }
+            // Check for South direction
+            else if (direction.equals(""so"")) {
+                if (!isWall(robotPosition.x, robotPosition.y - 1)) {
+                    robotPosition.y--;
+                }
+            }
+            // Check for West direction
+            else if (direction.equals(""we"")) {
+                if (!isWall(robotPosition.x - 1, robotPosition.y)) {
+                    robotPosition.x--;
+                }
+            }
+            // Check for East direction
+            else if (direction.equals(""ea"")) {
+                if (!isWall(robotPosition.x + 1, robotPosition.y)) {
+                    robotPosition.x++;
+                }
+            }
+            // If the direction is not recognized
+            else {
+                throw new IllegalArgumentException(""The direction "" + direction + "" is not recognized."");
+            }
+        }
+
+        // Return the new position
+        return ""("" + robotPosition.x + "","" + robotPosition.y + "")"";
+    }
+
+    private boolean isWall(int x, int y) {
+        if (x < 0 || y < 0 || x >= roomWidth || y >= roomHeight) {
+            return true; // out of bounds
+        }
+        return walls[x][y]; // check for internal walls
+    }
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walkTo(String walkCommandString);
+}
+",4450,131,36.914529914529915,105,0.1297709923664122,0.12213740458015267,0.08396946564885496,0.0,0.3053435114503817,0.007633587786259542,0.10687022900763359,10.969465648854962,8.091603053435115,0.0,1.0,True,True,False,True,False,False,2,0.061068702290076333,0.03816793893129771,0.022900763358778626,0.007633587786259542,0.7404580152671756,0.15267175572519084,0.022900763358778626,7.416666666666667,15,26.647058823529413,52,4.0458015267175576,530,0,4.529914529914528,7,0.0,4.0458015267175576,4.0458015267175576
+optimised,m0,7,,,"package thkoeln.st.st2praktikum.exercise;
+
+public class Command {
+    private final String direction;
+    private final int steps;
+
+    Command(String direction, int steps) {
+        this.direction = direction;
+        this.steps = steps;
+    }
+
+    static Command fromString(String str) {
+        str = str.replace(""["", """").replace(""]"", """");
+        String[] parts = str.split("","");
+        return new Command(parts[0], Integer.parseInt(parts[1]));
+    }
+
+    String getDirection() {
+        return direction;
+    }
+
+    int getSteps() {
+        return steps;
+    }
+}
+package thkoeln.st.st2praktikum.exercise;
+
+import java.awt.Point;
+import java.util.Arrays;
+
+public class Exercise0 implements Walkable {
+
+    private final Room room;
+    private final Robot robot;
+
+    public Exercise0() {
+        this.room = new Room(12, 8, Arrays.asList(new Point(3,3), new Point(7,0), new Point(7,2), new Point(4,3), new Point(7,3), new Point(1,4), new Point(8,4)));
+        this.robot = new Robot(new Point(3, 0), room);
+    }
+
+    @Override
+    public String walkTo(String walkCommandString) {
+        Command command = Command.fromString(walkCommandString);
+        robot.executeCommand(command);
+        return robot.getPosition();
+    }
+}
+
+
+package thkoeln.st.st2praktikum.exercise;
+
+import java.awt.Point;
+
+public class Robot {
+    private Point position;
+    private final Room room;
+
+    Robot(Point startingPosition, Room room) {
+        this.position = startingPosition;
+        this.room = room;
+    }
+
+    void executeCommand(Command command) {
+        Point newPosition = new Point(position);
+        for (int i = 0; i < command.getSteps(); i++) {
+            switch (command.getDirection()) {
+                case ""no"": newPosition.y++; break;
+                case ""ea"": newPosition.x++; break;
+                case ""so"": newPosition.y--; break;
+                case ""we"": newPosition.x--; break;
+            }
+            if (room.isValidPosition(newPosition)) {
+                position = newPosition;
+            }
+        }
+    }
+
+    String getPosition() {
+        return ""("" + position.x + "","" + position.y + "")"";
+    }
+}
+package thkoeln.st.st2praktikum.exercise;
+
+import java.awt.Point;
+import java.util.List;
+
+public class Room {
+    private final int width;
+    private final int height;
+    private final List<Point> walls;
+
+    Room(int width, int height, List<Point> walls) {
+        this.width = width;
+        this.height = height;
+        this.walls = walls;
+    }
+
+    boolean isValidPosition(Point position) {
+        if (position.x < 0 || position.x >= width || position.y < 0 || position.y >= height) {
+            return false;
+        }
+        return !walls.contains(position);
+    }
+}
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walkTo(String walkCommandString);
+}
+",2830,109,31.275862068965516,163,0.0,0.01834862385321101,0.009174311926605505,0.009174311926605505,0.28440366972477066,0.0,0.1926605504587156,6.1192660550458715,4.256880733944954,0.0,1.0,False,True,False,True,False,False,5,0.07339449541284404,0.08256880733944955,0.027522935779816515,0.03669724770642202,0.3944954128440367,0.11009174311926606,0.045871559633027525,5.857142857142857,17,0.0,0,4.26605504587156,-15,21,5.662654521795705,73,0.027522935779816515,0.05504587155963303,-0.03669724770642202
+optimised,m0,8,,,"package thkoeln.st.st2praktikum.exercise;
+
+import java.awt.Point;
+import java.util.Arrays;
+import java.util.List;
+
+public class Exercise0 implements Walkable {
+
+    private Robot robot;
+    private Room room;
+
+    private Position position;
+
+
+    public Exercise0() {
+
+        this.position = new Position(new Point(3, 0));
+        this.robot = new Robot(position.getPoint());
+
+        List<Wall> walls = Arrays.asList(
+                new Wall(3, 0, 3, 3),
+                new Wall(7, 0, 7, 2),
+                new Wall(4, 3, 7, 3),
+                new Wall(1, 4, 8, 4)
+        );
+
+        this.room = new Room(12, 8, walls);
+    }
+
+    @Override
+    public String walkTo(String walkCommandString) {
+        String[] parts = walkCommandString.replace(""["", """").replace(""]"", """").split("","");
+        String direction = parts[0];
+        int steps = Integer.parseInt(parts[1]);
+
+        robot.walkTo(direction, steps, room);
+
+        position.setPoint(robot.getPosition());
+
+        return position.toString();
+    }
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+import java.awt.*;
+
+public class Position {
+    private Point point;
+
+    public Position(Point point) {
+        this.point = point;
+    }
+
+    public Point getPoint() {
+        return this.point;
+    }
+
+    public void setPoint(Point point) {
+        this.point = point;
+    }
+
+    @Override
+    public String toString() {
+        return String.format(""(%d,%d)"", point.x, point.y);
+    }
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+import java.awt.*;
+
+public class Robot {
+    private Point position;
+
+    public Robot(Point initialPosition) {
+        this.position = initialPosition;
+    }
+
+    public Point getPosition() {
+        return this.position;
+    }
+
+    public void setPosition(Point position) {
+        this.position = position;
+    }
+
+    public void walkTo(String direction, int steps, Room room) {
+        for (int i = 0; i < steps; i++) {
+            Point nextPosition = new Point(position);
+            switch (direction) {
+                case ""no"":
+                    nextPosition.y += 1;
+                    break;
+                case ""ea"":
+                    nextPosition.x += 1;
+                    break;
+                case ""so"":
+                    nextPosition.y -= 1;
+                    break;
+                case ""we"":
+                    nextPosition.x -= 1;
+                    break;
+            }
+
+            if (room.isInBounds(nextPosition) && !room.isWall(nextPosition)) {
+                position = nextPosition;
+            } else {
+                break;
+            }
+        }
+    }
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+import java.awt.Point;
+import java.util.Arrays;
+import java.util.List;
+
+public class Room {
+    private int width;
+    private int height;
+    private List<Wall> walls;
+
+    public Room(int width, int height, List<Wall> walls) {
+        this.width = width;
+        this.height = height;
+        this.walls = walls;
+    }
+
+    public boolean isInBounds(Point p) {
+        return p.x >= 0 && p.y >= 0 && p.x < width && p.y < height;
+    }
+
+    public boolean isWall(Point p) {
+        for (Wall wall : walls) {
+            if (wall.isAt(p)) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walkTo(String walkCommandString);
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+import java.awt.Point;
+
+public class Wall {
+    private int x1, y1, x2, y2;
+
+    public Wall(int x1, int y1, int x2, int y2) {
+        this.x1 = Math.min(x1, x2);
+        this.y1 = Math.min(y1, y2);
+        this.x2 = Math.max(x1, x2);
+        this.y2 = Math.max(y1, y2);
+    }
+
+    public boolean isAt(Point p) {
+        if (x1 == x2) { // This is a vertical wall
+            return p.x == x1 && p.y >= y1 && p.y < y2;
+        } else if (y1 == y2) { // This is a horizontal wall
+            return p.y == y1 && p.x >= x1 && p.x < x2;
+        } else {
+            return false; // This should not happen for this exercise
+        }
+    }
+}
+
+",4068,176,29.044776119402986,88,0.017045454545454544,0.022727272727272728,0.022727272727272728,0.005681818181818182,0.38636363636363635,0.0,0.23295454545454544,6.988636363636363,5.204545454545454,0.0,1.0,False,True,False,True,False,False,6,0.0625,0.06818181818181818,0.028409090909090908,0.028409090909090908,0.4318181818181818,0.10227272727272728,0.05113636363636364,4.3,15,29.333333333333332,40,2.9431818181818183,502,-6,2.9216991963260632,-12,-0.005681818181818182,2.6875,2.6931818181818183
+optimised,m0,9,,,"package thkoeln.st.st2praktikum.exercise;
+
+import java.awt.Point;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Exercise0 implements Walkable {
+    private Point robotPosition;
+    private List<Wall> walls;
+    private int roomWidth;
+    private int roomHeight;
+
+    public Exercise0() {
+        this.roomWidth = 12;
+        this.roomHeight = 8;
+        this.robotPosition = new Point(3, 0);
+        this.walls = new ArrayList<>();
+
+        addWall(new Point(3, 0), new Point(3, 3));
+        addWall(new Point(7, 0), new Point(7, 2));
+        addWall(new Point(4, 3), new Point(7, 3));
+        addWall(new Point(1, 4), new Point(8, 4));
+    }
+
+    public Exercise0(int roomWidth, int roomHeight, Point robotStartPosition) {
+        this.roomWidth = roomWidth;
+        this.roomHeight = roomHeight;
+        this.robotPosition = robotStartPosition;
+        this.walls = new ArrayList<>();
+    }
+
+    public void addWall(Point start, Point end) {
+        this.walls.add(new Wall(start, end));
+    }
+
+    public void removeWall(Point start, Point end) {
+        this.walls.removeIf(wall -> wall.getWallPoints().containsAll(new Wall(start, end).getWallPoints()));
+    }
+
+    @Override
+    public String walkTo(String walkCommandString) {
+        String direction = walkCommandString.substring(1, 3);
+        int steps = Integer.parseInt(walkCommandString.substring(4, walkCommandString.length() - 1));
+
+        switch(direction) {
+            case ""no"":
+                for(int i = 0; i < steps; i++) {
+                    Point nextPosition = new Point(robotPosition.x, robotPosition.y + 1);
+                    if(!isWall(nextPosition) && robotPosition.y + 1 < roomHeight) {
+                        robotPosition.y++;
+                    } else break;
+                }
+                break;
+            case ""ea"":
+                for(int i = 0; i < steps; i++) {
+                    Point nextPosition = new Point(robotPosition.x + 1, robotPosition.y);
+                    if(!isWall(nextPosition) && robotPosition.x + 1 < roomWidth) {
+                        robotPosition.x++;
+                    } else break;
+                }
+                break;
+            case ""so"":
+                for(int i = 0; i < steps; i++) {
+                    Point nextPosition = new Point(robotPosition.x, robotPosition.y - 1);
+                    if(!isWall(nextPosition) && robotPosition.y - 1 >= 0) {
+                        robotPosition.y--;
+                    } else break;
+                }
+                break;
+            case ""we"":
+                for(int i = 0; i < steps; i++) {
+                    Point nextPosition = new Point(robotPosition.x - 1, robotPosition.y);
+                    if(!isWall(nextPosition) && robotPosition.x - 1 >= 0) {
+                        robotPosition.x--;
+                    } else break;
+                }
+                break;
+        }
+
+        return ""("" + robotPosition.x + "","" + robotPosition.y + "")"";
+    }
+
+    private boolean isWall(Point point) {
+        return this.walls.stream().anyMatch(wall -> wall.containsPoint(point));
+    }
+
+    public Point getRobotPosition() {
+        return robotPosition;
+    }
+
+    public void setRobotPosition(Point robotPosition) {
+        if (!isWall(robotPosition)) {
+            this.robotPosition = robotPosition;
+        } else {
+            System.out.println(""Cannot place the robot on a wall!"");
+        }
+    }
+
+    public String getRoomSize() {
+        return ""("" + roomWidth + "","" + roomHeight + "")"";
+    }
+}
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Walkable {
+    String walkTo(String walkCommandString);
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+import java.awt.Point;
+import java.util.ArrayList;
+import java.util.List;
+
+class Wall {
+    private List<Point> wallPoints;
+    private Point start;
+    private Point end;
+
+    public Wall(Point start, Point end) {
+        this.start = start;
+        this.end = end;
+        this.wallPoints = new ArrayList<>();
+        for (int i = start.x; i <= end.x; i++) {
+            for (int j = start.y; j <= end.y; j++) {
+                wallPoints.add(new Point(i, j));
+            }
+        }
+    }
+
+    public List<Point> getWallPoints() {
+        return wallPoints;
+    }
+
+    public boolean containsPoint(Point point) {
+        return wallPoints.contains(point);
+    }
+
+    public Point getStart() {
+        return start;
+    }
+
+    public Point getEnd() {
+        return end;
+    }
+
+    // Check if two walls are intersecting
+    public boolean intersects(Wall other) {
+        return this.wallPoints.stream().anyMatch(point -> other.wallPoints.contains(point));
+    }
+
+    // Length of the wall
+    public int getLength() {
+        return Math.max(Math.abs(end.x - start.x), Math.abs(end.y - start.y)) + 1;
+    }
+
+    // Change wall orientation from vertical to horizontal or vice versa
+    public void changeOrientation() {
+        int temp = start.y;
+        start.y = start.x;
+        start.x = temp;
+
+        temp = end.y;
+        end.y = end.x;
+        end.x = temp;
+
+        wallPoints.clear();
+        for (int i = start.x; i <= end.x; i++) {
+            for (int j = start.y; j <= end.y; j++) {
+                wallPoints.add(new Point(i, j));
+            }
+        }
+    }
+
+    // Move the wall by dx, dy
+    public void move(int dx, int dy) {
+        start.x += dx;
+        start.y += dy;
+        end.x += dx;
+        end.y += dy;
+
+        wallPoints.clear();
+        for (int i = start.x; i <= end.x; i++) {
+            for (int j = start.y; j <= end.y; j++) {
+                wallPoints.add(new Point(i, j));
+            }
+        }
+    }
+}
+
+",5633,190,34.23270440251572,108,0.021052631578947368,0.031578947368421054,0.05263157894736842,0.005263157894736842,0.24210526315789474,0.0,0.1631578947368421,9.263157894736842,7.010526315789473,0.005263157894736842,1.0,False,True,False,True,False,False,3,0.08421052631578947,0.03684210526315789,0.03684210526315789,0.010526315789473684,0.6789473684210526,0.17894736842105263,0.031578947368421054,5.230769230769231,18,35.25,65,3.610526315789474,648,1,4.2702044025157235,11,0.0,3.4157894736842107,3.463157894736842

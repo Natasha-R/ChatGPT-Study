@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>290</x>
+      <y>50</y>
+      <w>20</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>type=initial</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>290</x>
+      <y>60</y>
+      <w>30</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>650</x>
+      <y>110</y>
+      <w>180</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>Fügen Sie die Zustände 
+und die Übergänge aus 
+der Aufgabenstellung
+hinzu. 
+
+Benennen Sie dieses 
+File nicht um.
+
+Diese Notiz dürfen Sie
+löschen.</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

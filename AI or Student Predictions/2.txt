@@ -1,0 +1,205 @@
+package thkoeln.st.st2praktikum.exercise;
+
+public class Barrier {
+
+    Point p1;
+    Point p2;
+    Direction direction;
+
+    public Barrier(Point p1, Point p2) {
+        if (p1.x == p2.x) {
+            this.direction = Direction.NORTH;
+        } else {
+            this.direction = Direction.EAST;
+        }
+        this.p1 = p1;
+        this.p2 = p2;
+    }
+
+    public boolean collides(Command c) {
+        Direction moveDirection = c.direction;
+
+        // Cannot collide if moving parallel to the barrier
+        if (isParallel(direction, moveDirection)) {
+            return false;
+        }
+
+        switch (moveDirection) {
+            case EAST: if (c.to.x == p1.x && c.to.y >= p1.y && c.to.y < p2.y) return true;           break;
+            case WEST: if (c.from.x == p1.x && c.to.y >= p1.y && c.to.y < p2.y) return true;         break;
+            case NORTH: if (c.to.y == p1.y && c.to.x >= p1.x && c.to.x < p2.x) return true;          break;
+            case SOUTH: if (c.from.y == p1.y && c.to.x >= p1.x && c.to.x < p2.x) return true;        break;
+        }
+
+        return false;
+    }
+
+    private boolean isParallel(Direction barrierDirection, Direction moveDirection) {
+        if (barrierDirection == Direction.EAST && ( moveDirection == Direction.EAST ||moveDirection == Direction.WEST))
+            return true;
+        else return barrierDirection == Direction.NORTH && (moveDirection == Direction.NORTH || moveDirection == Direction.SOUTH);
+    }
+
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+public class Command {
+    Point from;
+    Point to;
+    Direction direction;
+
+    public Command(Point from, Point to) {
+        this.from = from;
+        this.to = to;
+
+        if (to.x > from.x) {
+            direction = Direction.EAST;
+        } else if (to.x < from.x) {
+            direction = Direction.WEST;
+        } else if (to.y > from.y) {
+            direction = Direction.NORTH;
+        } else if (to.y < from.y) {
+            direction = Direction.SOUTH;
+        } else {
+            throw new RuntimeException("Not a valid move");
+        }
+    }
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+public enum Direction {
+    NORTH, EAST, SOUTH, WEST
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Exercise0 implements Moveable {
+
+    final int DECK_WIDTH = 11;
+    final int DECK_HEIGHT = 7;
+
+    ArrayList<Barrier> barriers = new ArrayList<>();
+
+    Point position;
+
+    public Exercise0() {
+        barriers.add(new Barrier(new Point(1, 4), new Point(8, 4)));
+        barriers.add(new Barrier(new Point(4, 3), new Point(7, 3)));
+        barriers.add(new Barrier(new Point(3, 0), new Point(3, 3)));
+        barriers.add(new Barrier(new Point(7, 0), new Point(7, 2)));
+        position = new Point(3, 0);
+        System.out.println("reset position");
+    }
+
+    @Override
+    public String moveTo(String moveCommandString) {
+        Command command = parseCommandString(moveCommandString);
+        ArrayList<Command> commands = getSingleSteps(command);
+        Point endPos = null;
+        for (Command c : commands) {
+            for (Barrier b : barriers) {
+                if (b.collides(c)) {
+                    endPos = c.from;
+                }
+            }
+        }
+        if (endPos == null) endPos = command.to;
+        position = endPos;
+        return endPos.toString();
+    }
+
+    private Command parseCommandString(String moveCommandString) {
+        Pattern p = Pattern.compile("\\[([a-z]{2}),([\\d]*)\\]");
+        Matcher matcher = p.matcher(moveCommandString);
+
+        Command c;
+        if (matcher.matches()) {
+            String directionString = matcher.group(1).toLowerCase();
+            int length = Integer.parseInt(matcher.group(2));
+
+            if (directionString.startsWith("n")) {
+                c = new Command(position, new Point(position.x, position.y + length));
+            } else if (directionString.startsWith("s")) {
+                c = new Command(position, new Point(position.x, position.y - length));
+            } else if (directionString.startsWith("e")) {
+                c = new Command(position, new Point(position.x + length, position.y));
+            } else if (directionString.startsWith("w")) {
+                c = new Command(position, new Point(position.x - length, position.y));
+            } else {
+                throw new RuntimeException("Could not parse command direction: " + directionString);
+            }
+        } else {
+            throw new RuntimeException("Could not parse commandString: " + moveCommandString);
+        }
+
+        if (c.to.x > DECK_WIDTH) {
+            c.to.x = DECK_WIDTH;
+        } else if (c.to.x < 0) {
+            c.to.x = 0;
+        }
+        if (c.to.y > DECK_HEIGHT) {
+            c.to.y = DECK_HEIGHT;
+        } else if (c.to.y < 0) {
+            c.to.y = 0;
+        }
+
+        return c;
+    }
+
+    private ArrayList<Command> getSingleSteps(Command c) {
+        ArrayList<Command> commands = new ArrayList<>(11);
+        switch (c.direction) {
+            case NORTH:
+                for (int i = c.from.y; i < c.to.y; i++) {
+                    commands.add(new Command(new Point(c.from.x, i), new Point(c.to.x, i + 1)));
+                }
+                break;
+            case SOUTH:
+                for (int i = c.from.y; i >= c.to.y; i--) {
+                    commands.add(new Command(new Point(c.from.x, i), new Point(c.from.x, i - 1)));
+                }
+                break;
+            case EAST:
+                for (int i = c.from.x; i < c.to.x; i++) {
+                    commands.add(new Command(new Point(i, c.from.y), new Point(i + 1, c.to.y)));
+                }
+                break;
+            case WEST:
+                for (int i = c.from.x; i >= c.to.x; i--) {
+                    commands.add(new Command(new Point(i, c.from.y), new Point(i - 1, c.from.y)));
+                }
+                break;
+        }
+        return commands;
+    }
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Moveable {
+    String moveTo(String moveCommandString);
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+public class Point {
+    public int x;
+    public int y;
+
+    public Point(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    @Override
+    public String toString() {
+        return "(" + x + "," + y + ")";
+    }
+}

@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<ruleset name="Custom Rules"
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
+
+    <description>
+        Clean Code Rules
+    </description>
+
+    <!-- :::::::::::::::::::::::: -->
+    <!-- :::::: CLEAN CODE :::::: -->
+    <!-- :::::::::::::::::::::::: -->
+    <!-- KISS rules (keep it simple, stupid) -->
+<!--    <rule ref="category/java/bestpractices.xml/ForLoopVariableCount"/>-->
+<!--    <rule ref="category/java/bestpractices.xml/ForLoopCanBeForeach"/>-->
+<!--    <rule ref="category/java/bestpractices.xml/SimplifiableTestAssertion"/>-->
+<!--    <rule ref="category/java/bestpractices.xml/WhileLoopWithLiteralBoolean"/>-->
+<!--    <rule ref="category/java/codestyle.xml/ForLoopShouldBeWhileLoop"/>-->
+<!--    <rule ref="category/java/codestyle.xml/UnnecessaryLocalBeforeReturn"/>-->
+<!--    <rule ref="category/java/codestyle.xml/UseShortArrayInitializer"/>-->
+    <rule ref="category/java/design.xml/AvoidDeeplyNestedIfStmts"/>
+<!--    <rule ref="category/java/design.xml/AvoidRethrowingException"/>-->
+<!--    <rule ref="category/java/design.xml/CognitiveComplexity"> -->
+<!--        <properties>-->
+<!--            <property name="reportLevel" value="15"/>-->
+<!--        </properties>-->
+<!--    </rule>-->
+<!--    <rule ref="category/java/design.xml/CollapsibleIfStatements"/>-->
+<!--    <rule ref="category/java/design.xml/CyclomaticComplexity">-->
+<!--        <properties>-->
+<!--            <property name="classReportLevel" value="80"/>-->
+<!--            <property name="methodReportLevel" value="15"/>-->
+<!--        </properties>-->
+<!--    </rule>-->
+    <rule ref="category/java/design.xml/ExcessiveParameterList">
+        <properties>
+            <property name="minimum" value="10"/>
+        </properties>
+    </rule>
+<!--    <rule ref="category/java/design.xml/LogicInversion"/>-->
+    <rule ref="category/java/design.xml/NcssCount"> <!-- count of Non-Commenting Source Statements -->
+        <properties>
+            <property name="methodReportLevel" value="40"/>
+            <property name="classReportLevel" value="300"/>
+        </properties>
+    </rule>
+<!--    <rule ref="category/java/design.xml/NPathComplexity"/>-->
+<!--    <rule ref="category/java/design.xml/SimplifyBooleanExpressions"/>-->
+<!--    <rule ref="category/java/performance.xml/TooFewBranchesForASwitchStatement"/>-->
+
+    <!-- Naming rules -->
+<!--    <rule ref="category/java/codestyle.xml/AvoidDollarSigns"/>-->
+    <rule ref="category/java/codestyle.xml/ClassNamingConventions"/>
+    <rule ref="category/java/codestyle.xml/FieldNamingConventions"/>
+    <rule ref="category/java/codestyle.xml/FormalParameterNamingConventions"/>
+    <rule ref="category/java/codestyle.xml/GenericsNaming"/>
+    <rule ref="category/java/codestyle.xml/LinguisticNaming"/>
+    <rule ref="category/java/codestyle.xml/LocalVariableNamingConventions"/>
+    <rule ref="category/java/codestyle.xml/LongVariable">
+        <properties>
+            <property name="minimum" value="40"/>
+        </properties>
+    </rule>
+    <rule ref="category/java/codestyle.xml/MethodNamingConventions"/>
+    <rule ref="category/java/codestyle.xml/ShortMethodName"/>
+    <!-- <rule ref="category/java/codestyle.xml/ShortVariable" />-->
+
+    <!-- YAGNI rules (you ain't gonna need it) -->
+<!--    <rule ref="category/java/bestpractices.xml/UnusedAssignment"/>-->
+<!--    <rule ref="category/java/bestpractices.xml/UnusedFormalParameter"/>-->
+<!--    <rule ref="category/java/codestyle.xml/UnnecessaryImport"/>-->
+<!--    <rule ref="category/java/bestpractices.xml/UnusedLocalVariable"/>-->
+<!--    <rule ref="category/java/bestpractices.xml/UnusedPrivateField"/>-->
+<!--    <rule ref="category/java/bestpractices.xml/UnusedPrivateMethod"/>-->
+
+    <!-- LEAST_ASTONISHMENT rules -->
+    <!-- <rule ref="category/java/bestpractices.xml/ArrayIsStoredDirectly" /> --> <!-- DISCUSS use? -->
+<!--    <rule ref="category/java/bestpractices.xml/AvoidReassigningCatchVariables"/>-->
+<!--    <rule ref="category/java/bestpractices.xml/AvoidReassigningLoopVariables"/>-->
+<!--    <rule ref="category/java/bestpractices.xml/CheckResultSet"/>-->
+<!--    <rule ref="category/java/bestpractices.xml/ConstantsInInterface"/>-->
+<!--    <rule ref="category/java/bestpractices.xml/DefaultLabelNotLastInSwitchStmt"/>-->
+<!--    <rule ref="category/java/bestpractices.xml/LiteralsFirstInComparisons"/>-->
+<!--    <rule ref="category/java/bestpractices.xml/LooseCoupling"/>-->
+<!--    <rule ref="category/java/bestpractices.xml/MethodReturnsInternalArray"/>-->
+<!--    <rule ref="category/java/bestpractices.xml/OneDeclarationPerLine"/>-->
+<!--    <rule ref="category/java/bestpractices.xml/SwitchStmtsShouldHaveDefault"/>-->
+<!--    <rule ref="category/java/bestpractices.xml/UseCollectionIsEmpty"/>-->
+<!--    <rule ref="category/java/codestyle.xml/AvoidProtectedFieldInFinalClass"/>-->
+<!--    <rule ref="category/java/codestyle.xml/AvoidProtectedMethodInFinalClassNotExtending"/>-->
+    <rule ref="category/java/codestyle.xml/FieldDeclarationsShouldBeAtStartOfClass"/>
+<!--    <rule ref="category/java/codestyle.xml/LocalVariableCouldBeFinal"/>-->
+<!--	<rule ref="category/java/codestyle.xml/MethodArgumentCouldBeFinal" />-->
+<!--    <rule ref="category/java/bestpractices.xml/AbstractClassWithoutAbstractMethod"/>-->
+<!--    <rule ref="category/java/design.xml/AbstractClassWithoutAnyMethod"/> -->
+<!--    <rule ref="category/java/design.xml/SingularField"/>-->
+<!--    <rule ref="category/java/errorprone.xml/AvoidLiteralsInIfCondition"/>-->
+<!--    <rule ref="category/java/design.xml/AvoidThrowingRawExceptionTypes"/>-->
+<!--    <rule ref="category/java/design.xml/AvoidThrowingNewInstanceOfSameException"/>-->
+<!--    <rule ref="category/java/design.xml/AvoidThrowingNullPointerException"/>-->
+<!--    <rule ref="category/java/bestpractices.xml/AvoidReassigningParameters"/>-->
+
+    <!-- INFORMATION_HIDING rules -->
+    <rule ref="category/java/design.xml/ExcessivePublicCount"> <!-- Should be moved to OCP -->
+        <properties>
+            <property name="minimum" value="20.0"/>
+        </properties>
+    </rule>
+
+    <!-- DRY rules (don't repeat yourself) -->
+<!--    <rule ref="category/java/codestyle.xml/IdenticalCatchBranches"/>-->
+
+    <!-- SINGLE_LEVEL_OF_ABSTRACTION rules -->
+<!--    <rule ref="category/java/design.xml/SwitchDensity"/>-->
+
+    <!-- COMMENT rules -->
+
+    <!-- TEST rules -->
+<!--    <rule ref="category/java/bestpractices.xml/JUnitAssertionsShouldIncludeMessage"/>-->
+<!--    <rule ref="category/java/bestpractices.xml/JUnitTestContainsTooManyAsserts"/>-->
+<!--    <rule ref="category/java/bestpractices.xml/JUnitTestsShouldIncludeAssert"/>-->
+
+
+    <!-- ::::::::::::::::::::::: -->
+    <!-- :::::::: SOLID :::::::: -->
+    <!-- ::::::::::::::::::::::: -->
+    <!-- SRP (Single Responsibility Principle) rules -->
+<!--    <rule ref="category/java/design.xml/GodClass"/>-->
+    <rule ref="category/java/design.xml/TooManyFields"/> <!-- default 15 fields -->
+    <rule ref="category/java/design.xml/TooManyMethods"> <!-- default is 10 methods -->
+        <properties>
+            <property name="maxmethods" value="15" />
+        </properties>
+    </rule>
+
+    <!-- OCP (Open Closed Principle) -->
+
+    <!-- undefined -->
+<!--    <rule ref="category/java/design.xml/CouplingBetweenObjects"/>-->
+
+</ruleset>

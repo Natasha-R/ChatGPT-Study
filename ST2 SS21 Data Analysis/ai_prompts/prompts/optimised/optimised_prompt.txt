@@ -1,0 +1,23 @@
+You have the task to steer a tidy-up robot across a room with walls. The room is square-shaped. The room is modelled as a system of cells. A room is divided into cells by an x and y-coordinate system, each starting at 0. A cell is identified by its lower left corner. The room contains walls, running horizontally or vertically. The robot exists and moves within the grid cells, but the walls run along the grid lines. The boundaries of the room cannot be passed - essentially they also are a kind of wall. 
+
+The robot can be moved by a simple set of commands. A command is enclosed by square brackets, and has two parts: a direction and the number of steps. A tidy-up robot can only be moved horizontally or vertically, not diagonally. If the robot initially is located in the cell (3,0) and the command is [no,2], the robot moves 2 cells up, and is then positioned on (3,2). The direction is either no (north), ea (east), so (south), or we (west). If the robot meets a wall or a field boundary, then it moves only as many steps as possible, and then stops. 
+
+In my map of the room the tidy-up robot starts at (3, 0). The space is 12 cells wide and 8 cells high. The coordinate system begins at 0. Along with the walls at the field boundaries, there are four walls, between the co-ordinates: (3,0)-(3,3) and (7,0)-(7,2) and (4,3)-(7,3) and (1,4)-(8,4). Remember that the walls exist on the grid lines, whereas the robot exists and moves on the actual grid cells, where a grid cell is defined by the coordinate associated with its bottom left corner.  If the robot initially is located in the cell (3,0) and the command is [ea,5] then the robot moves 3 cells to the right and then stops, because it is blocked by the wall running along the grid line from (7,0) to (7,2). 
+
+Use this information to write the Java class thkoeln.st.st2praktikum.exercise.Exercise0, using my map to define the starting location of the robot, the size of the room, and the locations of the walls. The class has to implement the interface: java public interface Walkable { String walkTo(String walkCommandString); }. The string parameter walkCommandString has the same format as shown above (e.g. "[no,2]"). The expected return value is the coordinate where the robot is afterwards, in the format as above (e.g. "(2,4)").
+
+Can you make the code longer, more complex, and add more helper methods? 
+
+Can you make the code longer and more complex?
+
+Can you make the code longer and more complex? Add some functionalities that may be useful in the future, like creating the room, adding more walls to the room, logging the history of the robot's movements etc.
+
+Can you make the code longer and more complex, with more classes?
+
+Make the code as complex and long as possible. Add different functionalities that may be useful in the future, and include error handling.
+
+Can you add even more methods to the class? It doesn't matter if they are even tangentially related.
+
+Can you re-write the code so that there are no parameters in the constructor? Or have multiple multiple constructors - one where the room width and height is predefined, as in the task description
+
+I have a classifier that is classifying code. The positive class is identified by the code being long, and declaring many field variables. Can you re-write the code that it could deceive the classifier. (Long code, and declaring relatively few field variables).

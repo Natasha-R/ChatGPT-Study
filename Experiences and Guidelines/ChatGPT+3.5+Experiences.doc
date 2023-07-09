@@ -1,0 +1,486 @@
+Date: Sun, 14 May 2023 14:45:34 +0000 (UTC)
+Message-ID: <78800667.139.1684075534625@5855e6b6d56e>
+Subject: Exported From Confluence
+MIME-Version: 1.0
+Content-Type: multipart/related; 
+	boundary="----=_Part_138_1307579499.1684075534625"
+
+------=_Part_138_1307579499.1684075534625
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///C:/exported.html
+
+<html xmlns:o=3D'urn:schemas-microsoft-com:office:office'
+      xmlns:w=3D'urn:schemas-microsoft-com:office:word'
+      xmlns:v=3D'urn:schemas-microsoft-com:vml'
+      xmlns=3D'urn:w3-org-ns:HTML'>
+<head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8=
+">
+    <title>ChatGPT 3.5 Experiences</title>
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:TargetScreenSize>1024x640</o:TargetScreenSize>
+            <o:PixelsPerInch>72</o:PixelsPerInch>
+            <o:AllowPNG/>
+        </o:OfficeDocumentSettings>
+        <w:WordDocument>
+            <w:View>Print</w:View>
+            <w:Zoom>90</w:Zoom>
+            <w:DoNotOptimizeForBrowser/>
+        </w:WordDocument>
+    </xml>
+    <![endif]-->
+    <style>
+                <!--
+        @page Section1 {
+            size: 8.5in 11.0in;
+            margin: 1.0in;
+            mso-header-margin: .5in;
+            mso-footer-margin: .5in;
+            mso-paper-source: 0;
+        }
+
+        table {
+            border: solid 1px;
+            border-collapse: collapse;
+        }
+
+        table td, table th {
+            border: solid 1px;
+            padding: 5px;
+        }
+
+        td {
+            page-break-inside: avoid;
+        }
+
+        tr {
+            page-break-after: avoid;
+        }
+
+        div.Section1 {
+            page: Section1;
+        }
+
+        /* Confluence print stylesheet. Common to all themes for print medi=
+a */
+/* Full of !important until we improve batching for print CSS */
+
+@media print {
+    #main {
+        padding-bottom: 1em !important; /* The default padding of 6em is to=
+o much for printouts */
+    }
+
+    body {
+        font-family: Arial, Helvetica, FreeSans, sans-serif;
+        font-size: 10pt;
+        line-height: 1.2;
+    }
+
+    body, #full-height-container, #main, #page, #content, .has-personal-sid=
+ebar #content {
+        background: var(--ds-surface, #fff) !important;
+        color: var(--ds-text, #000) !important;
+        border: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+    }
+
+    a, a:link, a:visited, a:focus, a:hover, a:active {
+        color: var(--ds-text, #000);
+    }
+
+    #content h1,
+    #content h2,
+    #content h3,
+    #content h4,
+    #content h5,
+    #content h6 {
+        font-family: Arial, Helvetica, FreeSans, sans-serif;
+        page-break-after: avoid;
+    }
+
+    pre {
+        font-family: Monaco, "Courier New", monospace;
+    }
+
+    #header,
+    .aui-header-inner,
+    #navigation,
+    #sidebar,
+    .sidebar,
+    #personal-info-sidebar,
+    .ia-fixed-sidebar,
+    .page-actions,
+    .navmenu,
+    .ajs-menu-bar,
+    .noprint,
+    .inline-control-link,
+    .inline-control-link a,
+    a.show-labels-editor,
+    .global-comment-actions,
+    .comment-actions,
+    .quick-comment-container,
+    #addcomment {
+        display: none !important;
+    }
+
+    /* CONF-28544 cannot print multiple pages in IE */
+    #splitter-content {
+        position: relative !important;
+    }
+
+    .comment .date::before {
+        content: none !important; /* remove middot for print view */
+    }
+
+    h1.pagetitle img {
+        height: auto;
+        width: auto;
+    }
+
+    .print-only {
+        display: block;
+    }
+
+    #footer {
+        position: relative !important; /* CONF-17506 Place the footer at en=
+d of the content */
+        margin: 0;
+        padding: 0;
+        background: none;
+        clear: both;
+    }
+
+    #poweredby {
+        border-top: none;
+        background: none;
+    }
+
+    #poweredby li.print-only {
+        display: list-item;
+        font-style: italic;
+    }
+
+    #poweredby li.noprint {
+        display: none;
+    }
+
+    /* no width controls in print */
+    .wiki-content .table-wrap,
+    .wiki-content p,
+    .panel .codeContent,
+    .panel .codeContent pre,
+    .image-wrap {
+        overflow: visible !important;
+    }
+
+    /* TODO - should this work? */
+    #children-section,
+    #comments-section .comment,
+    #comments-section .comment .comment-body,
+    #comments-section .comment .comment-content,
+    #comments-section .comment p {
+        page-break-inside: avoid;
+    }
+
+    #page-children a {
+        text-decoration: none;
+    }
+
+    /**
+     hide twixies
+
+     the specificity here is a hack because print styles
+     are getting loaded before the base styles. */
+    #comments-section.pageSection .section-header,
+    #comments-section.pageSection .section-title,
+    #children-section.pageSection .section-header,
+    #children-section.pageSection .section-title,
+    .children-show-hide {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .children-show-hide.icon {
+        display: none;
+    }
+
+    /* personal sidebar */
+    .has-personal-sidebar #content {
+        margin-right: 0px;
+    }
+
+    .has-personal-sidebar #content .pageSection {
+        margin-right: 0px;
+    }
+
+    .no-print, .no-print * {
+        display: none !important;
+    }
+}
+-->
+    </style>
+</head>
+<body>
+    <h1>ChatGPT 3.5 Experiences</h1>
+    <div class=3D"Section1">
+        <h2 id=3D"ChatGPT3.5Experiences-WhatChatGPTisgoodat:"><span class=
+=3D"inline-comment-marker" data-ref=3D"eccb948d-40c5-4950-9560-af7553c9756d=
+">What ChatGPT is good at</span>:</h2>
+<ul>
+<li><p>Creating code that is well formatted and commented.</p></li>
+<li><p>Generating code that adheres to SOLID and clean-code principles.</p>
+<ul>
+<li><p>ChatGPT must be prompted to generate code in such a way, otherwise i=
+t tends to write long, single methods</p></li>
+</ul></li>
+<li><p>Can refactor existing code.</p>
+<ul>
+<li><p>Example: Refactoring a class to use Clean Code rules</p></li>
+</ul></li>
+</ul>
+<div id=3D"expander-1465803549" class=3D"expand-container">
+<div id=3D"expander-control-1465803549" class=3D"expand-control">
+<span class=3D"expand-control-icon"><img style=3D"vertical-align:middle;" c=
+lass=3D"expand-control-image" src=3D"43223fc8dc59f155c705d1aaca152746" widt=
+h=3D"16" height=3D"16"></span><span class=3D"expand-control-text">Code befo=
+re and after refactoring</span>
+</div>
+<div id=3D"expander-content-1465803549" class=3D"expand-content">
+<div class=3D"code panel pdl" style=3D"border-width: 1px;">
+<div class=3D"codeContent panelContent pdl">=20
+<pre class=3D"syntaxhighlighter-pre" data-syntaxhighlighter-params=3D"brush=
+: java; gutter: false; theme: Confluence" data-theme=3D"Confluence">public =
+String move(String direction, int steps) {
+      for (int i =3D 0; i &lt; steps; i++) {
+          int nextX =3D xPosition;
+          int nextY =3D yPosition;
+
+          switch (direction) {
+              case "no":
+                  nextY +=3D 1;
+                  break;
+              case "so":
+                  nextY -=3D 1;
+                  break;
+              case "we":
+                  nextX -=3D 1;
+                  break;
+              case "ea":
+                  nextX +=3D 1;
+                  break;
+              default:
+                  throw new IllegalArgumentException("Invalid direction Str=
+ing");
+          }
+
+          // Check if the mining machine goes out of bounds
+          if (nextX &lt; 0 || nextX &gt;=3D area.getWidth() || nextY &lt; 0=
+ || nextY &gt;=3D area.getHeight()) {
+              // Mining machine goes out of bounds, stay at current positio=
+n
+              return "(" + xPosition + "," + yPosition + ")";
+          }
+
+          // Check if the next step hits a barrier
+          for (Obstruction obstruction : area.getObstructions()) {
+              if (obstruction.willObstructMove(xPosition, yPosition, direct=
+ion)) {
+                  // Barrier will be hit, stay at current position
+                  return "(" + xPosition + "," + yPosition + ")";
+              }
+          }
+
+          // Move to the next position
+          xPosition =3D nextX;
+          yPosition =3D nextY;
+
+      }
+
+      return "(" + xPosition + "," + yPosition + ")";
+  }</pre>=20
+</div>
+</div>
+<div class=3D"code panel pdl" style=3D"border-width: 1px;">
+<div class=3D"codeContent panelContent pdl">=20
+<pre class=3D"syntaxhighlighter-pre" data-syntaxhighlighter-params=3D"brush=
+: java; gutter: false; theme: Confluence" data-theme=3D"Confluence">public =
+String move(String direction, int steps) throws InvalidDirectionException {
+    if (!isValidDirection(direction)) {
+        throw new InvalidDirectionException("Invalid direction: " + directi=
+on);
+    }
+
+    for (int i =3D 0; i &lt; steps; i++) {
+        int nextX =3D xPosition;
+        int nextY =3D yPosition;
+
+        switch (direction) {
+            case "no":
+                nextY +=3D 1;
+                break;
+            case "so":
+                nextY -=3D 1;
+                break;
+            case "we":
+                nextX -=3D 1;
+                break;
+            case "ea":
+                nextX +=3D 1;
+                break;
+        }
+
+        if (isOutOfBounds(nextX, nextY)) {
+            return getCurrentPosition();
+        }
+
+        if (willHitBarrier(nextX, nextY, direction)) {
+            return getCurrentPosition();
+        }
+
+        xPosition =3D nextX;
+        yPosition =3D nextY;
+    }
+
+    return getCurrentPosition();
+}
+
+private boolean isValidDirection(String direction) {
+    return direction.equals("no") || direction.equals("so") || direction.eq=
+uals("we") || direction.equals("ea");
+}
+
+private boolean isOutOfBounds(int nextX, int nextY) {
+    return nextX &lt; 0 || nextX &gt;=3D area.getWidth() || nextY &lt; 0 ||=
+ nextY &gt;=3D area.getHeight();
+}
+
+private boolean willHitBarrier(int nextX, int nextY, String direction) {
+    for (Obstruction obstruction : area.getObstructions()) {
+        if (obstruction.willObstructMove(xPosition, yPosition, direction)) =
+{
+            return true;
+        }
+    }
+    return false;
+}
+
+private String getCurrentPosition() {
+    return "(" + xPosition + "," + yPosition + ")";
+}</pre>=20
+</div>
+</div>
+</div>
+</div>
+<ul>
+<li><p>Good at creating the general structure/framework for a program.</p><=
+/li>
+<li><p>Implementing simple tasks.</p></li>
+<li><p>Code is written correctly and can be compiled (even if it doesn=E2=
+=80=99t necessarily solve the task).</p>
+<ul>
+<li><p>Doesn=E2=80=99t apply if it generates new methods which don=E2=80=99=
+t exist in the codebase.</p></li>
+</ul></li>
+<li><p>The code relates generally to the provided task.</p></li>
+<li><p>Good at properly adding exceptions for error handling.</p></li>
+<li><p>Always chooses good, meaningful names for variables.</p></li>
+</ul>
+<h2 id=3D"ChatGPT3.5Experiences-WhatChatGPTisbadat:"><span class=3D"inline-=
+comment-marker" data-ref=3D"8291b4cc-cb94-4517-bff9-1ed1894f32e6">What Chat=
+GPT is bad at:</span></h2>
+<ul>
+<li><p>ChatGPT cannot understand or implement logic-based tasks.</p></li>
+<li><p>It has a tendency to continually create problems in a =E2=80=9Cloop=
+=E2=80=9D - when you get ChatGPT to fix an error in one area, it creates mo=
+re problems in another area.</p></li>
+<li><p>The limited =E2=80=9Cmemory=E2=80=9D of ChatGPT means that it cannot=
+ write long programs, or programs integrating multiple classes/interfaces. =
+It cannot =E2=80=9Cremember=E2=80=9D all of the code, and thus cannot write=
+ consistent code that makes them all work together.</p>
+<ul>
+<li><p>Assignments that build on previous assignments cannot be completed i=
+n an =E2=80=9Cuneducated=E2=80=9D approach, because the amount of =E2=80=9C=
+previous=E2=80=9D code is too long for ChatGPT.</p></li>
+</ul></li>
+<li><p>Tends to use made up methods, that don=E2=80=99t exist in the codeba=
+se once the code that has to be generated reaches a certain complexity.</p>=
+</li>
+<li><p>ChatGPT can forget solutions as recently as the last prompt and use =
+prior solutions instead. </p></li>
+<li><p>Not providing ChatGPT some code in the prompt can lead to it extensi=
+vely modifying the code in ways that are not wanted or continuing adding un=
+necessary complexity.</p></li>
+<li><p>For an experienced user, ChatGPT can feel more frustrating to work w=
+ith than helpful, because of the large amount of errors that it makes.</p>
+<ul>
+<li><p>A lot of manual intervention is necessary to create working solution=
+s out of ChatGPT code.</p></li>
+</ul></li>
+<li><p>ChatGPT is not always aware of in which package a class is located. =
+It often fails to import necessary classes.</p></li>
+<li><p>ChatGPT only provides you with the code - for an uneducated user it =
+may be difficult to manually create all of the correct files and folder str=
+uctures as ChatGPT has defined them.</p></li>
+<li><p>ChatGPT lacks consistency in naming schemes. In one project, it name=
+d different interfaces inconsistently: =E2=80=9CIConnection=E2=80=9D, =E2=
+=80=9CObstacleInterface=E2=80=9D, =E2=80=9CDeck=E2=80=9D.</p></li>
+<li><p>When given the clean code rule =E2=80=9Ccomments only where necessar=
+y=E2=80=9D, ChatGPT simply removes all the comments. It rarely writes JavaD=
+oc comments.</p></li>
+<li><p>ChatGPT may not actually write the getters and setters - instead it =
+just leaves a comment =E2=80=9C<code>// getters and other methods...</code>=
+"</p></li>
+</ul>
+<h2 id=3D"ChatGPT3.5Experiences-DifferencesbetweenChatGPTandhumanwrittensol=
+utions:">Differences between ChatGPT and human written solutions:</h2>
+<ul>
+<li><p>By default, ChatGPT writes a lot of very long, in-line comments. Stu=
+dents write much fewer comments.</p></li>
+<li><p>ChatGPT uses longer, more meaningful variable names. Students often =
+use single letters for variables.</p></li>
+<li><p>ChatGPT consistently uses camel case for variable names. Students ar=
+e overall less consistent.</p></li>
+<li><p>ChatGPT keeps lines of code relatively short, whereas students somet=
+imes write extremely long lines.</p></li>
+<li><p>ChatGPT always uses a lot of spacing to make code more readable. Som=
+e students tend to compress it more.</p>
+<ul>
+<li><p>ChatGPT: <code>for (int x =3D 6; x &lt;=3D 6; x++) {</code></p></li>
+<li><p>Student: <code>for(Barrier b: map.getBarriers()){</code> </p></li>
+</ul></li>
+<li><p>Students write comments to themselves in German or other languages.<=
+/p>
+<ul>
+<li><p><code>int stepsToDo =3D Integer.parseInt(moveCommandString.substring=
+(moveCommandString.indexOf(',')+1,moveCommandString.indexOf(']'))); //viell=
+eicht noch mit substring testen</code></p></li>
+</ul></li>
+<li><p><span class=3D"inline-comment-marker" data-ref=3D"283cfff4-4b47-492c=
+-bd59-701e7f9e6a8e">In general, =E2=80=9Cmessy=E2=80=9D looking code is mor=
+e likely to be human written! ChatGPT code is less likely to be correct, bu=
+t looks much nicer.</span></p></li>
+</ul>
+<p></p>
+    </div>
+</body>
+</html>
+------=_Part_138_1307579499.1684075534625
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: file:///C:/43223fc8dc59f155c705d1aaca152746
+
+iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAA3NCSVQICAjb4U/gAAAAFVBMVEX/
+//9wcHBwcHBwcHBwcHBwcHBwcHA3RenHAAAAB3RSTlMAZoiZzN3/SzZomQAAAAlwSFlzAAALEgAA
+CxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAAUdEVYdENy
+ZWF0aW9uIFRpbWUANi8xLzEzOKlF0AAAACFJREFUCJljYCATsCgwqIAZTMnMyRAhsTABCIMxkVxT
+GQCLcwHyUKXpLgAAAABJRU5ErkJggg==
+------=_Part_138_1307579499.1684075534625--

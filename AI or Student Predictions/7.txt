@@ -1,0 +1,211 @@
+package thkoeln.st.st2praktikum.exercise;
+
+public class Command {
+    private String direction;
+    private int steps;
+
+    public Command(String direction, int steps) {
+        this.direction = direction;
+        this.steps = steps;
+    }
+
+    public String getDirection() {
+        return direction;
+    }
+
+    public int getSteps() {
+        return steps;
+    }
+
+    public static Command parseCommand(String commandString) {
+        commandString = commandString.replaceAll("\\[|\\]", "");
+        String[] parts = commandString.split(",");
+        return new Command(parts[0], Integer.parseInt(parts[1]));
+    }
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+public class Coordinate {
+    private int x;
+    private int y;
+
+    public Coordinate(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Coordinate that = (Coordinate) o;
+        return x == that.x && y == that.y;
+    }
+
+    @Override
+    public String toString() {
+        return "(" + x + "," + y + ")";
+    }
+}
+
+
+package thkoeln.st.st2praktikum.exercise;
+
+import java.util.*;
+
+public class Exercise0 implements Moveable {
+
+    private static final int MAX_X = 11;
+    private static final int MAX_Y = 8;
+    private Coordinate currentPosition;
+    private List<Obstacle> obstacles;
+
+    public Exercise0() {
+        currentPosition = new Coordinate(0, 2);
+        createObstacles();
+    }
+
+    @Override
+    public String moveTo(String moveCommandString) {
+        Command command = Command.parseCommand(moveCommandString);
+        moveDroid(command);
+        return currentPosition.toString();
+    }
+
+    private void moveDroid(Command command) {
+        int dx = 0, dy = 0;
+
+        switch (command.getDirection()) {
+            case "no":
+                dy = 1;
+                break;
+            case "ea":
+                dx = 1;
+                break;
+            case "so":
+                dy = -1;
+                break;
+            case "we":
+                dx = -1;
+                break;
+        }
+
+        for (int i = 0; i < command.getSteps(); i++) {
+            Coordinate nextPosition = new Coordinate(currentPosition.getX() + dx, currentPosition.getY() + dy);
+            if (canMove(currentPosition, nextPosition, command.getDirection())) {
+                currentPosition = nextPosition;
+            } else {
+                break;
+            }
+        }
+    }
+
+    private boolean canMove(Coordinate current, Coordinate next, String direction) {
+
+        if (next.getX() < 0 || next.getX() > MAX_X || next.getY() < 0 || next.getY() > MAX_Y) {
+            return false;
+        }
+        if (direction.equals("ea") || direction.equals("no")) {
+            for (Obstacle obstacle : obstacles) {
+                if (obstacle.isInPathOfMovement(current, next)) {
+                    return false;
+                }
+            }
+        } else {
+            for (Obstacle obstacle : obstacles) {
+                if (obstacle.isInPathOfMovement(next, current)) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+
+    private void createObstacles() {
+        obstacles = new ArrayList<>();
+        obstacles.add(new Obstacle(new Coordinate(3, 0), new Coordinate(3, 3)));
+        obstacles.add(new Obstacle(new Coordinate(5, 0), new Coordinate(5, 4)));
+        obstacles.add(new Obstacle(new Coordinate(4, 5), new Coordinate(7, 5)));
+        obstacles.add(new Obstacle(new Coordinate(7, 5), new Coordinate(7, 9)));
+    }
+}
+
+
+package thkoeln.st.st2praktikum.exercise;
+
+public interface Moveable {
+    String moveTo(String moveCommandString);
+}
+
+package thkoeln.st.st2praktikum.exercise;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class Obstacle {
+    private List<Coordinate> coordinates;
+
+    public Obstacle(Coordinate start, Coordinate end) {
+        this.coordinates = new ArrayList<>();
+        int dx = start.getX() != end.getX() ? 1 : 0;
+        int dy = start.getY() != end.getY() ? 1 : 0;
+        int x = start.getX();
+        int y = start.getY();
+        while (x != end.getX() || y != end.getY()) {
+            coordinates.add(new Coordinate(x, y));
+            x += dx;
+            y += dy;
+        }
+        coordinates.add(end);
+    }
+
+    public boolean isInPathOfMovement(Coordinate cStart, Coordinate cEnd) {
+        List<Coordinate[]> blockedPaths = Arrays.asList(
+                new Coordinate[] {new Coordinate(2,0), new Coordinate(3,0)},
+                new Coordinate[] {new Coordinate(2,1), new Coordinate(3,1)},
+                new Coordinate[] {new Coordinate(2,2), new Coordinate(3,2)},
+                new Coordinate[] {new Coordinate(4,0), new Coordinate(5,0)},
+                new Coordinate[] {new Coordinate(4,1), new Coordinate(5,1)},
+                new Coordinate[] {new Coordinate(4,2), new Coordinate(5,2)},
+                new Coordinate[] {new Coordinate(4,3), new Coordinate(5,3)},
+                new Coordinate[] {new Coordinate(4,4), new Coordinate(4,5)},
+                new Coordinate[] {new Coordinate(5,4), new Coordinate(5,5)},
+                new Coordinate[] {new Coordinate(6,4), new Coordinate(6,5)},
+                new Coordinate[] {new Coordinate(6,5), new Coordinate(7,5)},
+                new Coordinate[] {new Coordinate(6,6), new Coordinate(7,6)},
+                new Coordinate[] {new Coordinate(6,7), new Coordinate(7,7)},
+                new Coordinate[] {new Coordinate(6,8), new Coordinate(7,8)}
+        );
+
+        for (Coordinate[] blockedPath : blockedPaths) {
+            Coordinate pStart = blockedPath[0];
+            Coordinate pEnd = blockedPath[1];
+
+            if ((cStart.equals(pStart) && cEnd.equals(pEnd)) || (cStart.equals(pEnd) && cEnd.equals(pStart))) {
+                //System.out.println("The robot was blocked");
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public List<Coordinate> getCoordinates() {
+        return coordinates;
+    }
+
+    public boolean isObstacle(Coordinate coordinate) {
+        return coordinates.contains(coordinate);
+    }
+}
