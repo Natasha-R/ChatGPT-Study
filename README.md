@@ -1,6 +1,6 @@
 ## Project Description
 
-**The purpose of this project is to examine the fundamental differences between AI-generated and human-written code, and to determine whether AI tool use can be consistently detected.** 
+**The purpose of this project is to examine the fundamental differences between AI-generated and human-written code, to explore the capabilities of AI tools to complete coding assignments, and to determine whether AI tool use can be consistently detected.** 
 
 Part of the [ChatGPT guided project](https://www.archi-lab.io/projects/ss23/gp_chatgpt_ss23.html) under the [Digital Sciences](https://digital-sciences.de/) Master's degree at [TH Köln](https://www.th-koeln.de/). The five key areas of the project are described below.
 
