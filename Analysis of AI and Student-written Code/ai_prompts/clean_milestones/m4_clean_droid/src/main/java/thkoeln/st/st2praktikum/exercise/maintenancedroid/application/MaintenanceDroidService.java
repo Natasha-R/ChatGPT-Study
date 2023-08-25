@@ -11,7 +11,7 @@ import java.util.UUID;
 
 
 @Service
-public class MaintenanceDroidService {
+public class DroidService {
     
     /**
      * This method adds a new maintenance droid
