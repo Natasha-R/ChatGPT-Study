@@ -1,6 +1,4 @@
-**The purpose of this study is to analyse AI-generated code, with a focus on software engineering use-cases. examine the fundamental differences between AI-generated and human-written code, to explore the capabilities of AI tools to complete coding assignments, and to determine whether AI tool use can be consistently detected.** 
-
-The core focus areas of this reasearch are described below.
+**The purpose of this study is to analyse AI-generated code, with a focus on software engineering use-cases.** The core focus areas of this research are described below.
 
 ### [Analysis of AI- and human-written code](ST2%20SS21%20Data%20Analysis)
 
