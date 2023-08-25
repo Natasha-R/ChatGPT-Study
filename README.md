@@ -1,4 +1,4 @@
-**The purpose of this study is to analyse AI-generated code, with a focus on software engineering use-cases.** The core focus areas of this research are described below.
+**The purpose of this study is to analyse AI-generated code, with a focus on software engineering use-cases.** The core areas of this research are described below.
 
 ### [Analysis of AI- and human-written code](ST2%20SS21%20Data%20Analysis)
 
