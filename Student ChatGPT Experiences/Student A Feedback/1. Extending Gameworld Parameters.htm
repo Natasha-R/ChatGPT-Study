@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html class="notion-html" lang="en"><head lang="en">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta charset="utf-8"><meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><title>Extending Gameworld Parameters</title><meta name="description" content="A new tool that blends your everyday work apps into one. It's the all-in-one workspace for you and your team"><script>window.__webStartTime=performance.now()</script><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@NotionHQ"><meta name="twitter:title" content="Notion – The all-in-one workspace for your notes, tasks, wikis, and databases."><meta name="twitter:description" content="A new tool that blends your everyday work apps into one. It's the all-in-one workspace for you and your team"><meta name="twitter:url" content="https://www.notion.so"><meta name="twitter:image" content="https://www.notion.so/images/meta/default.png"><meta property="og:site_name" content="Notion"><meta property="og:type" content="website"><meta property="og:url" content="https://www.notion.so"><meta property="og:title" content="Notion – The all-in-one workspace for your notes, tasks, wikis, and databases."><meta property="og:description" content="A new tool that blends your everyday work apps into one. It's the all-in-one workspace for you and your team"><meta property="og:image" content="https://www.notion.so/images/meta/default.png"><meta property="og:locale" content="en_US"><link rel="shortcut icon" type="image/x-icon" href="https://magical-millennium-c4f.notion.site/images/favicon.ico"><link rel="apple-touch-icon" href="https://magical-millennium-c4f.notion.site/images/logo-ios.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-itunes-app" content="app-id=1232780281"><meta name="format-detection" content="telephone=no"><meta name="msapplication-tap-highlight" content="no"><link href="1.%20Extending%20Gameworld%20Parameters_files/print.5c792172.css" rel="stylesheet" media="print"><script defer="defer" src="1.%20Extending%20Gameworld%20Parameters_files/2306-e1555cf037a6c188.js"></script><script defer="defer" src="1.%20Extending%20Gameworld%20Parameters_files/app-51c8ed793d503c18.js"></script><link href="1.%20Extending%20Gameworld%20Parameters_files/app-cda23436b43bf2f7.css" rel="stylesheet"></head><body class="notion-body"><script>var parsed,theme="light",localThemeKey="theme",themeRecord=localStorage.getItem("theme");!themeRecord||(parsed=JSON.parse(themeRecord))&&parsed.mode&&(theme=parsed.mode),"dark"===theme&&document.body.classList.add("dark")</script><style>body{background:#fff}body.dark{background:#191919}@keyframes startup-shimmer-animation{0%{transform:translateX(-100%) translateZ(0)}100%{transform:translateX(100%) translateZ(0)}}@keyframes startup-shimmer-fade-in{0%{opacity:0}100%{opacity:1}}@keyframes startup-spinner-rotate{0%{transform:rotate(0) translateZ(0)}100%{transform:rotate(360deg) translateZ(0)}}#initial-loading-spinner{position:fixed;height:100vh;width:100vw;z-index:-1;display:none;align-items:center;justify-content:center;opacity:.5}#initial-loading-spinner svg{height:24px;width:24px;animation:startup-spinner-rotate 1s linear infinite;transform-origin:center center;pointer-events:none}#skeleton{background:#fff;position:fixed;height:100vh;width:100vw;z-index:-1;display:none;overflow:hidden}#initial-loading-spinner.show,#skeleton.show{display:flex}body.dark #skeleton{background:#191919}.notion-front-page #skeleton,.notion-mobile #skeleton{display:none}#skeleton-sidebar{background-color:#fbfbfa;box-shadow:inset -1px 0 0 0 rgba(0,0,0,.025);display:flex;width:240px;flex-direction:column;padding:12px 14px;overflow:hidden}body.dark #skeleton-sidebar{background-color:#202020;box-shadow:inset -1px 0 0 0 rgba(255,255,255,.05)}#skeleton.isElectron #skeleton-sidebar{padding-top:46px}#skeleton .row{display:flex;margin-bottom:8px;align-items:center}#skeleton .row.fadein{animation:1s ease-in 0s 1 normal both running startup-shimmer-fade-in}#skeleton .chevron{width:12px;height:12px;display:block;margin-right:4px;fill:rgba(227,226,224,.5)}body.dark #skeleton .chevron{fill:#2f2f2f}.startup-shimmer{background:rgba(227,226,224,.5);overflow:hidden;position:relative}body.dark .startup-shimmer{background:#2f2f2f}.startup-shimmer::before{content:"";position:absolute;height:100%;width:100%;z-index:1;animation:1s linear infinite startup-shimmer-animation;background:linear-gradient(90deg,transparent 0,rgba(255,255,255,.4) 50%,transparent 100%)}body.dark .startup-shimmer::before{background:linear-gradient(90deg,transparent 0,rgba(86,86,86,.4) 50%,transparent 100%)}#skeleton .icon{width:20px;height:20px;border-radius:4px}#skeleton .text{height:10px;border-radius:10px}#skeleton .draggable{-webkit-app-region:drag;position:absolute;top:0;left:0;width:100%;height:36px;display:none}#skeleton.isElectron .draggable{display:block}</style><script>(t=>{function e(e){e=t.localStorage&&t.localStorage.getItem(e),e=e&&JSON.parse(e);if(e&&e.value)return e.value}var i=document.getElementById("skeleton"),d=document.getElementById("skeleton-sidebar"),n=document.getElementById("initial-loading-spinner"),o=e("LRU:KeyValueStore2:sidebar"),a=e("LRU:KeyValueStore2:current-user-id"),l="undefined"!=typeof global||t.__isElectron,r=/ReactNative|MobileNative|Android|iPad|iPhone|iPod|Windows Phone/.test(navigator.userAgent);!i||void 0===a||r||l?n&&n.classList.add("show"):(i.classList.add("show"),d&&o&&(!1===o.expanded&&d.remove(),0<o.width&&(d.style.width=String(o.width)+"px")))})(window)</script><style id="scroll-properties">
+			::-webkit-scrollbar {
+				width: 10px;
+				height: 10px;
+			}
+			::-webkit-scrollbar {
+				background: transparent;
+			}
+			::-webkit-scrollbar-track {
+				background: #EDECE9;
+			}
+			::-webkit-scrollbar-thumb {
+				background:#D3D1CB;
+			}
+			::-webkit-scrollbar-thumb:hover {
+				background:#AEACA6;
+			}
+		</style><div id="notion-app"><div style="color: rgb(55, 53, 47); fill: currentcolor; line-height: 1.5; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, &quot;Apple Color Emoji&quot;, Arial, sans-serif, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; background-color: white;" class="notion-app-inner notion-light-theme"><div style="height: 100%;"><div style="width: 100vw; height: 100%; position: relative; display: flex; flex: 1 1 0%; background: white; cursor: text;" class="notion-cursor-listener"><div class="" style="display: flex; flex-direction: column; width: 100%; overflow: hidden;"><header style="max-width: 100vw; z-index: 100; background: white; user-select: none;"><div style="width: 100%; max-width: 100vw; height: 45px; opacity: 1; transition: opacity 700ms ease 0s, color 700ms ease 0s; position: relative;" class="notion-topbar"><div style="display: flex; justify-content: space-between; align-items: center; overflow: hidden; height: 100%; padding-left: 12px; padding-right: 10px;"><div style="display: flex; align-items: center; line-height: 1.2; font-size: 14px; height: 100%; flex-grow: 0; margin-right: 8px; min-width: 0px;" class="notranslate shadow-cursor-breadcrumb"><div style="display: flex; align-items: center; min-width: 0px;" data-block-id="3f2acccc-9bb0-4e32-8a47-90b22cc98aab" class="notion-selectable notion-page-block"><a href="https://magical-millennium-c4f.notion.site/ChatGPT-Usage-Diary-3f2acccc9bb04e328a4790b22cc98aab?pvs=18" style="display: flex; color: rgb(55, 53, 47); text-decoration: none; user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; align-items: center; flex-shrink: 1; white-space: nowrap; height: 24px; border-radius: 4px; font-size: inherit; line-height: 1.2; min-width: 0px; padding: 2px;" rel="noopener noreferrer"><div style="display: flex; align-items: center; min-width: 0px;"><div style="display: flex; align-items: center; justify-content: center; height: 20px; width: 20px; border-radius: 0.25em; flex-shrink: 0; margin-right: 6px; font-weight: 500;" class="notion-record-icon notranslate"><div style="display: flex; align-items: center; justify-content: center; height: 20px; width: 20px;"><div style="height: 14px; width: 14px; font-size: 14px; line-height: 1; margin-left: 0px; color: black;"><img class="notion-emoji" alt="🤖" aria-label="🤖" style="width: 100%; height: 100%; background: url(&quot;/images/emoji/twitter-emoji-spritesheet-64.d3a69865.png&quot;) 66.1017% 64.4068% / 6000% 6000%;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></div></div></div><div class="notranslate" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 160px;">ChatGPT Usage Diary</div></div></a></div><span style="margin-left: 2px; margin-right: 2px; color: rgba(55, 53, 47, 0.5);">/</span><div role="button" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: inline-flex; align-items: center; flex-shrink: 1; white-space: nowrap; height: 24px; border-radius: 4px; font-size: 14px; line-height: 1.2; min-width: 0px; padding-left: 6px; padding-right: 6px; color: rgb(55, 53, 47);"><div class="notranslate" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 240px;">Extending Gameworld Parameters</div></div></div><div style="flex-grow: 1; flex-shrink: 1;"></div><div role="button" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: inline-flex; align-items: center; flex-shrink: 0; white-space: nowrap; height: 28px; border-radius: 4px; font-size: 14px; line-height: 1.2; min-width: 0px; padding-left: 8px; padding-right: 8px; color: rgb(55, 53, 47);"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width: 14px; height: 14px; display: block; fill: inherit; flex-shrink: 0; margin-right: 6px;" class="search"><path d="M.281 6.438c0-.875.164-1.696.492-2.461a6.484 6.484 0 011.375-2.032A6.237 6.237 0 016.64.078 6.2 6.2 0 019.11.57c.77.328 1.447.787 2.03 1.375a6.374 6.374 0 011.368 2.032c.333.765.5 1.586.5 2.46 0 .688-.107 1.342-.32 1.961a6.28 6.28 0 01-.868 1.696l3.563 3.578c.11.104.19.226.242.367.057.14.086.29.086.445 0 .22-.05.417-.149.594a1.122 1.122 0 01-1 .57c-.156 0-.307-.028-.453-.086a1.058 1.058 0 01-.382-.25l-3.586-3.585c-.5.333-1.047.596-1.641.789a6.089 6.089 0 01-1.86.28 6.237 6.237 0 01-2.468-.491 6.4 6.4 0 01-2.024-1.367A6.509 6.509 0 01.773 8.913a6.256 6.256 0 01-.492-2.476zm1.664 0c0 .65.12 1.26.36 1.828a4.775 4.775 0 001.015 1.5c.433.427.933.763 1.5 1.007a4.548 4.548 0 001.82.368c.652 0 1.261-.123 1.829-.368a4.747 4.747 0 002.508-2.507 4.567 4.567 0 00.367-1.829c0-.645-.123-1.252-.367-1.82a4.776 4.776 0 00-1.016-1.5A4.578 4.578 0 008.469 2.11a4.567 4.567 0 00-1.828-.367c-.646 0-1.253.123-1.82.367a4.667 4.667 0 00-1.5 1.008c-.433.432-.772.932-1.016 1.5a4.633 4.633 0 00-.36 1.82z"></path></svg>Search</div><div role="button" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: flex; align-items: center; justify-content: center; width: 32px; height: 28px; border-radius: 3px;" aria-label="More actions"><svg role="graphics-symbol" viewBox="0 0 13 3" style="width: 18px; height: 18px; display: block; fill: inherit; flex-shrink: 0;" class="dots"><g><path d="M3,1.5A1.5,1.5,0,1,1,1.5,0,1.5,1.5,0,0,1,3,1.5Z"></path><path d="M8,1.5A1.5,1.5,0,1,1,6.5,0,1.5,1.5,0,0,1,8,1.5Z"></path><path d="M13,1.5A1.5,1.5,0,1,1,11.5,0,1.5,1.5,0,0,1,13,1.5Z"></path></g></svg></div><div style="flex: 0 0 auto; width: 1px; height: 16px; margin-left: 8px; margin-right: 8px; background: rgba(55, 53, 47, 0.16);"></div><div role="button" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: inline-flex; align-items: center; flex-shrink: 0; white-space: nowrap; height: 28px; border-radius: 4px; font-size: 14px; line-height: 1.2; min-width: 0px; padding-left: 8px; padding-right: 8px; color: rgb(55, 53, 47);"><svg role="graphics-symbol" viewBox="0 0 120 126" style="width: 18px; height: 18px; display: block; fill: inherit; flex-shrink: 0; margin-right: 6px;" class="notionLogo"><path d="M 20.6927 21.9315C 24.5836 25.0924 26.0432 24.8512 33.3492 24.3638L 102.228 20.2279C 103.689 20.2279 102.474 18.7705 101.987 18.5283L 90.5477 10.2586C 88.3558 8.55699 85.4356 6.60818 79.8387 7.09563L 13.1433 11.9602C 10.711 12.2014 10.2251 13.4175 11.1939 14.3924L 20.6927 21.9315ZM 24.8281 37.9835L 24.8281 110.456C 24.8281 114.351 26.7745 115.808 31.1553 115.567L 106.853 111.187C 111.236 110.946 111.724 108.267 111.724 105.103L 111.724 33.1169C 111.724 29.958 110.509 28.2544 107.826 28.4976L 28.721 33.1169C 25.8018 33.3622 24.8281 34.8225 24.8281 37.9835ZM 99.5567 41.8711C 100.042 44.0622 99.5567 46.2512 97.3618 46.4974L 93.7143 47.2241L 93.7143 100.728C 90.5477 102.43 87.6275 103.403 85.1942 103.403C 81.2983 103.403 80.3226 102.186 77.4044 98.54L 53.5471 61.087L 53.5471 97.3239L 61.0964 99.0275C 61.0964 99.0275 61.0964 103.403 55.0057 103.403L 38.2148 104.377C 37.727 103.403 38.2148 100.973 39.9179 100.486L 44.2996 99.2717L 44.2996 51.36L 38.2158 50.8725C 37.728 48.6815 38.9431 45.5225 42.3532 45.2773L 60.3661 44.0631L 85.1942 82.0036L 85.1942 48.4402L 78.864 47.7136C 78.3781 45.0351 80.3226 43.0902 82.7569 42.849L 99.5567 41.8711ZM 7.5434 5.39404L 76.9175 0.285276C 85.4366 -0.445402 87.6285 0.0440428 92.983 3.93368L 115.128 19.4982C 118.782 22.1747 120 22.9034 120 25.8211L 120 111.187C 120 116.537 118.051 119.701 111.237 120.185L 30.6734 125.05C 25.5584 125.294 23.124 124.565 20.4453 121.158L 4.13735 99.9994C 1.21516 96.1048 0 93.191 0 89.7819L 0 13.903C 0 9.5279 1.94945 5.8785 7.5434 5.39404Z"></path></svg>Try Notion</div></div></div><div style="width: calc(100% - 0px); user-select: none;"></div></header><main style="flex-grow: 0; flex-shrink: 1; display: flex; flex-direction: column; background: white; z-index: 1; height: calc(-45px + 100vh); max-height: 100%; position: relative; width: 1920px; transition-property: width; transition-duration: 270ms; transition-timing-function: ease;" class="notion-frame"><div style="display: flex; flex-direction: column; z-index: 1; flex-grow: 1; position: relative; align-items: center; margin-right: 0px; margin-bottom: 0px; overflow: hidden auto;" class="notion-scroller vertical"><div style="position: absolute; top: 0px; left: 0px;"><div></div></div><div contenteditable="false" class="pseudoSelection" style="user-select: none; --pseudoSelection--background: transparent; width: 100%; display: flex; flex-direction: column; align-items: center; flex-shrink: 0; flex-grow: 0; z-index: 2;" data-content-editable-void="true"></div><div style="width: 100%; display: flex; justify-content: center; z-index: 3; flex-shrink: 0;"><div style="max-width: 100%; min-width: 0px; width: 100%;"><div style="width: 100%; display: flex; flex-direction: column; align-items: center; flex-shrink: 0; flex-grow: 0;"><div style="max-width: 100%; padding-left: calc(96px + env(safe-area-inset-left)); width: 100%;"><div contenteditable="false" class="pseudoSelection" style="user-select: none; --pseudoSelection--background: transparent; pointer-events: none;" data-content-editable-void="true"><div style="display: flex; justify-content: flex-start; flex-wrap: wrap; margin-top: 80px; margin-bottom: 4px; margin-left: -1px; color: rgba(55, 53, 47, 0.5); font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, &quot;Apple Color Emoji&quot;, Arial, sans-serif, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; height: 24px; pointer-events: auto;" class="notion-page-controls"></div></div><div style="padding-right: calc(96px + env(safe-area-inset-right));"><div><div style="color: rgb(55, 53, 47); font-weight: 700; line-height: 1.2; font-size: 40px; font-family: Lyon-Text, Georgia, ui-serif, serif; cursor: text; display: flex; align-items: center;" data-block-id="19dd48e7-e0ee-4d57-a7f3-bc281ef6d727" class="notion-selectable notion-page-block"><h1 style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 3px 2px; font-size: 1em; font-weight: inherit; margin: 0px;" spellcheck="true" placeholder="Untitled" data-content-editable-leaf="true" contenteditable="false">Extending Gameworld Parameters</h1></div><div style="margin-left: 4px;"></div></div></div></div></div><div style="width: 100%; display: flex; flex-direction: column; align-items: center; flex-shrink: 0; flex-grow: 0;"><div contenteditable="false" style="padding-left: calc(96px + env(safe-area-inset-left)); padding-right: calc(96px + env(safe-area-inset-right)); max-width: 100%; width: 100%;" data-content-editable-void="true"></div></div></div></div><div style="display: flex; width: 100%; justify-content: center; padding-top: 5px;"><div style="max-width: 100%; min-width: 0px; width: 100%;"><div style="flex-shrink: 0; flex-grow: 1; max-width: 100%; display: flex; align-items: flex-start; flex-direction: column; font-family: Lyon-Text, Georgia, ui-serif, serif; font-size: 17px; line-height: 1.6; width: 100%; z-index: 4; padding-bottom: 30vh; padding-left: calc(96px + env(safe-area-inset-left)); padding-right: calc(96px + env(safe-area-inset-right));" class="notion-page-content"><div style="width: 100%; max-width: 1718px; margin-top: 1.4em; margin-bottom: 1px;" data-block-id="f8741d57-c4a0-4b05-be8f-1a147f95c2d2" class="notion-selectable notion-sub_header-block"><div style="display: flex; width: 100%; color: inherit; fill: inherit;"><h3 style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 3px 2px; font-family: Lyon-Text, Georgia, ui-serif, serif; font-weight: 600; font-size: 1.5em; line-height: 1.3; margin: 0px;" spellcheck="true" placeholder="Heading 2" data-content-editable-leaf="true" contenteditable="false"><span style="font-weight:600" data-token-index="0" class="notion-enable-hover">Problem description/use case</span></h3></div></div><div style="width: 100%; max-width: 1718px; margin-top: 1px; margin-bottom: 1px;" data-block-id="69448628-876c-4cca-a0a0-b29c232cbf50" class="notion-selectable notion-text-block"><div style="color: inherit; fill: inherit;"><div style="display: flex;"><div style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 3px 2px;" spellcheck="true" placeholder=" " data-content-editable-leaf="true" contenteditable="false">I have written some code that extends the functionality of a REST API, and now I have to extend its OpenApi documentation with the new parameters that can be sent to the endpoint. This new parameter is quite complex, so this would be a lot of busywork. Luckily, I have an example of how the structure is supposed to look like from my tests.</div></div></div></div><div style="width: 100%; max-width: 1718px; margin-top: 1.4em; margin-bottom: 1px;" data-block-id="0f1fa04c-5035-48a6-90cd-76920ca8d98c" class="notion-selectable notion-sub_header-block"><div style="display: flex; width: 100%; color: inherit; fill: inherit;"><h3 style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 3px 2px; font-family: Lyon-Text, Georgia, ui-serif, serif; font-weight: 600; font-size: 1.5em; line-height: 1.3; margin: 0px;" spellcheck="true" placeholder="Heading 2" data-content-editable-leaf="true" contenteditable="false">Chat Logs</h3></div></div><div style="width: 100%; max-width: 1718px; margin-top: 1em; margin-bottom: 1px;" data-block-id="b51c415b-db1a-44c6-91ee-fe44cd4f8d11" class="notion-selectable notion-sub_sub_header-block"><div style="display: flex; width: 100%; color: inherit; fill: inherit;"><div style="display: flex; align-items: flex-start; width: 100%; padding-left: 2px;"><div contenteditable="false" class="pseudoSelection" style="user-select: none; --pseudoSelection--background: transparent; margin-right: 2px; width: 24px; display: flex; align-items: center; justify-content: center; flex-grow: 0; flex-shrink: 0; min-height: calc(1.5em + 6px); padding-right: 2px; height: 1.625em; margin-top: 0.5px;" data-content-editable-void="true" data-text-edit-side="start"><div role="button" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; position: relative; display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 3px;" aria-controls="id_8" aria-describedby="id_7" aria-expanded="true" aria-label="Close"><svg role="graphics-symbol" viewBox="0 0 100 100" style="width: 0.6875em; height: 0.6875em; display: block; fill: inherit; flex-shrink: 0; transition: transform 200ms ease-out 0s; transform: rotateZ(180deg); opacity: 1;" class="triangle"><polygon points="5.9,88.2 50,11.8 94.1,88.2 "></polygon></svg></div></div><div style="flex: 1 1 0px; min-width: 1px;"><div id="id_7" style="display: flex;"><h4 style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 3px 2px; font-family: Lyon-Text, Georgia, ui-serif, serif; font-weight: 600; font-size: 1.25em; line-height: 1.3; margin: 0px;" spellcheck="true" placeholder="Heading 3" data-content-editable-leaf="true" contenteditable="false"><span style="font-weight:600" data-token-index="0" class="notion-enable-hover">Me:</span></h4></div><div id="id_8" style=""><div style="display: flex; flex-direction: column;"><div style="width: 100%; max-width: 100%; margin-top: 2px; margin-bottom: 1px;" data-block-id="252b2693-517a-4fea-b876-717944048c7c" class="notion-selectable notion-text-block"><div style="color: inherit; fill: inherit;"><div style="display: flex;"><div style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 3px 2px;" spellcheck="true" placeholder=" " data-content-editable-leaf="true" contenteditable="false">Please extend the parameters accepted by the "/gameworlds" path from this openapi config:</div></div></div></div><div style="width: 100%; max-width: 100%; margin-top: 4px; margin-bottom: 4px;" data-block-id="0c44b28c-a011-439e-ba86-ba53b0e347f3" class="notion-selectable notion-code-block"><div style="display: flex;"><div contenteditable="false" style="flex-grow: 1; border-radius: 3px; text-align: left; position: relative; background: rgb(247, 246, 243); min-width: 0px; width: 100%;" data-content-editable-void="true" role="figure" aria-labelledby="id_p"><div style="position: absolute; top: 8px; left: 8px; z-index: 1; color: rgba(55, 53, 47, 0.65); display: flex; align-items: center; justify-content: flex-end; opacity: 0; transition: opacity 300ms ease-in 0s;"><div aria-disabled="true" role="button" tabindex="-1" style="user-select: none; transition: background 20ms ease-in 0s; cursor: default; display: inline-flex; align-items: center; white-space: nowrap; height: 20px; border-radius: 3px; font-size: 12px; line-height: 1.2; padding-left: 5px; padding-right: 5px; color: rgba(55, 53, 47, 0.65); margin-right: 5px;">YAML<svg role="graphics-symbol" viewBox="0 0 30 30" style="width: 10px; height: 100%; display: block; fill: rgba(55, 53, 47, 0.35); flex-shrink: 0; margin-left: 4px;" class="chevronDown"><polygon points="15,17.4 4.8,7 2,9.8 15,23 28,9.8 25.2,7 "></polygon></svg></div></div><div style="position: absolute; top: 3px; right: 1px; z-index: 1; color: rgba(55, 53, 47, 0.65); display: flex; align-items: center; justify-content: flex-end; height: 25px; font-size: 11.5px; opacity: 0; transition: opacity 300ms ease-in 0s;"><div style="color: rgba(55, 53, 47, 0.65); display: flex; align-items: center; justify-content: center; font-size: 12px; margin-top: 4px; margin-right: 4px;"><div role="button" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: inline-flex; align-items: center; white-space: nowrap; height: 25px; border-radius: 3px 0px 0px 3px; font-size: 11.5px; line-height: 1.2; padding: 4px 6px; color: rgb(55, 53, 47); background: rgb(234, 233, 229); font-weight: 400;"><svg role="graphics-symbol" viewBox="0 0 14 16" style="width: 16px; height: 16px; display: block; fill: inherit; flex-shrink: 0; padding-right: 4px;" class="copy"><path d="M2.404 15.322h5.701c1.26 0 1.887-.662 1.887-1.927V12.38h1.154c1.254 0 1.91-.662 1.91-1.928V5.555c0-.774-.158-1.266-.626-1.74L9.512.837C9.066.387 8.545.21 7.865.21H5.463c-1.254 0-1.91.662-1.91 1.928v1.084H2.404c-1.254 0-1.91.668-1.91 1.933v8.239c0 1.265.656 1.927 1.91 1.927zm7.588-6.62c0-.792-.1-1.161-.592-1.665L6.225 3.814c-.452-.462-.844-.58-1.5-.591V2.215c0-.533.28-.832.843-.832h2.38v2.883c0 .726.386 1.113 1.107 1.113h2.83v4.998c0 .539-.276.832-.844.832H9.992V8.701zm-.79-4.29c-.206 0-.288-.088-.288-.287V1.594l2.771 2.818H9.201zM2.503 14.15c-.563 0-.844-.293-.844-.832V5.232c0-.539.281-.837.85-.837h1.91v3.187c0 .85.416 1.26 1.26 1.26h3.14v4.476c0 .54-.28.832-.843.832H2.504zM5.79 7.816c-.24 0-.346-.105-.346-.345V4.547l3.223 3.27H5.791z"></path></svg>Copy</div></div></div><div><div style="display: flex; overflow-x: auto;" class="line-numbers notion-code-block"><div style="flex-grow: 1; flex-shrink: 1; text-align: left; font-family: &quot;SFMono-Regular&quot;, Menlo, Consolas, &quot;PT Mono&quot;, &quot;Liberation Mono&quot;, Courier, monospace; font-size: 85%; tab-size: 2; padding: 34px 16px 32px 32px; min-height: 1em; color: rgb(55, 53, 47); white-space: pre;" spellcheck="false" autocorrect="off" autocapitalize="none" placeholder=" " data-content-editable-leaf="true" contenteditable="false"><span class="token punctuation" data-token-index="0">---</span><span class="" data-token-index="0">
+</span><span class="token key atrule" data-token-index="0">openapi</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> 3.0.1
+</span><span class="token key atrule" data-token-index="0">info</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+  </span><span class="token key atrule" data-token-index="0">title</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> Map Service API
+  </span><span class="token key atrule" data-token-index="0">description</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> This is the REST documentation for the Map Service
+  </span><span class="token key atrule" data-token-index="0">version</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token string" data-token-index="0">'1.0.0'</span><span class="" data-token-index="0">
+</span><span class="token key atrule" data-token-index="0">paths</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+  </span><span class="token key atrule" data-token-index="0">"/gameworlds"</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+    </span><span class="token key atrule" data-token-index="0">post</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+      </span><span class="token key atrule" data-token-index="0">summary</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> Creates a gameworld
+      </span><span class="token key atrule" data-token-index="0">description</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token punctuation" data-token-index="0">|</span><span class="token punctuation" data-token-index="0">-</span><span class="" data-token-index="0">
+        Creates a new Gameworld</span><span class="token punctuation" data-token-index="0">,</span><span class="" data-token-index="0"> for the given amount of players and sets it to
+              "active" while setting all other gameworlds to "inactive". Publishes the `GameworldCreated` Event.
+      </span><span class="token key atrule" data-token-index="0">tags</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+        </span><span class="token punctuation" data-token-index="0">-</span><span class="" data-token-index="0"> gameworlds
+      </span><span class="token key atrule" data-token-index="0">parameters</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token punctuation" data-token-index="0">[</span><span class="token punctuation" data-token-index="0">]</span><span class="" data-token-index="0">
+      </span><span class="token key atrule" data-token-index="0">responses</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+        </span><span class="token key atrule" data-token-index="0">'200'</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">description</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> OK
+          </span><span class="token key atrule" data-token-index="0">content</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+            </span><span class="token key atrule" data-token-index="0">application/json</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+              </span><span class="token key atrule" data-token-index="0">schema</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> object
+                </span><span class="token key atrule" data-token-index="0">properties</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                  </span><span class="token key atrule" data-token-index="0">gameworldId</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                    </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> string
+                    </span><span class="token key atrule" data-token-index="0">format</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> uuid
+                </span><span class="token key atrule" data-token-index="0">required</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                  </span><span class="token punctuation" data-token-index="0">-</span><span class="" data-token-index="0"> gameworldId
+        </span><span class="token key atrule" data-token-index="0">'400'</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">description</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> Bad Request
+      </span><span class="token key atrule" data-token-index="0">requestBody</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+        </span><span class="token key atrule" data-token-index="0">content</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">application/json</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+            </span><span class="token key atrule" data-token-index="0">schema</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+              </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> object
+              </span><span class="token key atrule" data-token-index="0">properties</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                </span><span class="token key atrule" data-token-index="0">playerAmount</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                  </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> integer
+                  </span><span class="token key atrule" data-token-index="0">minimum</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token number" data-token-index="0">1</span><span class="" data-token-index="0">
+              </span><span class="token key atrule" data-token-index="0">required</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                </span><span class="token punctuation" data-token-index="0">-</span><span class="" data-token-index="0"> playerAmount
+  </span><span class="token key atrule" data-token-index="0">"/planets/{id}/minings"</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+    </span><span class="token key atrule" data-token-index="0">post</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+      </span><span class="token key atrule" data-token-index="0">summary</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> Creates a mining
+      </span><span class="token key atrule" data-token-index="0">description</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token punctuation" data-token-index="0">|</span><span class="token punctuation" data-token-index="0">-</span><span class="" data-token-index="0">
+        Creates a new Mining on the planet's resource.
+              The mining is then additionally published in the `ResourceMined` event.
+      </span><span class="token key atrule" data-token-index="0">tags</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+        </span><span class="token punctuation" data-token-index="0">-</span><span class="" data-token-index="0"> minings
+      </span><span class="token key atrule" data-token-index="0">parameters</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+        </span><span class="token punctuation" data-token-index="0">-</span><span class="" data-token-index="0"> </span><span class="token key atrule" data-token-index="0">name</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> id
+          </span><span class="token key atrule" data-token-index="0">in</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> path
+          </span><span class="token key atrule" data-token-index="0">schema</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+            </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> string
+            </span><span class="token key atrule" data-token-index="0">format</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> uuid
+          </span><span class="token key atrule" data-token-index="0">required</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token boolean important" data-token-index="0">true</span><span class="" data-token-index="0">
+      </span><span class="token key atrule" data-token-index="0">responses</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+        </span><span class="token key atrule" data-token-index="0">'200'</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">description</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> OK
+          </span><span class="token key atrule" data-token-index="0">content</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+            </span><span class="token key atrule" data-token-index="0">application/json</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+              </span><span class="token key atrule" data-token-index="0">schema</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> object
+                </span><span class="token key atrule" data-token-index="0">properties</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                  </span><span class="token key atrule" data-token-index="0">minedAmount</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                    </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> integer
+                    </span><span class="token key atrule" data-token-index="0">minimum</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token number" data-token-index="0">1</span><span class="" data-token-index="0">
+                </span><span class="token key atrule" data-token-index="0">required</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                  </span><span class="token punctuation" data-token-index="0">-</span><span class="" data-token-index="0"> minedAmount
+        </span><span class="token key atrule" data-token-index="0">'400'</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">description</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> Bad Request (e.g. no resource on the planet)
+        </span><span class="token key atrule" data-token-index="0">'404'</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">description</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> Not Found
+      </span><span class="token key atrule" data-token-index="0">requestBody</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+        </span><span class="token key atrule" data-token-index="0">content</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">application/json</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+            </span><span class="token key atrule" data-token-index="0">schema</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+              </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> object
+              </span><span class="token key atrule" data-token-index="0">properties</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                </span><span class="token key atrule" data-token-index="0">amountToMine</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                  </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> integer
+                  </span><span class="token key atrule" data-token-index="0">minimum</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token number" data-token-index="0">1</span><span class="" data-token-index="0">
+              </span><span class="token key atrule" data-token-index="0">required</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                </span><span class="token punctuation" data-token-index="0">-</span><span class="" data-token-index="0"> amountToMine
+</span><span class="token key atrule" data-token-index="0">servers</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+  </span><span class="token punctuation" data-token-index="0">-</span><span class="" data-token-index="0"> </span><span class="token key atrule" data-token-index="0">url</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> http</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">//</span><span class="token punctuation" data-token-index="0">{</span><span class="" data-token-index="0">defaultHost</span><span class="token punctuation" data-token-index="0">}</span><span class="" data-token-index="0">
+    </span><span class="token key atrule" data-token-index="0">variables</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+      </span><span class="token key atrule" data-token-index="0">defaultHost</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+        </span><span class="token key atrule" data-token-index="0">default</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> localhost</span><span class="token punctuation" data-token-index="0">:</span><span class="token number" data-token-index="0">3000</span><span class="" data-token-index="0">
+___</span><span>
+</span></div></div></div><div style="background: white; padding-right: 105px;"></div></div>​</div></div><div style="width: 100%; max-width: 100%; margin-top: 1px; margin-bottom: 1px;" data-block-id="9af42af1-8bf4-46ec-b3a6-40c080681201" class="notion-selectable notion-text-block"><div style="color: inherit; fill: inherit;"><div style="display: flex;"><div style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 3px 2px;" spellcheck="true" placeholder=" " data-content-editable-leaf="true" contenteditable="false">with the following schema:</div></div></div></div><div style="width: 100%; max-width: 100%; margin-top: 4px; margin-bottom: 0px;" data-block-id="367f8d66-005a-45c6-b62e-16edcadc64b3" class="notion-selectable notion-code-block"><div style="display: flex;"><div contenteditable="false" style="flex-grow: 1; border-radius: 3px; text-align: left; position: relative; background: rgb(247, 246, 243); min-width: 0px; width: 100%;" data-content-editable-void="true" role="figure" aria-labelledby="id_q"><div style="position: absolute; top: 8px; left: 8px; z-index: 1; color: rgba(55, 53, 47, 0.65); display: flex; align-items: center; justify-content: flex-end; opacity: 0; transition: opacity 300ms ease-in 0s;"><div aria-disabled="true" role="button" tabindex="-1" style="user-select: none; transition: background 20ms ease-in 0s; cursor: default; display: inline-flex; align-items: center; white-space: nowrap; height: 20px; border-radius: 3px; font-size: 12px; line-height: 1.2; padding-left: 5px; padding-right: 5px; color: rgba(55, 53, 47, 0.65); margin-right: 5px;">JavaScript<svg role="graphics-symbol" viewBox="0 0 30 30" style="width: 10px; height: 100%; display: block; fill: rgba(55, 53, 47, 0.35); flex-shrink: 0; margin-left: 4px;" class="chevronDown"><polygon points="15,17.4 4.8,7 2,9.8 15,23 28,9.8 25.2,7 "></polygon></svg></div></div><div style="position: absolute; top: 3px; right: 1px; z-index: 1; color: rgba(55, 53, 47, 0.65); display: flex; align-items: center; justify-content: flex-end; height: 25px; font-size: 11.5px; opacity: 0; transition: opacity 300ms ease-in 0s;"><div style="color: rgba(55, 53, 47, 0.65); display: flex; align-items: center; justify-content: center; font-size: 12px; margin-top: 4px; margin-right: 4px;"><div role="button" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: inline-flex; align-items: center; white-space: nowrap; height: 25px; border-radius: 3px 0px 0px 3px; font-size: 11.5px; line-height: 1.2; padding: 4px 6px; color: rgb(55, 53, 47); background: rgb(234, 233, 229); font-weight: 400;"><svg role="graphics-symbol" viewBox="0 0 14 16" style="width: 16px; height: 16px; display: block; fill: inherit; flex-shrink: 0; padding-right: 4px;" class="copy"><path d="M2.404 15.322h5.701c1.26 0 1.887-.662 1.887-1.927V12.38h1.154c1.254 0 1.91-.662 1.91-1.928V5.555c0-.774-.158-1.266-.626-1.74L9.512.837C9.066.387 8.545.21 7.865.21H5.463c-1.254 0-1.91.662-1.91 1.928v1.084H2.404c-1.254 0-1.91.668-1.91 1.933v8.239c0 1.265.656 1.927 1.91 1.927zm7.588-6.62c0-.792-.1-1.161-.592-1.665L6.225 3.814c-.452-.462-.844-.58-1.5-.591V2.215c0-.533.28-.832.843-.832h2.38v2.883c0 .726.386 1.113 1.107 1.113h2.83v4.998c0 .539-.276.832-.844.832H9.992V8.701zm-.79-4.29c-.206 0-.288-.088-.288-.287V1.594l2.771 2.818H9.201zM2.503 14.15c-.563 0-.844-.293-.844-.832V5.232c0-.539.281-.837.85-.837h1.91v3.187c0 .85.416 1.26 1.26 1.26h3.14v4.476c0 .54-.28.832-.843.832H2.504zM5.79 7.816c-.24 0-.346-.105-.346-.345V4.547l3.223 3.27H5.791z"></path></svg>Copy</div></div></div><div><div style="display: flex; overflow-x: auto;" class="line-numbers notion-code-block"><div style="flex-grow: 1; flex-shrink: 1; text-align: left; font-family: &quot;SFMono-Regular&quot;, Menlo, Consolas, &quot;PT Mono&quot;, &quot;Liberation Mono&quot;, Courier, monospace; font-size: 85%; tab-size: 2; padding: 34px 16px 32px 32px; min-height: 1em; color: rgb(55, 53, 47); white-space: pre;" spellcheck="false" autocorrect="off" autocapitalize="none" placeholder=" " data-content-editable-leaf="true" contenteditable="false"><span class="token string-property property" data-token-index="0">"gameworldSettings"</span><span class="token operator" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token punctuation" data-token-index="0">{</span><span class="" data-token-index="0">
+		</span><span class="token string-property property" data-token-index="0">"map"</span><span class="token operator" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token punctuation" data-token-index="0">{</span><span class="" data-token-index="0">
+			</span><span class="token string-property property" data-token-index="0">"type"</span><span class="token operator" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token string" data-token-index="0">"custom"</span><span class="token punctuation" data-token-index="0">,</span><span class="" data-token-index="0"> </span><span class="token comment" data-token-index="0">// should be either "custom" or "default"</span><span class="" data-token-index="0">
+			</span><span class="token string-property property" data-token-index="0">"size"</span><span class="token operator" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token number" data-token-index="0">5</span><span class="token punctuation" data-token-index="0">,</span><span class="" data-token-index="0"> </span><span class="token comment" data-token-index="0">// should be higher than 5</span><span class="" data-token-index="0">
+			</span><span class="token string-property property" data-token-index="0">"options"</span><span class="token operator" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token punctuation" data-token-index="0">{</span><span class="" data-token-index="0"> </span><span class="token comment" data-token-index="0">// this value is flexible and depends on the "type" property</span><span class="" data-token-index="0">
+				</span><span class="token string-property property" data-token-index="0">"layout"</span><span class="token operator" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token string" data-token-index="0">"XOOXX;OOOOO;OXXOO;XXXXO;OOOOO"</span><span class="" data-token-index="0">
+			</span><span class="token punctuation" data-token-index="0">}</span><span class="" data-token-index="0">
+		</span><span class="token punctuation" data-token-index="0">}</span><span class="token punctuation" data-token-index="0">,</span><span class="" data-token-index="0">
+		</span><span class="token string-property property" data-token-index="0">"resources"</span><span class="token operator" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token punctuation" data-token-index="0">{</span><span class="" data-token-index="0">
+			</span><span class="token string-property property" data-token-index="0">"minAmount"</span><span class="token operator" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token number" data-token-index="0">200</span><span class="token punctuation" data-token-index="0">,</span><span class="" data-token-index="0"> </span><span class="token comment" data-token-index="0">// Should be higher than 1</span><span class="" data-token-index="0">
+			</span><span class="token string-property property" data-token-index="0">"maxAmount"</span><span class="token operator" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token number" data-token-index="0">1000</span><span class="token punctuation" data-token-index="0">,</span><span class="" data-token-index="0"> </span><span class="token comment" data-token-index="0">// Should be higher than minAmount</span><span class="" data-token-index="0">
+			</span><span class="token string-property property" data-token-index="0">"areas"</span><span class="token operator" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token punctuation" data-token-index="0">{</span><span class="" data-token-index="0">
+				</span><span class="token string-property property" data-token-index="0">"border"</span><span class="token operator" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token punctuation" data-token-index="0">{</span><span class="" data-token-index="0">
+					</span><span class="token string-property property" data-token-index="0">"coal"</span><span class="token operator" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token number" data-token-index="0">0.8</span><span class="token punctuation" data-token-index="0">,</span><span class="" data-token-index="0"> </span><span class="token comment" data-token-index="0">// number between 0 and 1</span><span class="" data-token-index="0">
+					</span><span class="token string-property property" data-token-index="0">"iron"</span><span class="token operator" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token number" data-token-index="0">0.5</span><span class="token punctuation" data-token-index="0">,</span><span class="" data-token-index="0"> </span><span class="token comment" data-token-index="0">// number between 0 and 1</span><span class="" data-token-index="0">
+					</span><span class="token string-property property" data-token-index="0">"gem"</span><span class="token operator" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token number" data-token-index="0">0.3</span><span class="token punctuation" data-token-index="0">,</span><span class="" data-token-index="0"> </span><span class="token comment" data-token-index="0">// number between 0 and 1</span><span class="" data-token-index="0">
+					</span><span class="token string-property property" data-token-index="0">"gold"</span><span class="token operator" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token number" data-token-index="0">0.2</span><span class="token punctuation" data-token-index="0">,</span><span class="" data-token-index="0"> </span><span class="token comment" data-token-index="0">// number between 0 and 1</span><span class="" data-token-index="0">
+					</span><span class="token string-property property" data-token-index="0">"platin"</span><span class="token operator" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token number" data-token-index="0">0.1</span><span class="token punctuation" data-token-index="0">,</span><span class="" data-token-index="0"> </span><span class="token comment" data-token-index="0">// number between 0 and 1</span><span class="" data-token-index="0">
+				</span><span class="token punctuation" data-token-index="0">}</span><span class="token punctuation" data-token-index="0">,</span><span class="" data-token-index="0">
+				</span><span class="token string-property property" data-token-index="0">"outer"</span><span class="token operator" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token punctuation" data-token-index="0">{</span><span class="" data-token-index="0"> </span><span class="token comment" data-token-index="0">// Same as above },</span><span class="" data-token-index="0">
+				</span><span class="token string-property property" data-token-index="0">"middle"</span><span class="token operator" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token punctuation" data-token-index="0">{</span><span class="" data-token-index="0"> </span><span class="token comment" data-token-index="0">// Same as above },</span><span class="" data-token-index="0">
+				</span><span class="token string-property property" data-token-index="0">"inner"</span><span class="token operator" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token punctuation" data-token-index="0">{</span><span class="" data-token-index="0"> </span><span class="token comment" data-token-index="0">// Same as above },</span><span class="" data-token-index="0">
+			</span><span class="token punctuation" data-token-index="0">}</span><span class="" data-token-index="0">
+		</span><span class="token punctuation" data-token-index="0">}</span><span class="" data-token-index="0">
+	</span><span class="token punctuation" data-token-index="0">}</span><span class="" data-token-index="0">
+</span><span class="token punctuation" data-token-index="0">}</span><span>
+</span></div></div></div><div style="background: white; padding-right: 105px;"></div></div>​</div></div></div></div></div></div></div></div><div style="width: 100%; max-width: 1718px; margin-top: 1em; margin-bottom: 1px;" data-block-id="8d9bd26a-2c1c-4fa9-b50d-d13e36120410" class="notion-selectable notion-sub_sub_header-block"><div style="display: flex; width: 100%; color: inherit; fill: inherit;"><div style="display: flex; align-items: flex-start; width: 100%; padding-left: 2px;"><div contenteditable="false" class="pseudoSelection" style="user-select: none; --pseudoSelection--background: transparent; margin-right: 2px; width: 24px; display: flex; align-items: center; justify-content: center; flex-grow: 0; flex-shrink: 0; min-height: calc(1.5em + 6px); padding-right: 2px; height: 1.625em; margin-top: 0.5px;" data-content-editable-void="true" data-text-edit-side="start"><div role="button" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; position: relative; display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 3px;" aria-controls="id_a" aria-describedby="id_9" aria-expanded="true" aria-label="Close"><svg role="graphics-symbol" viewBox="0 0 100 100" style="width: 0.6875em; height: 0.6875em; display: block; fill: inherit; flex-shrink: 0; transition: transform 200ms ease-out 0s; transform: rotateZ(180deg); opacity: 1;" class="triangle"><polygon points="5.9,88.2 50,11.8 94.1,88.2 "></polygon></svg></div></div><div style="flex: 1 1 0px; min-width: 1px;"><div id="id_9" style="display: flex;"><h4 style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 3px 2px; font-family: Lyon-Text, Georgia, ui-serif, serif; font-weight: 600; font-size: 1.25em; line-height: 1.3; margin: 0px;" spellcheck="true" placeholder="Heading 3" data-content-editable-leaf="true" contenteditable="false">ChatGPT:</h4></div><div id="id_a"><div style="display: flex; flex-direction: column;"><div style="width: 100%; max-width: 100%; margin-top: 2px; margin-bottom: 1px;" data-block-id="2617e861-2322-4927-ba7d-1732c59722e7" class="notion-selectable notion-text-block"><div style="color: inherit; fill: inherit;"><div style="display: flex;"><div style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 3px 2px;" spellcheck="true" placeholder=" " data-content-editable-leaf="true" contenteditable="false">To extend the parameters accepted by the "/gameworlds" path in the OpenAPI configuration, you can update the "requestBody" schema to include the "gameworldSettings" object. Here's the updated OpenAPI config with the extended parameters:</div></div></div></div><div style="width: 100%; max-width: 100%; margin-top: 4px; margin-bottom: 4px;" data-block-id="64f4c8c5-8a9c-4f21-8e4a-202b07a1bdea" class="notion-selectable notion-code-block"><div style="display: flex;"><div contenteditable="false" style="flex-grow: 1; border-radius: 3px; text-align: left; position: relative; background: rgb(247, 246, 243); min-width: 0px; width: 100%;" data-content-editable-void="true" role="figure" aria-labelledby="id_r"><div style="position: absolute; top: 8px; left: 8px; z-index: 1; color: rgba(55, 53, 47, 0.65); display: flex; align-items: center; justify-content: flex-end; opacity: 0; transition: opacity 300ms ease-in 0s;"><div aria-disabled="true" role="button" tabindex="-1" style="user-select: none; transition: background 20ms ease-in 0s; cursor: default; display: inline-flex; align-items: center; white-space: nowrap; height: 20px; border-radius: 3px; font-size: 12px; line-height: 1.2; padding-left: 5px; padding-right: 5px; color: rgba(55, 53, 47, 0.65); margin-right: 5px;">YAML<svg role="graphics-symbol" viewBox="0 0 30 30" style="width: 10px; height: 100%; display: block; fill: rgba(55, 53, 47, 0.35); flex-shrink: 0; margin-left: 4px;" class="chevronDown"><polygon points="15,17.4 4.8,7 2,9.8 15,23 28,9.8 25.2,7 "></polygon></svg></div></div><div style="position: absolute; top: 3px; right: 1px; z-index: 1; color: rgba(55, 53, 47, 0.65); display: flex; align-items: center; justify-content: flex-end; height: 25px; font-size: 11.5px; opacity: 0; transition: opacity 300ms ease-in 0s;"><div style="color: rgba(55, 53, 47, 0.65); display: flex; align-items: center; justify-content: center; font-size: 12px; margin-top: 4px; margin-right: 4px;"><div role="button" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: inline-flex; align-items: center; white-space: nowrap; height: 25px; border-radius: 3px 0px 0px 3px; font-size: 11.5px; line-height: 1.2; padding: 4px 6px; color: rgb(55, 53, 47); background: rgb(234, 233, 229); font-weight: 400;"><svg role="graphics-symbol" viewBox="0 0 14 16" style="width: 16px; height: 16px; display: block; fill: inherit; flex-shrink: 0; padding-right: 4px;" class="copy"><path d="M2.404 15.322h5.701c1.26 0 1.887-.662 1.887-1.927V12.38h1.154c1.254 0 1.91-.662 1.91-1.928V5.555c0-.774-.158-1.266-.626-1.74L9.512.837C9.066.387 8.545.21 7.865.21H5.463c-1.254 0-1.91.662-1.91 1.928v1.084H2.404c-1.254 0-1.91.668-1.91 1.933v8.239c0 1.265.656 1.927 1.91 1.927zm7.588-6.62c0-.792-.1-1.161-.592-1.665L6.225 3.814c-.452-.462-.844-.58-1.5-.591V2.215c0-.533.28-.832.843-.832h2.38v2.883c0 .726.386 1.113 1.107 1.113h2.83v4.998c0 .539-.276.832-.844.832H9.992V8.701zm-.79-4.29c-.206 0-.288-.088-.288-.287V1.594l2.771 2.818H9.201zM2.503 14.15c-.563 0-.844-.293-.844-.832V5.232c0-.539.281-.837.85-.837h1.91v3.187c0 .85.416 1.26 1.26 1.26h3.14v4.476c0 .54-.28.832-.843.832H2.504zM5.79 7.816c-.24 0-.346-.105-.346-.345V4.547l3.223 3.27H5.791z"></path></svg>Copy</div></div></div><div><div style="display: flex;" class="line-numbers notion-code-block"><div style="flex-grow: 1; flex-shrink: 1; text-align: left; font-family: &quot;SFMono-Regular&quot;, Menlo, Consolas, &quot;PT Mono&quot;, &quot;Liberation Mono&quot;, Courier, monospace; font-size: 85%; tab-size: 2; padding: 34px 16px 32px 32px; min-height: 1em; color: rgb(55, 53, 47); white-space: pre-wrap; word-break: break-all; min-width: 0px;" spellcheck="false" autocorrect="off" autocapitalize="none" placeholder=" " data-content-editable-leaf="true" contenteditable="false"><span class="token key atrule" data-token-index="0">openapi</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> 3.0.1
+</span><span class="token key atrule" data-token-index="0">info</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+  </span><span class="token key atrule" data-token-index="0">title</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> Map Service API
+  </span><span class="token key atrule" data-token-index="0">description</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> This is the REST documentation for the Map Service
+  </span><span class="token key atrule" data-token-index="0">version</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token string" data-token-index="0">'1.0.0'</span><span class="" data-token-index="0">
+</span><span class="token key atrule" data-token-index="0">paths</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+  </span><span class="token key atrule" data-token-index="0">"/gameworlds"</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+    </span><span class="token key atrule" data-token-index="0">post</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+      </span><span class="token key atrule" data-token-index="0">summary</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> Creates a gameworld
+      </span><span class="token key atrule" data-token-index="0">description</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token punctuation" data-token-index="0">|</span><span class="token punctuation" data-token-index="0">-</span><span class="" data-token-index="0">
+        Creates a new Gameworld</span><span class="token punctuation" data-token-index="0">,</span><span class="" data-token-index="0"> for the given amount of players and sets it to
+        "active" while setting all other gameworlds to "inactive". Publishes the `GameworldCreated` Event.
+      </span><span class="token key atrule" data-token-index="0">tags</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+        </span><span class="token punctuation" data-token-index="0">-</span><span class="" data-token-index="0"> gameworlds
+      </span><span class="token key atrule" data-token-index="0">parameters</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token punctuation" data-token-index="0">[</span><span class="token punctuation" data-token-index="0">]</span><span class="" data-token-index="0">
+      </span><span class="token key atrule" data-token-index="0">responses</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+        </span><span class="token key atrule" data-token-index="0">'200'</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">description</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> OK
+          </span><span class="token key atrule" data-token-index="0">content</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+            </span><span class="token key atrule" data-token-index="0">application/json</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+              </span><span class="token key atrule" data-token-index="0">schema</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> object
+                </span><span class="token key atrule" data-token-index="0">properties</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                  </span><span class="token key atrule" data-token-index="0">gameworldId</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                    </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> string
+                    </span><span class="token key atrule" data-token-index="0">format</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> uuid
+                </span><span class="token key atrule" data-token-index="0">required</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                  </span><span class="token punctuation" data-token-index="0">-</span><span class="" data-token-index="0"> gameworldId
+        </span><span class="token key atrule" data-token-index="0">'400'</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">description</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> Bad Request
+      </span><span class="token key atrule" data-token-index="0">requestBody</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+        </span><span class="token key atrule" data-token-index="0">content</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">application/json</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+            </span><span class="token key atrule" data-token-index="0">schema</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+              </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> object
+              </span><span class="token key atrule" data-token-index="0">properties</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                </span><span class="token key atrule" data-token-index="0">playerAmount</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                  </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> integer
+                  </span><span class="token key atrule" data-token-index="0">minimum</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token number" data-token-index="0">1</span><span class="" data-token-index="0">
+                </span><span class="token key atrule" data-token-index="0">gameworldSettings</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                  </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> object
+                  </span><span class="token key atrule" data-token-index="0">properties</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                    </span><span class="token key atrule" data-token-index="0">map</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                      </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> object
+                      </span><span class="token key atrule" data-token-index="0">properties</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                        </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                          </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> string
+                          </span><span class="token key atrule" data-token-index="0">enum</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                            </span><span class="token punctuation" data-token-index="0">-</span><span class="" data-token-index="0"> custom
+                            </span><span class="token punctuation" data-token-index="0">-</span><span class="" data-token-index="0"> default
+                        </span><span class="token key atrule" data-token-index="0">size</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                          </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> integer
+                          </span><span class="token key atrule" data-token-index="0">minimum</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token number" data-token-index="0">5</span><span class="" data-token-index="0">
+                        </span><span class="token key atrule" data-token-index="0">options</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                          </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> object
+                          </span><span class="token key atrule" data-token-index="0">properties</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                            </span><span class="token key atrule" data-token-index="0">layout</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                              </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> string
+                    </span><span class="token key atrule" data-token-index="0">resources</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                      </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> object
+                      </span><span class="token key atrule" data-token-index="0">properties</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                        </span><span class="token key atrule" data-token-index="0">minAmount</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                          </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> integer
+                          </span><span class="token key atrule" data-token-index="0">minimum</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token number" data-token-index="0">1</span><span class="" data-token-index="0">
+                        </span><span class="token key atrule" data-token-index="0">maxAmount</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                          </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> integer
+                          </span><span class="token key atrule" data-token-index="0">minimum</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token number" data-token-index="0">1</span><span class="" data-token-index="0">
+                        </span><span class="token key atrule" data-token-index="0">areas</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                          </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> object
+                          </span><span class="token key atrule" data-token-index="0">properties</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                            </span><span class="token key atrule" data-token-index="0">border</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                              </span><span class="token key atrule" data-token-index="0">$ref</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token string" data-token-index="0">'#/components/schemas/ResourceDistribution'</span><span class="" data-token-index="0">
+                            </span><span class="token key atrule" data-token-index="0">outer</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                              </span><span class="token key atrule" data-token-index="0">$ref</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token string" data-token-index="0">'#/components/schemas/ResourceDistribution'</span><span class="" data-token-index="0">
+                            </span><span class="token key atrule" data-token-index="0">middle</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                              </span><span class="token key atrule" data-token-index="0">$ref</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token string" data-token-index="0">'#/components/schemas/ResourceDistribution'</span><span class="" data-token-index="0">
+                            </span><span class="token key atrule" data-token-index="0">inner</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                              </span><span class="token key atrule" data-token-index="0">$ref</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token string" data-token-index="0">'#/components/schemas/ResourceDistribution'</span><span class="" data-token-index="0">
+                  </span><span class="token key atrule" data-token-index="0">required</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                    </span><span class="token punctuation" data-token-index="0">-</span><span class="" data-token-index="0"> map
+                    </span><span class="token punctuation" data-token-index="0">-</span><span class="" data-token-index="0"> resources
+              </span><span class="token key atrule" data-token-index="0">required</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                </span><span class="token punctuation" data-token-index="0">-</span><span class="" data-token-index="0"> playerAmount
+
+</span><span class="token key atrule" data-token-index="0">components</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+  </span><span class="token key atrule" data-token-index="0">schemas</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+    </span><span class="token key atrule" data-token-index="0">ResourceDistribution</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+      </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> object
+      </span><span class="token key atrule" data-token-index="0">properties</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+        </span><span class="token key atrule" data-token-index="0">coal</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> number
+          </span><span class="token key atrule" data-token-index="0">minimum</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token number" data-token-index="0">0</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">maximum</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token number" data-token-index="0">1</span><span class="" data-token-index="0">
+        </span><span class="token key atrule" data-token-index="0">iron</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> number
+          </span><span class="token key atrule" data-token-index="0">minimum</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token number" data-token-index="0">0</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">maximum</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token number" data-token-index="0">1</span><span class="" data-token-index="0">
+        </span><span class="token key atrule" data-token-index="0">gem</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> number
+          </span><span class="token key atrule" data-token-index="0">minimum</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token number" data-token-index="0">0</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">maximum</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token number" data-token-index="0">1</span><span class="" data-token-index="0">
+        </span><span class="token key atrule" data-token-index="0">gold</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> number
+          </span><span class="token key atrule" data-token-index="0">minimum</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token number" data-token-index="0">0</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">maximum</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token number" data-token-index="0">1</span><span class="" data-token-index="0">
+        </span><span class="token key atrule" data-token-index="0">platin</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> number
+          </span><span class="token key atrule" data-token-index="0">minimum</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token number" data-token-index="0">0</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">maximum</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token number" data-token-index="0">1</span><span class="" data-token-index="0">
+
+</span><span class="token key atrule" data-token-index="0">servers</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+  </span><span class="token punctuation" data-token-index="0">-</span><span class="" data-token-index="0"> </span><span class="token key atrule" data-token-index="0">url</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> http</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">//</span><span class="token punctuation" data-token-index="0">{</span><span class="" data-token-index="0">defaultHost</span><span class="token punctuation" data-token-index="0">}</span><span class="" data-token-index="0">
+    </span><span class="token key atrule" data-token-index="0">variables</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+      </span><span class="token key atrule" data-token-index="0">defaultHost</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+        </span><span class="token key atrule" data-token-index="0">default</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> localhost</span><span class="token punctuation" data-token-index="0">:</span><span class="token number" data-token-index="0">3000</span><span class="" data-token-index="0">
+</span><span>
+</span></div></div></div><div style="background: white; padding-right: 105px;"></div></div>​</div></div><div style="width: 100%; max-width: 100%; margin-top: 1px; margin-bottom: 0px;" data-block-id="eb33611f-65f1-44dd-a4f3-f68056cfa1b6" class="notion-selectable notion-text-block"><div style="color: inherit; fill: inherit;"><div style="display: flex;"><div style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 3px 2px;" spellcheck="true" placeholder=" " data-content-editable-leaf="true" contenteditable="false">In the updated schema, the "gameworldSettings" object is added to the "requestBody" schema. It includes the "map" object with properties for the map type, size, and options, as well as the "resources" object with properties for minimum and maximum resource amounts and the distribution in different areas (border, outer, middle, inner). The resource distribution is defined using the "ResourceDistribution" schema, which ensures that the distribution values are between 0 and 1.</div></div></div></div></div></div></div></div></div></div><div style="width: 100%; max-width: 1718px; margin-top: 1em; margin-bottom: 1px;" data-block-id="0bcc29c9-20e5-4ff3-93d6-8bdbcc268239" class="notion-selectable notion-sub_sub_header-block"><div style="display: flex; width: 100%; color: inherit; fill: inherit;"><div style="display: flex; align-items: flex-start; width: 100%; padding-left: 2px;"><div contenteditable="false" class="pseudoSelection" style="user-select: none; --pseudoSelection--background: transparent; margin-right: 2px; width: 24px; display: flex; align-items: center; justify-content: center; flex-grow: 0; flex-shrink: 0; min-height: calc(1.5em + 6px); padding-right: 2px; height: 1.625em; margin-top: 0.5px;" data-content-editable-void="true" data-text-edit-side="start"><div role="button" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; position: relative; display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 3px;" aria-controls="id_c" aria-describedby="id_b" aria-expanded="true" aria-label="Close"><svg role="graphics-symbol" viewBox="0 0 100 100" style="width: 0.6875em; height: 0.6875em; display: block; fill: inherit; flex-shrink: 0; transition: transform 200ms ease-out 0s; transform: rotateZ(180deg); opacity: 1;" class="triangle"><polygon points="5.9,88.2 50,11.8 94.1,88.2 "></polygon></svg></div></div><div style="flex: 1 1 0px; min-width: 1px;"><div id="id_b" style="display: flex;"><h4 style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 3px 2px; font-family: Lyon-Text, Georgia, ui-serif, serif; font-weight: 600; font-size: 1.25em; line-height: 1.3; margin: 0px;" spellcheck="true" placeholder="Heading 3" data-content-editable-leaf="true" contenteditable="false">Me:</h4></div><div id="id_c"><div style="display: flex; flex-direction: column;"><div style="width: 100%; max-width: 100%; margin-top: 2px; margin-bottom: 1px;" data-block-id="30d661e5-9956-439e-981c-b07d3cdfac36" class="notion-selectable notion-text-block"><div style="color: inherit; fill: inherit;"><div style="display: flex;"><div style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 3px 2px;" spellcheck="true" placeholder=" " data-content-editable-leaf="true" contenteditable="false">The POST /games route from this openapi doc needs to be extended the same way:</div></div></div></div><div style="width: 100%; max-width: 100%; margin-top: 4px; margin-bottom: 0px;" data-block-id="e2d1127f-a7c8-4328-93d5-459d7c6d34a4" class="notion-selectable notion-code-block"><div style="display: flex;"><div contenteditable="false" style="flex-grow: 1; border-radius: 3px; text-align: left; position: relative; background: rgb(247, 246, 243); min-width: 0px; width: 100%;" data-content-editable-void="true" role="figure" aria-labelledby="id_s"><div style="position: absolute; top: 8px; left: 8px; z-index: 1; color: rgba(55, 53, 47, 0.65); display: flex; align-items: center; justify-content: flex-end; opacity: 0; transition: opacity 300ms ease-in 0s;"><div aria-disabled="true" role="button" tabindex="-1" style="user-select: none; transition: background 20ms ease-in 0s; cursor: default; display: inline-flex; align-items: center; white-space: nowrap; height: 20px; border-radius: 3px; font-size: 12px; line-height: 1.2; padding-left: 5px; padding-right: 5px; color: rgba(55, 53, 47, 0.65); margin-right: 5px;">YAML<svg role="graphics-symbol" viewBox="0 0 30 30" style="width: 10px; height: 100%; display: block; fill: rgba(55, 53, 47, 0.35); flex-shrink: 0; margin-left: 4px;" class="chevronDown"><polygon points="15,17.4 4.8,7 2,9.8 15,23 28,9.8 25.2,7 "></polygon></svg></div></div><div style="position: absolute; top: 3px; right: 1px; z-index: 1; color: rgba(55, 53, 47, 0.65); display: flex; align-items: center; justify-content: flex-end; height: 25px; font-size: 11.5px; opacity: 0; transition: opacity 300ms ease-in 0s;"><div style="color: rgba(55, 53, 47, 0.65); display: flex; align-items: center; justify-content: center; font-size: 12px; margin-top: 4px; margin-right: 4px;"><div role="button" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: inline-flex; align-items: center; white-space: nowrap; height: 25px; border-radius: 3px 0px 0px 3px; font-size: 11.5px; line-height: 1.2; padding: 4px 6px; color: rgb(55, 53, 47); background: rgb(234, 233, 229); font-weight: 400;"><svg role="graphics-symbol" viewBox="0 0 14 16" style="width: 16px; height: 16px; display: block; fill: inherit; flex-shrink: 0; padding-right: 4px;" class="copy"><path d="M2.404 15.322h5.701c1.26 0 1.887-.662 1.887-1.927V12.38h1.154c1.254 0 1.91-.662 1.91-1.928V5.555c0-.774-.158-1.266-.626-1.74L9.512.837C9.066.387 8.545.21 7.865.21H5.463c-1.254 0-1.91.662-1.91 1.928v1.084H2.404c-1.254 0-1.91.668-1.91 1.933v8.239c0 1.265.656 1.927 1.91 1.927zm7.588-6.62c0-.792-.1-1.161-.592-1.665L6.225 3.814c-.452-.462-.844-.58-1.5-.591V2.215c0-.533.28-.832.843-.832h2.38v2.883c0 .726.386 1.113 1.107 1.113h2.83v4.998c0 .539-.276.832-.844.832H9.992V8.701zm-.79-4.29c-.206 0-.288-.088-.288-.287V1.594l2.771 2.818H9.201zM2.503 14.15c-.563 0-.844-.293-.844-.832V5.232c0-.539.281-.837.85-.837h1.91v3.187c0 .85.416 1.26 1.26 1.26h3.14v4.476c0 .54-.28.832-.843.832H2.504zM5.79 7.816c-.24 0-.346-.105-.346-.345V4.547l3.223 3.27H5.791z"></path></svg>Copy</div></div></div><div><div style="display: flex; overflow-x: auto;" class="line-numbers notion-code-block"><div style="flex-grow: 1; flex-shrink: 1; text-align: left; font-family: &quot;SFMono-Regular&quot;, Menlo, Consolas, &quot;PT Mono&quot;, &quot;Liberation Mono&quot;, Courier, monospace; font-size: 85%; tab-size: 2; padding: 34px 16px 32px 32px; min-height: 1em; color: rgb(55, 53, 47); white-space: pre;" spellcheck="false" autocorrect="off" autocapitalize="none" placeholder=" " data-content-editable-leaf="true" contenteditable="false">openapi: 3.0.0
+info:
+  title: Game Service API
+  version: 3.3.0
+servers:
+  - url: http://{defaultHost}
+    variables:
+      defaultHost:
+        default: localhost:8082
+paths:
+  "/games":
+    post:
+      summary: Creates a new game
+      tags:
+        - games
+      description: Creates a new game. Only one game can be running at a time, so creating a new one is only possible if there is currently no active instance.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/game"
+      responses:
+        "201":
+          description: A new game has been successfully created.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  gameId:
+                    $ref: "#/components/schemas/uuid"
+        "400":
+          description: An active game already exists. A game is considered active when its status is either  "CREATED" or "RUNNING". Active games have to be closed in order to create a new one.
+
+    get:
+      summary: All active games.
+      tags:
+        - games
+      description: Returns a list of all open or active games. But there may only be one.
+      responses:
+        "200":
+          description: A list of all open or running games at the moment.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/gameInfo"
+
+  "/games/{gameId}/time":
+    get:
+      summary: Returns the current time
+      tags:
+        - games
+      description: Returns the current time once the game has been started.
+      parameters:
+        - $ref: "#/components/parameters/gameId"
+      responses:
+        "200":
+          description: Returns the current time.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/roundTime"
+        "404":
+          description: Game not found.
+
+  "/games/{gameId}/gameCommands/start":
+    post:
+      summary: Starts the game.
+      tags:
+        - games
+      description: Gives the command to start the game. Only administrators are privileged to start the game. It can be executed only when a new game has been created and is waiting for the game to start.
+      parameters:
+        - $ref: "#/components/parameters/gameId"
+      responses:
+        "201":
+          description: The command has been accepted and the game is about to start.
+        "400":
+          description: Game is in a state that prevents it from being started. Its either running or closed.
+        "404":
+          description: Game not found.
+
+  "/games/{gameId}/gameCommands/end":
+    post:
+      summary: Ends the game.
+      tags:
+        - games
+      description: Gives the command to end the game. Only administrators can give this command. Once the command is received, the current round will be continued, after which the game is closed.
+      parameters:
+        - $ref: "#/components/parameters/gameId"
+      responses:
+        "201":
+          description: The command has been accepted and the game will be closed at the next possible moment.
+        "400":
+          description: Failed to end game. Game is in a state that prevents it from beeing stopped.
+        "404":
+          description: Game not found.
+
+  "/games/{gameId}/players/{playerId}":
+    put:
+      summary: Registers a player for the game.
+      tags:
+        - games
+      description: Registers the player, according to his token, for the game.  Registration is only possible if the game exists and is in a startup phase that makes registrations possible. Once the game has been started, further registrations are not possible.
+      parameters:
+        - $ref: "#/components/parameters/gameId"
+        - $ref: "#/components/parameters/playerId"
+      responses:
+        "200":
+          description: Joined game successful. Player will participate once the game starts.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  gameExchange:
+                    type: string
+                    description: The Exchange used to send game events to the player
+                  playerQueue:
+                    type: string
+                    description: The Queue used to send relevant game events to the player. This is the queue the player should listen to.
+        "400":
+          description: Failed to join game. Its either full or has already started.
+        "404":
+          description: Player or game not found.
+
+  "/games/{gameId}/maxRounds":
+    patch:
+      summary: Change number of rounds.
+      tags:
+        - games
+      description: An Admin can change the maximal rounds of a game.
+      parameters:
+        - $ref: "#/components/parameters/gameId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                maxRounds:
+                  type: integer
+      responses:
+        "200":
+          description: The maximal of rounds has been successfully changed for the game.
+        "400":
+          description: Failed. Invalid game-state or illegal argument.
+        "404":
+          description: Failed. Game not found.
+
+  "/games/{gameId}/duration":
+    patch:
+      summary: Change duration of the rounds.
+      tags:
+        - games
+      description: In MILLISECONDS !!! 1000 = 1s
+      parameters:
+        - $ref: "#/components/parameters/gameId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                duration:
+                  type: integer
+                  description: In MILLISECONDS !!! 1000 = 1s
+      responses:
+        "200":
+          description: The duration of the rounds have been successfully changed for the game.
+        "400":
+          description: Failed. Invalid game-state or illegal argument
+        "404":
+          description: Game not found.
+
+  "/players":
+    post:
+      summary: Creates a new player.
+      tags:
+        - players
+      description: A player can register using a name and email and, upon successful registration, will receive a Bear token that they can use to authenticate themselves in the future.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/player"
+      responses:
+        "201":
+          description: The player has been successfully registered.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/player"
+        "400":
+          description: Player with same name or mail already exists.
+    get:
+      summary: Fetches player-details.
+      tags:
+        - players
+      description: A player can only be registered once.
+      parameters:
+        - in: query
+          name: name
+          required: true
+          description: Player's name
+          schema:
+            type: string
+        - in: query
+          name: mail
+          required: true
+          description: Player's mail
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Request successful.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/player"
+        "404":
+          description: Player not found.
+
+
+  "/commands":
+    post:
+      summary: Creates a new command for the specified robot
+      tags:
+        - commands
+      description: A new command will be created for the specific robot and will be processed at the next possible time. Multiple commands can be given per player per turn, but there can only be one command per robot at a time. Duplicate commands always replace the previous one. A player is not allowed to give orders for a robot that does not belong to him.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/command"
+      responses:
+        "201":
+          description: Command successfully created. Returns commandId (transactionId)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  transactionId:
+                    $ref: "#/components/schemas/uuid"
+        "400":
+          description: Syntax invalid, Game not ready (has't started yet or already finished) or command invalid. That may happen if the player is trying to send commands for robots that do not belong to him.
+        "404":
+          description: Player or game not found.
+
+    get:
+      summary: Returns all player commands of a round.
+      tags:
+        - commands
+      description: After the round of a game is finished, the commands of this can be retrieved.
+      parameters:
+        - in: query
+          name: gameId
+          required: true
+          schema:
+            $ref: "#/components/schemas/uuid"
+        - in: query
+          name: roundNumber
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Contains all player commands of a round.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  gameId:
+                    $ref: "#/components/schemas/uuid"
+                  roundId:
+                    $ref: "#/components/schemas/uuid"
+                  roundNumber:
+                    type: integer
+                  commands:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/commandOutput"
+        "400":
+          description: Invalid input.
+        "404":
+          description: The given round couldnt be found.
+  "/logs/game-info":
+    get:
+      summary: Game-Logic related logging w/ level INFO
+      tags:
+        - logs
+      responses:
+        "200":
+          description: Log found.
+          content:
+            text/plain:
+              schema:
+                type: string
+  "/logs/game-trace":
+    get:
+      summary: Game-Logic related logging w/ level TRACE
+      tags:
+        - logs
+      responses:
+        "200":
+          description: Log found.
+          content:
+            text/plain:
+              schema:
+                type: string
+  "/logs/info":
+    get:
+      summary: Application related logging w/ level INFO
+      tags:
+        - logs
+      responses:
+        "200":
+          description: Log found.
+          content:
+            text/plain:
+              schema:
+                type: string
+  "/logs/error":
+    get:
+      summary: Application related logging w/ level ERROR
+      tags:
+        - logs
+      responses:
+        "200":
+          description: Log found.
+          content:
+            text/plain:
+              schema:
+                type: string
+  "/logs":
+    get:
+      summary: Allows to access as specific log.
+      description: Allows access to rolling logs. Logs roll by increment. Eg error.log, error1.log, ...
+      parameters:
+        - in: query
+          name: file
+          required: true
+          schema:
+            type: string
+          description: Just the filename! Suffix must not be specified! Eg error, game-trace, ...
+      tags:
+        - logs
+      responses:
+        "200":
+          description: Log found.
+          content:
+            text/plan:
+              schema:
+                type: string
+
+
+components:
+  parameters:
+    gameId:
+      in: path
+      name: gameId
+      schema:
+        $ref: "#/components/schemas/uuid"
+      required: true
+
+    maxRounds:
+      in: path
+      name: maxRounds
+      description: Defines the maximum possible number of rounds.
+      schema:
+        $ref: "#/components/schemas/roundNumber"
+      required: true
+
+    newDuration:
+      in: path
+      name: newDuration
+      description: Total duration of a round in milliseconds.
+      schema:
+        $ref: "#/components/schemas/duration"
+      required: true
+
+    playerId:
+      in: path
+      name: playerId
+      schema:
+        $ref: "#/components/schemas/uuid"
+      required: true
+
+
+  schemas:
+    uuid:
+      type: string
+      format: uuid
+      example: d290f1ee-6c54-4b01-90e6-d701748f0851
+
+    roundNumber:
+      type: integer
+      example: 3
+
+    duration:
+      type: integer
+      format: int64
+      example: 60000
+
+    gameStatus:
+      description: Now in sync with asyncAPI gameStatus status-enum.
+      type: string
+      enum:
+        - created
+        - started
+        - ended
+
+    itemQuantity:
+      type: integer
+      format: int64
+      example: 5
+
+    commandType:
+      description: Specifies the command type. Type and content must match, otherwise the command cannot be processed.
+      type: string
+      enum:
+        - buying
+        - selling
+        - movement
+        - battle
+        - mining
+        - regeneration
+
+    commandObject:
+      description: Defines the command content. The corresponding syntax is given by the robot service.
+      type: object
+      required:
+        - commandType
+      properties:
+        commandType:
+          $ref: "#/components/schemas/commandType"
+        planetId:
+          $ref: "#/components/schemas/uuid"
+        targetId:
+          $ref: "#/components/schemas/uuid"
+        itemName:
+          $ref: "#/components/schemas/commandItem"
+        itemQuantity:
+          $ref: "#/components/schemas/itemQuantity"
+    commandItem:
+      description: Defines whether a command is bound to an object. The corresponding syntax is given by the robot service.
+      type: string
+      format: JsonNode
+
+    game:
+      type: object
+      required:
+        - maxRounds
+        - maxPlayers
+      properties:
+        maxRounds:
+          description: Defines the maximum possible number of rounds.
+          type: integer
+          minimum: 1
+          example: 58
+        maxPlayers:
+          description: Defines the maximum possible number of players.
+          type: integer
+          minimum: 1
+          example: 6
+
+    gameInfo:
+      type: object
+      properties:
+        gameId:
+          $ref: "#/components/schemas/uuid"
+        gameStatus:
+          $ref: "#/components/schemas/gameStatus"
+        maxPlayers:
+          description: Maximum possible number of players participating.
+          type: integer
+          minimum: 1
+          example: 6
+        maxRounds:
+          description: Maximum possible number of rounds before the game terminates.
+          type: integer
+          minimum: 1
+          example: 58
+        currentRoundNumber:
+          description: Current round-number. May be null if game hasnt started yet.
+          type: integer
+        roundLengthInMillis:
+          $ref: "#/components/schemas/duration"
+        participatingPlayers:
+          description: List of all the players participating in the game.
+          type: array
+          items:
+            type: string
+            example: player-hackschnitzel
+
+    roundTime:
+      type: object
+      properties:
+        gameTime:
+          description: Elapsed time in seconds since the start of the game. Null if game hasnt started yet.
+          type: integer
+          format: int64
+          example: 183
+        roundCount:
+          description: Number of the current round. Null if game hasnt started yet.
+          type: integer
+          example: 4
+        roundTime:
+          description: Elapsed time in seconds since the start of the round. Null if game hasnt started yet.
+          type: integer
+          format: int64
+          example: 33
+
+    player:
+      type: object
+      required:
+        - name
+        - email
+      properties:
+        playerId:
+          allOf:
+            - description: The Player ID
+            - $ref: "#/components/schemas/uuid"
+        name:
+          description: The name the player chooses to be displayed in the game.
+          type: string
+          example: "Rigatoni"
+        email:
+          description: An email address through which the player can have his token restored.
+          type: string
+          format: email
+
+    command:
+      description: The command that a player wants to send to his robot.
+      type: object
+      required:
+        - gameId
+        - playerId
+        - commandType
+        - commandObject
+      properties:
+        gameId:
+          $ref: "#/components/schemas/uuid"
+        playerId:
+          $ref: "#/components/schemas/uuid"
+        robotId:
+          $ref: "#/components/schemas/uuid"
+        commandType:
+          $ref: "#/components/schemas/commandType"
+        commandObject:
+          $ref: "#/components/schemas/commandObject"
+    commandOutput:
+      description: The command that has been accepted from a player for a specific game, round and robot.
+      type: object
+      properties:
+        transacionId:
+          $ref: "#/components/schemas/uuid"
+        gameId:
+          $ref: "#/components/schemas/uuid"
+        playerId:
+          $ref: "#/components/schemas/uuid"
+        robotId:
+          $ref: "#/components/schemas/uuid"
+        commandType:
+          $ref: "#/components/schemas/commandType"
+        commandObject:
+          $ref: "#/components/schemas/commandObject"</div></div></div><div style="background: white; padding-right: 105px;"></div></div>​</div></div></div></div></div></div></div></div><div style="width: 100%; max-width: 1718px; margin-top: 1em; margin-bottom: 1px;" data-block-id="4d25fe68-30f2-4e4f-9141-250ba5d7679b" class="notion-selectable notion-sub_sub_header-block"><div style="display: flex; width: 100%; color: inherit; fill: inherit;"><div style="display: flex; align-items: flex-start; width: 100%; padding-left: 2px;"><div contenteditable="false" class="pseudoSelection" style="user-select: none; --pseudoSelection--background: transparent; margin-right: 2px; width: 24px; display: flex; align-items: center; justify-content: center; flex-grow: 0; flex-shrink: 0; min-height: calc(1.5em + 6px); padding-right: 2px; height: 1.625em; margin-top: 0.5px;" data-content-editable-void="true" data-text-edit-side="start"><div role="button" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; position: relative; display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 3px;" aria-controls="id_e" aria-describedby="id_d" aria-expanded="true" aria-label="Close"><svg role="graphics-symbol" viewBox="0 0 100 100" style="width: 0.6875em; height: 0.6875em; display: block; fill: inherit; flex-shrink: 0; transition: transform 200ms ease-out 0s; transform: rotateZ(180deg); opacity: 1;" class="triangle"><polygon points="5.9,88.2 50,11.8 94.1,88.2 "></polygon></svg></div></div><div style="flex: 1 1 0px; min-width: 1px;"><div id="id_d" style="display: flex;"><h4 style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 3px 2px; font-family: Lyon-Text, Georgia, ui-serif, serif; font-weight: 600; font-size: 1.25em; line-height: 1.3; margin: 0px;" spellcheck="true" placeholder="Heading 3" data-content-editable-leaf="true" contenteditable="false">ChatGPT:</h4></div><div id="id_e"><div style="display: flex; flex-direction: column;"><div style="width: 100%; max-width: 100%; margin-top: 2px; margin-bottom: 1px;" data-block-id="0848ee2d-50a9-45b7-835a-624478a507c2" class="notion-selectable notion-text-block"><div style="color: inherit; fill: inherit;"><div style="display: flex;"><div style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 3px 2px;" spellcheck="true" placeholder=" " data-content-editable-leaf="true" contenteditable="false">To extend the POST <span style="font-family:&quot;SFMono-Regular&quot;, Menlo, Consolas, &quot;PT Mono&quot;, &quot;Liberation Mono&quot;, Courier, monospace;line-height:normal;background:rgba(135,131,120,0.15);color:#EB5757;border-radius:3px;font-size:85%;padding:0.2em 0.4em" data-token-index="1" spellcheck="false" class="notion-enable-hover">/games</span> route, you can add additional parameters, request body, and response definitions as needed. Here's an example of an extended version of the route:</div></div></div></div><div style="width: 100%; max-width: 100%; margin-top: 4px; margin-bottom: 4px;" data-block-id="5c0857db-fdca-4b92-b29d-934fae40a6eb" class="notion-selectable notion-code-block"><div style="display: flex;"><div contenteditable="false" style="flex-grow: 1; border-radius: 3px; text-align: left; position: relative; background: rgb(247, 246, 243); min-width: 0px; width: 100%;" data-content-editable-void="true" role="figure" aria-labelledby="id_t"><div style="position: absolute; top: 8px; left: 8px; z-index: 1; color: rgba(55, 53, 47, 0.65); display: flex; align-items: center; justify-content: flex-end; opacity: 0; transition: opacity 300ms ease-in 0s;"><div aria-disabled="true" role="button" tabindex="-1" style="user-select: none; transition: background 20ms ease-in 0s; cursor: default; display: inline-flex; align-items: center; white-space: nowrap; height: 20px; border-radius: 3px; font-size: 12px; line-height: 1.2; padding-left: 5px; padding-right: 5px; color: rgba(55, 53, 47, 0.65); margin-right: 5px;">Plain Text<svg role="graphics-symbol" viewBox="0 0 30 30" style="width: 10px; height: 100%; display: block; fill: rgba(55, 53, 47, 0.35); flex-shrink: 0; margin-left: 4px;" class="chevronDown"><polygon points="15,17.4 4.8,7 2,9.8 15,23 28,9.8 25.2,7 "></polygon></svg></div></div><div style="position: absolute; top: 3px; right: 1px; z-index: 1; color: rgba(55, 53, 47, 0.65); display: flex; align-items: center; justify-content: flex-end; height: 25px; font-size: 11.5px; opacity: 0; transition: opacity 300ms ease-in 0s;"><div style="color: rgba(55, 53, 47, 0.65); display: flex; align-items: center; justify-content: center; font-size: 12px; margin-top: 4px; margin-right: 4px;"><div role="button" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: inline-flex; align-items: center; white-space: nowrap; height: 25px; border-radius: 3px 0px 0px 3px; font-size: 11.5px; line-height: 1.2; padding: 4px 6px; color: rgb(55, 53, 47); background: rgb(234, 233, 229); font-weight: 400;"><svg role="graphics-symbol" viewBox="0 0 14 16" style="width: 16px; height: 16px; display: block; fill: inherit; flex-shrink: 0; padding-right: 4px;" class="copy"><path d="M2.404 15.322h5.701c1.26 0 1.887-.662 1.887-1.927V12.38h1.154c1.254 0 1.91-.662 1.91-1.928V5.555c0-.774-.158-1.266-.626-1.74L9.512.837C9.066.387 8.545.21 7.865.21H5.463c-1.254 0-1.91.662-1.91 1.928v1.084H2.404c-1.254 0-1.91.668-1.91 1.933v8.239c0 1.265.656 1.927 1.91 1.927zm7.588-6.62c0-.792-.1-1.161-.592-1.665L6.225 3.814c-.452-.462-.844-.58-1.5-.591V2.215c0-.533.28-.832.843-.832h2.38v2.883c0 .726.386 1.113 1.107 1.113h2.83v4.998c0 .539-.276.832-.844.832H9.992V8.701zm-.79-4.29c-.206 0-.288-.088-.288-.287V1.594l2.771 2.818H9.201zM2.503 14.15c-.563 0-.844-.293-.844-.832V5.232c0-.539.281-.837.85-.837h1.91v3.187c0 .85.416 1.26 1.26 1.26h3.14v4.476c0 .54-.28.832-.843.832H2.504zM5.79 7.816c-.24 0-.346-.105-.346-.345V4.547l3.223 3.27H5.791z"></path></svg>Copy</div></div></div><div><div style="display: flex;" class="line-numbers notion-code-block"><div style="flex-grow: 1; flex-shrink: 1; text-align: left; font-family: &quot;SFMono-Regular&quot;, Menlo, Consolas, &quot;PT Mono&quot;, &quot;Liberation Mono&quot;, Courier, monospace; font-size: 85%; tab-size: 2; padding: 34px 16px 32px 32px; min-height: 1em; color: rgb(55, 53, 47); white-space: pre-wrap; word-break: break-all; min-width: 0px;" spellcheck="false" autocorrect="off" autocapitalize="none" placeholder=" " data-content-editable-leaf="true" contenteditable="false">"/games":
+  post:
+    summary: Creates a new game
+    tags:
+      - games
+    description: Creates a new game. Only one game can be running at a time, so creating a new one is only possible if there is currently no active instance.
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/game"
+    parameters:
+      - $ref: "#/components/parameters/adminToken"  # Add an admin token parameter for authentication
+    responses:
+      "201":
+        description: A new game has been successfully created.
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                gameId:
+                  $ref: "#/components/schemas/uuid"
+      "400":
+        description: An active game already exists or invalid request. Active games have to be closed in order to create a new one.
+
+  get:
+    summary: All active games.
+    tags:
+      - games
+    description: Returns a list of all open or active games. But there may only be one.
+    responses:
+      "200":
+        description: A list of all open or running games at the moment.
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "#/components/schemas/gameInfo"
+
+</div></div></div><div style="background: white; padding-right: 105px;"></div></div>​</div></div><div style="width: 100%; max-width: 100%; margin-top: 1px; margin-bottom: 1px;" data-block-id="23006920-9d21-4b98-a49c-5631a7bbd8af" class="notion-selectable notion-text-block"><div style="color: inherit; fill: inherit;"><div style="display: flex;"><div style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 3px 2px;" spellcheck="true" placeholder=" " data-content-editable-leaf="true" contenteditable="false">In this extended version, an <span style="font-family:&quot;SFMono-Regular&quot;, Menlo, Consolas, &quot;PT Mono&quot;, &quot;Liberation Mono&quot;, Courier, monospace;line-height:normal;background:rgba(135,131,120,0.15);color:#EB5757;border-radius:3px;font-size:85%;padding:0.2em 0.4em" data-token-index="1" spellcheck="false" class="notion-enable-hover">adminToken</span> parameter is added to the POST request to authenticate the administrator creating the game. The parameter is defined in the <span style="font-family:&quot;SFMono-Regular&quot;, Menlo, Consolas, &quot;PT Mono&quot;, &quot;Liberation Mono&quot;, Courier, monospace;line-height:normal;background:rgba(135,131,120,0.15);color:#EB5757;border-radius:3px;font-size:85%;padding:0.2em 0.4em" data-token-index="3" spellcheck="false" class="notion-enable-hover">components/parameters</span> section and can be referenced using <span style="font-family:&quot;SFMono-Regular&quot;, Menlo, Consolas, &quot;PT Mono&quot;, &quot;Liberation Mono&quot;, Courier, monospace;line-height:normal;background:rgba(135,131,120,0.15);color:#EB5757;border-radius:3px;font-size:85%;padding:0.2em 0.4em" data-token-index="5" spellcheck="false" class="notion-enable-hover">$ref</span>. Additionally, the <span style="font-family:&quot;SFMono-Regular&quot;, Menlo, Consolas, &quot;PT Mono&quot;, &quot;Liberation Mono&quot;, Courier, monospace;line-height:normal;background:rgba(135,131,120,0.15);color:#EB5757;border-radius:3px;font-size:85%;padding:0.2em 0.4em" data-token-index="7" spellcheck="false" class="notion-enable-hover">400</span> response description is updated to include the case of an invalid request.</div></div></div></div><div style="width: 100%; max-width: 100%; margin-top: 1px; margin-bottom: 0px;" data-block-id="52083e97-6dee-47a0-af8e-683fc676da88" class="notion-selectable notion-text-block"><div style="color: inherit; fill: inherit;"><div style="display: flex;"><div style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 3px 2px;" spellcheck="true" placeholder=" " data-content-editable-leaf="true" contenteditable="false">Remember to update the <span style="font-family:&quot;SFMono-Regular&quot;, Menlo, Consolas, &quot;PT Mono&quot;, &quot;Liberation Mono&quot;, Courier, monospace;line-height:normal;background:rgba(135,131,120,0.15);color:#EB5757;border-radius:3px;font-size:85%;padding:0.2em 0.4em" data-token-index="1" spellcheck="false" class="notion-enable-hover">components</span> section accordingly to include the new parameter definition if necessary.</div></div></div></div></div></div></div></div></div></div><div style="width: 100%; max-width: 1718px; margin-top: 1.4em; margin-bottom: 1px;" data-block-id="2a4ceda4-a987-4f00-a709-dd5ea2b082e6" class="notion-selectable notion-sub_header-block"><div style="display: flex; width: 100%; color: inherit; fill: inherit;"><h3 style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 3px 2px; font-family: Lyon-Text, Georgia, ui-serif, serif; font-weight: 600; font-size: 1.5em; line-height: 1.3; margin: 0px;" spellcheck="true" placeholder="Heading 2" data-content-editable-leaf="true" contenteditable="false"><span style="font-weight:600" data-token-index="0" class="notion-enable-hover">Code before and after</span></h3></div></div><div style="width: 100%; max-width: 1718px; margin-top: 1em; margin-bottom: 1px;" data-block-id="0504888a-22e0-4275-bf33-93e2eb6b8d29" class="notion-selectable notion-sub_sub_header-block"><div style="display: flex; width: 100%; color: inherit; fill: inherit;"><div style="display: flex; align-items: flex-start; width: 100%; padding-left: 2px;"><div contenteditable="false" class="pseudoSelection" style="user-select: none; --pseudoSelection--background: transparent; margin-right: 2px; width: 24px; display: flex; align-items: center; justify-content: center; flex-grow: 0; flex-shrink: 0; min-height: calc(1.5em + 6px); padding-right: 2px; height: 1.625em; margin-top: 0.5px;" data-content-editable-void="true" data-text-edit-side="start"><div role="button" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; position: relative; display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 3px;" aria-controls="id_i" aria-describedby="id_h" aria-expanded="true" aria-label="Close"><svg role="graphics-symbol" viewBox="0 0 100 100" style="width: 0.6875em; height: 0.6875em; display: block; fill: inherit; flex-shrink: 0; transition: transform 200ms ease-out 0s; transform: rotateZ(180deg); opacity: 1;" class="triangle"><polygon points="5.9,88.2 50,11.8 94.1,88.2 "></polygon></svg></div></div><div style="flex: 1 1 0px; min-width: 1px;"><div id="id_h" style="display: flex;"><h4 style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 3px 2px; font-family: Lyon-Text, Georgia, ui-serif, serif; font-weight: 600; font-size: 1.25em; line-height: 1.3; margin: 0px;" spellcheck="true" placeholder="Heading 3" data-content-editable-leaf="true" contenteditable="false">Before</h4></div><div id="id_i"><div style="display: flex; flex-direction: column;"><div style="width: 100%; max-width: 100%; margin-top: 4px; margin-bottom: 0px;" data-block-id="8eb8689c-c5ac-4185-938b-2b2bc004f560" class="notion-selectable notion-code-block"><div style="display: flex;"><div contenteditable="false" style="flex-grow: 1; border-radius: 3px; text-align: left; position: relative; background: rgb(247, 246, 243); min-width: 0px; width: 100%;" data-content-editable-void="true" role="figure" aria-labelledby="id_u"><div style="position: absolute; top: 8px; left: 8px; z-index: 1; color: rgba(55, 53, 47, 0.65); display: flex; align-items: center; justify-content: flex-end; opacity: 0; transition: opacity 300ms ease-in 0s;"><div aria-disabled="true" role="button" tabindex="-1" style="user-select: none; transition: background 20ms ease-in 0s; cursor: default; display: inline-flex; align-items: center; white-space: nowrap; height: 20px; border-radius: 3px; font-size: 12px; line-height: 1.2; padding-left: 5px; padding-right: 5px; color: rgba(55, 53, 47, 0.65); margin-right: 5px;">YAML<svg role="graphics-symbol" viewBox="0 0 30 30" style="width: 10px; height: 100%; display: block; fill: rgba(55, 53, 47, 0.35); flex-shrink: 0; margin-left: 4px;" class="chevronDown"><polygon points="15,17.4 4.8,7 2,9.8 15,23 28,9.8 25.2,7 "></polygon></svg></div></div><div style="position: absolute; top: 3px; right: 1px; z-index: 1; color: rgba(55, 53, 47, 0.65); display: flex; align-items: center; justify-content: flex-end; height: 25px; font-size: 11.5px; opacity: 0; transition: opacity 300ms ease-in 0s;"><div style="color: rgba(55, 53, 47, 0.65); display: flex; align-items: center; justify-content: center; font-size: 12px; margin-top: 4px; margin-right: 4px;"><div role="button" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: inline-flex; align-items: center; white-space: nowrap; height: 25px; border-radius: 3px 0px 0px 3px; font-size: 11.5px; line-height: 1.2; padding: 4px 6px; color: rgb(55, 53, 47); background: rgb(234, 233, 229); font-weight: 400;"><svg role="graphics-symbol" viewBox="0 0 14 16" style="width: 16px; height: 16px; display: block; fill: inherit; flex-shrink: 0; padding-right: 4px;" class="copy"><path d="M2.404 15.322h5.701c1.26 0 1.887-.662 1.887-1.927V12.38h1.154c1.254 0 1.91-.662 1.91-1.928V5.555c0-.774-.158-1.266-.626-1.74L9.512.837C9.066.387 8.545.21 7.865.21H5.463c-1.254 0-1.91.662-1.91 1.928v1.084H2.404c-1.254 0-1.91.668-1.91 1.933v8.239c0 1.265.656 1.927 1.91 1.927zm7.588-6.62c0-.792-.1-1.161-.592-1.665L6.225 3.814c-.452-.462-.844-.58-1.5-.591V2.215c0-.533.28-.832.843-.832h2.38v2.883c0 .726.386 1.113 1.107 1.113h2.83v4.998c0 .539-.276.832-.844.832H9.992V8.701zm-.79-4.29c-.206 0-.288-.088-.288-.287V1.594l2.771 2.818H9.201zM2.503 14.15c-.563 0-.844-.293-.844-.832V5.232c0-.539.281-.837.85-.837h1.91v3.187c0 .85.416 1.26 1.26 1.26h3.14v4.476c0 .54-.28.832-.843.832H2.504zM5.79 7.816c-.24 0-.346-.105-.346-.345V4.547l3.223 3.27H5.791z"></path></svg>Copy</div></div></div><div><div style="display: flex; overflow-x: auto;" class="line-numbers notion-code-block"><div style="flex-grow: 1; flex-shrink: 1; text-align: left; font-family: &quot;SFMono-Regular&quot;, Menlo, Consolas, &quot;PT Mono&quot;, &quot;Liberation Mono&quot;, Courier, monospace; font-size: 85%; tab-size: 2; padding: 34px 16px 32px 32px; min-height: 1em; color: rgb(55, 53, 47); white-space: pre;" spellcheck="false" autocorrect="off" autocapitalize="none" placeholder=" " data-content-editable-leaf="true" contenteditable="false"><span class="token punctuation" data-token-index="0">---</span><span class="" data-token-index="0">
+</span><span class="token key atrule" data-token-index="0">openapi</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> 3.0.1
+</span><span class="token key atrule" data-token-index="0">info</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+  </span><span class="token key atrule" data-token-index="0">title</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> Map Service API
+  </span><span class="token key atrule" data-token-index="0">description</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> This is the REST documentation for the Map Service
+  </span><span class="token key atrule" data-token-index="0">version</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token string" data-token-index="0">'1.0.0'</span><span class="" data-token-index="0">
+</span><span class="token key atrule" data-token-index="0">paths</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+  </span><span class="token key atrule" data-token-index="0">"/gameworlds"</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+    </span><span class="token key atrule" data-token-index="0">post</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+      </span><span class="token key atrule" data-token-index="0">summary</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> Creates a gameworld
+      </span><span class="token key atrule" data-token-index="0">description</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token punctuation" data-token-index="0">|</span><span class="token punctuation" data-token-index="0">-</span><span class="" data-token-index="0">
+        Creates a new Gameworld</span><span class="token punctuation" data-token-index="0">,</span><span class="" data-token-index="0"> for the given amount of players and sets it to
+              "active" while setting all other gameworlds to "inactive". Publishes the `GameworldCreated` Event.
+      </span><span class="token key atrule" data-token-index="0">tags</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+        </span><span class="token punctuation" data-token-index="0">-</span><span class="" data-token-index="0"> gameworlds
+      </span><span class="token key atrule" data-token-index="0">parameters</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token punctuation" data-token-index="0">[</span><span class="token punctuation" data-token-index="0">]</span><span class="" data-token-index="0">
+      </span><span class="token key atrule" data-token-index="0">responses</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+        </span><span class="token key atrule" data-token-index="0">'200'</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">description</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> OK
+          </span><span class="token key atrule" data-token-index="0">content</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+            </span><span class="token key atrule" data-token-index="0">application/json</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+              </span><span class="token key atrule" data-token-index="0">schema</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> object
+                </span><span class="token key atrule" data-token-index="0">properties</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                  </span><span class="token key atrule" data-token-index="0">gameworldId</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                    </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> string
+                    </span><span class="token key atrule" data-token-index="0">format</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> uuid
+                </span><span class="token key atrule" data-token-index="0">required</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                  </span><span class="token punctuation" data-token-index="0">-</span><span class="" data-token-index="0"> gameworldId
+        </span><span class="token key atrule" data-token-index="0">'400'</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">description</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> Bad Request
+      </span><span class="token key atrule" data-token-index="0">requestBody</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+        </span><span class="token key atrule" data-token-index="0">content</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">application/json</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+            </span><span class="token key atrule" data-token-index="0">schema</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+              </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> object
+              </span><span class="token key atrule" data-token-index="0">properties</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                </span><span class="token key atrule" data-token-index="0">playerAmount</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                  </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> integer
+                  </span><span class="token key atrule" data-token-index="0">minimum</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token number" data-token-index="0">1</span><span class="" data-token-index="0">
+              </span><span class="token key atrule" data-token-index="0">required</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                </span><span class="token punctuation" data-token-index="0">-</span><span class="" data-token-index="0"> playerAmount
+  </span><span class="token key atrule" data-token-index="0">"/planets/{id}/minings"</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+    </span><span class="token key atrule" data-token-index="0">post</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+      </span><span class="token key atrule" data-token-index="0">summary</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> Creates a mining
+      </span><span class="token key atrule" data-token-index="0">description</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token punctuation" data-token-index="0">|</span><span class="token punctuation" data-token-index="0">-</span><span class="" data-token-index="0">
+        Creates a new Mining on the planet's resource.
+              The mining is then additionally published in the `ResourceMined` event.
+      </span><span class="token key atrule" data-token-index="0">tags</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+        </span><span class="token punctuation" data-token-index="0">-</span><span class="" data-token-index="0"> minings
+      </span><span class="token key atrule" data-token-index="0">parameters</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+        </span><span class="token punctuation" data-token-index="0">-</span><span class="" data-token-index="0"> </span><span class="token key atrule" data-token-index="0">name</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> id
+          </span><span class="token key atrule" data-token-index="0">in</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> path
+          </span><span class="token key atrule" data-token-index="0">schema</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+            </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> string
+            </span><span class="token key atrule" data-token-index="0">format</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> uuid
+          </span><span class="token key atrule" data-token-index="0">required</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token boolean important" data-token-index="0">true</span><span class="" data-token-index="0">
+      </span><span class="token key atrule" data-token-index="0">responses</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+        </span><span class="token key atrule" data-token-index="0">'200'</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">description</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> OK
+          </span><span class="token key atrule" data-token-index="0">content</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+            </span><span class="token key atrule" data-token-index="0">application/json</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+              </span><span class="token key atrule" data-token-index="0">schema</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> object
+                </span><span class="token key atrule" data-token-index="0">properties</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                  </span><span class="token key atrule" data-token-index="0">minedAmount</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                    </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> integer
+                    </span><span class="token key atrule" data-token-index="0">minimum</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token number" data-token-index="0">1</span><span class="" data-token-index="0">
+                </span><span class="token key atrule" data-token-index="0">required</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                  </span><span class="token punctuation" data-token-index="0">-</span><span class="" data-token-index="0"> minedAmount
+        </span><span class="token key atrule" data-token-index="0">'400'</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">description</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> Bad Request (e.g. no resource on the planet)
+        </span><span class="token key atrule" data-token-index="0">'404'</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">description</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> Not Found
+      </span><span class="token key atrule" data-token-index="0">requestBody</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+        </span><span class="token key atrule" data-token-index="0">content</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">application/json</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+            </span><span class="token key atrule" data-token-index="0">schema</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+              </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> object
+              </span><span class="token key atrule" data-token-index="0">properties</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                </span><span class="token key atrule" data-token-index="0">amountToMine</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                  </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> integer
+                  </span><span class="token key atrule" data-token-index="0">minimum</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token number" data-token-index="0">1</span><span class="" data-token-index="0">
+              </span><span class="token key atrule" data-token-index="0">required</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                </span><span class="token punctuation" data-token-index="0">-</span><span class="" data-token-index="0"> amountToMine
+</span><span class="token key atrule" data-token-index="0">servers</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+  </span><span class="token punctuation" data-token-index="0">-</span><span class="" data-token-index="0"> </span><span class="token key atrule" data-token-index="0">url</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> http</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">//</span><span class="token punctuation" data-token-index="0">{</span><span class="" data-token-index="0">defaultHost</span><span class="token punctuation" data-token-index="0">}</span><span class="" data-token-index="0">
+    </span><span class="token key atrule" data-token-index="0">variables</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+      </span><span class="token key atrule" data-token-index="0">defaultHost</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+        </span><span class="token key atrule" data-token-index="0">default</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> localhost</span><span class="token punctuation" data-token-index="0">:</span><span class="token number" data-token-index="0">3000</span><span>
+</span></div></div></div><div style="background: white; padding-right: 105px;"></div></div>​</div></div></div></div></div></div></div></div><div style="width: 100%; max-width: 1718px; margin-top: 1em; margin-bottom: 1px;" data-block-id="3d12bde5-2cf3-42bb-820a-da360319a9ae" class="notion-selectable notion-sub_sub_header-block"><div style="display: flex; width: 100%; color: inherit; fill: inherit;"><div style="display: flex; align-items: flex-start; width: 100%; padding-left: 2px;"><div contenteditable="false" class="pseudoSelection" style="user-select: none; --pseudoSelection--background: transparent; margin-right: 2px; width: 24px; display: flex; align-items: center; justify-content: center; flex-grow: 0; flex-shrink: 0; min-height: calc(1.5em + 6px); padding-right: 2px; height: 1.625em; margin-top: 0.5px;" data-content-editable-void="true" data-text-edit-side="start"><div role="button" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; position: relative; display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 3px;" aria-controls="id_k" aria-describedby="id_j" aria-expanded="true" aria-label="Close"><svg role="graphics-symbol" viewBox="0 0 100 100" style="width: 0.6875em; height: 0.6875em; display: block; fill: inherit; flex-shrink: 0; transition: transform 200ms ease-out 0s; transform: rotateZ(180deg); opacity: 1;" class="triangle"><polygon points="5.9,88.2 50,11.8 94.1,88.2 "></polygon></svg></div></div><div style="flex: 1 1 0px; min-width: 1px;"><div id="id_j" style="display: flex;"><h4 style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 3px 2px; font-family: Lyon-Text, Georgia, ui-serif, serif; font-weight: 600; font-size: 1.25em; line-height: 1.3; margin: 0px;" spellcheck="true" placeholder="Heading 3" data-content-editable-leaf="true" contenteditable="false">After</h4></div><div id="id_k"><div style="display: flex; flex-direction: column;"><div style="width: 100%; max-width: 100%; margin-top: 2px; margin-bottom: 1px;" data-block-id="df5c904b-479e-4246-90f8-acc09637fee5" class="notion-selectable notion-text-block"><div style="color: inherit; fill: inherit;"><div style="display: flex;"><div style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 3px 2px;" spellcheck="true" placeholder=" " data-content-editable-leaf="true" contenteditable="false">Essentially, it’s the same as ChatGPT’s output. I just added back the path it removed which it probably did to keep the result short. Also I had to set some options to “nullable” and removed the “required” option to some props. This isn’t ChatGPT’s mistake, I should’ve been more specific in my prompt.</div></div></div></div><div style="width: 100%; max-width: 100%; margin-top: 4px; margin-bottom: 0px;" data-block-id="8c950b57-5f4d-4dd6-9cc7-4fa8bd1e26ad" class="notion-selectable notion-code-block"><div style="display: flex;"><div contenteditable="false" style="flex-grow: 1; border-radius: 3px; text-align: left; position: relative; background: rgb(247, 246, 243); min-width: 0px; width: 100%;" data-content-editable-void="true" role="figure" aria-labelledby="id_v"><div style="position: absolute; top: 8px; left: 8px; z-index: 1; color: rgba(55, 53, 47, 0.65); display: flex; align-items: center; justify-content: flex-end; opacity: 0; transition: opacity 300ms ease-in 0s;"><div aria-disabled="true" role="button" tabindex="-1" style="user-select: none; transition: background 20ms ease-in 0s; cursor: default; display: inline-flex; align-items: center; white-space: nowrap; height: 20px; border-radius: 3px; font-size: 12px; line-height: 1.2; padding-left: 5px; padding-right: 5px; color: rgba(55, 53, 47, 0.65); margin-right: 5px;">YAML<svg role="graphics-symbol" viewBox="0 0 30 30" style="width: 10px; height: 100%; display: block; fill: rgba(55, 53, 47, 0.35); flex-shrink: 0; margin-left: 4px;" class="chevronDown"><polygon points="15,17.4 4.8,7 2,9.8 15,23 28,9.8 25.2,7 "></polygon></svg></div></div><div style="position: absolute; top: 3px; right: 1px; z-index: 1; color: rgba(55, 53, 47, 0.65); display: flex; align-items: center; justify-content: flex-end; height: 25px; font-size: 11.5px; opacity: 0; transition: opacity 300ms ease-in 0s;"><div style="color: rgba(55, 53, 47, 0.65); display: flex; align-items: center; justify-content: center; font-size: 12px; margin-top: 4px; margin-right: 4px;"><div role="button" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: inline-flex; align-items: center; white-space: nowrap; height: 25px; border-radius: 3px 0px 0px 3px; font-size: 11.5px; line-height: 1.2; padding: 4px 6px; color: rgb(55, 53, 47); background: rgb(234, 233, 229); font-weight: 400;"><svg role="graphics-symbol" viewBox="0 0 14 16" style="width: 16px; height: 16px; display: block; fill: inherit; flex-shrink: 0; padding-right: 4px;" class="copy"><path d="M2.404 15.322h5.701c1.26 0 1.887-.662 1.887-1.927V12.38h1.154c1.254 0 1.91-.662 1.91-1.928V5.555c0-.774-.158-1.266-.626-1.74L9.512.837C9.066.387 8.545.21 7.865.21H5.463c-1.254 0-1.91.662-1.91 1.928v1.084H2.404c-1.254 0-1.91.668-1.91 1.933v8.239c0 1.265.656 1.927 1.91 1.927zm7.588-6.62c0-.792-.1-1.161-.592-1.665L6.225 3.814c-.452-.462-.844-.58-1.5-.591V2.215c0-.533.28-.832.843-.832h2.38v2.883c0 .726.386 1.113 1.107 1.113h2.83v4.998c0 .539-.276.832-.844.832H9.992V8.701zm-.79-4.29c-.206 0-.288-.088-.288-.287V1.594l2.771 2.818H9.201zM2.503 14.15c-.563 0-.844-.293-.844-.832V5.232c0-.539.281-.837.85-.837h1.91v3.187c0 .85.416 1.26 1.26 1.26h3.14v4.476c0 .54-.28.832-.843.832H2.504zM5.79 7.816c-.24 0-.346-.105-.346-.345V4.547l3.223 3.27H5.791z"></path></svg>Copy</div></div></div><div><div style="display: flex; overflow-x: auto;" class="line-numbers notion-code-block"><div style="flex-grow: 1; flex-shrink: 1; text-align: left; font-family: &quot;SFMono-Regular&quot;, Menlo, Consolas, &quot;PT Mono&quot;, &quot;Liberation Mono&quot;, Courier, monospace; font-size: 85%; tab-size: 2; padding: 34px 16px 32px 32px; min-height: 1em; color: rgb(55, 53, 47); white-space: pre;" spellcheck="false" autocorrect="off" autocapitalize="none" placeholder=" " data-content-editable-leaf="true" contenteditable="false"><span class="token punctuation" data-token-index="0">---</span><span class="" data-token-index="0">
+</span><span class="token key atrule" data-token-index="0">openapi</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> 3.0.1
+</span><span class="token key atrule" data-token-index="0">info</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+  </span><span class="token key atrule" data-token-index="0">title</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> Map Service API
+  </span><span class="token key atrule" data-token-index="0">description</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> This is the REST documentation for the Map Service
+  </span><span class="token key atrule" data-token-index="0">version</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token string" data-token-index="0">'1.0.0'</span><span class="" data-token-index="0">
+</span><span class="token key atrule" data-token-index="0">paths</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+  </span><span class="token key atrule" data-token-index="0">"/gameworlds"</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+    </span><span class="token key atrule" data-token-index="0">post</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+      </span><span class="token key atrule" data-token-index="0">summary</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> Creates a gameworld
+      </span><span class="token key atrule" data-token-index="0">description</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token punctuation" data-token-index="0">|</span><span class="token punctuation" data-token-index="0">-</span><span class="" data-token-index="0">
+        Creates a new Gameworld</span><span class="token punctuation" data-token-index="0">,</span><span class="" data-token-index="0"> for the given amount of players and sets it to
+        "active" while setting all other gameworlds to "inactive". Publishes the `GameworldCreated` Event.
+      </span><span class="token key atrule" data-token-index="0">tags</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+        </span><span class="token punctuation" data-token-index="0">-</span><span class="" data-token-index="0"> gameworlds
+      </span><span class="token key atrule" data-token-index="0">parameters</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token punctuation" data-token-index="0">[</span><span class="token punctuation" data-token-index="0">]</span><span class="" data-token-index="0">
+      </span><span class="token key atrule" data-token-index="0">responses</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+        </span><span class="token key atrule" data-token-index="0">'200'</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">description</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> OK
+          </span><span class="token key atrule" data-token-index="0">content</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+            </span><span class="token key atrule" data-token-index="0">application/json</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+              </span><span class="token key atrule" data-token-index="0">schema</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> object
+                </span><span class="token key atrule" data-token-index="0">properties</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                  </span><span class="token key atrule" data-token-index="0">gameworldId</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                    </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> string
+                    </span><span class="token key atrule" data-token-index="0">format</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> uuid
+                </span><span class="token key atrule" data-token-index="0">required</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                  </span><span class="token punctuation" data-token-index="0">-</span><span class="" data-token-index="0"> gameworldId
+        </span><span class="token key atrule" data-token-index="0">'400'</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">description</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> Bad Request
+      </span><span class="token key atrule" data-token-index="0">requestBody</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+        </span><span class="token key atrule" data-token-index="0">content</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">application/json</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+            </span><span class="token key atrule" data-token-index="0">schema</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+              </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> object
+              </span><span class="token key atrule" data-token-index="0">properties</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                </span><span class="token key atrule" data-token-index="0">playerAmount</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                  </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> integer
+                  </span><span class="token key atrule" data-token-index="0">minimum</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token number" data-token-index="0">1</span><span class="" data-token-index="0">
+                </span><span class="token key atrule" data-token-index="0">gameworldSettings</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                  </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> object
+                  </span><span class="token key atrule" data-token-index="0">properties</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                    </span><span class="token key atrule" data-token-index="0">map</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                      </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> object
+                      </span><span class="token key atrule" data-token-index="0">nullable</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token boolean important" data-token-index="0">true</span><span class="" data-token-index="0">
+                      </span><span class="token key atrule" data-token-index="0">properties</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                        </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                          </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> string
+                          </span><span class="token key atrule" data-token-index="0">enum</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                            </span><span class="token punctuation" data-token-index="0">-</span><span class="" data-token-index="0"> custom
+                            </span><span class="token punctuation" data-token-index="0">-</span><span class="" data-token-index="0"> default
+                        </span><span class="token key atrule" data-token-index="0">size</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                          </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> integer
+                          </span><span class="token key atrule" data-token-index="0">minimum</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token number" data-token-index="0">5</span><span class="" data-token-index="0">
+                        </span><span class="token key atrule" data-token-index="0">options</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                          </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> object
+                          </span><span class="token key atrule" data-token-index="0">properties</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                            </span><span class="token key atrule" data-token-index="0">layout</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                              </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> string
+                    </span><span class="token key atrule" data-token-index="0">resources</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                      </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> object
+                      </span><span class="token key atrule" data-token-index="0">nullable</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token boolean important" data-token-index="0">true</span><span class="" data-token-index="0">
+                      </span><span class="token key atrule" data-token-index="0">properties</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                        </span><span class="token key atrule" data-token-index="0">minAmount</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                          </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> integer
+                          </span><span class="token key atrule" data-token-index="0">minimum</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token number" data-token-index="0">1</span><span class="" data-token-index="0">
+                        </span><span class="token key atrule" data-token-index="0">maxAmount</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                          </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> integer
+                          </span><span class="token key atrule" data-token-index="0">minimum</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token number" data-token-index="0">1</span><span class="" data-token-index="0">
+                        </span><span class="token key atrule" data-token-index="0">areas</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                          </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> object
+                          </span><span class="token key atrule" data-token-index="0">properties</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                            </span><span class="token key atrule" data-token-index="0">border</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                              </span><span class="token key atrule" data-token-index="0">$ref</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token string" data-token-index="0">'#/components/schemas/ResourceDistribution'</span><span class="" data-token-index="0">
+                            </span><span class="token key atrule" data-token-index="0">outer</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                              </span><span class="token key atrule" data-token-index="0">$ref</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token string" data-token-index="0">'#/components/schemas/ResourceDistribution'</span><span class="" data-token-index="0">
+                            </span><span class="token key atrule" data-token-index="0">middle</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                              </span><span class="token key atrule" data-token-index="0">$ref</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token string" data-token-index="0">'#/components/schemas/ResourceDistribution'</span><span class="" data-token-index="0">
+                            </span><span class="token key atrule" data-token-index="0">inner</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                              </span><span class="token key atrule" data-token-index="0">$ref</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token string" data-token-index="0">'#/components/schemas/ResourceDistribution'</span><span class="" data-token-index="0">
+              </span><span class="token key atrule" data-token-index="0">required</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                </span><span class="token punctuation" data-token-index="0">-</span><span class="" data-token-index="0"> playerAmount
+  </span><span class="token key atrule" data-token-index="0">"/planets/{id}/minings"</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+    </span><span class="token key atrule" data-token-index="0">post</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+      </span><span class="token key atrule" data-token-index="0">summary</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> Creates a mining
+      </span><span class="token key atrule" data-token-index="0">description</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token punctuation" data-token-index="0">|</span><span class="token punctuation" data-token-index="0">-</span><span class="" data-token-index="0">
+        Creates a new Mining on the planet's resource.
+              The mining is then additionally published in the `ResourceMined` event.
+      </span><span class="token key atrule" data-token-index="0">tags</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+        </span><span class="token punctuation" data-token-index="0">-</span><span class="" data-token-index="0"> minings
+      </span><span class="token key atrule" data-token-index="0">parameters</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+        </span><span class="token punctuation" data-token-index="0">-</span><span class="" data-token-index="0"> </span><span class="token key atrule" data-token-index="0">name</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> id
+          </span><span class="token key atrule" data-token-index="0">in</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> path
+          </span><span class="token key atrule" data-token-index="0">schema</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+            </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> string
+            </span><span class="token key atrule" data-token-index="0">format</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> uuid
+          </span><span class="token key atrule" data-token-index="0">required</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token boolean important" data-token-index="0">true</span><span class="" data-token-index="0">
+      </span><span class="token key atrule" data-token-index="0">responses</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+        </span><span class="token key atrule" data-token-index="0">'200'</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">description</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> OK
+          </span><span class="token key atrule" data-token-index="0">content</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+            </span><span class="token key atrule" data-token-index="0">application/json</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+              </span><span class="token key atrule" data-token-index="0">schema</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> object
+                </span><span class="token key atrule" data-token-index="0">properties</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                  </span><span class="token key atrule" data-token-index="0">minedAmount</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                    </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> integer
+                    </span><span class="token key atrule" data-token-index="0">minimum</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token number" data-token-index="0">1</span><span class="" data-token-index="0">
+                </span><span class="token key atrule" data-token-index="0">required</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                  </span><span class="token punctuation" data-token-index="0">-</span><span class="" data-token-index="0"> minedAmount
+        </span><span class="token key atrule" data-token-index="0">'400'</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">description</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> Bad Request (e.g. no resource on the planet)
+        </span><span class="token key atrule" data-token-index="0">'404'</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">description</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> Not Found
+      </span><span class="token key atrule" data-token-index="0">requestBody</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+        </span><span class="token key atrule" data-token-index="0">content</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">application/json</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+            </span><span class="token key atrule" data-token-index="0">schema</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+              </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> object
+              </span><span class="token key atrule" data-token-index="0">properties</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                </span><span class="token key atrule" data-token-index="0">amountToMine</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                  </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> integer
+                  </span><span class="token key atrule" data-token-index="0">minimum</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token number" data-token-index="0">1</span><span class="" data-token-index="0">
+              </span><span class="token key atrule" data-token-index="0">required</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+                </span><span class="token punctuation" data-token-index="0">-</span><span class="" data-token-index="0"> amountToMine
+
+</span><span class="token key atrule" data-token-index="0">components</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+  </span><span class="token key atrule" data-token-index="0">schemas</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+    </span><span class="token key atrule" data-token-index="0">ResourceDistribution</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+      </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> object
+      </span><span class="token key atrule" data-token-index="0">properties</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+        </span><span class="token key atrule" data-token-index="0">coal</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> number
+          </span><span class="token key atrule" data-token-index="0">nullable</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token boolean important" data-token-index="0">true</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">minimum</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token number" data-token-index="0">0</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">maximum</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token number" data-token-index="0">1</span><span class="" data-token-index="0">
+        </span><span class="token key atrule" data-token-index="0">iron</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> number
+          </span><span class="token key atrule" data-token-index="0">nullable</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token boolean important" data-token-index="0">true</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">minimum</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token number" data-token-index="0">0</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">maximum</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token number" data-token-index="0">1</span><span class="" data-token-index="0">
+        </span><span class="token key atrule" data-token-index="0">gem</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> number
+          </span><span class="token key atrule" data-token-index="0">nullable</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token boolean important" data-token-index="0">true</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">minimum</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token number" data-token-index="0">0</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">maximum</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token number" data-token-index="0">1</span><span class="" data-token-index="0">
+        </span><span class="token key atrule" data-token-index="0">gold</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> number
+          </span><span class="token key atrule" data-token-index="0">nullable</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token boolean important" data-token-index="0">true</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">minimum</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token number" data-token-index="0">0</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">maximum</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token number" data-token-index="0">1</span><span class="" data-token-index="0">
+        </span><span class="token key atrule" data-token-index="0">platin</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">type</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> number
+          </span><span class="token key atrule" data-token-index="0">minimum</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token number" data-token-index="0">0</span><span class="" data-token-index="0">
+          </span><span class="token key atrule" data-token-index="0">maximum</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> </span><span class="token number" data-token-index="0">1</span><span class="" data-token-index="0">
+
+</span><span class="token key atrule" data-token-index="0">servers</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+  </span><span class="token punctuation" data-token-index="0">-</span><span class="" data-token-index="0"> </span><span class="token key atrule" data-token-index="0">url</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> http</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">//</span><span class="token punctuation" data-token-index="0">{</span><span class="" data-token-index="0">defaultHost</span><span class="token punctuation" data-token-index="0">}</span><span class="" data-token-index="0">
+    </span><span class="token key atrule" data-token-index="0">variables</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+      </span><span class="token key atrule" data-token-index="0">defaultHost</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0">
+        </span><span class="token key atrule" data-token-index="0">default</span><span class="token punctuation" data-token-index="0">:</span><span class="" data-token-index="0"> localhost</span><span class="token punctuation" data-token-index="0">:</span><span class="token number" data-token-index="0">3000</span><span>
+</span></div></div></div><div style="background: white; padding-right: 105px;"></div></div>​</div></div></div></div></div></div></div></div><div style="width: 100%; max-width: 1718px; margin-top: 1.4em; margin-bottom: 1px;" data-block-id="aeb8cee0-6cf0-4e81-b14c-87626ea4ad50" class="notion-selectable notion-sub_header-block"><div style="display: flex; width: 100%; color: inherit; fill: inherit;"><h3 style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 3px 2px; font-family: Lyon-Text, Georgia, ui-serif, serif; font-weight: 600; font-size: 1.5em; line-height: 1.3; margin: 0px;" spellcheck="true" placeholder="Heading 2" data-content-editable-leaf="true" contenteditable="false"><span style="font-weight:600" data-token-index="0" class="notion-enable-hover">Personal assessment</span></h3></div></div><div style="width: 100%; max-width: 1718px; margin-top: 1px; margin-bottom: 1px;" data-block-id="c2c32b25-f734-4d9a-8751-7c08875bdf99" class="notion-selectable notion-text-block"><div style="color: inherit; fill: inherit;"><div style="display: flex;"><div style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 3px 2px;" spellcheck="true" placeholder=" " data-content-editable-leaf="true" contenteditable="false"><span style="font-weight:600;color:rgba(68, 131, 97, 1);fill:rgba(68, 131, 97, 1)" data-token-index="0" class="notion-enable-hover">9/10</span>
+It’s close to perfect, it would’ve been nice if it kept the other path that was in there before though.</div></div></div></div><div style="width: 100%; max-width: 1718px; margin-top: 1px; margin-bottom: 0px;" data-block-id="98109316-524f-4439-99c4-0d783bc40042" class="notion-selectable notion-text-block"><div style="color: rgb(212, 76, 71); fill: rgb(212, 76, 71);"><div style="display: flex;"><div style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 3px 2px; min-height: 1em; color: rgb(55, 53, 47); -webkit-text-fill-color: rgba(55, 53, 47, 0.5);" spellcheck="true" placeholder=" " data-content-editable-leaf="true" contenteditable="false"></div></div></div></div></div></div><div contenteditable="false" style="width: 0px;" data-content-editable-void="true"><div style="display: none; flex-shrink: 0; pointer-events: none; width: 0px; opacity: 0;"><div style="display: flex; flex-direction: column; padding: 5px 16px; width: 340px; flex-shrink: 0; height: 100%; position: relative; pointer-events: none; z-index: 1;"><div style="position: absolute; pointer-events: none; width: 100%; height: 100%; top: -5px; background: linear-gradient(white 0px, rgba(255, 255, 255, 0) 15px);"></div></div></div></div></div><div class="notion-presence-container" style="position: absolute; top: 0px; left: 0px; z-index: 89;"><div></div></div></div></main></div><div role="region" aria-label="Side Peek" aria-hidden="true" style="position: fixed; top: 0px; right: 0px; bottom: 0px; width: 960px; z-index: 109; transform: translateX(960px) translateZ(0px); transition-property: transform; transition-duration: 270ms; transition-timing-function: ease;" class="notion-peek-renderer"></div></div></div><div class="notion-overlay-container notion-default-overlay-container" style="position: fixed; inset: 0px; z-index: 999; pointer-events: none; overflow: hidden;"><div style="position: relative; z-index: 0;"></div></div><div class="notion-overlay-container" style="position: fixed; inset: 0px; z-index: 1001; pointer-events: none; overflow: hidden;"><div style="position: relative; z-index: 0;"></div></div></div></div><script>window.CONFIG={env:"production",isAdminMode:!1,isDevelopingInAirplaneMode:!1,isLocalhost:!1,offline:!0,version:"23.12.0.185",domainBaseUrl:"https://www.notion.so",adminUrl:"https://admin.notion.so",publicDomainName:"notion.site",protocol:"notion",staticS3:{url:"https://prod-notion-assets.s3-us-west-2.amazonaws.com",bucket:"prod-notion-assets"},lastUpdatedTime:1692393330956,api:{http:"/api/v3"},googleOAuth:{clientId:"905154081809-858sm3f0qnalqd9d44d9gecjtrdji9tf.apps.googleusercontent.com"},messageStore:{url:"https://msgstore.www.notion.so",api:"/api/v1"},stripe:{key:"pk_live_vuNO27XGTCbXjVwneiECILjT"},revenueCat:{apiResponseMaxAge:6048e5,entitlementIDs:{personal:"notion.id.personal_pro"},productIDs:{personal:{monthly:"notion.id.personal_pro_monthly",yearly:"notion.id.personal_pro_yearly"}}},intercom:{appId:"gpfdrxfd",adminId:"3483686"},mutiny:{personalKey:"1149e901f65fc47c"},partnerStack:{apiKey:"pk_6nwYfqCKEoPt2lTuU8Veswm2zArJ3Apq"},segment:{writeKey:"g1mMn2qquRcv7exBIVDivoKl9cOrdxLA"},amplitude:{apiKey:"af43d4b535912f7751949bfb061d8659"},pricing:{invoiceDaysUntilDue:30,free:{spaceBlockLimit:1e3,fileUploadMaxBytes:5e6},team_free:{spaceBlockLimit:1e3,fileUploadMaxBytes:5e6},personal_free:{fileUploadMaxBytes:5e6},student:{productId:"prod_FhChFoDp7gS1Ba"},personal:{productId:"prod_CpavZFCbxF2YGx",monthlyPrice:500,yearlyPrice:4800},plus:{productId:"prod_CpawK4ih14xs4t",monthlyPricePerMember:1e3,yearlyPricePerMember:9600},business:{productId:"prod_LEnFERYcTgENz8",monthlyPricePerMember:1800,yearlyPricePerMember:18e3},enterprise:{productId:"prod_Cpb8M1AFEFhdy1",monthlyPricePerMember:2500,yearlyPricePerMember:24e3},ai:{productId:"prod_N6tyEr9FFSTXJo",monthlyPricePerMember:1e3,yearlyPricePerMember:9600}},desktopS3:{url:"https://s3-us-west-2.amazonaws.com/desktop-release.notion-static.com"},publicFileS3:{url:"https://s3-us-west-2.amazonaws.com/public.notion-static.com",bucket:"public.notion-static.com"},temporaryFileS3:{url:"https://s3-us-west-2.amazonaws.com/temporary.notion-static.com",bucket:"temporary.notion-static.com"},secureFileS3:{url:"https://s3-us-west-2.amazonaws.com/secure.notion-static.com",bucket:"secure.notion-static.com"},secureFileS3V2:{url:"https://prod-files-secure.s3.us-west-2.amazonaws.com",bucket:"prod-files-secure"},secureFileConfig:{origins:{s:"secure.notion-static.com",f:"prod-files-secure"},s3BaseDomainName:"s3.us-west-2.amazonaws.com",rootPath:"/f",protocol:"https",hostname:"file.notion.so"},loggly:{token:"9b01b08e-c969-4e27-837c-805d1fc6ec7b"},splunk:{token:"EA76605A-F565-4B17-A496-34435622A1EB"},embedly:{key:"421626497c5d4fc2ae6b075189d602a2"},iframely:{key:"222a85036317ca50d3ba5f321bfda6f0"},iframely_prod:{key:"656ac74fac4fff346b811dca7919d483"},aif:{url:"https://aif.notion.so/aif-production.html"},contentful:{spaceId:"spoqsaf9291f",contentDeliveryToken:"AGqteRpWD8aE_kxy_s7_hSFAlKCh5qf-RctSU6vV6u0",contentPreviewToken:"uR2ZVAs-9TMKDq0YKYVtczFplx6P9p06huCibZDJZKA"},iOSAppId:1232780281,facebook:{pixelId:"499229960464487"},statsig:{apiKey:"client-Tgza5wNFa8dVt9BdeUfG6Vkm29bHxX10MhoztTMzLBB"},googleReCaptcha:{siteKey:"6LcvqigfAAAAAPaPL3j2YLldFcZVGwKvG9TmjDgK"},turnstile:{sitekey:"0x4AAAAAAADLq8YYJOHc6qqw"},google:{clientId:"905154081809-858sm3f0qnalqd9d44d9gecjtrdji9tf.apps.googleusercontent.com"},sprig:{environmentId:"2HKBN1wgCwHr"}}</script><textarea style="opacity: 0; pointer-events: none; position: fixed; left: 0px; top: 0px;" tabindex="-1">-</textarea><div style="width: env(safe-area-inset-bottom);"></div><div id="forest-ext-shadow-host"></div></body></html>
