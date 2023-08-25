@@ -22,9 +22,19 @@ ChatGPT was used to generate Python code solutions to the [HumanEval](https://gi
 
 In order to evaluate the capabilities of ChatGPT at completing assignments for software engineering university courses, purely AI written code (from ChatGPT-4) was generated for the solution to the ST2 2023 milestones, comprising of the creation of a complex e-commerce system.
 
+### [Student ChatGPT Experiences](Student%20ChatGPT%20Experiences)
+
+Two students used ChatGPT 
+
 ### [Experiences and Guidelines](Experiences%20and%20Guidelines)
 
 My experiences with generating code using each of the chatbots, and evaluation of their strengths and weaknesses, and a set of guidelines for using AI tools to write code, are provided.
+
+### [Student Survey](Student%20Survey)
+
+The results of a university wide survey 
+
+
 
 
 
