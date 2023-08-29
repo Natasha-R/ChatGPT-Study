@@ -1,0 +1,10 @@
+﻿Question,Very useful,Useful,Neither useful nor hindering,Hindering,Very hindering,Not used
+Generating new code which does not rely on existing code,0.2632,0.5263,0.1053,0.0526,0,0.0526
+Generating new code which relies on existing code,0.2105,0.3684,0.2105,0.1053,0,0.1053
+Refactoring existing code,0.1579,0.2632,0.3158,0.1053,0,0.1579
+Fixing business logic in existing code,0.1579,0.2632,0.2632,0.1579,0,0.1579
+Fixing compile errors in existing code,0.2632,0.2632,0.2105,0.1579,0,0.1053
+Asking for code to be explained,0.5789,0.3158,0,0,0,0.1053
+Asking for alternative solutions,0.3684,0.2632,0.1053,0.1053,0,0.1579
+To learn about a coding concept,0.3158,0.3158,0.2105,0,0,0.1579
+Other programming-related areas,0.1053,0.4737,0.1053,0,0,0.3158
