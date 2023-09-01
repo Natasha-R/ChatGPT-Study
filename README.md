@@ -1,5 +1,7 @@
 **The purpose of this study is to analyse AI-generated code, with a focus on software engineering use-cases.** The seven core areas of this research are described below.
 
+This dataset can also be accessed on the IEEE dataport: [https://dx.doi.org/10.21227/4rxb-zv06](https://dx.doi.org/10.21227/4rxb-zv06)
+
 ### [Analysis of AI and Student-written Code](Analysis%20of%20AI%20and%20Student-written%20Code)
 
 AI chatbots (ChatGPT-4, ChatGPT-3.5, Bing Chat and Bard) were used to generate code solutions to Java programming tasks (milestone assignments) taken from the 2021 presentation of the [Software Engineering 2](https://www.archi-lab.io/regularModules/ss22/st2_ss22.html) Bachelor's course at TH Köln. Student solutions to the same assignments were stored anonymously. The differences between the AI and human written code solutions to "milestone 0" are analysed, and a simple classification model was trained to distinguish between AI and human written code. For the analysis, two approaches are compared: representing the code using manually defined features, and by OpenAI's text embedding vectors.
