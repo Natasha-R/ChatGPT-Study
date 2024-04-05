@@ -1,3 +1,7 @@
+This data is associated with the following research paper: [*What an AI-Embracing Software Engineering Curriculum Should Look Like: An Empirical Study*](https://ieeexplore.ieee.org/document/10372093).
+
+> **Abstract:** It is not possible to reliably prevent the use of artificial intelligence (AI) tools, nor would that be desirable as AI offers many benefits for students. We recommend that appropriate AI usage be taught within software engineering courses and AI tools integrated into examinations. In order to most effectively support today’s students, software engineering curricula must embrace AI.
+
 **The purpose of this study is to analyse AI-generated code, with a focus on software engineering use-cases.** The seven core areas of this research are described below.
 
 This dataset can also be accessed on the IEEE dataport: [https://dx.doi.org/10.21227/4rxb-zv06](https://dx.doi.org/10.21227/4rxb-zv06)
